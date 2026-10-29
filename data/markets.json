@@ -18,5 +18,15 @@
     "lat": -34.93426,
     "lng": 138.59395,
     "products": ["Künefe", "Baklava"]
+  },{
+    "name": "Turkish Gozleme Pide & Sweet House",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "311 Racecourse Rd, Flemington VIC 3031",
+    "lat": -37.78843,
+    "lng": 144.93059,
+    "products": ["Gözleme", "Pide"],
+    "source": "https://www.openstreetmap.org/node/11240467936"
   }
 ]
