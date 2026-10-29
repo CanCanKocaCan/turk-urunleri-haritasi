@@ -1,0 +1,89 @@
+# Yer Bulucu Agent Talimatları
+
+Bu dosya, haftalık çalışan Claude agent'ının talimatlarıdır. Agent'ın davranışını değiştirmek için bu dosyayı düzenle.
+
+## Görev
+
+Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını**, **kafelerini** ve **fırınlarını** bul, doğrula, `data/markets.json` dosyasına ekle ve bir Pull Request aç.
+
+**Bu çalışmada en fazla 10 yer ekle.** Daha azı tamamen kabul edilebilir. Az ama doğru veri, çok ama hatalı veriden iyidir.
+
+## Bölge
+
+Şu an sadece **Avustralya**. Bu listeden `data/markets.json` içinde **en az kaydı olan** şehri seç (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
+
+1. Melbourne
+2. Sydney
+3. Adelaide
+4. Brisbane
+5. Perth
+6. Canberra
+7. Gold Coast
+8. Hobart
+9. Darwin
+
+## Adımlar
+
+### 1. Mevcut durumu öğren
+- `data/markets.json` dosyasını oku. Zaten var olan yerleri tekrar ekleme.
+- Repoda açık bekleyen, `claude/yeni-yerler-` ile başlayan PR'lar varsa, onlardaki yerleri de tekrar ekleme.
+
+### 2. Aday bul
+- Web araması yap. İngilizce ve Türkçe aramalar dene, örneğin: `Turkish grocery Melbourne`, `Turkish restaurant Melbourne`, `Turkish bakery Melbourne`, `Türk marketi Melbourne`, `Turkish cafe künefe Melbourne`.
+- OpenStreetMap'i kullanabilirsin. Overpass API'de `cuisine=turkish` ve `shop=*` + `name~"Turk|Türk|Istanbul|Anatolia|Ankara|Izmir"` gibi aramalar işe yarar. Kullanım kurallarına uy (makul istek sayısı, açıklayıcı User-Agent).
+- **Google Maps sayfalarını çekmeye çalışma** (kullanım şartları buna izin vermiyor). Arama sonuçlarında görünen bilgileri ipucu olarak kullanabilirsin, ama kaynak olarak başka bir yer göstermelisin.
+
+### 3. Her adayı doğrula
+Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
+- **Türk bağlantısı açık:** Türk mutfağı sunuyor, Türk işletmesi olduğunu belirtiyor ya da açıkça Türk ürünleri satıyor. Sadece "Orta Doğu" veya "Akdeniz" yazan yerleri, Türk ürünü sattığına dair açık kanıt yoksa ekleme.
+- **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz var (web sitesi, sosyal medya paylaşımı, güncel yorum).
+- **Tam adres biliniyor:** Sokak ve numara düzeyinde.
+- **Güvenilir bir kaynak var:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı. Bu linki `source` alanına yaz.
+
+Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklenmeyen adaylar" bölümüne kısa bir notla yaz.
+
+### 4. Koordinatları bul
+- OpenStreetMap kaydı varsa oradaki koordinatı kullan.
+- Yoksa adresi Nominatim (`https://nominatim.openstreetmap.org/search`) ile koordinata çevir. Saniyede en fazla 1 istek gönder ve açıklayıcı bir User-Agent kullan.
+- Koordinat **binanın kendisini** göstermeli, şehir merkezini değil. Virgülden sonra 5 basamağa yuvarla.
+
+### 5. Ürünleri yaz
+- **Sadece kaynakta açıkça geçen ürünleri yaz. Asla tahmin etme.**
+- Marketlerde markaları tercih et (ör. "Ülker çikolata", "Pınar peynir", "Beypazarı maden suyu", "Torku", "Eti").
+- Restoran, kafe ve fırınlarda menüdeki Türk yemeklerini ve tatlılarını yaz (ör. "Künefe", "Lahmacun", "Simit", "Baklava").
+- En fazla 8 ürün. Hiçbir ürün bulamazsan boş liste (`[]`) bırakabilirsin.
+- Ürün adlarını Türkçe yaz.
+
+### 6. Kaydı ekle
+Her yeri `data/markets.json` listesinin sonuna bu formatta ekle:
+
+```json
+{
+  "name": "İşletmenin resmî adı",
+  "type": "market",
+  "city": "Melbourne",
+  "country": "Avustralya",
+  "address": "Sokak, numara, semt, eyalet, posta kodu",
+  "lat": -37.81234,
+  "lng": 144.96123,
+  "products": ["Ürün 1", "Ürün 2"],
+  "source": "https://..."
+}
+```
+
+- `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) veya `firin` (fırın, pastane, börekçi).
+- `country`: Türkçe ülke adı (ör. "Avustralya").
+- Mevcut kayıtlara ve diğer dosyalara **dokunma**.
+
+### 7. Kontrol et
+`node scripts/validate-markets.js` komutunu çalıştır. Hata varsa düzelt ve tekrar çalıştır. ✅ çıkmadan PR açma.
+
+### 8. Pull Request aç
+- Yeni bir branch oluştur: `claude/yeni-yerler-YYYY-AA-GG` (bugünün tarihi).
+- Commit mesajı: `<Şehir>: <N> yeni yer eklendi`
+- Branch'i push et ve `main` branch'ine bir PR aç.
+- **PR açıklaması** (Türkçe):
+  - Hangi şehirde arandığı
+  - Eklenen her yer için bir tablo satırı: ad, tür, adres, kaynak linki, varsa kısa bir not
+  - **Eklenmeyen adaylar:** Bulunan ama emin olunamadığı için eklenmeyen yerler ve nedenleri
+- Hiç yeni yer bulamadıysan PR açma. Sadece neden bulamadığını özetle.

@@ -1,0 +1,19 @@
+name: Veri kontrolü
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/**"
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/validate-markets.js

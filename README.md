@@ -31,14 +31,19 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
   "address": "Açık adres (isteğe bağlı)",
   "lat": 0.0,
   "lng": 0.0,
-  "products": ["Ürün 1", "Ürün 2"]
+  "products": ["Ürün 1", "Ürün 2"],
+  "source": "Bilginin kaynağı, ör. işletmenin web sitesi (isteğe bağlı)"
 }
 ```
 
    `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖
 
 3. Koordinatları bulmak için Google Maps'te markete sağ tıkla; ilk satırdaki sayılar `lat, lng` değerleridir.
-4. Pull Request aç.
+4. Pull Request aç. GitHub, dosyanın doğru formatta olduğunu otomatik olarak kontrol eder (`scripts/validate-markets.js`).
+
+## Otomatik yer bulucu
+
+Haftada bir çalışan bir Claude agent'ı yeni yerler arar, doğrular ve PR açar. Talimatları: [`agent/YER-BULUCU.md`](agent/YER-BULUCU.md). Agent'ın açtığı PR'lar da diğer PR'lar gibi incelenip onaylanır.
 
 > Lütfen yalnızca bizzat gördüğün veya doğrulayabildiğin marketleri ekle.
 
