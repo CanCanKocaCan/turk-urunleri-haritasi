@@ -8,4 +8,13 @@
     "lng": 138.56179,
     "products": ["Beypazarı maden suyu", "Asperox Sarı Güç", "Asperox Mavi Güç"]
   }
+  ,{
+    "name": "Istanbul Lounge",
+    "city": "Adelaide",
+    "country": "Avustralya",
+    "address": "162 Gilbert St, Adelaide SA 5000",
+    "lat": -34.93426,
+    "lng": 138.59395,
+    "products": ["Künefe", "Baklava"]
+  }
 ]
