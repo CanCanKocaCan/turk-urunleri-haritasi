@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Yarralumla Turkish Pide House",
+    "type": "restoran",
+    "city": "Canberra",
+    "country": "Avustralya",
+    "address": "47 Novar St, Yarralumla ACT 2600",
+    "lat": -35.30734,
+    "lng": 149.09809,
+    "products": [
+      "Pide",
+      "Lahmacun",
+      "Gözleme",
+      "Şiş kebap",
+      "Köfte",
+      "İskender",
+      "Baklava",
+      "Lokum"
+    ],
+    "source": "https://order.halalpidehouse.com.au/"
+  }
+]
