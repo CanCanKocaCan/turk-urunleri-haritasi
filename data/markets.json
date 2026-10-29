@@ -28,5 +28,46 @@
     "lng": 144.93059,
     "products": ["Gözleme", "Pide"],
     "source": "https://www.openstreetmap.org/node/11240467936"
+  },
+  {
+    "name": "Turkuaz Turkish Cuisine",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "121 Enmore Rd, Enmore NSW 2042",
+    "lat": -33.89872,
+    "lng": 151.17371,
+    "products": [
+      "Pide",
+      "Beyti",
+      "Ali Nazik",
+      "Mantı"
+    ],
+    "source": "https://turkuazkitchen.com.au/"
+  },
+  {
+    "name": "The Sultan's Table",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "179 Enmore Rd, Enmore NSW 2042",
+    "lat": -33.89888,
+    "lng": 151.17225,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4762860221"
+  },
+  {
+    "name": "Anason",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "5/23 Barangaroo Ave, Barangaroo NSW 2000",
+    "lat": -33.8646,
+    "lng": 151.20128,
+    "products": [
+      "Meze",
+      "Rakı"
+    ],
+    "source": "https://www.anason.com.au/"
   }
 ]
