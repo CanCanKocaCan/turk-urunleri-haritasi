@@ -26,11 +26,14 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 ### 1. Mevcut durumu öğren
 - `data/markets.json` dosyasını oku. Zaten var olan yerleri tekrar ekleme.
+- Daha önceki PR'ların (kapanmış olanlar dahil) "Eklenmeyen adaylar" bölümüne bak. Oradaki adayları bu çalışmada yeniden dene, çünkü belki bu sefer doğrulayabilirsin.
 - Repoda açık bekleyen, `claude/yeni-yerler-` ile başlayan PR'lar varsa, onlardaki yerleri de tekrar ekleme.
 
 ### 2. Aday bul
 - Web araması yap. İngilizce ve Türkçe aramalar dene, örneğin: `Turkish grocery Melbourne`, `Turkish restaurant Melbourne`, `Turkish bakery Melbourne`, `Türk marketi Melbourne`, `Turkish cafe künefe Melbourne`.
 - OpenStreetMap'i kullanabilirsin. Overpass API'de `cuisine=turkish` ve `shop=*` + `name~"Turk|Türk|Istanbul|Anatolia|Ankara|Izmir"` gibi aramalar işe yarar. Kullanım kurallarına uy (makul istek sayısı, açıklayıcı User-Agent).
+- **Overpass sık sık zaman aşımına uğrar.** İsteklere en fazla 30 saniye süre ver, tek bir deneme yap ve cevap gelmezse beklemeden devam et.
+- **Nominatim ile tek tek ara.** Web aramasında bulduğun **her adayın adını** Nominatim'de şehirle birlikte ara (ör. `https://nominatim.openstreetmap.org/search?q=Marmara+Melbourne&format=json&addressdetails=1&extratags=1&limit=3`). Ayrıca `Turkish restaurant <şehir>`, `Turkish bakery <şehir>`, `Turkish grocery <şehir>` gibi genel aramalar yap. Saniyede en fazla 1 istek gönder. Sonuç doğru işletmeyse (ad ve semt uyuşuyorsa), OSM kaydı adres, koordinat ve kaynak olarak yeterlidir. Kaynak olarak `https://www.openstreetmap.org/<node|way>/<id>` linkini kullan.
 - **Google Maps sayfalarını çekmeye çalışma** (kullanım şartları buna izin vermiyor). Arama sonuçlarında görünen bilgileri ipucu olarak kullanabilirsin, ama kaynak olarak başka bir yer göstermelisin.
 
 ### 3. Her adayı doğrula
@@ -39,6 +42,8 @@ Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
 - **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz var (web sitesi, sosyal medya paylaşımı, güncel yorum).
 - **Tam adres biliniyor:** Sokak ve numara düzeyinde.
 - **Güvenilir bir kaynak var:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı. Bu linki `source` alanına yaz.
+
+İşletmenin kendi sitesi açılmazsa (403 hatası veya boş sayfa) adayı hemen eleme. OSM kaydı ve güncel bir başka iz (ör. son 2 yıla ait yorum, menü sayfası, sipariş sayfası) birlikte yeterlidir. Türk bağlantısını ve açık olduğunu bunlardan doğrula.
 
 Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklenmeyen adaylar" bölümüne kısa bir notla yaz.
 
