@@ -1,4 +1,5 @@
-// data/markets.json dosyasını kontrol eder. Kullanım: node scripts/validate-markets.js
+// data/ klasörünü kontrol eder. Kullanım: node scripts/validate-markets.js
+// Yapı: data/index.json + data/<ülke>/<şehir>.json (ülke ve şehir adları küçük harf, Türkçe karaktersiz, boşluk yerine "-")
 const fs = require("fs");
 const path = require("path");
 
@@ -7,27 +8,83 @@ const TYPES = ["market", "restoran", "kafe", "firin"];
 const REQUIRED_TEXT = ["name", "type", "city", "country"];
 const DUPLICATE_DISTANCE_METERS = 30;
 
-const file = path.join(__dirname, "..", "data", "markets.json");
+const dataDir = path.join(__dirname, "..", "data");
 const errors = [];
-
-let markets;
-try {
-  markets = JSON.parse(fs.readFileSync(file, "utf8"));
-} catch (error) {
-  console.error(`❌ markets.json okunamadı: ${error.message}`);
-  process.exit(1);
-}
-
-if (!Array.isArray(markets)) {
-  console.error("❌ markets.json bir liste ([ ... ]) olmalı");
-  process.exit(1);
-}
 
 function normalize(text) {
   return String(text)
     .toLocaleLowerCase("tr")
     .replace(/ı/g, "i")
     .replace(/[^a-z0-9ğüşöç]/g, "");
+}
+
+// "Gold Coast" -> "gold-coast", "İzmir" -> "izmir"
+function slug(text) {
+  return String(text)
+    .toLocaleLowerCase("tr")
+    .replace(/ı/g, "i")
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function readJson(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (error) {
+    console.error(`❌ ${path.relative(dataDir, file)} okunamadı: ${error.message}`);
+    process.exit(1);
+  }
+}
+
+const index = readJson(path.join(dataDir, "index.json"));
+if (typeof index !== "object" || index === null || Array.isArray(index)) {
+  console.error('❌ index.json { "ülke": ["şehir", ...] } biçiminde olmalı');
+  process.exit(1);
+}
+
+const markets = [];
+const indexed = new Set();
+for (const [country, cities] of Object.entries(index)) {
+  if (!Array.isArray(cities)) {
+    errors.push(`index.json: "${country}" şehir listesi olmalı`);
+    continue;
+  }
+  for (const city of cities) {
+    const rel = `${country}/${city}.json`;
+    indexed.add(rel);
+    const file = path.join(dataDir, country, `${city}.json`);
+    if (!fs.existsSync(file)) {
+      errors.push(`index.json: ${rel} dosyası yok`);
+      continue;
+    }
+    const list = readJson(file);
+    if (!Array.isArray(list)) {
+      errors.push(`${rel}: bir liste ([ ... ]) olmalı`);
+      continue;
+    }
+    list.forEach((m, i) => {
+      // Dosya yolu ile kaydın kendi şehir/ülke alanı uyuşmalı
+      if (slug(m.country) !== country || slug(m.city) !== city) {
+        errors.push(`${rel} #${i + 1} (${m.name || "isimsiz"}): "${m.city}, ${m.country}" bu dosyaya ait değil`);
+      }
+      markets.push({ ...m, _file: rel });
+    });
+  }
+}
+
+// data/ altındaki her şehir dosyası index.json'da listelenmiş olmalı, yoksa sitede görünmez
+for (const country of fs.readdirSync(dataDir, { withFileTypes: true })) {
+  if (!country.isDirectory()) continue;
+  for (const file of fs.readdirSync(path.join(dataDir, country.name))) {
+    if (file.endsWith(".json") && !indexed.has(`${country.name}/${file}`)) {
+      errors.push(`${country.name}/${file} index.json'da listelenmemiş`);
+    }
+  }
 }
 
 function distanceMeters(a, b) {
@@ -41,7 +98,7 @@ function distanceMeters(a, b) {
 }
 
 markets.forEach((m, i) => {
-  const where = `#${i + 1} (${m.name || "isimsiz"})`;
+  const where = `${m._file} (${m.name || "isimsiz"})`;
 
   for (const field of REQUIRED_TEXT) {
     if (typeof m[field] !== "string" || !m[field].trim()) {
@@ -81,7 +138,7 @@ for (let i = 0; i < markets.length; i++) {
       typeof a.lat === "number" && typeof b.lat === "number" &&
       distanceMeters(a, b) < DUPLICATE_DISTANCE_METERS;
     if (sameName || tooClose) {
-      errors.push(`#${i + 1} (${a.name}) ve #${j + 1} (${b.name}) aynı yer olabilir`);
+      errors.push(`${a._file} (${a.name}) ve ${b._file} (${b.name}) aynı yer olabilir`);
     }
   }
 }

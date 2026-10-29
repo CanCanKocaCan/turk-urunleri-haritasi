@@ -8,7 +8,7 @@ Yurt dışında Türk ürünlerini (Beypazarı, Ülker, Pınar, sucuk, simit…)
 
 - Düz HTML, CSS ve JavaScript (derleme adımı yok)
 - [Leaflet](https://leafletjs.com) ve [OpenStreetMap](https://www.openstreetmap.org) haritası
-- Veriler: [`data/markets.json`](data/markets.json)
+- Veriler: [`data/`](data) klasöründe, ülke ve şehre göre ayrılmış (`data/avustralya/adelaide.json` gibi)
 
 ## Yerelde çalıştırma
 
@@ -20,7 +20,7 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 ## Market ekleme (katkıda bulun)
 
 1. Bu repoyu fork'la.
-2. `data/markets.json` dosyasına yeni bir kayıt ekle:
+2. Yerin şehrinin dosyasına (`data/<ülke>/<şehir>.json`, ör. `data/avustralya/adelaide.json`) yeni bir kayıt ekle:
 
 ```json
 {
@@ -38,6 +38,7 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 
    `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖
 
+   Şehrin dosyası yoksa oluştur ve `data/index.json` içindeki ülkenin listesine ekle (ülke klasörü de yoksa o da eklenir). Ülke ve şehir adları küçük harfli, Türkçe karaktersiz yazılır, boşluk yerine `-` kullanılır: `data/avustralya/gold-coast.json`.
 3. Koordinatları bulmak için Google Maps'te markete sağ tıkla; ilk satırdaki sayılar `lat, lng` değerleridir.
 4. Pull Request aç. GitHub, dosyanın doğru formatta olduğunu otomatik olarak kontrol eder (`scripts/validate-markets.js`).
 

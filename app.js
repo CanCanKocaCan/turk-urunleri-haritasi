@@ -10,7 +10,7 @@ const list = document.getElementById("market-list");
 const resultCount = document.getElementById("result-count");
 const typeFilters = document.getElementById("type-filters");
 
-// markets.json içindeki "type" alanının alabileceği değerler
+// data/ altındaki kayıtların "type" alanının alabileceği değerler
 const TYPES = {
   market: { label: "Market", icon: "🛒" },
   restoran: { label: "Restoran", icon: "🍽️" },
@@ -137,10 +137,20 @@ function markerIcon(market) {
   });
 }
 
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`${url} yüklenemedi (${response.status})`);
+  return response.json();
+}
+
 async function init() {
   try {
-    const response = await fetch("data/markets.json");
-    markets = await response.json();
+    // data/index.json { "ülke": ["şehir", ...] } -> her şehir data/<ülke>/<şehir>.json dosyasında
+    const index = await fetchJson("data/index.json");
+    const files = Object.entries(index).flatMap(([country, cities]) =>
+      cities.map((city) => `data/${country}/${city}.json`)
+    );
+    markets = (await Promise.all(files.map(fetchJson))).flat();
   } catch (error) {
     resultCount.textContent = "Veriler yüklenemedi. Sayfayı Live Server ile açtığından emin ol.";
     console.error(error);

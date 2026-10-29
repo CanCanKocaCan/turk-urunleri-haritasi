@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Turkish Gozleme Pide & Sweet House",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "311 Racecourse Rd, Flemington VIC 3031",
+    "lat": -37.78843,
+    "lng": 144.93059,
+    "products": ["Gözleme", "Pide"],
+    "source": "https://www.openstreetmap.org/node/11240467936"
+  },
+  {
+    "name": "Nefes",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "174-178 Lygon St, Carlton VIC 3053",
+    "lat": -37.80302,
+    "lng": 144.96673,
+    "products": ["Kuzu şiş", "Kuzu pirzola", "Hünkar beğendi"],
+    "source": "https://www.nefes.com.au/"
+  },
+  {
+    "name": "Likya - Turkish Eatery",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "174 Rathdowne St, Carlton VIC 3053",
+    "lat": -37.79531,
+    "lng": 144.97108,
+    "products": ["Adana kebap", "Şiş kebap", "Pide", "Meze"],
+    "source": "https://www.openstreetmap.org/node/1064821312"
+  },
+  {
+    "name": "Pehlivan Turkish Street Food",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "142 Middle St, Hadfield VIC 3046",
+    "lat": -37.70911,
+    "lng": 144.93878,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/14318330757"
+  },
+  {
+    "name": "Two Minutes Turkish",
+    "type": "kafe",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "Shop 10, 30 English St, Essendon Fields VIC 3041",
+    "lat": -37.72693,
+    "lng": 144.8953,
+    "products": ["Kebap", "Meze"],
+    "source": "https://www.openstreetmap.org/node/3136427717"
+  }
+]

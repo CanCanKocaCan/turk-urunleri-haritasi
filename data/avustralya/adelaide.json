@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Saray Market & Butchery",
+    "type": "market",
+    "city": "Adelaide",
+    "country": "Avustralya",
+    "address": "1/176 Henley Beach Rd, Torrensville SA 5031",
+    "lat": -34.9237,
+    "lng": 138.56179,
+    "products": ["Beypazarı maden suyu", "Asperox Sarı Güç", "Asperox Mavi Güç"]
+  },
+  {
+    "name": "Istanbul Lounge",
+    "type": "kafe",
+    "city": "Adelaide",
+    "country": "Avustralya",
+    "address": "162 Gilbert St, Adelaide SA 5000",
+    "lat": -34.93426,
+    "lng": 138.59395,
+    "products": ["Künefe", "Baklava"]
+  },
+  {
+    "name": "Hatun Cafe",
+    "type": "kafe",
+    "city": "Adelaide",
+    "country": "Avustralya",
+    "address": "32 James Pl, Adelaide SA 5000",
+    "lat": -34.92397,
+    "lng": 138.60077,
+    "products": ["Türk kahvaltı tabağı", "Menemen", "Çılbır", "Kebap dürüm", "Kebap tabağı", "Lokum", "İrmik tatlısı"],
+    "source": "https://www.openstreetmap.org/node/12094828212"
+  }
+]

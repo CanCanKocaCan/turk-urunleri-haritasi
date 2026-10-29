@@ -4,13 +4,13 @@ Bu dosya, haftalık çalışan Claude agent'ının talimatlarıdır. Agent'ın d
 
 ## Görev
 
-Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını**, **kafelerini** ve **fırınlarını** bul, doğrula, `data/markets.json` dosyasına ekle ve bir Pull Request aç.
+Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını**, **kafelerini** ve **fırınlarını** bul, doğrula, şehrinin `data/<ülke>/<şehir>.json` dosyasına ekle ve bir Pull Request aç.
 
 **Bu çalışmada en fazla 10 yer ekle.** Daha azı tamamen kabul edilebilir. Az ama doğru veri, çok ama hatalı veriden iyidir.
 
 ## Bölge
 
-Şu an sadece **Avustralya**. Bu listeden `data/markets.json` içinde **en az kaydı olan** şehri seç (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
+Şu an sadece **Avustralya**. Bu listeden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
 
 1. Melbourne
 2. Sydney
@@ -25,7 +25,7 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 ## Adımlar
 
 ### 1. Mevcut durumu öğren
-- `data/markets.json` dosyasını oku. Zaten var olan yerleri tekrar ekleme.
+- `data/index.json` dosyasını ve listelediği tüm şehir dosyalarını (`data/<ülke>/<şehir>.json`) oku. Zaten var olan yerleri tekrar ekleme.
 - Daha önceki PR'ların (kapanmış olanlar dahil) "Eklenmeyen adaylar" bölümüne bak. Oradaki adayları bu çalışmada yeniden dene, çünkü belki bu sefer doğrulayabilirsin.
 - Repoda açık bekleyen, `claude/yeni-yerler-` ile başlayan PR'lar varsa, onlardaki yerleri de tekrar ekleme.
 
@@ -73,7 +73,7 @@ Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklen
 - Ürün adlarını Türkçe yaz.
 
 ### 6. Kaydı ekle
-Her yeri `data/markets.json` listesinin sonuna bu formatta ekle:
+Her yeri **kendi şehrinin dosyasındaki** listenin sonuna bu formatta ekle (ör. Adelaide için `data/avustralya/adelaide.json`):
 
 ```json
 {
@@ -92,7 +92,8 @@ Her yeri `data/markets.json` listesinin sonuna bu formatta ekle:
 - Koordinatı bulunamayan yerde `lat` ve `lng` birlikte `null` olur (biri sayı, diğeri null olamaz). Doğrulama betiği buna izin verir.
 - `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) veya `firin` (fırın, pastane, börekçi).
 - `country`: Türkçe ülke adı (ör. "Avustralya").
-- Mevcut kayıtlara ve diğer dosyalara **dokunma**.
+- **Şehrin dosyası henüz yoksa** oluştur (liste biçiminde `[ ... ]`) ve `data/index.json` içinde ülkenin listesine ekle (ülke yoksa ekle). Dosya adları küçük harfli, Türkçe karaktersiz, boşluk yerine `-` olur: `data/avustralya/gold-coast.json`. `index.json`'da listelenmeyen şehir dosyası sitede görünmez ve kontrol hata verir.
+- Mevcut kayıtlara ve `data/` dışındaki dosyalara **dokunma**.
 
 ### 7. Kontrol et
 `node scripts/validate-markets.js` komutunu çalıştır. Hata varsa düzelt ve tekrar çalıştır. ✅ çıkmadan PR açma.
