@@ -22,6 +22,14 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 8. Hobart
 9. Darwin
 
+## Öncelikli adaylar (geçici, PR'dan sonra silinecek)
+
+Proje sahibi bu çalışma için şu yerleri özellikle istedi. **Adelaide** için ara ve önce bunları dene: **Umay**, **Ottoman Grill**, **Hatun**, **Yiros Central**.
+
+- Bunlar sadece **aday**. Adres, tür, Türk bağlantısı ve açık olup olmadığını aşağıdaki kurallarla **sen doğrula**; kuralları gevşetme. İsimler Adelaide'de başka işletmelerle karışabilir, doğru olanı bul (ad ve semt uyuşmalı).
+- Doğrulanamayanı ekleme, PR'daki "Eklenmeyen adaylar" bölümüne nedeniyle yaz.
+- Bunlar 10 yer sınırına dahildir. Kalan hakla Adelaide'de başka yer de arayabilirsin.
+
 ## Adımlar
 
 ### 1. Mevcut durumu öğren
