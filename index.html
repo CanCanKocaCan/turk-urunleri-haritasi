@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Türk Ürünleri Haritası</title>
+  <meta name="description" content="Yurt dışında Türk ürünlerini nerede bulabileceğinizi gösteren açık kaynak harita.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <header>
+      <h1>🇹🇷 Türk Ürünleri Haritası</h1>
+      <p class="subtitle">Yurt dışında Türk ürünlerini nerede bulursun?</p>
+    </header>
+
+    <input id="search" type="search" placeholder="Ürün, market, şehir veya ülke ara… (ör. Beypazarı)" autocomplete="off">
+    <p id="result-count"></p>
+
+    <ul id="market-list"></ul>
+
+    <footer>
+      <a href="https://github.com/CanCanKocaCan/turk-urunleri-haritasi" target="_blank" rel="noopener">
+        Market ekle / katkıda bulun →
+      </a>
+    </footer>
+  </aside>
+
+  <main id="map"></main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
