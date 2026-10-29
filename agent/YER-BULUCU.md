@@ -22,6 +22,15 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 8. Hobart
 9. Darwin
 
+## Bu çalışma için geçici özel istek (PR'dan sonra silinecek)
+
+Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Adelaide'de arama yapma** (Adelaide zaten yeterli).
+
+- Normal "en az kaydı olan şehir" kuralı yerine, listedeki **Adelaide dışındaki** şehirleri (Melbourne, Sydney, Brisbane, Perth, Canberra, Gold Coast, Hobart, Darwin) kayıt sayısı en az olandan başlayarak sırayla tara ve toplam hedefe ulaşana kadar devam et.
+- Bu çalışmada 10 yer sınırı **yok**; en fazla **30** yer ekle. Hedef 20. Her yer kendi şehrinin dosyasına gider.
+- **Doğrulama kuralları aynen geçerli.** 20'ye ulaşmak için hiçbir kuralı gevşetme, kaynak uydurma, koordinat tahmin etme. 20'ye ulaşamazsan bulduğun kadarını ekle ve PR'da kaç yer bulunduğunu, hangi şehirlerin ve semtlerin tarandığını açıkça yaz.
+- Tek PR aç. Commit mesajı: `Avustralya: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
+
 ## Adımlar
 
 ### 1. Mevcut durumu öğren
