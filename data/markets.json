@@ -1,11 +1,11 @@
 [
   {
-    "name": "Saray Market",
+    "name": "Saray Market & Butchery",
     "city": "Adelaide",
     "country": "Avustralya",
-    "address": "",
-    "lat": -34.9285,
-    "lng": 138.6007,
+    "address": "1/176 Henley Beach Rd, Torrensville SA 5031",
+    "lat": -34.92370,
+    "lng": 138.56179,
     "products": ["Beypazarı maden suyu"]
   }
 ]
