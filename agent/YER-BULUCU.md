@@ -31,6 +31,13 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 ### 2. Aday bul
 - Web araması yap. İngilizce ve Türkçe aramalar dene, örneğin: `Turkish grocery Melbourne`, `Turkish restaurant Melbourne`, `Turkish bakery Melbourne`, `Türk marketi Melbourne`, `Turkish cafe künefe Melbourne`.
+- **Marketleri, fırınları ve kasapları ayrıca semt semt ara.** Bunlar şehir adıyla yapılan aramalarda restoranların altında kaybolur. Türklerin yoğun yaşadığı semtleri kullan, örneğin:
+  - Melbourne: Broadmeadows, Coburg, Brunswick, Roxburgh Park, Campbellfield, Meadow Heights, Dandenong, Sunshine
+  - Sydney: Auburn, Lakemba, Granville, Bankstown, Prestons, Liverpool
+  - Adelaide: Torrensville, Thebarton, Hindmarsh
+  - Diğer şehirlerde önce "Turkish community <şehir>" diye arayıp semtleri bul.
+  - Örnek aramalar: `Turkish grocery Auburn`, `Turkish butcher Lakemba`, `Turkish bakery Broadmeadows`, `pide salonu Coburg`, `Türk kasabı Auburn`, `Ülker Pınar Torku <semt>`.
+- Bu şehirde market, fırın veya kasap bulamadıysan, bunu PR'da hangi semtleri aradığınla birlikte yaz.
 - OpenStreetMap'i kullanabilirsin. Overpass API'de `cuisine=turkish` ve `shop=*` + `name~"Turk|Türk|Istanbul|Anatolia|Ankara|Izmir"` gibi aramalar işe yarar. Kullanım kurallarına uy (makul istek sayısı, açıklayıcı User-Agent).
 - **Overpass sık sık zaman aşımına uğrar.** İsteklere en fazla 30 saniye süre ver, tek bir deneme yap ve cevap gelmezse beklemeden devam et.
 - **Nominatim ile tek tek ara.** Web aramasında bulduğun **her adayın adını** Nominatim'de şehirle birlikte ara (ör. `https://nominatim.openstreetmap.org/search?q=Marmara+Melbourne&format=json&addressdetails=1&extratags=1&limit=3`). Ayrıca `Turkish restaurant <şehir>`, `Turkish bakery <şehir>`, `Turkish grocery <şehir>` gibi genel aramalar yap. Saniyede en fazla 1 istek gönder. Sonuç doğru işletmeyse (ad ve semt uyuşuyorsa), OSM kaydı adres, koordinat ve kaynak olarak yeterlidir. Kaynak olarak `https://www.openstreetmap.org/<node|way>/<id>` linkini kullan.
@@ -41,15 +48,20 @@ Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
 - **Türk bağlantısı açık:** Türk mutfağı sunuyor, Türk işletmesi olduğunu belirtiyor ya da açıkça Türk ürünleri satıyor. Sadece "Orta Doğu" veya "Akdeniz" yazan yerleri, Türk ürünü sattığına dair açık kanıt yoksa ekleme.
 - **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz var (web sitesi, sosyal medya paylaşımı, güncel yorum).
 - **Tam adres biliniyor:** Sokak ve numara düzeyinde.
-- **Güvenilir bir kaynak var:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı. Bu linki `source` alanına yaz.
+- **Güvenilir bir kaynak var.** Şu iki yoldan biri yeterli:
+  - **A) Resmî kaynak:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı.
+  - **B) İki bağımsız üçüncü taraf kaynak:** Birbirinden bağımsız **en az iki** sitede (ör. Yelp, TripAdvisor, Zomato, Uber Eats, DoorDash, Menulog, yerel rehberler, haber yazıları) **aynı sokak ve numara** geçiyor, ve bunlardan en az birinde **son 2 yıla ait** bir iz var (yorum, menü, sipariş sayfası). Aynı şirketin siteleri (ör. TripAdvisor ve onun alt siteleri) bağımsız sayılmaz. Adresler çelişiyorsa ekleme.
+  - `source` alanına resmî kaynak varsa onu, yoksa en güncel üçüncü taraf sayfanın linkini yaz. B yoluyla eklediğin yerleri PR tablosundaki notta "2 bağımsız kaynak: <site 1>, <site 2>" diye belirt.
 
-İşletmenin kendi sitesi açılmazsa (403 hatası veya boş sayfa) adayı hemen eleme. OSM kaydı ve güncel bir başka iz (ör. son 2 yıla ait yorum, menü sayfası, sipariş sayfası) birlikte yeterlidir. Türk bağlantısını ve açık olduğunu bunlardan doğrula.
+İşletmenin kendi sitesi açılmazsa (403 hatası veya boş sayfa) adayı hemen eleme. OSM kaydı ya da B yolu ile doğrulamayı dene. Türk bağlantısını ve açık olduğunu da bu kaynaklardan doğrula.
 
 Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklenmeyen adaylar" bölümüne kısa bir notla yaz.
 
 ### 4. Koordinatları bul
 - OpenStreetMap kaydı varsa oradaki koordinatı kullan.
-- Yoksa adresi Nominatim (`https://nominatim.openstreetmap.org/search`) ile koordinata çevir. Saniyede en fazla 1 istek gönder ve açıklayıcı bir User-Agent kullan.
+- Yoksa **işletmenin adını değil, sokak adresini** Nominatim (`https://nominatim.openstreetmap.org/search`) ile koordinata çevir. Küçük işletmelerin çoğu OSM'de kayıtlı değildir, ama sokak adresleri neredeyse her zaman kayıtlıdır. Yapılandırılmış arama daha iyi sonuç verir, örneğin: `https://nominatim.openstreetmap.org/search?street=496+King+St&city=Newtown&state=NSW&country=Australia&format=json&limit=1`. Saniyede en fazla 1 istek gönder ve açıklayıcı bir User-Agent kullan.
+- Nominatim cevap vermezse yedek olarak Photon'u dene: `https://photon.komoot.io/api/?q=<adres>&limit=1`.
+- Sonuç sadece sokağı gösteriyorsa (kapı numarası eşleşmiyorsa) koordinatı yine kullanabilirsin, ama PR notuna "koordinat sokak düzeyinde" yaz.
 - Koordinat **binanın kendisini** göstermeli, şehir merkezini değil. Virgülden sonra 5 basamağa yuvarla.
 
 ### 5. Ürünleri yaz
