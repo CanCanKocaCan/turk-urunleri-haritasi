@@ -51,11 +51,15 @@ markets.forEach((m, i) => {
   if (m.type && !TYPES.includes(m.type)) {
     errors.push(`${where}: "type" şunlardan biri olmalı: ${TYPES.join(", ")} (şu an: "${m.type}")`);
   }
-  if (typeof m.lat !== "number" || m.lat < -90 || m.lat > 90) {
-    errors.push(`${where}: "lat" -90 ile 90 arasında bir sayı olmalı`);
-  }
-  if (typeof m.lng !== "number" || m.lng < -180 || m.lng > 180) {
-    errors.push(`${where}: "lng" -180 ile 180 arasında bir sayı olmalı`);
+  // Koordinat bulunamadıysa ikisi birlikte null olabilir; sahibi sonradan elle doldurur
+  const noLocation = m.lat === null && m.lng === null;
+  if (!noLocation) {
+    if (typeof m.lat !== "number" || m.lat < -90 || m.lat > 90) {
+      errors.push(`${where}: "lat" -90 ile 90 arasında bir sayı olmalı (ya da lat ve lng birlikte null)`);
+    }
+    if (typeof m.lng !== "number" || m.lng < -180 || m.lng > 180) {
+      errors.push(`${where}: "lng" -180 ile 180 arasında bir sayı olmalı (ya da lat ve lng birlikte null)`);
+    }
   }
   if (!Array.isArray(m.products) || !m.products.every((p) => typeof p === "string" && p.trim())) {
     errors.push(`${where}: "products" yazılardan oluşan bir liste olmalı`);

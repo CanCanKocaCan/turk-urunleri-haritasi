@@ -59,6 +59,11 @@ function popupHtml(market) {
   `;
 }
 
+// Koordinatı henüz girilmemiş kayıtlar ("lat": null) listede görünür ama haritada işaret almaz
+function hasLocation(market) {
+  return typeof market.lat === "number" && typeof market.lng === "number";
+}
+
 function matches(market, query) {
   if (selectedType && market.type !== selectedType) return false;
   if (!query) return true;
@@ -74,6 +79,7 @@ function render() {
 
   list.innerHTML = "";
   for (const market of markets) {
+    if (!market.marker) continue;
     const isVisible = visible.includes(market);
     if (isVisible) {
       market.marker.addTo(map);
@@ -86,13 +92,15 @@ function render() {
     const li = document.createElement("li");
     li.innerHTML = `
       <div class="market-name">${typeInfo(market).icon} ${escapeHtml(market.name)}</div>
-      <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}</div>
+      <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}${hasLocation(market) ? "" : " (konum eklenecek)"}</div>
       <div class="products">${productTags(market.products)}</div>
     `;
-    li.addEventListener("click", () => {
-      map.flyTo([market.lat, market.lng], 14);
-      market.marker.openPopup();
-    });
+    if (hasLocation(market)) {
+      li.addEventListener("click", () => {
+        map.flyTo([market.lat, market.lng], 14);
+        market.marker.openPopup();
+      });
+    }
     list.appendChild(li);
   }
 
@@ -140,6 +148,7 @@ async function init() {
   }
 
   for (const market of markets) {
+    if (!hasLocation(market)) continue;
     market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market) }).bindPopup(popupHtml(market));
   }
 

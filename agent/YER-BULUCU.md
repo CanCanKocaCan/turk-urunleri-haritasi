@@ -62,6 +62,7 @@ Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklen
 - Yoksa **işletmenin adını değil, sokak adresini** Nominatim (`https://nominatim.openstreetmap.org/search`) ile koordinata çevir. Küçük işletmelerin çoğu OSM'de kayıtlı değildir, ama sokak adresleri neredeyse her zaman kayıtlıdır. Yapılandırılmış arama daha iyi sonuç verir, örneğin: `https://nominatim.openstreetmap.org/search?street=496+King+St&city=Newtown&state=NSW&country=Australia&format=json&limit=1`. Saniyede en fazla 1 istek gönder ve açıklayıcı bir User-Agent kullan.
 - Nominatim cevap vermezse yedek olarak Photon'u dene: `https://photon.komoot.io/api/?q=<adres>&limit=1`.
 - Sonuç sadece sokağı gösteriyorsa (kapı numarası eşleşmiyorsa) koordinatı yine kullanabilirsin, ama PR notuna "koordinat sokak düzeyinde" yaz.
+- **Koordinat hiçbir şekilde bulunamazsa yeri eleme.** Diğer tüm doğrulamaları geçiyorsa kaydı `"lat": null, "lng": null` ile ekle. Koordinatı **asla tahmin etme** ve şehir merkezini yazma. Sahibi bu koordinatları elle dolduracak. PR tablosundaki notta "⚠️ KOORDİNAT EKSİK" yaz, ve PR açıklamasının en üstünde bu yerleri ayrı bir "Koordinatı elle girilecek yerler" listesinde topla (ad ve adres ile).
 - Koordinat **binanın kendisini** göstermeli, şehir merkezini değil. Virgülden sonra 5 basamağa yuvarla.
 
 ### 5. Ürünleri yaz
@@ -88,6 +89,7 @@ Her yeri `data/markets.json` listesinin sonuna bu formatta ekle:
 }
 ```
 
+- Koordinatı bulunamayan yerde `lat` ve `lng` birlikte `null` olur (biri sayı, diğeri null olamaz). Doğrulama betiği buna izin verir.
 - `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) veya `firin` (fırın, pastane, börekçi).
 - `country`: Türkçe ülke adı (ör. "Avustralya").
 - Mevcut kayıtlara ve diğer dosyalara **dokunma**.
@@ -96,7 +98,7 @@ Her yeri `data/markets.json` listesinin sonuna bu formatta ekle:
 `node scripts/validate-markets.js` komutunu çalıştır. Hata varsa düzelt ve tekrar çalıştır. ✅ çıkmadan PR açma.
 
 ### 8. Pull Request aç
-- Yeni bir branch oluştur: `claude/yeni-yerler-YYYY-AA-GG` (bugünün tarihi).
+- Yeni bir branch oluştur: `claude/yeni-yerler-YYYY-AA-GG` (bugünün tarihi). Aynı isimde bir branch zaten varsa (`git ls-remote --heads origin`) sonuna `-2`, `-3` ekle. Var olan bir branch'in üzerine yazma.
 - Commit mesajı: `<Şehir>: <N> yeni yer eklendi`
 - Branch'i push et ve `main` branch'ine bir PR aç.
 - **PR açıklaması** (Türkçe):
