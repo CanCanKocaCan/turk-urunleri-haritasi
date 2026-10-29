@@ -8,8 +8,23 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const searchInput = document.getElementById("search");
 const list = document.getElementById("market-list");
 const resultCount = document.getElementById("result-count");
+const typeFilters = document.getElementById("type-filters");
+
+// markets.json içindeki "type" alanının alabileceği değerler
+const TYPES = {
+  market: { label: "Market", icon: "🛒" },
+  restoran: { label: "Restoran", icon: "🍽️" },
+  kafe: { label: "Kafe", icon: "☕" },
+  firin: { label: "Fırın", icon: "🥖" },
+};
+const UNKNOWN_TYPE = { label: "Diğer", icon: "📍" };
+
+function typeInfo(market) {
+  return TYPES[market.type] || UNKNOWN_TYPE;
+}
 
 let markets = [];
+let selectedType = null; // null = hepsi
 
 // Türkçe karakterleri de doğru küçültüp "Beypazarı" ile "beypazari" eşleşsin diye sadeleştiriyoruz
 function normalize(text) {
@@ -34,8 +49,10 @@ function productTags(products) {
 }
 
 function popupHtml(market) {
+  const type = typeInfo(market);
   return `
     <strong>${escapeHtml(market.name)}</strong><br>
+    <small>${type.icon} ${type.label}</small><br>
     ${escapeHtml(market.city)}, ${escapeHtml(market.country)}<br>
     ${market.address ? `<small>${escapeHtml(market.address)}</small><br>` : ""}
     <div class="products">${productTags(market.products)}</div>
@@ -43,9 +60,10 @@ function popupHtml(market) {
 }
 
 function matches(market, query) {
+  if (selectedType && market.type !== selectedType) return false;
   if (!query) return true;
   const haystack = normalize(
-    [market.name, market.city, market.country, ...market.products].join(" ")
+    [market.name, market.city, market.country, typeInfo(market).label, ...market.products].join(" ")
   );
   return haystack.includes(normalize(query));
 }
@@ -67,7 +85,7 @@ function render() {
   for (const market of visible) {
     const li = document.createElement("li");
     li.innerHTML = `
-      <div class="market-name">${escapeHtml(market.name)}</div>
+      <div class="market-name">${typeInfo(market).icon} ${escapeHtml(market.name)}</div>
       <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}</div>
       <div class="products">${productTags(market.products)}</div>
     `;
@@ -78,7 +96,37 @@ function render() {
     list.appendChild(li);
   }
 
-  resultCount.textContent = `${visible.length} market bulundu`;
+  resultCount.textContent = `${visible.length} yer bulundu`;
+}
+
+function renderTypeFilters() {
+  // Sadece veride gerçekten bulunan türler için buton göster
+  const usedTypes = Object.keys(TYPES).filter((key) => markets.some((m) => m.type === key));
+  const options = [{ key: null, label: "Tümü", icon: "" }, ...usedTypes.map((key) => ({ key, ...TYPES[key] }))];
+
+  typeFilters.innerHTML = "";
+  for (const option of options) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = `${option.icon} ${option.label}`.trim();
+    button.classList.toggle("active", option.key === selectedType);
+    button.addEventListener("click", () => {
+      selectedType = option.key;
+      renderTypeFilters();
+      render();
+    });
+    typeFilters.appendChild(button);
+  }
+}
+
+function markerIcon(market) {
+  return L.divIcon({
+    className: "type-marker",
+    html: typeInfo(market).icon,
+    iconSize: [34, 34],
+    iconAnchor: [17, 17],
+    popupAnchor: [0, -17],
+  });
 }
 
 async function init() {
@@ -92,9 +140,10 @@ async function init() {
   }
 
   for (const market of markets) {
-    market.marker = L.marker([market.lat, market.lng]).bindPopup(popupHtml(market));
+    market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market) }).bindPopup(popupHtml(market));
   }
 
+  renderTypeFilters();
   render();
 }
 

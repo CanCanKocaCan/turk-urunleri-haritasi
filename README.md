@@ -25,6 +25,7 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 ```json
 {
   "name": "Market adı",
+  "type": "market",
   "city": "Şehir",
   "country": "Ülke",
   "address": "Açık adres (isteğe bağlı)",
@@ -33,6 +34,8 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
   "products": ["Ürün 1", "Ürün 2"]
 }
 ```
+
+   `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖
 
 3. Koordinatları bulmak için Google Maps'te markete sağ tıkla; ilk satırdaki sayılar `lat, lng` değerleridir.
 4. Pull Request aç.

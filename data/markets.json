@@ -1,6 +1,7 @@
 [
   {
     "name": "Saray Market & Butchery",
+    "type": "market",
     "city": "Adelaide",
     "country": "Avustralya",
     "address": "1/176 Henley Beach Rd, Torrensville SA 5031",
@@ -10,6 +11,7 @@
   }
   ,{
     "name": "Istanbul Lounge",
+    "type": "kafe",
     "city": "Adelaide",
     "country": "Avustralya",
     "address": "162 Gilbert St, Adelaide SA 5000",
