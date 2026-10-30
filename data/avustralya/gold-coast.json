@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Alachati Turkish Restaurant & Tapas Bar",
+    "type": "restoran",
+    "city": "Gold Coast",
+    "country": "Avustralya",
+    "address": "1/90 Surf Parade, Broadbeach QLD 4218",
+    "lat": -28.02813,
+    "lng": 153.43104,
+    "products": [],
+    "source": "https://firsttable.com.au/gold-coast/broadbeach/alachati",
+    "verified": false,
+    "note": "Kaynaklarda adres çelişiyor: FirstTable ve NRMA 1/90 Surf Parade, OSM 24-26 Queensland Ave yazıyor; koordinat OSM kaydından."
+  }
+]

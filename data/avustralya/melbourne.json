@@ -64,5 +64,31 @@
     "lng": 144.99909,
     "products": ["Pide", "Türk ekmeği", "Kebap"],
     "source": "https://www.openstreetmap.org/node/2365435363"
+  },
+  {
+    "name": "Marmara Turkish Restaurant",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "68 Chapel St, Windsor VIC 3181",
+    "lat": -37.85535,
+    "lng": 144.99289,
+    "products": [],
+    "source": "https://www.opentable.com.au/r/marmara-windsor",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres OpenTable ve AAA listesinde aynı, bir kaynak Balaclava'da ikinci bir adres (217 Carlisle St) veriyor. Koordinat sokak adresi aramasından."
+  },
+  {
+    "name": "Tulum Turkish Restaurant",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "217 Carlisle St, Balaclava VIC 3183",
+    "lat": -37.86897,
+    "lng": 144.99394,
+    "products": [],
+    "source": "https://sitchu.com.au/melbourne/restaurants/best-turkish-restaurants-melbourne",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres Sitchu ve OpenTable'a dayanıyor, bir kaynak Caulfield'da (619 Glen Huntly Rd) gösteriyor."
   }
 ]

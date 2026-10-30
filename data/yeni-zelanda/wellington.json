@@ -9,5 +9,18 @@
     "lng": 174.77512,
     "products": [],
     "source": "https://www.openstreetmap.org/node/10580674611"
+  },
+  {
+    "name": "Cafe Istanbul",
+    "type": "restoran",
+    "city": "Wellington",
+    "country": "Yeni Zelanda",
+    "address": "117 Cuba St, Te Aro, Wellington",
+    "lat": -41.2927,
+    "lng": 174.77623,
+    "products": [],
+    "source": "https://concreteplayground.com/wellington/restaurants/cafe-istanbul",
+    "verified": false,
+    "note": "OSM'de kaydı yok, adres Concrete Playground ve Localist'te geçiyor; güncel aktiflik doğrulanamadı."
   }
 ]
