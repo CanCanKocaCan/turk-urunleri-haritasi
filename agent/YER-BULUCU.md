@@ -10,7 +10,7 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 ## Bölge
 
-Şu an **Avustralya** ve **Yeni Zelanda**. Bu listelerden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
+Şu an **Avustralya**, **Yeni Zelanda**, **ABD** (New Jersey, Chicago) ve **Japonya** (Tokyo). Bu listelerden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
 
 **Avustralya** (`country`: "Avustralya", klasör: `data/avustralya/`)
 1. Melbourne
@@ -34,17 +34,25 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 Yeni Zelanda için `data/index.json` içine `"yeni-zelanda": [...]` anahtarını ekle (yoksa). Adres biçimi: "Sokak, numara, semt, şehir, posta kodu" (Yeni Zelanda'da eyalet yok). Nominatim aramalarında ülke olarak `New Zealand` kullan. Semt bazlı market aramasında şehirdeki Türk topluluğuna göre semtleri sen bul (ör. `Turkish grocery Auckland`, `Turkish community Wellington`).
 
+**ABD** (`country`: "ABD", klasör: `data/abd/`)
+1. New Jersey: dosya `data/abd/new-jersey.json`, kayıtlarda `city` her zaman **"New Jersey"** olur (eyalet düzeyinde tek dosya). Gerçek kasaba/şehir adresin içinde yazılır. Türk topluluğunun yoğun olduğu yerler: Paterson, Clifton, Haledon, Wayne, Totowa, Jersey City, Hoboken, Edison, Fort Lee ve çevresi; ayrıca topluluk yoğunluğuna göre sen de semt bul.
+2. Chicago: dosya `data/abd/chicago.json`, `city`: **"Chicago"**. Chicago şehri ve yakın banliyöleri (ör. Schaumburg, Des Plaines, Mount Prospect, Skokie, Palatine) aynı dosyaya girer, banliyö adresin içinde yazılır. Adres biçimi: "Sokak, numara, semt/banliyö, IL posta kodu".
+- ABD adreslerinde eyalet kısaltması (NJ, IL) kullan. Nominatim aramalarında ülke olarak `United States` kullan.
+
+**Japonya** (`country`: "Japonya", klasör: `data/japonya/`)
+1. Tokyo: dosya `data/japonya/tokyo.json`, `city`: **"Tokyo"**. Tokyo Camii'nin bulunduğu Yoyogi-Uehara/Shibuya çevresi, Shinjuku, Minato, Setagaya, ve Tokyo'nun diğer bölgeleri (23 özel bölge ve çevresi).
+- Japonya adresleri sokak/numara düzeninde değildir: "chome-ban-go" (blok-bina) biçimini kullan (ör. "1-19 Oyamacho, Shibuya City, Tokyo 151-0065"). Kapı numarası sorunu yoksa blok düzeyinde adres yeterli sayılır. Nominatim aramalarında `Japan` kullan; sonuçlar Latin ya da Japonca yazılabilir, Latin harfli adı tercih et. Ürünleri Türkçe yaz.
+
 ## Bu çalışma için geçici özel istek (PR'dan sonra silinecek)
 
-Proje sahibi bu çalışmada, **önceki PR'larda (#1'den bugüne) "Eklenmeyen adaylar" bölümünde kalmış** yerlerin, OSM'de kaydı olmadığı ya da güncel bilgi bulunamadığı için elenmiş olanlarını **doğrulanmamış olarak** haritaya eklemeni istiyor. Sitede bu yerlerin yanında otomatik bir uyarı görünecek.
+Proje sahibi haritayı **New Jersey, Chicago ve Tokyo**'ya genişletiyor. Bu çalışmada **yalnızca bu üç yerde** ara. Avustralya ve Yeni Zelanda'da arama yapma.
 
-- Önce tüm kapalı ve açık PR'ların "Eklenmeyen adaylar" bölümlerini oku (`gh pr list --state all` ya da GitHub aracı). Yeni aday aramak bu çalışmanın asıl işi **değil**; yalnızca o adayları değerlendir. Çok ucuza bulabildiğin yeni bir yer olursa normal kurallarla ekleyebilirsin.
-- Bir aday şu koşulları sağlıyorsa **`"verified": false`** ile ekle (Adım 3'teki D yolu): en az bir listede/dizinde **adı ve sokak adresi** geçiyor (kapı numarası olmasa da sokak ve semt yeter) ve Türk bağlantısı açık. Adres hiç bulunamayan adayı ekleme.
-- **Ekleme:** "kalıcı olarak kapandı" işareti olan yerler (ör. Miss Istanbul, Pasha's Hobart), Türk bağlantısı olmayan ya da yalnızca "Orta Doğu/Lübnan/Yunan" olarak geçen yerler (ör. Syra, Yiros Central, Anatolia Kebabs), şehir sınırları dışındakiler, **Adelaide** adayları ve yalnızca teslimat platformunda adresi olmayanlar. Veride (`data/`) zaten olan yerleri tekrar ekleme.
-- Her kayda kısa bir **`"note"`** yaz (Türkçe, tek cümle): neden doğrulanamadığını söyle, örneğin "OSM'de kaydı yok, adres yalnızca bir dizinde geçiyor." ya da "Kaynaklarda adres çelişiyor (15 ve 112 Princes St)." Çelişen adreslerden en olası olanı yaz ve note'ta diğerini belirt.
-- Koordinatı Adım 4'e göre adresten bulmaya çalış (Nominatim sokak araması). Bulamazsan `lat` ve `lng` `null` olsun, **tahmin etme**.
-- Bu çalışmada 10 yer sınırı **yok**; en fazla **40** yer ekle. Her yer kendi şehrinin dosyasına gider. Hiç ekleme yapmadığın adayları PR'da nedenleriyle listele.
-- Tek PR aç. Commit mesajı: `Doğrulanmamış adaylar: <N> yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
+- Hedef: üç yerde toplam **en az 25 yer**; New Jersey, Chicago ve Tokyo'dan her biri için en az 8 yer bulmaya çalış. En fazla **45** yer ekle (10 yer sınırı bu çalışma için geçerli değil). Her yer kendi şehrinin dosyasına gider (`data/abd/new-jersey.json`, `data/abd/chicago.json`, `data/japonya/tokyo.json`). Olmayan dosyaları oluştur ve `data/index.json`'a ekle (`"abd"` anahtarı zaten var; `"japonya"` yeni).
+- `data/abd/new-jersey.json` içinde zaten **Anatolia Market Halal Meat And Grocery** (Wayne, NJ) var; proje sahibi buradan başladı. Bu kaydı değiştirme, tekrar ekleme. Aynı bölgedeki (Wayne, Paterson, Clifton, Haledon, Totowa) Türk market, restoran, fırın ve berberlere öncelik ver.
+- Market, kasap ve fırınları ayrıca semt semt ara. **Berberleri de ara** (Adım 3'teki Türk sahiplik kuralı geçerli).
+- Doğrulama kuralları proje sahibinin onayıyla gevşetildi (C yolu, gevşetilmiş aktiflik kuralı, numarasız adres, koordinatsız kayıt). Kaynak, adres, koordinat veya ürün **uydurma**. D yolu (`"verified": false`) bu çalışmada **kullanılmaz**, yalnızca Adım 3'teki kurallarla doğrulanabilenleri ekle.
+- Hedefe ulaşamazsan bulduğun kadarını ekle; PR'da her şehir için kaç yer bulunduğunu, hangi semtlerin ve aramaların yapıldığını açıkça yaz.
+- Tek PR aç. Commit mesajı: `New Jersey, Chicago ve Tokyo: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
 
 ## Adımlar
 
