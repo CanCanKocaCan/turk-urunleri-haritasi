@@ -121,6 +121,7 @@ function render() {
   }
 
   resultCount.textContent = `${visible.length} yer · ${visible.filter(hasLocation).length} haritada · ${visible.filter(m => !hasLocation(m)).length} konum bekliyor`;
+  document.getElementById("search-summary").textContent = `${visible.length} yer bulundu`;
   if (!visible.length) list.innerHTML = '<li>Sonuç bulunamadı. Filtreleri temizleyebilir veya yeni bir yer önerebilirsin.</li>';
   if (!visible.some(m => m.id === selectedId)) selectedId = "";
   showDetail(markets.find(m => m.id === selectedId));
@@ -174,6 +175,7 @@ async function init() {
     markets = (await Promise.all(files.map(async file => (await fetchJson(file)).map((m,i) => ({...m,id:m.id || `${file}:${i}`}))))).flat();
   } catch (error) {
     resultCount.textContent = "Veriler yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.";
+    status.textContent = resultCount.textContent;
     console.error(error);
     return;
   }
@@ -222,7 +224,7 @@ function setPanel(open) {
   const toggle = document.getElementById('panel-toggle');
   toggle.setAttribute('aria-expanded', String(open));
   toggle.setAttribute('aria-label', open ? 'Yan paneli kapat' : 'Yan paneli aç');
-  toggle.textContent = open ? '‹' : '›';
+  if (!open && document.getElementById('sidebar').contains(document.activeElement)) toggle.focus();
 }
 function showDetail(m) {
   const detail = document.getElementById('place-detail');
@@ -239,6 +241,19 @@ function selectMarket(m, focus) {
   if(hasLocation(m)) cluster.zoomToShowLayer(m.marker, () => {});
   if(focus) document.querySelector('#place-detail h2').focus();
 }
+const advancedFilters = document.getElementById('advanced-filters');
+const filterToggle = document.getElementById('filter-toggle');
+filterToggle.onclick = () => {
+  const open = document.body.classList.contains('panel-closed') || !advancedFilters.open;
+  setPanel(true);
+  advancedFilters.open = open;
+  if (open) advancedFilters.scrollIntoView({block:'nearest'});
+};
+advancedFilters.addEventListener('toggle', () => filterToggle.setAttribute('aria-expanded', String(advancedFilters.open)));
+document.getElementById('search-form').onsubmit = e => {
+  e.preventDefault();
+  selectedId = ''; render(); fitResults();
+};
 document.getElementById('panel-toggle').onclick = () => setPanel(document.body.classList.contains('panel-closed'));
 function fitResults() {
   const points = markets.filter(m => matches(m, searchInput.value.trim()) && hasLocation(m)).map(m => [m.lat,m.lng]);
