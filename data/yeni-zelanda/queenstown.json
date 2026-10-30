@@ -7,7 +7,12 @@
     "address": "34 Shotover Street, Queenstown 9300",
     "lat": -45.03147,
     "lng": 168.65995,
-    "products": ["Kuzu kebap", "Falafel", "Baklava"],
-    "source": "https://www.openstreetmap.org/node/11504267269"
+    "products": [
+      "Kuzu kebap",
+      "Falafel",
+      "Baklava"
+    ],
+    "source": "https://www.openstreetmap.org/node/11504267269",
+    "id": "yeni-zelanda-queenstown-1"
   }
 ]

@@ -8,7 +8,8 @@
     "lat": -45.8716,
     "lng": 170.50439,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/12523110104"
+    "source": "https://www.openstreetmap.org/node/12523110104",
+    "id": "yeni-zelanda-dunedin-1"
   },
   {
     "name": "Huzur Kebab",
@@ -19,7 +20,8 @@
     "lat": -45.85856,
     "lng": 170.51255,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/9342681589"
+    "source": "https://www.openstreetmap.org/node/9342681589",
+    "id": "yeni-zelanda-dunedin-2"
   },
   {
     "name": "Dost Turkish Cafe",
@@ -32,6 +34,7 @@
     "products": [],
     "source": "https://localista.com.au/listing/nz/dunedin-suburb/bars-and-restaurants/dost-turkish-cafe",
     "verified": false,
-    "note": "Adres kaynaklarda çelişiyor: çoğu liste 112 Princes St, OSM 15 Princes St yazıyor; koordinat 112 numaralı adresten."
+    "note": "Adres kaynaklarda çelişiyor: çoğu liste 112 Princes St, OSM 15 Princes St yazıyor; koordinat 112 numaralı adresten.",
+    "id": "yeni-zelanda-dunedin-3"
   }
 ]

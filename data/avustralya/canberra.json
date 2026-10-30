@@ -17,7 +17,8 @@
       "Baklava",
       "Lokum"
     ],
-    "source": "https://order.halalpidehouse.com.au/"
+    "source": "https://order.halalpidehouse.com.au/",
+    "id": "avustralya-canberra-1"
   },
   {
     "name": "Turkish Pide House Woden",
@@ -28,7 +29,8 @@
     "lat": -35.34623,
     "lng": 149.08447,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/1814424698"
+    "source": "https://www.openstreetmap.org/node/1814424698",
+    "id": "avustralya-canberra-2"
   },
   {
     "name": "Belco Halal Kebabs and Pizzeria",
@@ -48,6 +50,7 @@
       "Sucuklu pide",
       "Ayran"
     ],
-    "source": "https://order.kebabsinbelco.com.au/"
+    "source": "https://order.kebabsinbelco.com.au/",
+    "id": "avustralya-canberra-3"
   }
 ]

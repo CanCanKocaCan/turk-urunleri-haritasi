@@ -7,8 +7,12 @@
     "address": "379-381 Grey Street, Hamilton East, Hamilton 3216",
     "lat": -37.79305,
     "lng": 175.29308,
-    "products": ["Kebap", "Lahmacun"],
-    "source": "https://babaganush.co.nz/"
+    "products": [
+      "Kebap",
+      "Lahmacun"
+    ],
+    "source": "https://babaganush.co.nz/",
+    "id": "yeni-zelanda-hamilton-1"
   },
   {
     "name": "Kapadokya",
@@ -19,6 +23,7 @@
     "lat": -37.78816,
     "lng": 175.2841,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/2519540406"
+    "source": "https://www.openstreetmap.org/node/2519540406",
+    "id": "yeni-zelanda-hamilton-2"
   }
 ]

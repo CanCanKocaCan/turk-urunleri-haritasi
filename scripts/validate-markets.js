@@ -97,7 +97,18 @@ function distanceMeters(a, b) {
   return 2 * 6371000 * Math.asin(Math.sqrt(h));
 }
 
+const ids = new Set();
 markets.forEach((m, i) => {
+  if (typeof m.id !== "string" || !/^[a-z0-9-]+$/.test(m.id) || ids.has(m.id)) errors.push(`${m.name}: id benzersiz, küçük harfli bir kimlik olmalı`);
+  ids.add(m.id);
+  if (m.website !== undefined && !/^https?:\/\/\S+$/.test(m.website)) errors.push(`${m.name}: website geçersiz`);
+  if (m.phone !== undefined && !/^\+?[0-9 ()-]{5,30}$/.test(m.phone)) errors.push(`${m.name}: phone geçersiz`);
+  if (m.productEvidence !== undefined) {
+    if (!m.productEvidence || typeof m.productEvidence !== "object" || Array.isArray(m.productEvidence)) errors.push(`${m.name}: productEvidence nesne olmalı`);
+    else for (const [product, evidence] of Object.entries(m.productEvidence)) {
+      if (!m.products?.includes(product) || !evidence || typeof evidence !== 'object' || !/^\d{4}-\d{2}-\d{2}$/.test(evidence.lastSeen || '') || !Number.isFinite(Date.parse(evidence.lastSeen)) || evidence.lastSeen > new Date().toISOString().slice(0,10) || !/^https?:\/\/\S+$/.test(evidence.source || '')) errors.push(`${m.name}: ${product} için tarih/kaynak geçersiz`);
+    }
+  }
   const where = `${m._file} (${m.name || "isimsiz"})`;
 
   for (const field of REQUIRED_TEXT) {

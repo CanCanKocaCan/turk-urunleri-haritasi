@@ -15,7 +15,8 @@
       "Humus",
       "Babaganuş"
     ],
-    "source": "https://www.openstreetmap.org/way/1478720384"
+    "source": "https://www.openstreetmap.org/way/1478720384",
+    "id": "avustralya-brisbane-1"
   },
   {
     "name": "Mado",
@@ -26,7 +27,8 @@
     "lat": -27.48065,
     "lng": 153.02378,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/4670859692"
+    "source": "https://www.openstreetmap.org/node/4670859692",
+    "id": "avustralya-brisbane-2"
   },
   {
     "name": "Caravanserai",
@@ -37,7 +39,8 @@
     "lat": -27.48696,
     "lng": 153.00628,
     "products": [],
-    "source": "https://caravanserai.restaurant/"
+    "source": "https://caravanserai.restaurant/",
+    "id": "avustralya-brisbane-3"
   },
   {
     "name": "Ahmet's",
@@ -48,6 +51,7 @@
     "lat": -27.4782,
     "lng": 153.02152,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/5205595557"
+    "source": "https://www.openstreetmap.org/node/5205595557",
+    "id": "avustralya-brisbane-4"
   }
 ]

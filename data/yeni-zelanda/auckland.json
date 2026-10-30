@@ -8,7 +8,8 @@
     "lat": -36.85762,
     "lng": 174.75947,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/1015095964"
+    "source": "https://www.openstreetmap.org/node/1015095964",
+    "id": "yeni-zelanda-auckland-1"
   },
   {
     "name": "Seven Hills Turkish Eatery",
@@ -19,7 +20,8 @@
     "lat": -36.78902,
     "lng": 174.77337,
     "products": [],
-    "source": "https://sevenhills.co.nz/"
+    "source": "https://sevenhills.co.nz/",
+    "id": "yeni-zelanda-auckland-2"
   },
   {
     "name": "Izmir Kebab and Grill",
@@ -29,7 +31,12 @@
     "address": "64A Federal Street, Auckland CBD, Auckland 1010",
     "lat": -36.84808,
     "lng": 174.76278,
-    "products": ["Kebap", "Meze", "Pilav"],
-    "source": "https://izmirkebabgrill.co.nz"
+    "products": [
+      "Kebap",
+      "Meze",
+      "Pilav"
+    ],
+    "source": "https://izmirkebabgrill.co.nz",
+    "id": "yeni-zelanda-auckland-3"
   }
 ]

@@ -7,8 +7,11 @@
     "address": "261D Fraser Street, Merivale, Tauranga 3112",
     "lat": -37.71385,
     "lng": 176.15074,
-    "products": ["Kebap"],
-    "source": "https://www.turkishstarskebab.nz"
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.turkishstarskebab.nz",
+    "id": "yeni-zelanda-tauranga-1"
   },
   {
     "name": "Turkish To Go",
@@ -19,6 +22,7 @@
     "lat": -37.68713,
     "lng": 176.16905,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/3694565570"
+    "source": "https://www.openstreetmap.org/node/3694565570",
+    "id": "yeni-zelanda-tauranga-2"
   }
 ]
