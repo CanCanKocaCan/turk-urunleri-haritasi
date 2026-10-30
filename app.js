@@ -111,29 +111,19 @@ function render() {
   if (position) visible.sort((a,b) => distance(a)-distance(b));
   for (const market of visible) {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <div class="market-name">${typeInfo(market).icon} ${escapeHtml(market.name)}</div>
-      <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}${hasLocation(market) ? "" : " (konum eklenecek)"}</div>
-      ${warningHtml(market)}
-      <div class="products">${productTags(market.products, market)}</div>
-    `;
     const open = document.createElement("button");
-    open.textContent = "Haritada göster"; open.disabled = !hasLocation(market);
-    open.setAttribute("aria-label", `${market.name}, ${market.city}: haritada göster`);
+    open.className = "result-card";
+    open.setAttribute("aria-label", `${market.name}, ${market.city}: ayrıntıları göster`);
+    open.innerHTML = `<span class="result-icon" aria-hidden="true">${typeInfo(market).icon}</span><span><strong>${escapeHtml(market.name)}</strong><span class="market-location">${typeInfo(market).label} · ${escapeHtml(market.city)}, ${escapeHtml(market.country)}</span><span class="preview-products">${escapeHtml(market.products.slice(0,3).join(" · "))}</span>${hasLocation(market) ? "" : '<span class="market-location">Konum eklenecek</span>'}${position && hasLocation(market) ? `<span class="market-location">${distance(market).toFixed(1)} km</span>` : ""}</span>`;
     open.onclick = () => selectMarket(market, true);
     li.appendChild(open);
-    li.insertAdjacentHTML("beforeend", links(market));
-    if (position && hasLocation(market)) li.insertAdjacentHTML("beforeend", `<p>${distance(market).toFixed(1)} km uzaklıkta</p>`);
-    const report = document.createElement("button"); report.textContent = "Ürün / işletme bilgisi bildir";
-    report.onclick = () => openForm(market); li.appendChild(report);
-    const share = document.createElement("button"); share.textContent = "Mekânı paylaş";
-    share.onclick = () => { selectedId = market.id; syncUrl(); shareUrl(); }; li.appendChild(share);
     list.appendChild(li);
   }
 
   resultCount.textContent = `${visible.length} yer · ${visible.filter(hasLocation).length} haritada · ${visible.filter(m => !hasLocation(m)).length} konum bekliyor`;
   if (!visible.length) list.innerHTML = '<li>Sonuç bulunamadı. Filtreleri temizleyebilir veya yeni bir yer önerebilirsin.</li>';
   if (!visible.some(m => m.id === selectedId)) selectedId = "";
+  showDetail(markets.find(m => m.id === selectedId));
   syncUrl();
 }
 
@@ -190,7 +180,7 @@ async function init() {
 
   for (const market of markets) {
     if (!hasLocation(market)) continue;
-    market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market), title: `${market.name}, ${market.city}`, alt: `${market.name}, ${market.city}` }).bindPopup(popupHtml(market));
+    market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market), title: `${market.name}, ${market.city}`, alt: `${market.name}, ${market.city}` }).on("click", () => selectMarket(market, false));
   }
 
   document.getElementById("coverage").textContent = `Kapsam: ${[...new Set(markets.map(m => m.country))].join(", ")}. ${markets.length} kayıt.`;
@@ -226,11 +216,30 @@ function restoreUrl() {
   if(selected) selectMarket(selected, false);
   else fitResults();
 }
-function selectMarket(m, focus) {
-  selectedId = m.id; syncUrl();
-  if(!hasLocation(m)) return;
-  cluster.zoomToShowLayer(m.marker, () => { m.marker.openPopup(); if(focus) document.getElementById('map').scrollIntoView({behavior:'smooth',block:'nearest'}); });
+function setPanel(open) {
+  document.body.classList.toggle('panel-closed', !open);
+  document.getElementById('sidebar').inert = !open;
+  const toggle = document.getElementById('panel-toggle');
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Yan paneli kapat' : 'Yan paneli aç');
+  toggle.textContent = open ? '‹' : '›';
 }
+function showDetail(m) {
+  const detail = document.getElementById('place-detail');
+  detail.hidden = !m; list.hidden = !!m;
+  document.getElementById('result-count').hidden = !!m;
+  if (!m) { detail.replaceChildren(); return; }
+  detail.innerHTML = `<button id="back-results">← Sonuçlara dön</button><div class="place-hero" aria-hidden="true">${typeInfo(m).icon}</div><h2 tabindex="-1">${escapeHtml(m.name)}</h2><p class="market-location">${typeInfo(m).label} · ${escapeHtml(m.city)}, ${escapeHtml(m.country)}</p>${links(m)}<p>${escapeHtml(m.address || 'Açık adres henüz eklenmedi.')}</p>${hasLocation(m) ? '' : '<p>Harita konumu henüz eklenmedi. Yol tarifi adres aramasıyla açılır.</p>'}${warningHtml(m)}<h3>Ürünler ve güncellik</h3><div class="products">${productTags(m.products,m)}</div><div class="detail-tools"><button id="detail-share">Paylaş</button><button id="detail-report">Bilgi düzelt / ürün bildir</button></div>`;
+  document.getElementById('back-results').onclick = () => { selectedId=''; syncUrl(); showDetail(); list.querySelector('button')?.focus(); };
+  document.getElementById('detail-share').onclick = shareUrl;
+  document.getElementById('detail-report').onclick = () => openForm(m);
+}
+function selectMarket(m, focus) {
+  selectedId = m.id; syncUrl(); setPanel(true); showDetail(m);
+  if(hasLocation(m)) cluster.zoomToShowLayer(m.marker, () => {});
+  if(focus) document.querySelector('#place-detail h2').focus();
+}
+document.getElementById('panel-toggle').onclick = () => setPanel(document.body.classList.contains('panel-closed'));
 function fitResults() {
   const points = markets.filter(m => matches(m, searchInput.value.trim()) && hasLocation(m)).map(m => [m.lat,m.lng]);
   if(points.length) map.fitBounds(points,{padding:[30,30],maxZoom:13});
