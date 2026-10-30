@@ -10,25 +10,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="panel-toggle" aria-label="Yan paneli kapat" aria-controls="sidebar" aria-expanded="true">‹</button>
+  <nav id="map-tools" aria-label="Harita araçları">
+    <button id="panel-toggle" aria-label="Yan paneli kapat" aria-controls="sidebar" aria-expanded="true"><span aria-hidden="true">☰</span><span>Sonuçlar</span></button>
+    <button id="filter-toggle" aria-controls="advanced-filters" aria-expanded="false"><span aria-hidden="true">☷</span><span>Filtreler</span></button>
+    <button id="nearby"><span aria-hidden="true">◎</span><span>Yakınımda</span></button>
+    <button id="share"><span aria-hidden="true">↗</span><span>Paylaş</span></button>
+    <button id="reset"><span aria-hidden="true">↺</span><span>Temizle</span></button>
+    <button id="contribute"><span aria-hidden="true">＋</span><span>Yer öner</span></button>
+  </nav>
+  <section id="map-search" aria-label="Haritada arama">
+    <form id="search-form" role="search">
+      <label class="sr-only" for="search">Ürün veya mekân ara</label>
+      <input id="search" type="search" placeholder="Ürün, mekân veya şehir ara" autocomplete="off">
+      <button type="submit" aria-label="Sonuçları haritada göster"><span aria-hidden="true">⌕</span></button>
+    </form>
+    <div id="type-filters" aria-label="Mekân türü"></div>
+    <p id="search-summary" role="status"></p>
+    <p id="status" role="status"></p>
+  </section>
   <aside id="sidebar">
     <header>
       <h1>Türk Ürünleri Haritası</h1>
       <p class="subtitle">Yurt dışında Türk ürünlerini nerede bulursun?</p>
     </header>
 
-    <label class="sr-only" for="search">Ürün veya mekân ara</label><input id="search" type="search" placeholder="Haritada ara" autocomplete="off">
     <details id="advanced-filters"><summary>Filtreler ve arama seçenekleri</summary><div id="modes" aria-label="Arama amacı"><button data-mode="all">Tümü</button><button data-mode="product">Ürün bul</button><button data-mode="place">Mekân bul</button></div>
     <div class="filters"><label>Ülke<select id="country"><option value="">Tüm ülkeler</option></select></label><label>Şehir<select id="city"><option value="">Tüm şehirler</option></select></label></div>
-    <div id="type-filters" aria-label="Mekân türü"></div>
-    <div class="actions"><button id="nearby">Yakınımdakiler</button><button id="share">Sonuçları paylaş</button><button id="reset">Temizle</button></div>
-    </details><p id="status" role="status"></p><details><summary>Kapsam ve güncellik</summary><p id="coverage"></p><p>Liste kapsamlı değildir. Sonuç bulunmaması, bölgede Türk ürünü olmadığı anlamına gelmez. Ürünler güncel stok garantisi taşımaz.</p></details>
+    </details><details><summary>Kapsam ve güncellik</summary><p id="coverage"></p><p>Liste kapsamlı değildir. Sonuç bulunmaması, bölgede Türk ürünü olmadığı anlamına gelmez. Ürünler güncel stok garantisi taşımaz.</p></details>
     <p id="result-count" role="status"></p>
 
     <section id="place-detail" aria-label="Mekân ayrıntıları" hidden></section><ul id="market-list"></ul>
 
     <footer>
-      <button id="contribute">Yer / ürün öner veya bilgi düzelt</button>
       <a href="https://github.com/CanCanKocaCan/turk-urunleri-haritasi" target="_blank" rel="noopener">Kaynak kodu</a>
     </footer>
   </aside>

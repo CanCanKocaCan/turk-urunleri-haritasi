@@ -23,6 +23,9 @@ test('combined filters, Turkish search, share restoration and empty state', asyn
  assert.equal(d.getElementById('place-detail').hidden,false);
  assert.match(d.getElementById('place-detail').textContent,/Yol tarifi al/);
  d.getElementById('panel-toggle').click();assert.equal(d.getElementById('panel-toggle').getAttribute('aria-expanded'),'false');
+ assert.equal(d.getElementById('sidebar').inert,true);
+ for(const id of ['search','type-filters','nearby','share','reset','contribute','status']) assert.equal(d.getElementById('sidebar').contains(d.getElementById(id)),false);
+ assert.equal(d.getElementById('search-summary').textContent,'1 yer bulundu');
  d.getElementById('panel-toggle').click();
  d.getElementById('back-results').click();assert.equal(d.getElementById('place-detail').hidden,true);
  d.getElementById('reset').click();const country=d.getElementById('country');country.value='Avustralya';country.dispatchEvent(new w.Event('change'));const city=d.getElementById('city');city.value='Adelaide';city.dispatchEvent(new w.Event('change'));assert.match(d.getElementById('result-count').textContent,/4 yer/);
