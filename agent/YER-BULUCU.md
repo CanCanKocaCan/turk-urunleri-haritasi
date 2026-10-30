@@ -10,8 +10,9 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 ## Bölge
 
-Şu an sadece **Avustralya**. Bu listeden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
+Şu an **Avustralya** ve **Yeni Zelanda**. Bu listelerden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
 
+**Avustralya** (`country`: "Avustralya", klasör: `data/avustralya/`)
 1. Melbourne
 2. Sydney
 3. Adelaide
@@ -22,15 +23,26 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 8. Hobart
 9. Darwin
 
+**Yeni Zelanda** (`country`: "Yeni Zelanda", klasör: `data/yeni-zelanda/`, dosya örneği: `data/yeni-zelanda/auckland.json`)
+1. Auckland
+2. Wellington
+3. Christchurch
+4. Hamilton
+5. Tauranga
+6. Dunedin
+7. Queenstown
+
+Yeni Zelanda için `data/index.json` içine `"yeni-zelanda": [...]` anahtarını ekle (yoksa). Adres biçimi: "Sokak, numara, semt, şehir, posta kodu" (Yeni Zelanda'da eyalet yok). Nominatim aramalarında ülke olarak `New Zealand` kullan. Semt bazlı market aramasında şehirdeki Türk topluluğuna göre semtleri sen bul (ör. `Turkish grocery Auckland`, `Turkish community Wellington`).
+
 ## Bu çalışma için geçici özel istek (PR'dan sonra silinecek)
 
-Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Adelaide'de arama yapma** (Adelaide zaten yeterli).
+Proje sahibi bu çalışmada **Avustralya ve Yeni Zelanda genelinde en az 20 yer** istiyor. **Adelaide'de arama yapma** (Adelaide zaten yeterli). Yeni Zelanda ilk kez ekleniyor ve henüz hiç kaydı yok, bu yüzden oradan başla.
 
-- Normal "en az kaydı olan şehir" kuralı yerine, listedeki **Adelaide dışındaki** şehirleri (Melbourne, Sydney, Brisbane, Perth, Canberra, Gold Coast, Hobart, Darwin) kayıt sayısı en az olandan başlayarak sırayla tara ve toplam hedefe ulaşana kadar devam et.
+- Normal "en az kaydı olan şehir" kuralı yerine, önce **Yeni Zelanda** şehirlerini (Auckland, Wellington, Christchurch, Hamilton, Tauranga, Dunedin, Queenstown), sonra kayıt sayısı en az olandan başlayarak Avustralya'daki **Adelaide dışındaki** şehirleri (Melbourne, Sydney, Brisbane, Perth, Canberra, Gold Coast, Hobart, Darwin) sırayla tara ve toplam hedefe ulaşana kadar devam et. Yeni Zelanda'da en az 10 yer bulmaya çalış.
 - Bu çalışmada 10 yer sınırı **yok**; en fazla **30** yer ekle. Hedef 20. Her yer kendi şehrinin dosyasına gider.
 - **Doğrulama kuralları proje sahibinin onayıyla gevşetildi** (Adım 3'teki C yolu ve gevşetilmiş aktiflik kuralı). Kaynak, adres, koordinat veya ürün **uydurma** (Adım 3'teki değişmeyen kurallar geçerli). 20'ye ulaşamazsan bulduğun kadarını ekle ve PR'da kaç yer bulunduğunu, hangi şehirlerin ve semtlerin tarandığını açıkça yaz.
 - **Önce eski adayları yeniden dene.** #1'den bugüne kadar tüm PR'ların "Eklenmeyen adaylar" bölümlerini oku (`gh pr list --state all` ya da GitHub aracı). Oradaki her adayı, gevşetilmiş kurallarla önce değerlendir, sonra yeni aday ara. Adelaide'dekileri atla.
-- Tek PR aç. Commit mesajı: `Avustralya: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
+- Tek PR aç. Commit mesajı: `Yeni Zelanda ve Avustralya: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
 
 ## Adımlar
 
