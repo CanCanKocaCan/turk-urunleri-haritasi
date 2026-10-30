@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Tokyo Camii Halal Market",
+    "type": "market",
+    "city": "Tokyo",
+    "country": "Japonya",
+    "address": "1-19 Oyamacho, Shibuya City, Tokyo 151-0065",
+    "lat": 35.6681,
+    "lng": 139.67656,
+    "products": [
+      "Tahsildaroğlu peynir",
+      "Tadım kuruyemiş",
+      "Türk dondurması",
+      "Sütaş beyaz peynir",
+      "Koska tahin",
+      "Altınkılıç kaşar"
+    ],
+    "source": "https://halalmarket.tokyocamii.org/"
+  },
+  {
+    "name": "Tadım Turkish Restaurant & Halal Kebab",
+    "type": "restoran",
+    "city": "Tokyo",
+    "country": "Japonya",
+    "address": "30-11 Kyomachi-dori, Senzoku, Taito City, Tokyo 111-0031",
+    "lat": 35.72426,
+    "lng": 139.79282,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/14289390601"
+  },
+  {
+    "name": "Kebab Cafe",
+    "type": "restoran",
+    "city": "Tokyo",
+    "country": "Japonya",
+    "address": "2-25-10 Dogenzaka, Shibuya City, Tokyo 150-0043",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Karışık kebap"
+    ],
+    "source": "https://www.halalfoodinjapan.com/en/post/143/"
+  },
+  {
+    "name": "Saray Nishi-Asakusa",
+    "type": "restoran",
+    "city": "Tokyo",
+    "country": "Japonya",
+    "address": "2-14-18 Nishiasakusa, Taito City, Tokyo 111-0035",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap sandviç",
+      "Türk dondurması"
+    ],
+    "source": "http://www.asakusa-e.com/shoku/halal_e.htm"
+  }
+]
