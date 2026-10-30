@@ -56,7 +56,7 @@ Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Ad
 Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
 - **Türk bağlantısı açık:** Türk mutfağı sunuyor, Türk işletmesi olduğunu belirtiyor ya da açıkça Türk ürünleri satıyor. Sadece "Orta Doğu" veya "Akdeniz" yazan yerleri, Türk ürünü sattığına dair açık kanıt yoksa ekleme.
 - **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz var (web sitesi, sosyal medya paylaşımı, güncel yorum).
-- **Tam adres biliniyor:** Sokak ve numara düzeyinde.
+- **Adres biliniyor:** Tercihen sokak ve numara düzeyinde. **Kapı numarası bulunamıyorsa yeri eleme.** OSM kaydı (ad, tür ve semt uyuşuyor, Türk bağlantısı ve aktiflik diğer kurallardan geçiyor) varsa numarasız ekle: `address` alanına sokak, semt, eyalet ve posta kodunu yaz, numarayı **uydurma**. Koordinatı OSM düğümünden/binasından al. PR tablosundaki notta "⚠️ KAPI NUMARASI EKSİK" yaz ve PR açıklamasının en üstündeki "Elle kontrol edilecek yerler" listesine ekle. Üçüncü taraf kaynaklar numarayı farklı yazıyorsa (ör. 293 ve 297) yine ekleyebilirsin, ama notta çelişkiyi belirt.
 - **Güvenilir bir kaynak var.** Şu iki yoldan biri yeterli:
   - **A) Resmî kaynak:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı.
   - **B) İki bağımsız üçüncü taraf kaynak:** Birbirinden bağımsız **en az iki** sitede (ör. Yelp, TripAdvisor, Zomato, Uber Eats, DoorDash, Menulog, yerel rehberler, haber yazıları) **aynı sokak ve numara** geçiyor, ve bunlardan en az birinde **son 2 yıla ait** bir iz var (yorum, menü, sipariş sayfası). Aynı şirketin siteleri (ör. TripAdvisor ve onun alt siteleri) bağımsız sayılmaz. Adresler çelişiyorsa ekleme.
@@ -70,7 +70,7 @@ Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklen
 - OpenStreetMap kaydı varsa oradaki koordinatı kullan.
 - Yoksa **işletmenin adını değil, sokak adresini** Nominatim (`https://nominatim.openstreetmap.org/search`) ile koordinata çevir. Küçük işletmelerin çoğu OSM'de kayıtlı değildir, ama sokak adresleri neredeyse her zaman kayıtlıdır. Yapılandırılmış arama daha iyi sonuç verir, örneğin: `https://nominatim.openstreetmap.org/search?street=496+King+St&city=Newtown&state=NSW&country=Australia&format=json&limit=1`. Saniyede en fazla 1 istek gönder ve açıklayıcı bir User-Agent kullan.
 - Nominatim cevap vermezse yedek olarak Photon'u dene: `https://photon.komoot.io/api/?q=<adres>&limit=1`.
-- Sonuç sadece sokağı gösteriyorsa (kapı numarası eşleşmiyorsa) koordinatı yine kullanabilirsin, ama PR notuna "koordinat sokak düzeyinde" yaz.
+- Sonuç sadece sokağı gösteriyorsa (kapı numarası eşleşmiyorsa) koordinatı yine kullanabilirsin, ama PR notuna "koordinat sokak düzeyinde" yaz. OSM kaydında kapı numarası yoksa bu bir eleme sebebi değildir, kaydın kendi koordinatını kullan.
 - **Koordinat hiçbir şekilde bulunamazsa yeri eleme.** Diğer tüm doğrulamaları geçiyorsa kaydı `"lat": null, "lng": null` ile ekle. Koordinatı **asla tahmin etme** ve şehir merkezini yazma. Sahibi bu koordinatları elle dolduracak. PR tablosundaki notta "⚠️ KOORDİNAT EKSİK" yaz, ve PR açıklamasının en üstünde bu yerleri ayrı bir "Koordinatı elle girilecek yerler" listesinde topla (ad ve adres ile).
 - Koordinat **binanın kendisini** göstermeli, şehir merkezini değil. Virgülden sonra 5 basamağa yuvarla.
 
