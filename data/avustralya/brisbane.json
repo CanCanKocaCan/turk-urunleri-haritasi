@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Olive Thyme Turkish Cuisine",
+    "type": "restoran",
+    "city": "Brisbane",
+    "country": "Avustralya",
+    "address": "297 Sandgate Rd, Albion QLD 4010",
+    "lat": -27.43009,
+    "lng": 153.04193,
+    "products": [
+      "Lahmacun",
+      "Künefe",
+      "Köfte",
+      "Pirzola",
+      "Humus",
+      "Babaganuş"
+    ],
+    "source": "https://www.openstreetmap.org/way/1478720384"
+  }
+]

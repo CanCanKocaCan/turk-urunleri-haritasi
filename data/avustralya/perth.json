@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Turkish Oven",
+    "type": "restoran",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "275 Albany Hwy, Victoria Park WA 6100",
+    "lat": -31.97228,
+    "lng": 115.89489,
+    "products": [
+      "Pide",
+      "Gözleme",
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://www.openstreetmap.org/way/167161761"
+  }
+]
