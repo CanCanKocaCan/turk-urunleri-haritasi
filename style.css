@@ -81,6 +81,22 @@ h1 {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Bilgileri doğrulanamayan yerler: kesikli çerçeve ve soluk işaretçi */
+.type-marker.unverified {
+  border-style: dashed;
+  border-color: #d98a00;
+  opacity: 0.8;
+}
+
+.warning {
+  margin-top: 6px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  background: #fff4d6;
+  color: #7a5200;
+  border-radius: 6px;
+}
+
 #result-count {
   margin: 0;
   color: #666;

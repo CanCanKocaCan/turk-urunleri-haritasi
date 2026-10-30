@@ -36,13 +36,15 @@ Yeni Zelanda için `data/index.json` içine `"yeni-zelanda": [...]` anahtarını
 
 ## Bu çalışma için geçici özel istek (PR'dan sonra silinecek)
 
-Proje sahibi bu çalışmada **Avustralya ve Yeni Zelanda genelinde en az 20 yer** istiyor. **Adelaide'de arama yapma** (Adelaide zaten yeterli). Yeni Zelanda ilk kez ekleniyor ve henüz hiç kaydı yok, bu yüzden oradan başla.
+Proje sahibi bu çalışmada, **önceki PR'larda (#1'den bugüne) "Eklenmeyen adaylar" bölümünde kalmış** yerlerin, OSM'de kaydı olmadığı ya da güncel bilgi bulunamadığı için elenmiş olanlarını **doğrulanmamış olarak** haritaya eklemeni istiyor. Sitede bu yerlerin yanında otomatik bir uyarı görünecek.
 
-- Normal "en az kaydı olan şehir" kuralı yerine, önce **Yeni Zelanda** şehirlerini (Auckland, Wellington, Christchurch, Hamilton, Tauranga, Dunedin, Queenstown), sonra kayıt sayısı en az olandan başlayarak Avustralya'daki **Adelaide dışındaki** şehirleri (Melbourne, Sydney, Brisbane, Perth, Canberra, Gold Coast, Hobart, Darwin) sırayla tara ve toplam hedefe ulaşana kadar devam et. Yeni Zelanda'da en az 10 yer bulmaya çalış.
-- Bu çalışmada 10 yer sınırı **yok**; en fazla **30** yer ekle. Hedef 20. Her yer kendi şehrinin dosyasına gider.
-- **Doğrulama kuralları proje sahibinin onayıyla gevşetildi** (Adım 3'teki C yolu ve gevşetilmiş aktiflik kuralı). Kaynak, adres, koordinat veya ürün **uydurma** (Adım 3'teki değişmeyen kurallar geçerli). 20'ye ulaşamazsan bulduğun kadarını ekle ve PR'da kaç yer bulunduğunu, hangi şehirlerin ve semtlerin tarandığını açıkça yaz.
-- **Önce eski adayları yeniden dene.** #1'den bugüne kadar tüm PR'ların "Eklenmeyen adaylar" bölümlerini oku (`gh pr list --state all` ya da GitHub aracı). Oradaki her adayı, gevşetilmiş kurallarla önce değerlendir, sonra yeni aday ara. Adelaide'dekileri atla.
-- Tek PR aç. Commit mesajı: `Yeni Zelanda ve Avustralya: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
+- Önce tüm kapalı ve açık PR'ların "Eklenmeyen adaylar" bölümlerini oku (`gh pr list --state all` ya da GitHub aracı). Yeni aday aramak bu çalışmanın asıl işi **değil**; yalnızca o adayları değerlendir. Çok ucuza bulabildiğin yeni bir yer olursa normal kurallarla ekleyebilirsin.
+- Bir aday şu koşulları sağlıyorsa **`"verified": false`** ile ekle (Adım 3'teki D yolu): en az bir listede/dizinde **adı ve sokak adresi** geçiyor (kapı numarası olmasa da sokak ve semt yeter) ve Türk bağlantısı açık. Adres hiç bulunamayan adayı ekleme.
+- **Ekleme:** "kalıcı olarak kapandı" işareti olan yerler (ör. Miss Istanbul, Pasha's Hobart), Türk bağlantısı olmayan ya da yalnızca "Orta Doğu/Lübnan/Yunan" olarak geçen yerler (ör. Syra, Yiros Central, Anatolia Kebabs), şehir sınırları dışındakiler, **Adelaide** adayları ve yalnızca teslimat platformunda adresi olmayanlar. Veride (`data/`) zaten olan yerleri tekrar ekleme.
+- Her kayda kısa bir **`"note"`** yaz (Türkçe, tek cümle): neden doğrulanamadığını söyle, örneğin "OSM'de kaydı yok, adres yalnızca bir dizinde geçiyor." ya da "Kaynaklarda adres çelişiyor (15 ve 112 Princes St)." Çelişen adreslerden en olası olanı yaz ve note'ta diğerini belirt.
+- Koordinatı Adım 4'e göre adresten bulmaya çalış (Nominatim sokak araması). Bulamazsan `lat` ve `lng` `null` olsun, **tahmin etme**.
+- Bu çalışmada 10 yer sınırı **yok**; en fazla **40** yer ekle. Her yer kendi şehrinin dosyasına gider. Hiç ekleme yapmadığın adayları PR'da nedenleriyle listele.
+- Tek PR aç. Commit mesajı: `Doğrulanmamış adaylar: <N> yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
 
 ## Adımlar
 
@@ -74,6 +76,7 @@ Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
   - **A) Resmî kaynak:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı.
   - **B) İki bağımsız üçüncü taraf kaynak:** Birbirinden bağımsız **en az iki** sitede (ör. Yelp, TripAdvisor, Zomato, Uber Eats, DoorDash, Menulog, yerel rehberler, haber yazıları) **aynı sokak ve numara** geçiyor, ve bunlardan en az birinde **son 2 yıla ait** bir iz var (yorum, menü, sipariş sayfası). Aynı şirketin siteleri (ör. TripAdvisor ve onun alt siteleri) bağımsız sayılmaz. Adresler çelişiyorsa ekleme.
   - **C) Tek kaynak (gevşetilmiş kural):** A ve B sağlanamıyorsa, **tek** bir üçüncü taraf sayfada (Yelp, TripAdvisor, Uber Eats, DoorDash, Zabihah, yerel rehber vb.) işletmenin adı ve adresi tutarlıysa yine ekle. Bunu PR tablosundaki notta "⚠️ TEK KAYNAK: <site>" diye belirt ve yeri PR'ın en üstündeki "Elle kontrol edilecek yerler" listesine ekle.
+  - **D) Doğrulanmamış (yalnızca "Bu çalışma için geçici özel istek" bölümü istediğinde kullan):** A, B ve C sağlanamıyor ama aday, en az bir listede/dizinde adı ve sokak adresiyle geçiyorsa kaydı `"verified": false` ve kısa bir `"note"` ile ekle. Site bu kayıtlarda otomatik "bilgileri doğrulanamadı" uyarısı gösterir. Normal haftalık çalışmalarda bu yolu **kullanma**.
   - `source` alanına resmî kaynak varsa onu, yoksa en güncel üçüncü taraf sayfanın linkini yaz. B yoluyla eklediğin yerleri PR tablosundaki notta "2 bağımsız kaynak: <site 1>, <site 2>" diye belirt.
 
 İşletmenin kendi sitesi açılmazsa (403 hatası veya boş sayfa) adayı hemen eleme. OSM kaydı ya da B yolu ile doğrulamayı dene. Türk bağlantısını ve açık olduğunu da bu kaynaklardan doğrula.
@@ -118,6 +121,7 @@ Her yeri **kendi şehrinin dosyasındaki** listenin sonuna bu formatta ekle (ör
 }
 ```
 
+- Doğrulanmamış (D yolu) kayıtlara iki alan daha eklenir: `"verified": false` ve `"note": "Neden doğrulanamadığı, tek cümle."`. Bu alanlar doğrulanmış kayıtlarda **hiç bulunmaz** (`"verified": true` yazma).
 - Koordinatı bulunamayan yerde `lat` ve `lng` birlikte `null` olur (biri sayı, diğeri null olamaz). Doğrulama betiği buna izin verir.
 - `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) veya `firin` (fırın, pastane, börekçi).
 - `country`: Türkçe ülke adı (ör. "Avustralya").

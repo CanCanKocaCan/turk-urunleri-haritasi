@@ -121,6 +121,12 @@ markets.forEach((m, i) => {
   if (!Array.isArray(m.products) || !m.products.every((p) => typeof p === "string" && p.trim())) {
     errors.push(`${where}: "products" yazılardan oluşan bir liste olmalı`);
   }
+  if (m.verified !== undefined && typeof m.verified !== "boolean") {
+    errors.push(`${where}: "verified" true ya da false olmalı`);
+  }
+  if (m.note !== undefined && (typeof m.note !== "string" || !m.note.trim())) {
+    errors.push(`${where}: "note" boş olmayan bir yazı olmalı`);
+  }
   if (m.address !== undefined && typeof m.address !== "string") {
     errors.push(`${where}: "address" yazı olmalı`);
   }

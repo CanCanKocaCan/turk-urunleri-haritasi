@@ -48,6 +48,17 @@ function productTags(products) {
   return products.map((p) => `<span class="product">${escapeHtml(p)}</span>`).join("");
 }
 
+// "verified": false olan kayıtların bilgileri tam doğrulanamadı; sitede uyarı gösterilir
+function isUnverified(market) {
+  return market.verified === false;
+}
+
+function warningHtml(market) {
+  if (!isUnverified(market)) return "";
+  const note = market.note ? ` ${escapeHtml(market.note)}` : "";
+  return `<div class="warning">⚠️ Bilgileri doğrulanamadı, gitmeden önce kontrol et.${note}</div>`;
+}
+
 function popupHtml(market) {
   const type = typeInfo(market);
   return `
@@ -55,6 +66,7 @@ function popupHtml(market) {
     <small>${type.icon} ${type.label}</small><br>
     ${escapeHtml(market.city)}, ${escapeHtml(market.country)}<br>
     ${market.address ? `<small>${escapeHtml(market.address)}</small><br>` : ""}
+    ${warningHtml(market)}
     <div class="products">${productTags(market.products)}</div>
   `;
 }
@@ -93,6 +105,7 @@ function render() {
     li.innerHTML = `
       <div class="market-name">${typeInfo(market).icon} ${escapeHtml(market.name)}</div>
       <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}${hasLocation(market) ? "" : " (konum eklenecek)"}</div>
+      ${warningHtml(market)}
       <div class="products">${productTags(market.products)}</div>
     `;
     if (hasLocation(market)) {
@@ -129,7 +142,7 @@ function renderTypeFilters() {
 
 function markerIcon(market) {
   return L.divIcon({
-    className: "type-marker",
+    className: isUnverified(market) ? "type-marker unverified" : "type-marker",
     html: typeInfo(market).icon,
     iconSize: [34, 34],
     iconAnchor: [17, 17],
