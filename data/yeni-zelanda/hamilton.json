@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Babaganush Turkish Restaurant",
+    "type": "restoran",
+    "city": "Hamilton",
+    "country": "Yeni Zelanda",
+    "address": "379-381 Grey Street, Hamilton East, Hamilton 3216",
+    "lat": -37.79305,
+    "lng": 175.29308,
+    "products": ["Kebap", "Lahmacun"],
+    "source": "https://babaganush.co.nz/"
+  },
+  {
+    "name": "Kapadokya",
+    "type": "restoran",
+    "city": "Hamilton",
+    "country": "Yeni Zelanda",
+    "address": "270 Victoria Street, Hamilton Central, Hamilton 3240",
+    "lat": -37.78816,
+    "lng": 175.2841,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/2519540406"
+  }
+]

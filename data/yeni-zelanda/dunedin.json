@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Paasha Turkish Restaurant",
+    "type": "restoran",
+    "city": "Dunedin",
+    "country": "Yeni Zelanda",
+    "address": "31 Saint Andrew Street, Dunedin Central, Dunedin 9016",
+    "lat": -45.8716,
+    "lng": 170.50439,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/12523110104"
+  },
+  {
+    "name": "Huzur Kebab",
+    "type": "restoran",
+    "city": "Dunedin",
+    "country": "Yeni Zelanda",
+    "address": "George Street, North Dunedin, Dunedin 9010",
+    "lat": -45.85856,
+    "lng": 170.51255,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/9342681589"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Little Turkish Cafe",
+    "type": "kafe",
+    "city": "Auckland",
+    "country": "Yeni Zelanda",
+    "address": "217 Karangahape Road, Newton, Auckland 1002",
+    "lat": -36.85762,
+    "lng": 174.75947,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/1015095964"
+  },
+  {
+    "name": "Seven Hills Turkish Eatery",
+    "type": "kafe",
+    "city": "Auckland",
+    "country": "Yeni Zelanda",
+    "address": "1-7 The Strand, Takapuna, Auckland 0622",
+    "lat": -36.78902,
+    "lng": 174.77337,
+    "products": [],
+    "source": "https://sevenhills.co.nz/"
+  },
+  {
+    "name": "Izmir Kebab and Grill",
+    "type": "restoran",
+    "city": "Auckland",
+    "country": "Yeni Zelanda",
+    "address": "64A Federal Street, Auckland CBD, Auckland 1010",
+    "lat": -36.84808,
+    "lng": 174.76278,
+    "products": ["Kebap", "Meze", "Pilav"],
+    "source": "https://izmirkebabgrill.co.nz"
+  }
+]
