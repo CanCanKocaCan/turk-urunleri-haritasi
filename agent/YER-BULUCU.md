@@ -28,7 +28,8 @@ Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Ad
 
 - Normal "en az kaydı olan şehir" kuralı yerine, listedeki **Adelaide dışındaki** şehirleri (Melbourne, Sydney, Brisbane, Perth, Canberra, Gold Coast, Hobart, Darwin) kayıt sayısı en az olandan başlayarak sırayla tara ve toplam hedefe ulaşana kadar devam et.
 - Bu çalışmada 10 yer sınırı **yok**; en fazla **30** yer ekle. Hedef 20. Her yer kendi şehrinin dosyasına gider.
-- **Doğrulama kuralları aynen geçerli.** 20'ye ulaşmak için hiçbir kuralı gevşetme, kaynak uydurma, koordinat tahmin etme. 20'ye ulaşamazsan bulduğun kadarını ekle ve PR'da kaç yer bulunduğunu, hangi şehirlerin ve semtlerin tarandığını açıkça yaz.
+- **Doğrulama kuralları proje sahibinin onayıyla gevşetildi** (Adım 3'teki C yolu ve gevşetilmiş aktiflik kuralı). Kaynak, adres, koordinat veya ürün **uydurma** (Adım 3'teki değişmeyen kurallar geçerli). 20'ye ulaşamazsan bulduğun kadarını ekle ve PR'da kaç yer bulunduğunu, hangi şehirlerin ve semtlerin tarandığını açıkça yaz.
+- **Önce eski adayları yeniden dene.** #1'den bugüne kadar tüm PR'ların "Eklenmeyen adaylar" bölümlerini oku (`gh pr list --state all` ya da GitHub aracı). Oradaki her adayı, gevşetilmiş kurallarla önce değerlendir, sonra yeni aday ara. Adelaide'dekileri atla.
 - Tek PR aç. Commit mesajı: `Avustralya: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
 
 ## Adımlar
@@ -55,16 +56,23 @@ Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Ad
 ### 3. Her adayı doğrula
 Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
 - **Türk bağlantısı açık:** Türk mutfağı sunuyor, Türk işletmesi olduğunu belirtiyor ya da açıkça Türk ürünleri satıyor. Sadece "Orta Doğu" veya "Akdeniz" yazan yerleri, Türk ürünü sattığına dair açık kanıt yoksa ekleme.
-- **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz var (web sitesi, sosyal medya paylaşımı, güncel yorum).
+- **Hâlâ açık:** "Permanently closed", "kalıcı olarak kapandı" gibi işaretler yok. Son 2 yılda aktif olduğuna dair bir iz tercih edilir (web sitesi, sosyal medya paylaşımı, güncel yorum), ama **bulamazsan eleme**: kapandığına dair hiçbir işaret yoksa ve işletme bir listede ya da sipariş platformunda hâlâ görünüyorsa ekle, notta "⚠️ aktiflik doğrulanamadı" yaz.
 - **Adres biliniyor:** Tercihen sokak ve numara düzeyinde. **Kapı numarası bulunamıyorsa yeri eleme.** OSM kaydı (ad, tür ve semt uyuşuyor, Türk bağlantısı ve aktiflik diğer kurallardan geçiyor) varsa numarasız ekle: `address` alanına sokak, semt, eyalet ve posta kodunu yaz, numarayı **uydurma**. Koordinatı OSM düğümünden/binasından al. PR tablosundaki notta "⚠️ KAPI NUMARASI EKSİK" yaz ve PR açıklamasının en üstündeki "Elle kontrol edilecek yerler" listesine ekle. Üçüncü taraf kaynaklar numarayı farklı yazıyorsa (ör. 293 ve 297) yine ekleyebilirsin, ama notta çelişkiyi belirt.
-- **Güvenilir bir kaynak var.** Şu iki yoldan biri yeterli:
+- **Güvenilir bir kaynak var.** Şu üç yoldan biri yeterli:
   - **A) Resmî kaynak:** İşletmenin kendi web sitesi, resmî sosyal medya hesabı ya da OpenStreetMap kaydı.
   - **B) İki bağımsız üçüncü taraf kaynak:** Birbirinden bağımsız **en az iki** sitede (ör. Yelp, TripAdvisor, Zomato, Uber Eats, DoorDash, Menulog, yerel rehberler, haber yazıları) **aynı sokak ve numara** geçiyor, ve bunlardan en az birinde **son 2 yıla ait** bir iz var (yorum, menü, sipariş sayfası). Aynı şirketin siteleri (ör. TripAdvisor ve onun alt siteleri) bağımsız sayılmaz. Adresler çelişiyorsa ekleme.
+  - **C) Tek kaynak (gevşetilmiş kural):** A ve B sağlanamıyorsa, **tek** bir üçüncü taraf sayfada (Yelp, TripAdvisor, Uber Eats, DoorDash, Zabihah, yerel rehber vb.) işletmenin adı ve adresi tutarlıysa yine ekle. Bunu PR tablosundaki notta "⚠️ TEK KAYNAK: <site>" diye belirt ve yeri PR'ın en üstündeki "Elle kontrol edilecek yerler" listesine ekle.
   - `source` alanına resmî kaynak varsa onu, yoksa en güncel üçüncü taraf sayfanın linkini yaz. B yoluyla eklediğin yerleri PR tablosundaki notta "2 bağımsız kaynak: <site 1>, <site 2>" diye belirt.
 
 İşletmenin kendi sitesi açılmazsa (403 hatası veya boş sayfa) adayı hemen eleme. OSM kaydı ya da B yolu ile doğrulamayı dene. Türk bağlantısını ve açık olduğunu da bu kaynaklardan doğrula.
 
-Emin olmadığın bir yeri **ekleme**. Bunun yerine PR açıklamasındaki "Eklenmeyen adaylar" bölümüne kısa bir notla yaz.
+**Gevşetmelere rağmen değişmeyen kurallar** (bunlardan biri sağlanmıyorsa yeri ekleme, "Eklenmeyen adaylar" bölümüne nedeniyle yaz):
+- Türk bağlantısı açık olmalı: Türk mutfağı/ürünü sunduğu kaynakta yazıyor ya da adında Türk/İstanbul/Anadolu gibi bir ifade geçip Türk yemeği (kebap, pide, gözleme, baklava, simit vb.) sunuyor. Kaynakta "Middle Eastern", "Lebanese", "Greek" gibi tanımlanan ve Türk olduğuna dair kanıt olmayan yerleri ekleme.
+- "Kalıcı olarak kapandı" gibi bir işaret olan yeri ekleme.
+- Adres, koordinat ve ürünleri asla uydurma ya da tahmin etme. Adres tutarsızsa notta belirt.
+- Google Maps sayfalarını çekme.
+
+Bunların dışında emin olmadığın bir yeri eklemek yerine, PR notunda ⚠️ ile işaretleyerek ekleyebilirsin.
 
 ### 4. Koordinatları bul
 - OpenStreetMap kaydı varsa oradaki koordinatı kullan.
