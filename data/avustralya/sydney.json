@@ -86,5 +86,57 @@
     "lng": 151.20401,
     "products": [],
     "source": "https://www.openstreetmap.org/node/13529274549"
+  },
+  {
+    "name": "Konak Turkish Kitchen",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "496 King St, Newtown NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.agfg.com.au/restaurant/konak-79307",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres OpenTable, Quandoo ve AGFG'de aynı ama güncel aktiflik doğrulanamadı, koordinat eksik."
+  },
+  {
+    "name": "Kusadasi Turkish Restaurant",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "111 Enmore Rd, Enmore NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.firsttable.com.au/sydney/inner-west/enmore/kusadasi-turkish-restaurant",
+    "verified": false,
+    "note": "OSM'de kaydı yok, adres yalnızca First Table ve Wanderlog'da geçiyor; aktiflik doğrulanamadı, koordinat eksik."
+  },
+  {
+    "name": "Maydanoz",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "50 Carrington St, Sydney NSW 2000",
+    "lat": -33.86632,
+    "lng": 151.20661,
+    "products": [],
+    "source": "https://concreteplayground.com/sydney/food-drink/efendys-somer-sivriolu-maydanoz-sydney",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres Concrete Playground, Time Out ve SBS'te aynı, güncel çalışma saatleri doğrulanamadı."
+  },
+  {
+    "name": "Pasha's Turkish Restaurant",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "490 King St, Newtown NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.theurbanlist.com/sydney/directory/pashas-turkish-restaurant",
+    "verified": false,
+    "note": "OSM'de kaydı yok; listelerde adres 490/492 King St olarak geçiyor, koordinat eksik."
   }
 ]
