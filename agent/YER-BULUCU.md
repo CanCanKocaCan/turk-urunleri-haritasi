@@ -38,6 +38,7 @@ Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Ad
 - `data/index.json` dosyasını ve listelediği tüm şehir dosyalarını (`data/<ülke>/<şehir>.json`) oku. Zaten var olan yerleri tekrar ekleme.
 - Daha önceki PR'ların (kapanmış olanlar dahil) "Eklenmeyen adaylar" bölümüne bak. Oradaki adayları bu çalışmada yeniden dene, çünkü belki bu sefer doğrulayabilirsin.
 - Repoda açık bekleyen, `claude/yeni-yerler-` ile başlayan PR'lar varsa, onlardaki yerleri de tekrar ekleme.
+- `agent/ADAYLAR.md` dosyasını oku. Proje sahibinin elle verdiği adaylar varsa bunları **önce** doğrula (aynı kurallarla). Dosyayı değiştirme.
 
 ### 2. Aday bul
 - Web araması yap. İngilizce ve Türkçe aramalar dene, örneğin: `Turkish grocery Melbourne`, `Turkish restaurant Melbourne`, `Turkish bakery Melbourne`, `Türk marketi Melbourne`, `Turkish cafe künefe Melbourne`.
@@ -51,6 +52,7 @@ Proje sahibi bu çalışmada **Avustralya genelinde en az 20 yer** istiyor. **Ad
 - OpenStreetMap'i kullanabilirsin. Overpass API'de `cuisine=turkish` ve `shop=*` + `name~"Turk|Türk|Istanbul|Anatolia|Ankara|Izmir"` gibi aramalar işe yarar. Kullanım kurallarına uy (makul istek sayısı, açıklayıcı User-Agent).
 - **Overpass sık sık zaman aşımına uğrar.** İsteklere en fazla 30 saniye süre ver, tek bir deneme yap ve cevap gelmezse beklemeden devam et.
 - **Nominatim ile tek tek ara.** Web aramasında bulduğun **her adayın adını** Nominatim'de şehirle birlikte ara (ör. `https://nominatim.openstreetmap.org/search?q=Marmara+Melbourne&format=json&addressdetails=1&extratags=1&limit=3`). Ayrıca `Turkish restaurant <şehir>`, `Turkish bakery <şehir>`, `Turkish grocery <şehir>` gibi genel aramalar yap. Saniyede en fazla 1 istek gönder. Sonuç doğru işletmeyse (ad ve semt uyuşuyorsa), OSM kaydı adres, koordinat ve kaynak olarak yeterlidir. Kaynak olarak `https://www.openstreetmap.org/<node|way>/<id>` linkini kullan.
+- **Facebook grupları (yalnızca ipucu):** Türk topluluk gruplarında işletme önerileri çok geçer, ama grup gönderilerini **doğrudan çekmeye çalışma**. Girişsiz görünmüyor, otomatik erişim Facebook kullanım şartlarına aykırı ve gönderiler kişilere ait. Bunun yerine web aramasına grup adlarını ve konuyu ekle, çıkan herkese açık sonuçlardan yalnızca **işletme adı ve semtini** ipucu olarak al. Örnek aramalar: `"Turks in Australia" Türk market Sydney`, `"Turkish Community of South Australia" market`, `Avustralya Türk market önerisi Melbourne`, `Avustralya'da Türk ürünleri nerede bulunur`. Bilinen gruplar: *Avustralya'da Yaşayan Türkler Turks in Australia Sydney Melbourne*, *The Turkish Community of South Australia*, *Avustralya Melbourne iş ve işçi bulma*, *Avustralya'da Yaşam, Eğitim, İş, Çalışma ve Göçmenlik*. Facebook gönderisini asla `source` olarak gösterme; ipucunu işletmenin kendi sitesi, OSM ya da Adım 3'teki kaynaklarla doğrula. Gönderi sahiplerinin adını, telefonunu ya da başka kişisel bilgisini PR'a ve veriye yazma.
 - **Google Maps sayfalarını çekmeye çalışma** (kullanım şartları buna izin vermiyor). Arama sonuçlarında görünen bilgileri ipucu olarak kullanabilirsin, ama kaynak olarak başka bir yer göstermelisin.
 
 ### 3. Her adayı doğrula
