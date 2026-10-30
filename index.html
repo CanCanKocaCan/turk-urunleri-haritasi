@@ -24,7 +24,10 @@
       <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="Ürün, mekân veya şehir ara" autocomplete="off">
       <button type="submit" aria-label="Sonuçları haritada göster"><span aria-hidden="true">⌕</span></button>
     </form>
-    <div id="suggestions" role="listbox" aria-label="Arama önerileri" hidden></div>
+    <div id="suggestion-popup" hidden>
+      <div class="popup-heading"><span>Arama önerileri</span><button id="close-suggestions" type="button" class="close-button" aria-label="Arama önerilerini kapat">×</button></div>
+      <div id="suggestions" role="listbox" aria-label="Arama önerileri" hidden></div>
+    </div>
     <div id="type-filters" aria-label="Mekân türü"></div>
     <div id="active-filters" aria-label="Aktif filtreler"></div>
     <p id="search-summary" role="status"></p>
@@ -32,6 +35,7 @@
   </section>
   <button id="search-area" hidden>Bu bölgede ara</button>
   <aside id="sidebar">
+    <div class="panel-heading"><span>Sonuçlar ve ayrıntılar</span><button id="close-panel" type="button" class="close-button" aria-label="Sonuç panelini kapat">×</button></div>
     <button id="sheet-handle" aria-label="Sonuç panelini büyüt" aria-expanded="false"><span aria-hidden="true"></span><span id="sheet-label">Sonuçlar</span></button>
     <div class="drawer-content">
     <header>
@@ -53,7 +57,7 @@
   </aside>
 
   <main id="map" aria-label="Mekân haritası"></main>
-  <dialog id="contribution"><form id="contribution-form"><h2>Topluluğa katkıda bulun</h2><p>Öneriler incelendikten sonra yayımlanır. Kişisel bilgi yazmayın.</p>
+  <dialog id="contribution"><form id="contribution-form"><div class="popup-heading"><h2>Topluluğa katkıda bulun</h2><button id="close-contribution" type="button" class="close-button" aria-label="Katkı formunu kapat">×</button></div><p>Öneriler incelendikten sonra yayımlanır. Kişisel bilgi yazmayın.</p>
   <label>Bildirim türü<select name="kind"><option value="new">Yeni yer / ürün</option><option value="seen">Bu ürünü gördüm</option><option value="missing">Ürün artık yok</option><option value="closed">İşletme kapandı</option><option value="correction">Bilgi düzeltme</option></select></label>
   <label>Mekân adı<input name="place" required maxlength="160"></label>
   <label>Şehir / ülke<input name="location" required maxlength="160"></label>

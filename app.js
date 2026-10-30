@@ -274,7 +274,7 @@ document.getElementById('search-form').onsubmit = e => {
   e.preventDefault();
   closeSuggestions(); selectedId = ''; render(); fitResults();
 };
-document.getElementById('panel-toggle').onclick = () => setPanel(document.body.classList.contains('panel-closed'));
+document.getElementById('panel-toggle').onclick = () => document.body.classList.contains('panel-closed') ? setPanel(true) : dismissPanel();
 function fitResults() {
   const points = markets.filter(m => matches(m, searchInput.value.trim()) && hasLocation(m)).map(m => [m.lat,m.lng]);
   if(points.length) map.fitBounds(points,{...mapPadding(),maxZoom:13});
@@ -380,7 +380,7 @@ function renderActiveFilters() {
 const suggestions = document.getElementById('suggestions');
 let suggestionItems = [], activeSuggestion = -1;
 function closeSuggestions() {
-  suggestions.hidden = true; searchInput.setAttribute('aria-expanded','false');
+  suggestions.hidden = true; document.getElementById('suggestion-popup').hidden=true; searchInput.setAttribute('aria-expanded','false');
   searchInput.removeAttribute('aria-activedescendant'); activeSuggestion = -1;
 }
 function renderSuggestions() {
@@ -410,6 +410,7 @@ function renderSuggestions() {
     suggestions.appendChild(group);
   }
   suggestions.hidden=!suggestionItems.length;
+  document.getElementById('suggestion-popup').hidden=suggestions.hidden;
   searchInput.setAttribute('aria-expanded',String(!suggestions.hidden));
   searchInput.removeAttribute('aria-activedescendant');
 }
@@ -424,9 +425,9 @@ function chooseSuggestion(index) {
   if(item.market)selectMarket(item.market,true);
 }
 searchInput.addEventListener('focus',renderSuggestions);
-searchInput.addEventListener('blur',closeSuggestions);
+searchInput.addEventListener('blur',e=>{if(!document.getElementById('suggestion-popup').contains(e.relatedTarget))closeSuggestions();});
 searchInput.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeSuggestions();return;}
+  if(e.key==='Escape'&&!suggestions.hidden){e.preventDefault();e.stopPropagation();closeSuggestions();return;}
   if(suggestions.hidden)return;
   if(e.key==='ArrowDown'||e.key==='ArrowUp') {
     e.preventDefault();
@@ -436,7 +437,11 @@ searchInput.addEventListener('keydown',e=>{
     searchInput.setAttribute('aria-activedescendant',option.id);option.scrollIntoView({block:'nearest'});
   } else if(e.key==='Enter'&&activeSuggestion>=0) {e.preventDefault();chooseSuggestion(activeSuggestion);}
 });
-document.addEventListener('pointerdown',e=>{if(!document.getElementById('map-search').contains(e.target))closeSuggestions();});
+document.addEventListener('pointerdown',e=>{
+  if(dialog.open)return;
+  if(!document.getElementById('map-search').contains(e.target))closeSuggestions();
+  if(!sidebar.contains(e.target)&&!e.target.closest('#panel-toggle, #filter-toggle'))dismissPanel();
+},true);
 
 function parseAreaBounds(value) {
   if(!value)return null;
@@ -514,3 +519,25 @@ function mapPadding() {
     paddingBottomRight:[24,mobile?(panelOpen?Math.min(sidebar.getBoundingClientRect().height+92,window.innerHeight*.55):92):30]
   };
 }
+// Maps-style dismissal keeps search and applied filters available.
+function dismissPanel() {
+  sidebar.querySelectorAll('details[open]').forEach(detail=>detail.open=false);
+  setPanel(false);
+}
+document.getElementById('close-panel').onclick=dismissPanel;
+document.getElementById('close-suggestions').onclick=()=>{searchInput.focus();closeSuggestions();};
+document.getElementById('close-contribution').onclick=()=>dialog.close();
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape'||dialog.open)return;
+  closeSuggestions();dismissPanel();
+});
+let backdropPointer=false;
+function outsideDialog(e) {
+  const rect=dialog.getBoundingClientRect();
+  return e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom;
+}
+dialog.addEventListener('pointerdown',e=>{backdropPointer=e.target===dialog&&outsideDialog(e);});
+dialog.addEventListener('click',e=>{
+  if(backdropPointer&&e.target===dialog&&outsideDialog(e))dialog.close();
+  backdropPointer=false;
+});
