@@ -16,5 +16,38 @@
       "Babaganuş"
     ],
     "source": "https://www.openstreetmap.org/way/1478720384"
+  },
+  {
+    "name": "Mado",
+    "type": "restoran",
+    "city": "Brisbane",
+    "country": "Avustralya",
+    "address": "15 Tribune St, South Bank, South Brisbane QLD 4101",
+    "lat": -27.48065,
+    "lng": 153.02378,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4670859692"
+  },
+  {
+    "name": "Caravanserai",
+    "type": "restoran",
+    "city": "Brisbane",
+    "country": "Avustralya",
+    "address": "1 Dornoch Terrace, West End QLD 4101",
+    "lat": -27.48696,
+    "lng": 153.00628,
+    "products": [],
+    "source": "https://caravanserai.restaurant/"
+  },
+  {
+    "name": "Ahmet's",
+    "type": "restoran",
+    "city": "Brisbane",
+    "country": "Avustralya",
+    "address": "164B Grey St, South Bank, South Brisbane QLD 4101",
+    "lat": -27.4782,
+    "lng": 153.02152,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/5205595557"
   }
 ]

@@ -18,5 +18,36 @@
       "Lokum"
     ],
     "source": "https://order.halalpidehouse.com.au/"
+  },
+  {
+    "name": "Turkish Pide House Woden",
+    "type": "restoran",
+    "city": "Canberra",
+    "country": "Avustralya",
+    "address": "Westfield Woden, Corinna St, Phillip ACT 2606",
+    "lat": -35.34623,
+    "lng": 149.08447,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/1814424698"
+  },
+  {
+    "name": "Belco Halal Kebabs and Pizzeria",
+    "type": "restoran",
+    "city": "Canberra",
+    "country": "Avustralya",
+    "address": "Lathlain St, Belconnen ACT 2617",
+    "lat": -35.23744,
+    "lng": 149.06313,
+    "products": [
+      "Pide",
+      "Gözleme",
+      "İskender kebap",
+      "Şiş kebap",
+      "Pirzola",
+      "Börek",
+      "Sucuklu pide",
+      "Ayran"
+    ],
+    "source": "https://order.kebabsinbelco.com.au/"
   }
 ]
