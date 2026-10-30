@@ -14,5 +14,27 @@
       "Baklava"
     ],
     "source": "https://www.openstreetmap.org/way/167161761"
+  },
+  {
+    "name": "Ankara Kebabs and Bakery",
+    "type": "firin",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "807B Beaufort St, Mount Lawley WA 6050",
+    "lat": -31.9251,
+    "lng": 115.88129,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4195540237"
+  },
+  {
+    "name": "Istanbul Kitchen",
+    "type": "restoran",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "Fitzgerald St, North Perth WA 6006",
+    "lat": -31.93321,
+    "lng": 115.85935,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4056130278"
   }
 ]
