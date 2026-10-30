@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Istanbul Food Bazaar",
+    "type": "market",
+    "city": "Clifton",
+    "country": "ABD",
+    "address": "1500 Main Ave, Clifton, NJ 07011",
+    "lat": 40.88532,
+    "lng": -74.14953,
+    "products": [
+      "Peynir",
+      "Hamur işleri",
+      "Atıştırmalıklar"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cab670ad-7767-11ef-95ae-6045bdeb9f57/istanbul-food-bazaar-clifton-nj",
+    "id": "abd-new-jersey-6",
+    "state": "NJ"
+  }
+]

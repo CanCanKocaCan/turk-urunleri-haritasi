@@ -1,0 +1,26 @@
+[
+  {
+    "id": "abd-cinnaminson-cappadocia-turkish-market",
+    "name": "Cappadocia Turkish Market",
+    "type": "market",
+    "city": "Cinnaminson",
+    "state": "NJ",
+    "country": "ABD",
+    "address": "2701 US-130, Unit C2, Cinnaminson, NJ 08077",
+    "lat": 40.00883,
+    "lng": -74.97144,
+    "products": [
+      "Tahsildaroğlu Bergama tulum peyniri",
+      "Apikoğlu sucuk",
+      "Balparmak bal",
+      "Moda simit",
+      "Çaykur Tomurcuk çay",
+      "Cumhuriyet sucuk",
+      "Merve mantı",
+      "Komagene çiğ köfte"
+    ],
+    "source": "https://cappadociaturkish.com/",
+    "website": "https://cappadociaturkish.com/",
+    "phone": "+18563895224"
+  }
+]

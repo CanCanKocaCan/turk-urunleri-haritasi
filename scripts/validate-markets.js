@@ -10,6 +10,7 @@ const DUPLICATE_DISTANCE_METERS = 30;
 
 const dataDir = path.join(__dirname, "..", "data");
 const errors = [];
+const REGIONS = JSON.parse(fs.readFileSync(path.join(dataDir,"regions.json"),"utf8"));
 
 function normalize(text) {
   return String(text)
@@ -109,6 +110,8 @@ markets.forEach((m, i) => {
       if (!m.products?.includes(product) || !evidence || typeof evidence !== 'object' || !/^\d{4}-\d{2}-\d{2}$/.test(evidence.lastSeen || '') || !Number.isFinite(Date.parse(evidence.lastSeen)) || evidence.lastSeen > new Date().toISOString().slice(0,10) || !/^https?:\/\/\S+$/.test(evidence.source || '')) errors.push(`${m.name}: ${product} için tarih/kaynak geçersiz`);
     }
   }
+  if (REGIONS[m.country] && !Object.hasOwn(REGIONS[m.country],m.state)) errors.push(`${m.name}: ABD/Avustralya kayıtlarında geçerli state kodu zorunlu`);
+  if (m.state !== undefined && !REGIONS[m.country]?.[m.state]) errors.push(`${m.name}: ülke ile state kodu eşleşmiyor`);
   const where = `${m._file} (${m.name || "isimsiz"})`;
 
   for (const field of REQUIRED_TEXT) {

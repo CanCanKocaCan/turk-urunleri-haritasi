@@ -44,7 +44,7 @@
     </header>
 
     <details id="advanced-filters"><summary>Filtreler ve arama seçenekleri</summary><div id="modes" aria-label="Arama amacı"><button data-mode="all">Tümü</button><button data-mode="product">Ürün bul</button><button data-mode="place">Mekân bul</button></div>
-    <div class="filters"><label>Ülke<select id="country"><option value="">Tüm ülkeler</option></select></label><label>Şehir<select id="city"><option value="">Tüm şehirler</option></select></label></div>
+    <div class="filters"><label>Ülke<select id="country"><option value="">Tüm ülkeler</option></select></label><label id="state-filter" hidden>Eyalet / bölge<select id="state" disabled aria-describedby="state-help"><option value="">Tüm eyaletler / bölgeler</option></select><small id="state-help">Kayıt bulunan eyaletler ve bölgeler</small></label><label>Şehir<select id="city"><option value="">Tüm şehirler</option></select></label></div>
     </details><details><summary>Kapsam ve güncellik</summary><p id="coverage"></p><p>Liste kapsamlı değildir. Sonuç bulunmaması, bölgede Türk ürünü olmadığı anlamına gelmez. Ürünler güncel stok garantisi taşımaz.</p></details>
     <p id="result-count" role="status"></p>
 

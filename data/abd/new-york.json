@@ -1,0 +1,126 @@
+[
+  {
+    "id": "abd-new-york-istanbul-grand-bazaar",
+    "name": "Istanbul Grand Bazaar",
+    "type": "market",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "2189 Hylan Blvd, Staten Island, NY 10306",
+    "lat": 40.57711,
+    "lng": -74.1035,
+    "products": [
+      "Çaykur çay",
+      "Mehmet Efendi Türk kahvesi",
+      "Öncü salça",
+      "Ülker ürünleri",
+      "Eti ürünleri",
+      "Koska helva",
+      "Marmarabirlik zeytin",
+      "Duru bulgur"
+    ],
+    "source": "https://istanbulbazaaronline.com/",
+    "website": "https://istanbulbazaaronline.com/",
+    "phone": "+19299497810"
+  },
+  {
+    "id": "abd-new-york-turkiyem-market",
+    "name": "Türkiyem Market",
+    "type": "market",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "46-31 Skillman Ave, Sunnyside, Queens, NY 11104",
+    "lat": 40.74661,
+    "lng": -73.91722,
+    "products": [
+      "Simit",
+      "Sucuk",
+      "Türk peynirleri"
+    ],
+    "source": "https://alaturka.com/rehber/turkiyem-market-sunnyside/",
+    "phone": "+17189373456"
+  },
+  {
+    "id": "abd-new-york-turkuaz-midtown-west",
+    "name": "Turkuaz Midtown West",
+    "type": "restoran",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "310 W 53rd St, New York, NY 10019",
+    "lat": 40.76436,
+    "lng": -73.98545,
+    "products": [
+      "Adana kebap",
+      "Tavuk şiş",
+      "Kuzu şiş",
+      "Köfte",
+      "Baklava"
+    ],
+    "source": "https://www.turkuazrestaurant.com/",
+    "website": "https://www.turkuazrestaurant.com/",
+    "phone": "+12122655500"
+  },
+  {
+    "id": "abd-new-york-turkuaz-midtown-east",
+    "name": "Turkuaz Midtown East",
+    "type": "restoran",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "1072 Second Ave, New York, NY 10022",
+    "lat": 40.75877,
+    "lng": -73.96533,
+    "products": [],
+    "source": "https://www.turkuazrestaurant.com/",
+    "website": "https://www.turkuazrestaurant.com/",
+    "phone": "+12128149357"
+  },
+  {
+    "id": "abd-new-york-turkish-cuisine",
+    "name": "Turkish Cuisine",
+    "type": "restoran",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "631 9th Ave, New York, NY 10036",
+    "lat": 40.76009,
+    "lng": -73.99164,
+    "products": [
+      "Sigara böreği",
+      "İçli köfte",
+      "Mantı",
+      "Adana kebap",
+      "Beyti kebap",
+      "Simit",
+      "Türk çayı",
+      "Mercimek çorbası"
+    ],
+    "source": "https://www.turkishcuisinenyc.com/menu/",
+    "website": "https://www.turkishcuisinenyc.com/",
+    "phone": "+12123979650"
+  },
+  {
+    "id": "abd-new-york-a-la-turka",
+    "name": "A La Turka",
+    "type": "restoran",
+    "city": "New York",
+    "state": "NY",
+    "country": "ABD",
+    "address": "1417 2nd Ave, New York, NY 10021",
+    "lat": 40.77009,
+    "lng": -73.95765,
+    "products": [
+      "Adana kebap",
+      "Tavuk şiş",
+      "Kuzu şiş",
+      "Köfte",
+      "Mercimek çorbası",
+      "Pide ekmeği"
+    ],
+    "source": "https://alaturkanyc.com/",
+    "website": "https://alaturkanyc.com/",
+    "phone": "+12127442424"
+  }
+]

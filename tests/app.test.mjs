@@ -16,7 +16,9 @@ test('combined filters, Turkish search, share restoration and empty state', asyn
  vm.runInContext(fs.readFileSync('app.js','utf8'),dom.getInternalVMContext());
  await new Promise(r=>setTimeout(r,30));
  const d=w.document, search=d.getElementById('search');
- assert.match(d.getElementById('result-count').textContent,/64 yer/);
+ const index=JSON.parse(fs.readFileSync('data/index.json','utf8'));
+ const total=Object.entries(index).reduce((n,[country,cities])=>n+cities.reduce((sum,city)=>sum+JSON.parse(fs.readFileSync(`data/${country}/${city}.json`,'utf8')).length,0),0);
+ assert.ok(d.getElementById('result-count').textContent.startsWith(`${total} yer`));
  search.value='beypazari';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('#market-list li').length,1);
  assert.equal(d.querySelectorAll('#market-list a').length,0);
  d.querySelector('#market-list button').click();assert.ok(w.location.search.includes('place='));

@@ -16,7 +16,8 @@
       "Babaganuş"
     ],
     "source": "https://www.openstreetmap.org/way/1478720384",
-    "id": "avustralya-brisbane-1"
+    "id": "avustralya-brisbane-1",
+    "state": "QLD"
   },
   {
     "name": "Mado",
@@ -28,7 +29,8 @@
     "lng": 153.02378,
     "products": [],
     "source": "https://www.openstreetmap.org/node/4670859692",
-    "id": "avustralya-brisbane-2"
+    "id": "avustralya-brisbane-2",
+    "state": "QLD"
   },
   {
     "name": "Caravanserai",
@@ -40,7 +42,8 @@
     "lng": 153.00628,
     "products": [],
     "source": "https://caravanserai.restaurant/",
-    "id": "avustralya-brisbane-3"
+    "id": "avustralya-brisbane-3",
+    "state": "QLD"
   },
   {
     "name": "Ahmet's",
@@ -52,6 +55,7 @@
     "lng": 153.02152,
     "products": [],
     "source": "https://www.openstreetmap.org/node/5205595557",
-    "id": "avustralya-brisbane-4"
+    "id": "avustralya-brisbane-4",
+    "state": "QLD"
   }
 ]

@@ -12,7 +12,8 @@
       "Pide"
     ],
     "source": "https://www.openstreetmap.org/node/11240467936",
-    "id": "avustralya-melbourne-1"
+    "id": "avustralya-melbourne-1",
+    "state": "VIC"
   },
   {
     "name": "Nefes",
@@ -28,7 +29,8 @@
       "Hünkar beğendi"
     ],
     "source": "https://www.nefes.com.au/",
-    "id": "avustralya-melbourne-2"
+    "id": "avustralya-melbourne-2",
+    "state": "VIC"
   },
   {
     "name": "Likya - Turkish Eatery",
@@ -45,7 +47,8 @@
       "Meze"
     ],
     "source": "https://www.openstreetmap.org/node/1064821312",
-    "id": "avustralya-melbourne-3"
+    "id": "avustralya-melbourne-3",
+    "state": "VIC"
   },
   {
     "name": "Pehlivan Turkish Street Food",
@@ -57,7 +60,8 @@
     "lng": 144.93878,
     "products": [],
     "source": "https://www.openstreetmap.org/node/14318330757",
-    "id": "avustralya-melbourne-4"
+    "id": "avustralya-melbourne-4",
+    "state": "VIC"
   },
   {
     "name": "Two Minutes Turkish",
@@ -72,7 +76,8 @@
       "Meze"
     ],
     "source": "https://www.openstreetmap.org/node/3136427717",
-    "id": "avustralya-melbourne-5"
+    "id": "avustralya-melbourne-5",
+    "state": "VIC"
   },
   {
     "name": "Best Turkish Bakery & Kebabs",
@@ -88,7 +93,8 @@
       "Kebap"
     ],
     "source": "https://www.openstreetmap.org/node/2365435363",
-    "id": "avustralya-melbourne-6"
+    "id": "avustralya-melbourne-6",
+    "state": "VIC"
   },
   {
     "name": "Marmara Turkish Restaurant",
@@ -102,7 +108,8 @@
     "source": "https://www.opentable.com.au/r/marmara-windsor",
     "verified": false,
     "note": "OSM'de kaydı yok; adres OpenTable ve AAA listesinde aynı, bir kaynak Balaclava'da ikinci bir adres (217 Carlisle St) veriyor. Koordinat sokak adresi aramasından.",
-    "id": "avustralya-melbourne-7"
+    "id": "avustralya-melbourne-7",
+    "state": "VIC"
   },
   {
     "name": "Tulum Turkish Restaurant",
@@ -116,6 +123,7 @@
     "source": "https://sitchu.com.au/melbourne/restaurants/best-turkish-restaurants-melbourne",
     "verified": false,
     "note": "OSM'de kaydı yok; adres Sitchu ve OpenTable'a dayanıyor, bir kaynak Caulfield'da (619 Glen Huntly Rd) gösteriyor.",
-    "id": "avustralya-melbourne-8"
+    "id": "avustralya-melbourne-8",
+    "state": "VIC"
   }
 ]

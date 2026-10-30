@@ -1,0 +1,26 @@
+[
+  {
+    "id": "abd-willingboro-istanbul-market",
+    "name": "Istanbul Market",
+    "type": "market",
+    "city": "Willingboro",
+    "state": "NJ",
+    "country": "ABD",
+    "address": "4307 US-130, Willingboro, NJ 08046",
+    "lat": 40.04724,
+    "lng": -74.90228,
+    "products": [
+      "Peynir",
+      "Zeytin",
+      "Reçel",
+      "Türk çayı",
+      "Türk kahvesi",
+      "Baharat",
+      "Bakliyat",
+      "Kuruyemiş"
+    ],
+    "source": "https://istanbulmarketusa.com/about/",
+    "website": "https://istanbulmarketusa.com/",
+    "phone": "+18568125596"
+  }
+]

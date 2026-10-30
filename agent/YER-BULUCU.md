@@ -10,7 +10,7 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 
 ## Bölge
 
-Şu an **Avustralya**, **Yeni Zelanda**, **ABD** (New Jersey, Chicago) ve **Japonya** (Tokyo). Bu listelerden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
+Şu an **Avustralya**, **Yeni Zelanda**, **ABD** (New Jersey, New York, Chicago) ve **Japonya** (Tokyo). Bu listelerden `data/` klasöründe (tüm şehir dosyalarında) **en az kaydı olan** şehri seç. Dosyası olmayan şehrin kaydı 0 sayılır (eşitlikte listede önce geleni). O şehirde 10 yer bulamazsan, listedeki bir sonraki şehre geçebilirsin.
 
 **Avustralya** (`country`: "Avustralya", klasör: `data/avustralya/`)
 1. Melbourne
@@ -35,24 +35,14 @@ Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını*
 Yeni Zelanda için `data/index.json` içine `"yeni-zelanda": [...]` anahtarını ekle (yoksa). Adres biçimi: "Sokak, numara, semt, şehir, posta kodu" (Yeni Zelanda'da eyalet yok). Nominatim aramalarında ülke olarak `New Zealand` kullan. Semt bazlı market aramasında şehirdeki Türk topluluğuna göre semtleri sen bul (ör. `Turkish grocery Auckland`, `Turkish community Wellington`).
 
 **ABD** (`country`: "ABD", klasör: `data/abd/`)
-1. New Jersey: dosya `data/abd/new-jersey.json`, kayıtlarda `city` her zaman **"New Jersey"** olur (eyalet düzeyinde tek dosya). Gerçek kasaba/şehir adresin içinde yazılır. Türk topluluğunun yoğun olduğu yerler: Paterson, Clifton, Haledon, Wayne, Totowa, Jersey City, Hoboken, Edison, Fort Lee ve çevresi; ayrıca topluluk yoğunluğuna göre sen de semt bul.
-2. Chicago: dosya `data/abd/chicago.json`, `city`: **"Chicago"**. Chicago şehri ve yakın banliyöleri (ör. Schaumburg, Des Plaines, Mount Prospect, Skokie, Palatine) aynı dosyaya girer, banliyö adresin içinde yazılır. Adres biçimi: "Sokak, numara, semt/banliyö, IL posta kodu".
-- ABD adreslerinde eyalet kısaltması (NJ, IL) kullan. Nominatim aramalarında ülke olarak `United States` kullan.
+1. New Jersey: `state`: **"NJ"**. `city` gerçek şehir/kasaba olur (Paterson, Clifton, Wayne, Jersey City, Cinnaminson, Toms River, Willingboro vb.); her şehir `data/abd/<şehir>.json` dosyasına gider. Eski `new-jersey.json` eyalet grubu kaldırıldı. Türk topluluğunun yoğun olduğu Paterson, Clifton, Haledon, Wayne, Totowa, Jersey City, Hoboken, Edison ve Fort Lee çevresine bak.
+2. Chicago (`state`: **"IL"**): dosya `data/abd/chicago.json`, `city`: **"Chicago"**. Chicago şehri ve yakın banliyöleri (ör. Schaumburg, Des Plaines, Mount Prospect, Skokie, Palatine) aynı dosyaya girer, banliyö adresin içinde yazılır. Adres biçimi: "Sokak, numara, semt/banliyö, IL posta kodu".
+3. New York (`state`: **"NY"**): New York City ve beş borough için `city`: **"New York"**, dosya `data/abd/new-york.json`; borough/semt açık adreste belirtilir. Eyaletin diğer şehirleri ayrı şehir dosyalarına gider.
+- ABD adreslerinde eyalet kısaltması (NJ, NY, IL) kullan. Nominatim aramalarında ülke olarak `United States` kullan.
 
 **Japonya** (`country`: "Japonya", klasör: `data/japonya/`)
 1. Tokyo: dosya `data/japonya/tokyo.json`, `city`: **"Tokyo"**. Tokyo Camii'nin bulunduğu Yoyogi-Uehara/Shibuya çevresi, Shinjuku, Minato, Setagaya, ve Tokyo'nun diğer bölgeleri (23 özel bölge ve çevresi).
 - Japonya adresleri sokak/numara düzeninde değildir: "chome-ban-go" (blok-bina) biçimini kullan (ör. "1-19 Oyamacho, Shibuya City, Tokyo 151-0065"). Kapı numarası sorunu yoksa blok düzeyinde adres yeterli sayılır. Nominatim aramalarında `Japan` kullan; sonuçlar Latin ya da Japonca yazılabilir, Latin harfli adı tercih et. Ürünleri Türkçe yaz.
-
-## Bu çalışma için geçici özel istek (PR'dan sonra silinecek)
-
-Proje sahibi haritayı **New Jersey, Chicago ve Tokyo**'ya genişletiyor. Bu çalışmada **yalnızca bu üç yerde** ara. Avustralya ve Yeni Zelanda'da arama yapma.
-
-- Hedef: üç yerde toplam **en az 25 yer**; New Jersey, Chicago ve Tokyo'dan her biri için en az 8 yer bulmaya çalış. En fazla **45** yer ekle (10 yer sınırı bu çalışma için geçerli değil). Her yer kendi şehrinin dosyasına gider (`data/abd/new-jersey.json`, `data/abd/chicago.json`, `data/japonya/tokyo.json`). Olmayan dosyaları oluştur ve `data/index.json`'a ekle (`"abd"` anahtarı zaten var; `"japonya"` yeni).
-- `data/abd/new-jersey.json` içinde zaten **Anatolia Market Halal Meat And Grocery** (Wayne, NJ) var; proje sahibi buradan başladı. Bu kaydı değiştirme, tekrar ekleme. Aynı bölgedeki (Wayne, Paterson, Clifton, Haledon, Totowa) Türk market, restoran, fırın ve berberlere öncelik ver.
-- Market, kasap ve fırınları ayrıca semt semt ara. **Berberleri de ara** (Adım 3'teki Türk sahiplik kuralı geçerli).
-- Doğrulama kuralları proje sahibinin onayıyla gevşetildi (C yolu, gevşetilmiş aktiflik kuralı, numarasız adres, koordinatsız kayıt). Kaynak, adres, koordinat veya ürün **uydurma**. D yolu (`"verified": false`) bu çalışmada **kullanılmaz**, yalnızca Adım 3'teki kurallarla doğrulanabilenleri ekle.
-- Hedefe ulaşamazsan bulduğun kadarını ekle; PR'da her şehir için kaç yer bulunduğunu, hangi semtlerin ve aramaların yapıldığını açıkça yaz.
-- Tek PR aç. Commit mesajı: `New Jersey, Chicago ve Tokyo: <N> yeni yer eklendi`. PR açıklamasında şehirleri ayrı başlıklar altında listele.
 
 ## Adımlar
 
@@ -126,6 +116,9 @@ Berberlerde D yolu (doğrulanmamış) **kullanılamaz**: sahiplik kanıtı olmay
 - Ürün adlarını Türkçe yaz.
 
 ### 6. Kaydı ekle
+
+ABD ve Avustralya kayıtlarında `state` zorunludur; `data/regions.json` içindeki ülkeye ait kodu kullan. Avustralya: Adelaide SA, Brisbane/Gold Coast QLD, Canberra ACT, Melbourne VIC, Perth WA, Sydney NSW. ACT ve NT bölgelerdir; arayüz bunları eyalet/bölge filtresinde gösterir. Diğer ülkelerde state ekleme. Şehir/eyalet ve mevcut id değerlerini karıştırma; var olan id değerlerini değiştirme.
+
 Her yeri **kendi şehrinin dosyasındaki** listenin sonuna bu formatta ekle (ör. Adelaide için `data/avustralya/adelaide.json`):
 
 ```json
