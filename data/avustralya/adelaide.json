@@ -29,5 +29,16 @@
     "lng": 138.60077,
     "products": ["Türk kahvaltı tabağı", "Menemen", "Çılbır", "Kebap dürüm", "Kebap tabağı", "Lokum", "İrmik tatlısı"],
     "source": "https://www.openstreetmap.org/node/12094828212"
+  },
+  {
+    "name": "Ottoman Grill",
+    "type": "restoran",
+    "city": "Adelaide",
+    "country": "Avustralya",
+    "address": "168C Jetty Rd, Glenelg SA 5045",
+    "lat": -34.98017,
+    "lng": 138.51942,
+    "products": ["Lokum", "Pide", "Kebap", "Meze"],
+    "source": "https://maps.app.goo.gl/FCVXJubG4jVMkCFFA"
   }
 ]
