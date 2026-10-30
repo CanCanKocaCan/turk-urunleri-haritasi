@@ -9,7 +9,7 @@ const {JSDOM}=require('jsdom');
 test('combined filters, Turkish search, share restoration and empty state', async()=>{
  const dom=new JSDOM(fs.readFileSync('index.html','utf8'),{url:'https://example.com/',runScripts:'outside-only'});const w=dom.window;
  w.HTMLElement.prototype.scrollIntoView=function() {};
- const map={setView(){return this;},fitBounds(){},distance(){return 1000;}};
+ const map={setView(){return this;},fitBounds(){},on(){return this;},panTo(){},distance(){return 1000;}};
  const cluster={addTo(){return this;},clearLayers(){},addLayers(){},zoomToShowLayer(m,fn){fn();}};
  w.L={map:()=>map,tileLayer:()=>({addTo(){}}),markerClusterGroup:()=>cluster,divIcon:()=>({}),marker:()=>({on(){return this;},openPopup(){}})};
  w.fetch=async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(url,'utf8'))});

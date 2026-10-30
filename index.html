@@ -21,14 +21,19 @@
   <section id="map-search" aria-label="Haritada arama">
     <form id="search-form" role="search">
       <label class="sr-only" for="search">Ürün veya mekân ara</label>
-      <input id="search" type="search" placeholder="Ürün, mekân veya şehir ara" autocomplete="off">
+      <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="Ürün, mekân veya şehir ara" autocomplete="off">
       <button type="submit" aria-label="Sonuçları haritada göster"><span aria-hidden="true">⌕</span></button>
     </form>
+    <div id="suggestions" role="listbox" aria-label="Arama önerileri" hidden></div>
     <div id="type-filters" aria-label="Mekân türü"></div>
+    <div id="active-filters" aria-label="Aktif filtreler"></div>
     <p id="search-summary" role="status"></p>
     <p id="status" role="status"></p>
   </section>
+  <button id="search-area" hidden>Bu bölgede ara</button>
   <aside id="sidebar">
+    <button id="sheet-handle" aria-label="Sonuç panelini büyüt" aria-expanded="false"><span aria-hidden="true"></span><span id="sheet-label">Sonuçlar</span></button>
+    <div class="drawer-content">
     <header>
       <h1>Türk Ürünleri Haritası</h1>
       <p class="subtitle">Yurt dışında Türk ürünlerini nerede bulursun?</p>
@@ -44,6 +49,7 @@
     <footer>
       <a href="https://github.com/CanCanKocaCan/turk-urunleri-haritasi" target="_blank" rel="noopener">Kaynak kodu</a>
     </footer>
+    </div>
   </aside>
 
   <main id="map" aria-label="Mekân haritası"></main>
