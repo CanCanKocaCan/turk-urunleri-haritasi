@@ -18,7 +18,8 @@
       "Lokum"
     ],
     "source": "https://order.halalpidehouse.com.au/",
-    "id": "avustralya-canberra-1"
+    "id": "avustralya-canberra-1",
+    "state": "ACT"
   },
   {
     "name": "Turkish Pide House Woden",
@@ -30,7 +31,8 @@
     "lng": 149.08447,
     "products": [],
     "source": "https://www.openstreetmap.org/node/1814424698",
-    "id": "avustralya-canberra-2"
+    "id": "avustralya-canberra-2",
+    "state": "ACT"
   },
   {
     "name": "Belco Halal Kebabs and Pizzeria",
@@ -51,6 +53,7 @@
       "Ayran"
     ],
     "source": "https://order.kebabsinbelco.com.au/",
-    "id": "avustralya-canberra-3"
+    "id": "avustralya-canberra-3",
+    "state": "ACT"
   }
 ]

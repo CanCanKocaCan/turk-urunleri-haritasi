@@ -55,14 +55,15 @@ test('filter chips are removable while drawer is closed and reset clears them',a
 });
 test('area search snapshots bounds, persists in URL and can be removed or restored',async t=>{
  const {dom,w,d,events}=await setup();t.after(()=>dom.window.close());
+ const total=d.querySelectorAll('.result-card').length;
  events.moveend();assert.equal(d.getElementById('search-area').hidden,false);
  d.getElementById('search-area').click();assert.equal(d.querySelectorAll('.result-card').length,4);
  assert.equal(d.getElementById('search-area').hidden,true);assert.ok(w.location.search.includes('bounds='));
  const url=w.location.href;
  events.moveend();assert.equal(d.querySelectorAll('.result-card').length,4);
- d.querySelector('[aria-label="Haritadaki bölge filtresini kaldır"]').click();assert.equal(d.querySelectorAll('.result-card').length,64);
+ d.querySelector('[aria-label="Haritadaki bölge filtresini kaldır"]').click();assert.equal(d.querySelectorAll('.result-card').length,total);
  const restored=await setup(url);t.after(()=>restored.dom.window.close());assert.equal(restored.d.querySelectorAll('.result-card').length,4);
- const invalid=await setup('https://example.com/?bounds=broken');t.after(()=>invalid.dom.window.close());assert.equal(invalid.d.querySelectorAll('.result-card').length,64);
+ const invalid=await setup('https://example.com/?bounds=broken');t.after(()=>invalid.dom.window.close());assert.equal(invalid.d.querySelectorAll('.result-card').length,total);
 });
 test('area handles antimeridian and excludes unlocated records',async t=>{
  const {dom,run}=await setup();t.after(()=>dom.window.close());
@@ -135,4 +136,35 @@ test('contribution closes by top X or backdrop; inside interaction preserves for
  dialog.dispatchEvent(new w.MouseEvent('click',{bubbles:true,clientX:20,clientY:20}));assert.equal(dialog.open,false);
  assert.equal(d.querySelector('[name=place]').value,'Taslak');
  d.getElementById('contribute').click();d.getElementById('close-contribution').click();assert.equal(dialog.open,false);
+});
+test('US state filter narrows cities, combines with search and restores shared state',async t=>{
+ const {dom,w,d,input}=await setup('https://example.com/?country=ABD&state=NJ');t.after(()=>dom.window.close());
+ const state=d.getElementById('state'),city=d.getElementById('city');
+ assert.equal(state.disabled,false);assert.equal(state.value,'NJ');assert.equal(d.querySelectorAll('.result-card').length,10);
+ assert.ok([...city.options].some(o=>o.value==='Paterson'));assert.ok(![...city.options].some(o=>o.value==='New York'));
+ input('sultan');assert.equal(d.querySelectorAll('.result-card').length,1);assert.match(w.location.search,/state=NJ/);
+ const restored=await setup(w.location.href);t.after(()=>restored.dom.window.close());assert.equal(restored.d.querySelectorAll('.result-card').length,1);
+ d.getElementById('reset').click();
+ const country=d.getElementById('country');country.value='ABD';country.dispatchEvent(new w.Event('change'));
+ state.value='NY';state.dispatchEvent(new w.Event('change'));
+ assert.equal(d.querySelectorAll('.result-card').length,6);assert.deepEqual([...city.options].map(o=>o.value),['','New York']);
+ d.getElementById('panel-toggle').click();d.querySelector('[aria-label="New York (NY) filtresini kaldır"]').click();assert.equal(state.value,'');assert.equal(d.querySelectorAll('.result-card').length,20);
+});
+test('Australian states and ACT use country-specific options and reset incompatible cities',async t=>{
+ const {dom,w,d}=await setup('https://example.com/?country=Avustralya&state=SA&city=Adelaide');t.after(()=>dom.window.close());
+ const state=d.getElementById('state'),country=d.getElementById('country'),city=d.getElementById('city');
+ assert.equal(state.value,'SA');assert.equal(city.value,'Adelaide');assert.equal(d.querySelectorAll('.result-card').length,4);
+ state.value='ACT';state.dispatchEvent(new w.Event('change'));assert.equal(city.value,'');assert.equal(d.querySelectorAll('.result-card').length,3);
+ assert.ok(![...state.options].some(o=>o.value==='NJ'));
+ country.value='ABD';country.dispatchEvent(new w.Event('change'));assert.equal(state.value,'');assert.equal(city.value,'');
+ assert.ok([...state.options].some(o=>o.value==='NJ'));assert.ok(![...state.options].some(o=>o.value==='SA'));
+ country.value='Japonya';country.dispatchEvent(new w.Event('change'));assert.equal(state.disabled,true);assert.equal(d.getElementById('state-filter').hidden,true);assert.equal(state.value,'');
+});
+test('state suggestions, legacy NJ links and stable place IDs survive city migration',async t=>{
+ const {dom,d,input}=await setup();t.after(()=>dom.window.close());
+ input('New Jersey');const options=d.querySelectorAll('#suggestions [role=option]');assert.equal(options.length,1);options[0].click();
+ assert.equal(d.getElementById('country').value,'ABD');assert.equal(d.getElementById('state').value,'NJ');assert.equal(d.getElementById('search').value,'');assert.equal(d.querySelectorAll('.result-card').length,10);
+ const legacy=await setup('https://example.com/?country=ABD&city=New%20Jersey&place=abd-new-jersey-2');t.after(()=>legacy.dom.window.close());
+ assert.equal(legacy.d.getElementById('state').value,'NJ');assert.match(legacy.d.getElementById('place-detail').textContent,/Taskin Bakery/);assert.match(legacy.d.getElementById('place-detail').textContent,/Paterson, New Jersey, ABD/);
+ const invalid=await setup('https://example.com/?country=Avustralya&state=NJ');t.after(()=>invalid.dom.window.close());assert.equal(invalid.d.getElementById('state').value,'');
 });

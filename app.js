@@ -27,6 +27,8 @@ function typeInfo(market) {
 let markets = [];
 const cluster = L.markerClusterGroup().addTo(map);
 const countrySelect = document.getElementById("country");
+const stateSelect = document.getElementById("state");
+let regions = {};
 const citySelect = document.getElementById("city");
 const status = document.getElementById("status");
 let mode = "all", selectedId = "", position = null;
@@ -79,7 +81,7 @@ function popupHtml(market) {
   return `
     <strong>${escapeHtml(market.name)}</strong><br>
     <small>${type.icon} ${type.label}</small><br>
-    ${escapeHtml(market.city)}, ${escapeHtml(market.country)}<br>
+    ${escapeHtml(locationLabel(market))}<br>
     ${market.address ? `<small>${escapeHtml(market.address)}</small><br>` : ""}
     ${warningHtml(market)}
     <div class="products">${productTags(market.products, market)}</div>${links(market)}
@@ -95,11 +97,12 @@ function matches(market, query) {
   if (!inArea(market)) return false;
   if (selectedType && market.type !== selectedType) return false;
   if (countrySelect.value && market.country !== countrySelect.value) return false;
+  if (stateSelect.value && market.state !== stateSelect.value) return false;
   if (citySelect.value && market.city !== citySelect.value) return false;
   if (mode === "product" && !["market", "firin"].includes(market.type)) return false;
   if (!query) return true;
   const haystack = normalize(
-    (mode === "product" ? market.products : mode === "place" ? [market.name, market.city, market.country, typeInfo(market).label] : [market.name, market.city, market.country, typeInfo(market).label, ...market.products]).join(" ")
+    (mode === "product" ? market.products : mode === "place" ? [market.name, market.city, market.state || "", stateName(market), market.country, typeInfo(market).label] : [market.name, market.city, market.state || "", stateName(market), market.country, typeInfo(market).label, ...market.products]).join(" ")
   );
   return haystack.includes(normalize(query));
 }
@@ -122,7 +125,7 @@ function render() {
     open.addEventListener('focus', () => highlightMarket(market.id));
     open.addEventListener('blur', () => highlightMarket(selectedId));
     open.setAttribute("aria-label", `${market.name}, ${market.city}: ayrıntıları göster`);
-    open.innerHTML = `<span class="result-icon" aria-hidden="true">${typeInfo(market).icon}</span><span><strong>${escapeHtml(market.name)}</strong><span class="market-location">${typeInfo(market).label} · ${escapeHtml(market.city)}, ${escapeHtml(market.country)}</span><span class="preview-products">${escapeHtml(market.products.slice(0,3).join(" · "))}</span>${market.products.length ? freshnessHtml(Object.values(market.productEvidence || {}).map(e => e.lastSeen).filter(Boolean).sort().at(-1)) : ""}${hasLocation(market) ? "" : '<span class="market-location">Konum eklenecek</span>'}${position && hasLocation(market) ? `<span class="market-location">${distance(market).toFixed(1)} km</span>` : ""}</span>`;
+    open.innerHTML = `<span class="result-icon" aria-hidden="true">${typeInfo(market).icon}</span><span><strong>${escapeHtml(market.name)}</strong><span class="market-location">${typeInfo(market).label} · ${escapeHtml(locationLabel(market))}</span><span class="preview-products">${escapeHtml(market.products.slice(0,3).join(" · "))}</span>${market.products.length ? freshnessHtml(Object.values(market.productEvidence || {}).map(e => e.lastSeen).filter(Boolean).sort().at(-1)) : ""}${hasLocation(market) ? "" : '<span class="market-location">Konum eklenecek</span>'}${position && hasLocation(market) ? `<span class="market-location">${distance(market).toFixed(1)} km</span>` : ""}</span>`;
     open.onclick = () => selectMarket(market, true);
     li.appendChild(open);
     list.appendChild(li);
@@ -179,7 +182,8 @@ async function fetchJson(url) {
 async function init() {
   try {
     // data/index.json { "ülke": ["şehir", ...] } -> her şehir data/<ülke>/<şehir>.json dosyasında
-    const index = await fetchJson("data/index.json");
+    const [index, regionData] = await Promise.all([fetchJson("data/index.json"),fetchJson("data/regions.json")]);
+    regions = regionData;
     const files = Object.entries(index).flatMap(([country, cities]) =>
       cities.map((city) => `data/${country}/${city}.json`)
     );
@@ -213,19 +217,24 @@ function distance(m) {
 }
 function syncUrl() {
   const p = new URLSearchParams();
-  for (const [k,v] of Object.entries({q:searchInput.value, country:countrySelect.value, city:citySelect.value, type:selectedType, mode:mode === 'all' ? '' : mode, place:selectedId})) if(v) p.set(k,v);
+  for (const [k,v] of Object.entries({q:searchInput.value, country:countrySelect.value, state:stateSelect.value, city:citySelect.value, type:selectedType, mode:mode === 'all' ? '' : mode, place:selectedId})) if(v) p.set(k,v);
   if (areaBounds) p.set('bounds', [areaBounds.getSouth(), areaBounds.getWest(), areaBounds.getNorth(), areaBounds.getEast()].join(','));
   history.replaceState(null,'',`${location.pathname}${p.size ? '?'+p : ''}`);
 }
 function updateCities() {
   const previous = citySelect.value; citySelect.replaceChildren(new Option('Tüm şehirler',''));
-  for(const city of [...new Set(markets.filter(m => !countrySelect.value || m.country === countrySelect.value).map(m => m.city))].sort()) citySelect.add(new Option(city,city));
+  for(const city of [...new Set(markets.filter(m => (!countrySelect.value || m.country === countrySelect.value) && (!stateSelect.value || m.state === stateSelect.value)).map(m => m.city))].sort()) citySelect.add(new Option(city,city));
   citySelect.value = [...citySelect.options].some(o => o.value === previous) ? previous : '';
 }
 function restoreUrl() {
   const p = new URLSearchParams(location.search);
   areaBounds = parseAreaBounds(p.get('bounds'));
-  searchInput.value = p.get('q') || ''; countrySelect.value = p.get('country') || ''; updateCities(); citySelect.value = p.get('city') || '';
+  searchInput.value = p.get('q') || ''; countrySelect.value = p.get('country') || '';
+  // Older links used New Jersey as a city grouping; retain their meaning.
+  const legacyNJ = countrySelect.value === 'ABD' && p.get('city') === 'New Jersey';
+  updateStates(); stateSelect.value = legacyNJ ? 'NJ' : p.get('state') || '';
+  if(![...stateSelect.options].some(o=>o.value===stateSelect.value))stateSelect.value='';
+  updateCities(); citySelect.value = legacyNJ ? '' : p.get('city') || '';
   selectedType = TYPES[p.get('type')] ? p.get('type') : null;
   mode = ['product','place'].includes(p.get('mode')) ? p.get('mode') : 'all'; selectedId = p.get('place') || '';
   renderModes(); renderTypeFilters(); render();
@@ -247,7 +256,7 @@ function showDetail(m) {
   detail.hidden = !m; list.hidden = !!m;
   document.getElementById('result-count').hidden = !!m;
   if (!m) { detail.replaceChildren(); return; }
-  detail.innerHTML = `<button id="back-results">← Sonuçlara dön</button><div class="place-hero" aria-hidden="true">${typeInfo(m).icon}</div><h2 tabindex="-1">${escapeHtml(m.name)}</h2><p class="market-location">${typeInfo(m).label} · ${escapeHtml(m.city)}, ${escapeHtml(m.country)}</p>${links(m)}<p>${escapeHtml(m.address || 'Açık adres henüz eklenmedi.')}</p>${hasLocation(m) ? '' : '<p>Harita konumu henüz eklenmedi. Yol tarifi adres aramasıyla açılır.</p>'}${warningHtml(m)}<h3>Ürünler ve güncellik</h3><div class="products">${productTags(m.products,m,true)}</div><p class="stock-note">Görülme tarihi stok garantisi değildir. Gitmeden önce işletmeyle kontrol et.</p><div class="detail-tools"><button id="detail-share">Paylaş</button><button id="detail-report">Bilgi düzelt / ürün bildir</button></div>`;
+  detail.innerHTML = `<button id="back-results">← Sonuçlara dön</button><div class="place-hero" aria-hidden="true">${typeInfo(m).icon}</div><h2 tabindex="-1">${escapeHtml(m.name)}</h2><p class="market-location">${typeInfo(m).label} · ${escapeHtml(locationLabel(m))}</p>${links(m)}<p>${escapeHtml(m.address || 'Açık adres henüz eklenmedi.')}</p>${hasLocation(m) ? '' : '<p>Harita konumu henüz eklenmedi. Yol tarifi adres aramasıyla açılır.</p>'}${warningHtml(m)}<h3>Ürünler ve güncellik</h3><div class="products">${productTags(m.products,m,true)}</div><p class="stock-note">Görülme tarihi stok garantisi değildir. Gitmeden önce işletmeyle kontrol et.</p><div class="detail-tools"><button id="detail-share">Paylaş</button><button id="detail-report">Bilgi düzelt / ürün bildir</button></div>`;
   document.getElementById('back-results').onclick = () => { selectedId=''; syncUrl(); showDetail(); highlightMarket(''); list.querySelector('button')?.focus(); };
   detail.querySelectorAll('.seen-product').forEach(button => button.onclick = () => openSeenForm(m, button.dataset.product));
   document.getElementById('detail-share').onclick = shareUrl;
@@ -283,9 +292,10 @@ function renderModes() {
   document.querySelectorAll('[data-mode]').forEach(b => { b.setAttribute('aria-pressed',String(b.dataset.mode===mode)); b.classList.toggle('active',b.dataset.mode===mode); });
 }
 document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode=b.dataset.mode; selectedType=null; selectedId=''; renderModes(); renderTypeFilters(); render(); fitResults(); });
-countrySelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; updateCities(); render(); fitResults(); };
+countrySelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; stateSelect.value=''; citySelect.value=''; updateStates(); updateCities(); render(); fitResults(); };
+stateSelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; citySelect.value=''; updateCities(); render(); fitResults(); };
 citySelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; render(); fitResults(); };
-document.getElementById('reset').onclick = () => { searchInput.value=''; countrySelect.value=''; updateCities(); citySelect.value=''; selectedType=null; selectedId=''; mode='all'; position=null; areaBounds=null; closeSuggestions(); status.textContent=''; renderModes(); renderTypeFilters(); render(); fitResults(); };
+document.getElementById('reset').onclick = () => { searchInput.value=''; countrySelect.value=''; stateSelect.value=''; updateStates(); updateCities(); citySelect.value=''; selectedType=null; selectedId=''; mode='all'; position=null; areaBounds=null; closeSuggestions(); status.textContent=''; renderModes(); renderTypeFilters(); render(); fitResults(); };
 window.addEventListener('popstate', restoreUrl);
 async function shareUrl() {
   try { await navigator.clipboard.writeText(location.href); status.textContent='Bağlantı kopyalandı.'; }
@@ -296,7 +306,7 @@ document.getElementById('nearby').onclick = () => {
   if(!navigator.geolocation) { status.textContent='Bu tarayıcı konumu desteklemiyor. Şehir filtresini kullanabilirsin.'; return; }
   status.textContent='Konum izni bekleniyor…';
   navigator.geolocation.getCurrentPosition(p => {
-    position=[p.coords.latitude,p.coords.longitude]; selectedId=''; areaBounds=null; countrySelect.value=''; updateCities(); citySelect.value='';
+    position=[p.coords.latitude,p.coords.longitude]; selectedId=''; areaBounds=null; countrySelect.value=''; stateSelect.value=''; updateStates(); updateCities(); citySelect.value='';
     render(); const closest=markets.filter(m => matches(m,searchInput.value.trim()) && hasLocation(m)).sort((a,b)=>distance(a)-distance(b))[0];
     if(closest) map.fitBounds([position,[closest.lat,closest.lng]],{...mapPadding(),maxZoom:13});
     status.textContent='Sonuçlar kuş uçuşu mesafeye göre sıralandı. Konumun kaydedilmez veya katkı sunucusuna gönderilmez.';
@@ -305,7 +315,7 @@ document.getElementById('nearby').onclick = () => {
 const dialog=document.getElementById('contribution'), form=document.getElementById('contribution-form');
 function openForm(m) {
   closeSuggestions();
-  form.reset(); form.elements.place.value=m?.name || ''; form.elements.location.value=m ? `${m.city}, ${m.country}` : '';
+  form.reset(); form.elements.place.value=m?.name || ''; form.elements.location.value=m ? locationLabel(m) : '';
   form.elements.observedAt.max=new Date().toLocaleDateString('en-CA');
   document.getElementById('form-status').textContent=window.APP_CONFIG?.contributionEndpoint ? '' : 'Çevrimiçi gönderim henüz yapılandırılmadı. Önerini dosya olarak indirebilirsin.';
   dialog.showModal();
@@ -368,7 +378,8 @@ function renderActiveFilters() {
     container.appendChild(button);
   };
   if (searchInput.value.trim()) add(`Arama: ${searchInput.value.trim()}`, () => searchInput.value='');
-  if (countrySelect.value) add(countrySelect.value, () => {countrySelect.value='';updateCities();});
+  if (countrySelect.value) add(countrySelect.value, () => {countrySelect.value='';stateSelect.value='';updateStates();updateCities();});
+  if (stateSelect.value) add(`${regions[countrySelect.value][stateSelect.value]} (${stateSelect.value})`, () => {stateSelect.value='';updateCities();});
   if (citySelect.value) add(citySelect.value, () => citySelect.value='');
   if (selectedType) add(TYPES[selectedType].label, () => selectedType=null);
   if (mode !== 'all') add(mode === 'product' ? 'Ürün bul' : 'Mekân bul', () => mode='all');
@@ -391,8 +402,9 @@ function renderSuggestions() {
   const includes = value => normalize(value).includes(query);
   const groups = [
     ['Ürünler', [...new Set(pool.filter(m => ['market','firin'].includes(m.type)).flatMap(m => m.products))].filter(includes).slice(0,4).map(label => ({kind:'product',label}))],
-    ['Mekânlar', pool.filter(m => includes(m.name)).slice(0,4).map(m => ({kind:'place',label:m.name,description:`${m.city}, ${m.country}`,market:m}))],
-    ['Şehirler', [...new Map(pool.map(m => [`${m.country}/${m.city}`,{kind:'city',label:m.city,country:m.country}])).values()].filter(x => includes(x.label)).slice(0,4)]
+    ['Mekânlar', pool.filter(m => includes(m.name)).slice(0,4).map(m => ({kind:'place',label:m.name,description:locationLabel(m),market:m}))],
+    ['Eyaletler / bölgeler', [...new Map(pool.filter(m=>m.state).map(m=>[`${m.country}/${m.state}`,{kind:'state',label:stateName(m),country:m.country,state:m.state}])).values()].filter(x=>includes(x.label)||includes(x.state)).slice(0,4)],
+    ['Şehirler', [...new Map(pool.map(m => [`${m.country}/${m.state || ''}/${m.city}`,{kind:'city',label:m.city,country:m.country,state:m.state,description:stateName(m) ? `${stateName(m)}, ${m.country}` : m.country}])).values()].filter(x => includes(x.label)).slice(0,4)]
   ];
   for (const [label, items] of groups) {
     if (!items.length) continue;
@@ -417,8 +429,8 @@ function renderSuggestions() {
 function chooseSuggestion(index) {
   const item=suggestionItems[index];if(!item)return;
   selectedId='';
-  if(item.kind==='city') {
-    areaBounds=null;countrySelect.value=item.country;updateCities();citySelect.value=item.label;
+  if(item.kind==='city'||item.kind==='state') {
+    areaBounds=null;countrySelect.value=item.country;updateStates();stateSelect.value=item.state || '';updateCities();citySelect.value=item.kind==='city'?item.label:'';
     searchInput.value='';mode='all';
   } else {searchInput.value=item.label;mode=item.kind==='product'?'product':'place';}
   closeSuggestions();renderModes();renderTypeFilters();render();fitResults();
@@ -541,3 +553,18 @@ dialog.addEventListener('click',e=>{
   if(backdropPointer&&e.target===dialog&&outsideDialog(e))dialog.close();
   backdropPointer=false;
 });
+function stateName(m) { return regions[m.country]?.[m.state] || ''; }
+function locationLabel(m) { return [m.city,stateName(m),m.country].filter(Boolean).join(', '); }
+function updateStates() {
+  const previous=stateSelect.value;
+  stateSelect.replaceChildren(new Option('Tüm eyaletler / bölgeler',''));
+  const enabled=!!regions[countrySelect.value];
+  document.getElementById('state-filter').hidden=!enabled;
+  stateSelect.disabled=!enabled;
+  if(enabled) {
+    const used=[...new Set(markets.filter(m=>m.country===countrySelect.value).map(m=>m.state).filter(Boolean))];
+    used.sort((a,b)=>regions[countrySelect.value][a].localeCompare(regions[countrySelect.value][b],'en'));
+    for(const code of used)stateSelect.add(new Option(`${regions[countrySelect.value][code]} (${code})`,code));
+  }
+  stateSelect.value=enabled&&[...stateSelect.options].some(o=>o.value===previous)?previous:'';
+}

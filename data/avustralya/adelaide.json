@@ -12,7 +12,8 @@
       "Asperox Sarı Güç",
       "Asperox Mavi Güç"
     ],
-    "id": "avustralya-adelaide-1"
+    "id": "avustralya-adelaide-1",
+    "state": "SA"
   },
   {
     "name": "Istanbul Lounge",
@@ -26,7 +27,8 @@
       "Künefe",
       "Baklava"
     ],
-    "id": "avustralya-adelaide-2"
+    "id": "avustralya-adelaide-2",
+    "state": "SA"
   },
   {
     "name": "Hatun Cafe",
@@ -46,7 +48,8 @@
       "İrmik tatlısı"
     ],
     "source": "https://www.openstreetmap.org/node/12094828212",
-    "id": "avustralya-adelaide-3"
+    "id": "avustralya-adelaide-3",
+    "state": "SA"
   },
   {
     "name": "Ottoman Grill",
@@ -63,6 +66,7 @@
       "Meze"
     ],
     "source": "https://maps.app.goo.gl/FCVXJubG4jVMkCFFA",
-    "id": "avustralya-adelaide-4"
+    "id": "avustralya-adelaide-4",
+    "state": "SA"
   }
 ]

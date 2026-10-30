@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Anatolia Market Halal Meat And Grocery",
+    "type": "market",
+    "city": "Wayne",
+    "country": "ABD",
+    "address": "29 NJ-23 (Newark-Pompton Turnpike), Wayne, NJ 07470",
+    "lat": 40.88837,
+    "lng": -74.24867,
+    "products": [],
+    "source": "https://maps.app.goo.gl/DQhPuqAZHDRY3egz8",
+    "verified": false,
+    "note": "Proje sahibinin önerisi; ürünleri ve Türk bağlantısı henüz doğrulanmadı.",
+    "id": "abd-new-jersey-1",
+    "state": "NJ"
+  }
+]

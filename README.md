@@ -56,7 +56,13 @@ Haftada bir çalışan bir Claude agent'ı yeni yerler arar, doğrular ve PR aç
 ## Keşif ve paylaşım
 
 Ürün bul modu market ve fırınlardaki ürünleri arar; Mekân bul modu işletme adı,
-şehir, ülke ve türü arar. Ülke, şehir, tür ve arama birlikte filtrelenir.
+şehir, ülke ve türü arar. Ülke, eyalet/bölge, şehir, tür ve arama birlikte filtrelenir.
+ABD ve Avustralya seçildiğinde yalnızca kayıt bulunan eyaletler/bölgeler listelenir.
+`state` kodları `data/regions.json` içinde tanımlıdır ve bu iki ülkenin kayıtlarında zorunludur.
+Örnekler: `country: "ABD", state: "NJ", city: "Paterson"`;
+`country: "Avustralya", state: "ACT", city: "Canberra"`.
+New Jersey artık şehir değildir; kayıtlar gerçek kasaba/şehir dosyalarına taşındı.
+Mevcut mekân id değerleri ve eski `country=ABD&city=New Jersey` bağlantıları korunur.
 Yakınımdakiler yalnızca kullanıcı düğmeye bastığında konum ister; konum URL'ye,
 katkı servisine veya kalıcı depolamaya yazılmaz. Mesafeler kuş uçuşudur.
 Paylaş bağlantıları filtreleri veya seçili mekânın kalıcı `id` değerini taşır.

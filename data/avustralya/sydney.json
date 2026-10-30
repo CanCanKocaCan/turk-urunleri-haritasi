@@ -14,7 +14,8 @@
       "Mantı"
     ],
     "source": "https://turkuazkitchen.com.au/",
-    "id": "avustralya-sydney-1"
+    "id": "avustralya-sydney-1",
+    "state": "NSW"
   },
   {
     "name": "The Sultan's Table",
@@ -26,7 +27,8 @@
     "lng": 151.17225,
     "products": [],
     "source": "https://www.openstreetmap.org/node/4762860221",
-    "id": "avustralya-sydney-2"
+    "id": "avustralya-sydney-2",
+    "state": "NSW"
   },
   {
     "name": "Anason",
@@ -41,7 +43,8 @@
       "Rakı"
     ],
     "source": "https://www.anason.com.au/",
-    "id": "avustralya-sydney-3"
+    "id": "avustralya-sydney-3",
+    "state": "NSW"
   },
   {
     "name": "Gima Supermarket",
@@ -57,7 +60,8 @@
       "Mantı"
     ],
     "source": "https://www.openstreetmap.org/way/563955282",
-    "id": "avustralya-sydney-4"
+    "id": "avustralya-sydney-4",
+    "state": "NSW"
   },
   {
     "name": "Arzum Market",
@@ -76,7 +80,8 @@
       "Ülker çikolata"
     ],
     "source": "https://www.sbs.com.au/food/article/featured-businesses-turkish/3aovmfzk5",
-    "id": "avustralya-sydney-5"
+    "id": "avustralya-sydney-5",
+    "state": "NSW"
   },
   {
     "name": "Menzil Turkish Bakehouse",
@@ -91,7 +96,8 @@
       "Pide"
     ],
     "source": "https://www.agfg.com.au/restaurant/menzil-turkish-bakehouse-85576",
-    "id": "avustralya-sydney-6"
+    "id": "avustralya-sydney-6",
+    "state": "NSW"
   },
   {
     "name": "Sultan Turkish Pide & Kebab House",
@@ -108,7 +114,8 @@
       "Türk pizzası"
     ],
     "source": "http://www.sultankebabs.net",
-    "id": "avustralya-sydney-7"
+    "id": "avustralya-sydney-7",
+    "state": "NSW"
   },
   {
     "name": "Feast of Istanbul",
@@ -120,7 +127,8 @@
     "lng": 151.20401,
     "products": [],
     "source": "https://www.openstreetmap.org/node/13529274549",
-    "id": "avustralya-sydney-8"
+    "id": "avustralya-sydney-8",
+    "state": "NSW"
   },
   {
     "name": "Konak Turkish Kitchen",
@@ -134,7 +142,8 @@
     "source": "https://www.agfg.com.au/restaurant/konak-79307",
     "verified": false,
     "note": "OSM'de kaydı yok; adres OpenTable, Quandoo ve AGFG'de aynı ama güncel aktiflik doğrulanamadı, koordinat eksik.",
-    "id": "avustralya-sydney-9"
+    "id": "avustralya-sydney-9",
+    "state": "NSW"
   },
   {
     "name": "Kusadasi Turkish Restaurant",
@@ -148,7 +157,8 @@
     "source": "https://www.firsttable.com.au/sydney/inner-west/enmore/kusadasi-turkish-restaurant",
     "verified": false,
     "note": "OSM'de kaydı yok, adres yalnızca First Table ve Wanderlog'da geçiyor; aktiflik doğrulanamadı, koordinat eksik.",
-    "id": "avustralya-sydney-10"
+    "id": "avustralya-sydney-10",
+    "state": "NSW"
   },
   {
     "name": "Maydanoz",
@@ -162,7 +172,8 @@
     "source": "https://concreteplayground.com/sydney/food-drink/efendys-somer-sivriolu-maydanoz-sydney",
     "verified": false,
     "note": "OSM'de kaydı yok; adres Concrete Playground, Time Out ve SBS'te aynı, güncel çalışma saatleri doğrulanamadı.",
-    "id": "avustralya-sydney-11"
+    "id": "avustralya-sydney-11",
+    "state": "NSW"
   },
   {
     "name": "Pasha's Turkish Restaurant",
@@ -176,6 +187,7 @@
     "source": "https://www.theurbanlist.com/sydney/directory/pashas-turkish-restaurant",
     "verified": false,
     "note": "OSM'de kaydı yok; listelerde adres 490/492 King St olarak geçiyor, koordinat eksik.",
-    "id": "avustralya-sydney-12"
+    "id": "avustralya-sydney-12",
+    "state": "NSW"
   }
 ]

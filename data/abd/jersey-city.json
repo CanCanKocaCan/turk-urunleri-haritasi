@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Rumi Turkish Grill",
+    "type": "restoran",
+    "city": "Jersey City",
+    "country": "ABD",
+    "address": "67 Greene St, Jersey City, NJ 07302",
+    "lat": 40.71453,
+    "lng": -74.03626,
+    "products": [
+      "Adana kebap",
+      "Beyti",
+      "Baklava",
+      "Künefe",
+      "Kazandibi"
+    ],
+    "source": "https://rumiturkishgrill.com/",
+    "id": "abd-new-jersey-5",
+    "state": "NJ"
+  }
+]

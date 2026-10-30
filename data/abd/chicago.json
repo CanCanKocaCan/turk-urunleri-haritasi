@@ -15,7 +15,8 @@
       "Künefe"
     ],
     "source": "https://www.openstreetmap.org/node/10567134220",
-    "id": "abd-chicago-1"
+    "id": "abd-chicago-1",
+    "state": "IL"
   },
   {
     "name": "Troy Mediterranean Grill & Turkish Kitchen",
@@ -29,7 +30,8 @@
       "Pide"
     ],
     "source": "https://www.openstreetmap.org/node/4718874637",
-    "id": "abd-chicago-2"
+    "id": "abd-chicago-2",
+    "state": "IL"
   },
   {
     "name": "Turkitch Turkish Kitchen",
@@ -45,7 +47,8 @@
       "Türk çayı"
     ],
     "source": "https://abc7chicago.com/turkish-food-chicago-turkitch-kitchen/5650100/",
-    "id": "abd-chicago-3"
+    "id": "abd-chicago-3",
+    "state": "IL"
   },
   {
     "name": "Istanbul Market & Cafe",
@@ -57,6 +60,7 @@
     "lng": -87.94062,
     "products": [],
     "source": "https://www.zabihah.com/restaurants/ca0289b7-7767-11ef-95ae-6045bdeb9f57/istanbul-market-caf-mount-prospect-il",
-    "id": "abd-chicago-4"
+    "id": "abd-chicago-4",
+    "state": "IL"
   }
 ]
