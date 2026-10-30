@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Turkish Star Kebabs",
+    "type": "restoran",
+    "city": "Tauranga",
+    "country": "Yeni Zelanda",
+    "address": "261D Fraser Street, Merivale, Tauranga 3112",
+    "lat": -37.71385,
+    "lng": 176.15074,
+    "products": ["Kebap"],
+    "source": "https://www.turkishstarskebab.nz"
+  },
+  {
+    "name": "Turkish To Go",
+    "type": "restoran",
+    "city": "Tauranga",
+    "country": "Yeni Zelanda",
+    "address": "Devonport Road, Tauranga Central, Tauranga 3110",
+    "lat": -37.68713,
+    "lng": 176.16905,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/3694565570"
+  }
+]

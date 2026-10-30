@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Turkish Kebabs of Queenstown",
+    "type": "restoran",
+    "city": "Queenstown",
+    "country": "Yeni Zelanda",
+    "address": "34 Shotover Street, Queenstown 9300",
+    "lat": -45.03147,
+    "lng": 168.65995,
+    "products": ["Kuzu kebap", "Falafel", "Baklava"],
+    "source": "https://www.openstreetmap.org/node/11504267269"
+  }
+]

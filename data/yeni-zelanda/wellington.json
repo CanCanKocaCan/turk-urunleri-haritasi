@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Kisa",
+    "type": "restoran",
+    "city": "Wellington",
+    "country": "Yeni Zelanda",
+    "address": "195 Cuba Street, Te Aro, Wellington 6040",
+    "lat": -41.29473,
+    "lng": 174.77512,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/10580674611"
+  }
+]

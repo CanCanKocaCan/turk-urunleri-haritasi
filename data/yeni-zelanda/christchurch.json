@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Best Turkish Food Co",
+    "type": "restoran",
+    "city": "Christchurch",
+    "country": "Yeni Zelanda",
+    "address": "138 Hereford Street, Christchurch Central, Christchurch 8011",
+    "lat": -43.53216,
+    "lng": 172.6374,
+    "products": ["Kebap"],
+    "source": "https://www.openstreetmap.org/node/12523108603"
+  },
+  {
+    "name": "Authentic Turkish Doner Kebabs",
+    "type": "restoran",
+    "city": "Christchurch",
+    "country": "Yeni Zelanda",
+    "address": "Shop 09 Spitfire Square, 544 Memorial Avenue, Christchurch Airport, Christchurch 8053",
+    "lat": -43.4905,
+    "lng": 172.54825,
+    "products": ["Döner kebap"],
+    "source": "https://authenticturkishdonerkebabs.co.nz/"
+  }
+]

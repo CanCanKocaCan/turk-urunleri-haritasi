@@ -31,5 +31,60 @@
     "lng": 151.20128,
     "products": ["Meze", "Rakı"],
     "source": "https://www.anason.com.au/"
+  },
+  {
+    "name": "Gima Supermarket",
+    "type": "market",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "31-35 Queen St, Auburn NSW 2144",
+    "lat": -33.85209,
+    "lng": 151.03363,
+    "products": ["Köfte", "Gözleme", "Mantı"],
+    "source": "https://www.openstreetmap.org/way/563955282"
+  },
+  {
+    "name": "Arzum Market",
+    "type": "market",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "61 Rawson St, Auburn NSW 2144",
+    "lat": null,
+    "lng": null,
+    "products": ["Mantı", "Zeytin", "Baklava", "Bitki çayı", "Mehmet Efendi kahve", "Ülker çikolata"],
+    "source": "https://www.sbs.com.au/food/article/featured-businesses-turkish/3aovmfzk5"
+  },
+  {
+    "name": "Menzil Turkish Bakehouse",
+    "type": "firin",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "40 Auburn Rd, Auburn NSW 2144",
+    "lat": null,
+    "lng": null,
+    "products": ["Simit", "Pide"],
+    "source": "https://www.agfg.com.au/restaurant/menzil-turkish-bakehouse-85576"
+  },
+  {
+    "name": "Sultan Turkish Pide & Kebab House",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "63 Pacific Hwy, Waitara NSW 2077",
+    "lat": -33.71046,
+    "lng": 151.10229,
+    "products": ["Pide", "Kebap", "Falafel", "Türk pizzası"],
+    "source": "http://www.sultankebabs.net"
+  },
+  {
+    "name": "Feast of Istanbul",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "275 Kent St, Sydney NSW 2000",
+    "lat": -33.86553,
+    "lng": 151.20401,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/13529274549"
   }
 ]

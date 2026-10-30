@@ -53,5 +53,16 @@
     "lng": 144.8953,
     "products": ["Kebap", "Meze"],
     "source": "https://www.openstreetmap.org/node/3136427717"
+  },
+  {
+    "name": "Best Turkish Bakery & Kebabs",
+    "type": "firin",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "348 High St, Northcote VIC 3070",
+    "lat": -37.76979,
+    "lng": 144.99909,
+    "products": ["Pide", "Türk ekmeği", "Kebap"],
+    "source": "https://www.openstreetmap.org/node/2365435363"
   }
 ]
