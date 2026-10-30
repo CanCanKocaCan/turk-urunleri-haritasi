@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 // app.js içindeki TYPES ile aynı tutulmalı
-const TYPES = ["market", "restoran", "kafe", "firin"];
+const TYPES = ["market", "restoran", "kafe", "firin", "berber"];
 const REQUIRED_TEXT = ["name", "type", "city", "country"];
 const DUPLICATE_DISTANCE_METERS = 30;
 

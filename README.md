@@ -36,7 +36,7 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 }
 ```
 
-   `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖
+   `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖, `berber` 💈 (berberler için yalnızca Türk sahipli dükkanlar eklenir; `products` alanına verdikleri hizmetler yazılır)
 
    Şehrin dosyası yoksa oluştur ve `data/index.json` içindeki ülkenin listesine ekle (ülke klasörü de yoksa o da eklenir). Ülke ve şehir adları küçük harfli, Türkçe karaktersiz yazılır, boşluk yerine `-` kullanılır: `data/avustralya/gold-coast.json`.
 3. Koordinatları bulmak için Google Maps'te markete sağ tıkla; ilk satırdaki sayılar `lat, lng` değerleridir.

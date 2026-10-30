@@ -16,6 +16,7 @@ const TYPES = {
   restoran: { label: "Restoran", icon: "🍽️" },
   kafe: { label: "Kafe", icon: "☕" },
   firin: { label: "Fırın", icon: "🥖" },
+  berber: { label: "Berber", icon: "💈" },
 };
 const UNKNOWN_TYPE = { label: "Diğer", icon: "📍" };
 

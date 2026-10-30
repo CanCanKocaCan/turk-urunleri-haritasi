@@ -4,7 +4,7 @@ Bu dosya, haftalık çalışan Claude agent'ının talimatlarıdır. Agent'ın d
 
 ## Görev
 
-Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını**, **kafelerini** ve **fırınlarını** bul, doğrula, şehrinin `data/<ülke>/<şehir>.json` dosyasına ekle ve bir Pull Request aç.
+Yurt dışında Türk ürünleri satan **marketleri**, Türk **restoranlarını**, **kafelerini**, **fırınlarını** ve **Türk sahipli berberleri** bul, doğrula, şehrinin `data/<ülke>/<şehir>.json` dosyasına ekle ve bir Pull Request aç.
 
 **Bu çalışmada en fazla 10 yer ekle.** Daha azı tamamen kabul edilebilir. Az ama doğru veri, çok ama hatalı veriden iyidir.
 
@@ -55,6 +55,7 @@ Proje sahibi bu çalışmada, **önceki PR'larda (#1'den bugüne) "Eklenmeyen ad
 
 ### 2. Aday bul
 - Web araması yap. İngilizce ve Türkçe aramalar dene, örneğin: `Turkish grocery Melbourne`, `Turkish restaurant Melbourne`, `Turkish bakery Melbourne`, `Türk marketi Melbourne`, `Turkish cafe künefe Melbourne`.
+- **Berberleri de ara** (`type`: `berber`, kuaför dahil erkek berberi): `Turkish barber <şehir>`, `Turkish barber shop <semt>`, `Türk berber <şehir>`, `Turkish hairdresser <şehir>`. Sahiplik kuralı için Adım 3'teki "Berberler için ek kural"a bak.
 - **Marketleri, fırınları ve kasapları ayrıca semt semt ara.** Bunlar şehir adıyla yapılan aramalarda restoranların altında kaybolur. Türklerin yoğun yaşadığı semtleri kullan, örneğin:
   - Melbourne: Broadmeadows, Coburg, Brunswick, Roxburgh Park, Campbellfield, Meadow Heights, Dandenong, Sunshine
   - Sydney: Auburn, Lakemba, Granville, Bankstown, Prestons, Liverpool
@@ -88,6 +89,18 @@ Bir yeri ancak bunların **hepsi** sağlanıyorsa ekle:
 - Google Maps sayfalarını çekme.
 
 Bunların dışında emin olmadığın bir yeri eklemek yerine, PR notunda ⚠️ ile işaretleyerek ekleyebilirsin.
+
+**Berberler için ek kural (gevşetilmez):** Berber eklemek için dükkanın **Türk sahipli** olduğuna dair **açık bir ifade** gerekir. Aşağıdakilerden biri yeterli:
+- İşletmenin kendi sitesi ya da resmî sosyal medya hesabı "Türk sahipli/Turkish-owned", "Türk berber", "sahibi Türkiye'den" gibi bir şey söylüyor.
+- Güvenilir bir rehber, haber ya da topluluk listesi dükkanı Türk sahipli olarak açıkça tanımlıyor.
+- İşletmenin kendi sayfası Türkçe yayın yapıyor ve Türk topluluğuna hitap ediyor (Türkçe site/gönderi).
+
+Şunlar **yeterli değildir**, bu durumda ekleme ve "Eklenmeyen adaylar"a "sahiplik doğrulanamadı" diye yaz:
+- Dükkan adında ya da hizmetlerinde "Turkish" geçmesi (ör. "Turkish shave", "Turkish style fade", "Turkish barber" bir tıraş tarzı/modası olarak yaygındır ve sahibin Türk olduğunu göstermez).
+- Dükkan adının ya da çalışan/sahip isminin Türkçe duyulması. **İsimden etnik köken tahmin etme.**
+- Mekânın Türk mahallesinde olması.
+
+Berberlerde D yolu (doğrulanmamış) **kullanılamaz**: sahiplik kanıtı olmayan berber hiçbir koşulda eklenmez. `products` alanına yalnızca kaynakta açıkça yazan hizmetleri Türkçe yaz (ör. "Saç kesimi", "Sakal tıraşı", "Damat tıraşı", "Ağda"), yoksa boş bırak. Sahiplerin kişisel bilgilerini (ad, telefon, ev adresi) verilere ya da PR'a yazma; yalnızca işletme bilgisi.
 
 ### 4. Koordinatları bul
 - OpenStreetMap kaydı varsa oradaki koordinatı kullan.
@@ -123,7 +136,7 @@ Her yeri **kendi şehrinin dosyasındaki** listenin sonuna bu formatta ekle (ör
 
 - Doğrulanmamış (D yolu) kayıtlara iki alan daha eklenir: `"verified": false` ve `"note": "Neden doğrulanamadığı, tek cümle."`. Bu alanlar doğrulanmış kayıtlarda **hiç bulunmaz** (`"verified": true` yazma).
 - Koordinatı bulunamayan yerde `lat` ve `lng` birlikte `null` olur (biri sayı, diğeri null olamaz). Doğrulama betiği buna izin verir.
-- `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) veya `firin` (fırın, pastane, börekçi).
+- `type`: `market` (market, kasap, şarküteri), `restoran`, `kafe` (kafe, tatlıcı, kahveci) `firin` (fırın, pastane, börekçi) veya `berber` (Türk sahipli berber/kuaför).
 - `country`: Türkçe ülke adı (ör. "Avustralya").
 - **Şehrin dosyası henüz yoksa** oluştur (liste biçiminde `[ ... ]`) ve `data/index.json` içinde ülkenin listesine ekle (ülke yoksa ekle). Dosya adları küçük harfli, Türkçe karaktersiz, boşluk yerine `-` olur: `data/avustralya/gold-coast.json`. `index.json`'da listelenmeyen şehir dosyası sitede görünmez ve kontrol hata verir.
 - Mevcut kayıtlara ve `data/` dışındaki dosyalara **dokunma**.
