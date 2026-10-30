@@ -8,7 +8,8 @@
     "lat": -41.29473,
     "lng": 174.77512,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/10580674611"
+    "source": "https://www.openstreetmap.org/node/10580674611",
+    "id": "yeni-zelanda-wellington-1"
   },
   {
     "name": "Cafe Istanbul",
@@ -21,6 +22,7 @@
     "products": [],
     "source": "https://concreteplayground.com/wellington/restaurants/cafe-istanbul",
     "verified": false,
-    "note": "OSM'de kaydı yok, adres Concrete Playground ve Localist'te geçiyor; güncel aktiflik doğrulanamadı."
+    "note": "OSM'de kaydı yok, adres Concrete Playground ve Localist'te geçiyor; güncel aktiflik doğrulanamadı.",
+    "id": "yeni-zelanda-wellington-2"
   }
 ]

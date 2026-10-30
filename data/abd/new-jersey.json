@@ -10,7 +10,8 @@
     "products": [],
     "source": "https://maps.app.goo.gl/DQhPuqAZHDRY3egz8",
     "verified": false,
-    "note": "Proje sahibinin önerisi; ürünleri ve Türk bağlantısı henüz doğrulanmadı."
+    "note": "Proje sahibinin önerisi; ürünleri ve Türk bağlantısı henüz doğrulanmadı.",
+    "id": "abd-new-jersey-1"
   },
   {
     "name": "Taskin Bakery",
@@ -24,7 +25,8 @@
       "Pide",
       "Türk çayı"
     ],
-    "source": "https://www.taskinbakery.com/"
+    "source": "https://www.taskinbakery.com/",
+    "id": "abd-new-jersey-2"
   },
   {
     "name": "Kral Pide",
@@ -38,7 +40,8 @@
       "Pide",
       "Lahmacun"
     ],
-    "source": "https://www.openstreetmap.org/node/13016434501"
+    "source": "https://www.openstreetmap.org/node/13016434501",
+    "id": "abd-new-jersey-3"
   },
   {
     "name": "Star Pide Salonu",
@@ -52,7 +55,8 @@
       "Pide",
       "Lahmacun"
     ],
-    "source": "https://www.openstreetmap.org/way/1219543442"
+    "source": "https://www.openstreetmap.org/way/1219543442",
+    "id": "abd-new-jersey-4"
   },
   {
     "name": "Rumi Turkish Grill",
@@ -69,7 +73,8 @@
       "Künefe",
       "Kazandibi"
     ],
-    "source": "https://rumiturkishgrill.com/"
+    "source": "https://rumiturkishgrill.com/",
+    "id": "abd-new-jersey-5"
   },
   {
     "name": "Istanbul Food Bazaar",
@@ -84,6 +89,7 @@
       "Hamur işleri",
       "Atıştırmalıklar"
     ],
-    "source": "https://www.zabihah.com/restaurants/cab670ad-7767-11ef-95ae-6045bdeb9f57/istanbul-food-bazaar-clifton-nj"
+    "source": "https://www.zabihah.com/restaurants/cab670ad-7767-11ef-95ae-6045bdeb9f57/istanbul-food-bazaar-clifton-nj",
+    "id": "abd-new-jersey-6"
   }
 ]

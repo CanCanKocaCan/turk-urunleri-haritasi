@@ -13,7 +13,8 @@
       "Kebap",
       "Baklava"
     ],
-    "source": "https://www.openstreetmap.org/way/167161761"
+    "source": "https://www.openstreetmap.org/way/167161761",
+    "id": "avustralya-perth-1"
   },
   {
     "name": "Ankara Kebabs and Bakery",
@@ -24,7 +25,8 @@
     "lat": -31.9251,
     "lng": 115.88129,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/4195540237"
+    "source": "https://www.openstreetmap.org/node/4195540237",
+    "id": "avustralya-perth-2"
   },
   {
     "name": "Istanbul Kitchen",
@@ -35,6 +37,7 @@
     "lat": -31.93321,
     "lng": 115.85935,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/4056130278"
+    "source": "https://www.openstreetmap.org/node/4056130278",
+    "id": "avustralya-perth-3"
   }
 ]

@@ -7,7 +7,12 @@
     "address": "1/176 Henley Beach Rd, Torrensville SA 5031",
     "lat": -34.9237,
     "lng": 138.56179,
-    "products": ["Beypazarı maden suyu", "Asperox Sarı Güç", "Asperox Mavi Güç"]
+    "products": [
+      "Beypazarı maden suyu",
+      "Asperox Sarı Güç",
+      "Asperox Mavi Güç"
+    ],
+    "id": "avustralya-adelaide-1"
   },
   {
     "name": "Istanbul Lounge",
@@ -17,7 +22,11 @@
     "address": "162 Gilbert St, Adelaide SA 5000",
     "lat": -34.93426,
     "lng": 138.59395,
-    "products": ["Künefe", "Baklava"]
+    "products": [
+      "Künefe",
+      "Baklava"
+    ],
+    "id": "avustralya-adelaide-2"
   },
   {
     "name": "Hatun Cafe",
@@ -27,8 +36,17 @@
     "address": "32 James Pl, Adelaide SA 5000",
     "lat": -34.92397,
     "lng": 138.60077,
-    "products": ["Türk kahvaltı tabağı", "Menemen", "Çılbır", "Kebap dürüm", "Kebap tabağı", "Lokum", "İrmik tatlısı"],
-    "source": "https://www.openstreetmap.org/node/12094828212"
+    "products": [
+      "Türk kahvaltı tabağı",
+      "Menemen",
+      "Çılbır",
+      "Kebap dürüm",
+      "Kebap tabağı",
+      "Lokum",
+      "İrmik tatlısı"
+    ],
+    "source": "https://www.openstreetmap.org/node/12094828212",
+    "id": "avustralya-adelaide-3"
   },
   {
     "name": "Ottoman Grill",
@@ -38,7 +56,13 @@
     "address": "168C Jetty Rd, Glenelg SA 5045",
     "lat": -34.98017,
     "lng": 138.51942,
-    "products": ["Lokum", "Pide", "Kebap", "Meze"],
-    "source": "https://maps.app.goo.gl/FCVXJubG4jVMkCFFA"
+    "products": [
+      "Lokum",
+      "Pide",
+      "Kebap",
+      "Meze"
+    ],
+    "source": "https://maps.app.goo.gl/FCVXJubG4jVMkCFFA",
+    "id": "avustralya-adelaide-4"
   }
 ]

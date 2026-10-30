@@ -15,7 +15,8 @@
       "Koska tahin",
       "Altınkılıç kaşar"
     ],
-    "source": "https://halalmarket.tokyocamii.org/"
+    "source": "https://halalmarket.tokyocamii.org/",
+    "id": "japonya-tokyo-1"
   },
   {
     "name": "Tadım Turkish Restaurant & Halal Kebab",
@@ -26,7 +27,8 @@
     "lat": 35.72426,
     "lng": 139.79282,
     "products": [],
-    "source": "https://www.openstreetmap.org/node/14289390601"
+    "source": "https://www.openstreetmap.org/node/14289390601",
+    "id": "japonya-tokyo-2"
   },
   {
     "name": "Kebab Cafe",
@@ -39,7 +41,8 @@
     "products": [
       "Karışık kebap"
     ],
-    "source": "https://www.halalfoodinjapan.com/en/post/143/"
+    "source": "https://www.halalfoodinjapan.com/en/post/143/",
+    "id": "japonya-tokyo-3"
   },
   {
     "name": "Saray Nishi-Asakusa",
@@ -53,6 +56,7 @@
       "Kebap sandviç",
       "Türk dondurması"
     ],
-    "source": "http://www.asakusa-e.com/shoku/halal_e.htm"
+    "source": "http://www.asakusa-e.com/shoku/halal_e.htm",
+    "id": "japonya-tokyo-4"
   }
 ]
