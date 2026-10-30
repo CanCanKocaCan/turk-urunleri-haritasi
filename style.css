@@ -332,3 +332,18 @@ footer a { font-size:12px; color:var(--blue); }
  #search-area { left:50%; right:auto; transform:translateX(-50%); }
  .leaflet-top.leaflet-left { top:calc(var(--drawer-top) + 60px); bottom:auto; }
 }
+/* Close buttons stay outside the scrolling content. */
+.close-button { display:grid; place-items:center; width:40px; height:40px; min-width:40px; padding:0; border:0; border-radius:50%; background:transparent; font-size:28px; line-height:1; color:#5f6368; }
+.close-button:hover { background:#edf1f7; color:#202124; }
+.panel-heading,.popup-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 12px 8px 20px; color:#64748b; font-size:12px; flex-shrink:0; }
+.panel-heading { border-bottom:1px solid #eef1f5; }
+.popup-heading h2 { margin:0; font-size:20px; color:#202124; }
+#contribution .popup-heading { position:sticky; top:-16px; background:white; padding:8px 0; z-index:1; }
+#suggestion-popup { position:absolute; left:0; right:0; top:58px; max-height:min(60dvh,480px); overflow:hidden; display:flex; flex-direction:column; background:#fff; border:1px solid #e1e5eb; border-radius:18px; box-shadow:0 8px 24px #26364d30; z-index:5; }
+#suggestion-popup[hidden] { display:none; }
+#suggestions { position:static; min-height:0; max-height:none; overflow:auto; border:0; border-radius:0; box-shadow:none; padding:0 8px 8px; }
+#suggestion-popup .popup-heading { padding:4px 8px 4px 16px; }
+@media(max-width:700px) {
+ .panel-heading { order:-1; min-height:44px; padding:2px 8px 2px 20px; }
+ #sheet-handle { min-height:30px; padding:3px 12px 5px; gap:3px; }
+}

@@ -102,3 +102,37 @@ test('mobile sheet has keyboard resizing and pointer drag snapping',async t=>{
  event('pointercancel',300);assert.equal(d.getElementById('sidebar').style.getPropertyValue('--sheet-height'),'');
  event('pointerdown',500);event('pointermove',-100);event('pointerup',-100);assert.equal(handle.getAttribute('aria-expanded'),'true');
 });
+test('close button and outside press dismiss panels without resetting search or filters',async t=>{
+ const {dom,w,d,input}=await setup('https://example.com/?country=Avustralya&city=Adelaide');t.after(()=>dom.window.close());
+ d.getElementById('filter-toggle').click();assert.equal(d.getElementById('advanced-filters').open,true);
+ d.getElementById('close-panel').click();assert.equal(d.getElementById('sidebar').inert,true);
+ assert.equal(d.getElementById('advanced-filters').open,false);assert.equal(d.getElementById('filter-toggle').getAttribute('aria-expanded'),'false');
+ assert.equal(d.getElementById('city').value,'Adelaide');assert.equal(d.querySelectorAll('.result-card').length,4);
+ d.getElementById('panel-toggle').click();
+ d.querySelector('.drawer-content').dispatchEvent(new w.Event('pointerdown',{bubbles:true}));assert.equal(d.getElementById('sidebar').inert,false);
+ d.getElementById('map').dispatchEvent(new w.Event('pointerdown',{bubbles:true}));assert.equal(d.getElementById('sidebar').inert,true);
+ input('bey');d.getElementById('close-suggestions').click();assert.equal(d.getElementById('suggestion-popup').hidden,true);assert.equal(d.getElementById('search').value,'bey');
+ input('bey');d.getElementById('map').dispatchEvent(new w.Event('pointerdown',{bubbles:true}));assert.equal(d.getElementById('suggestion-popup').hidden,true);
+ d.getElementById('filter-toggle').dispatchEvent(new w.Event('pointerdown',{bubbles:true}));d.getElementById('filter-toggle').click();
+ assert.equal(d.getElementById('sidebar').inert,false);assert.equal(d.getElementById('advanced-filters').open,true);
+ d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(d.getElementById('sidebar').inert,true);
+});
+test('suggestion Escape closes only popup; marker can reopen dismissed detail',async t=>{
+ const {dom,w,d,input,markers}=await setup();t.after(()=>dom.window.close());
+ const inputEl=input('bey');
+ inputEl.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true}));
+ assert.equal(d.getElementById('suggestions').hidden,true);assert.equal(d.getElementById('panel-toggle').getAttribute('aria-expanded'),'true');
+ d.getElementById('close-panel').click();markers[0].handlers.click();
+ assert.equal(d.getElementById('sidebar').inert,false);assert.equal(d.getElementById('place-detail').hidden,false);
+});
+test('contribution closes by top X or backdrop; inside interaction preserves form',async t=>{
+ const {dom,w,d}=await setup();t.after(()=>dom.window.close());
+ const dialog=d.getElementById('contribution');dialog.getBoundingClientRect=()=>({left:100,right:500,top:100,bottom:600});
+ d.getElementById('contribute').click();d.querySelector('[name=place]').value='Taslak';
+ d.querySelector('[name=place]').dispatchEvent(new w.MouseEvent('pointerdown',{bubbles:true,clientX:150,clientY:200}));
+ d.querySelector('[name=place]').click();assert.equal(dialog.open,true);
+ dialog.dispatchEvent(new w.MouseEvent('pointerdown',{bubbles:true,clientX:20,clientY:20}));
+ dialog.dispatchEvent(new w.MouseEvent('click',{bubbles:true,clientX:20,clientY:20}));assert.equal(dialog.open,false);
+ assert.equal(d.querySelector('[name=place]').value,'Taslak');
+ d.getElementById('contribute').click();d.getElementById('close-contribution').click();assert.equal(dialog.open,false);
+});
