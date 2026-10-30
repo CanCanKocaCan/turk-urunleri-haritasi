@@ -1,5 +1,27 @@
 {
-  "abd": ["new-jersey"],
-  "avustralya": ["adelaide", "brisbane", "canberra", "gold-coast", "melbourne", "perth", "sydney"],
-  "yeni-zelanda": ["auckland", "christchurch", "dunedin", "hamilton", "queenstown", "tauranga", "wellington"]
+  "abd": [
+    "chicago",
+    "new-jersey"
+  ],
+  "avustralya": [
+    "adelaide",
+    "brisbane",
+    "canberra",
+    "gold-coast",
+    "melbourne",
+    "perth",
+    "sydney"
+  ],
+  "yeni-zelanda": [
+    "auckland",
+    "christchurch",
+    "dunedin",
+    "hamilton",
+    "queenstown",
+    "tauranga",
+    "wellington"
+  ],
+  "japonya": [
+    "tokyo"
+  ]
 }
