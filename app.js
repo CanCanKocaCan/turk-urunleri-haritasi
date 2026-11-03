@@ -1,9 +1,19 @@
 const map = L.map("map").setView([30, 20], 2);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
+const tileLayer = MAPTILER_KEY
+  ? L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${MAPTILER_KEY}`, {
+      maxZoom: 19,
+      tileSize: 512,
+      zoomOffset: -1,
+      attribution:
+        '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> ' +
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap katkıcıları</a>',
+    })
+  : L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    });
+tileLayer.addTo(map);
 
 const searchInput = document.getElementById("search");
 const list = document.getElementById("market-list");
