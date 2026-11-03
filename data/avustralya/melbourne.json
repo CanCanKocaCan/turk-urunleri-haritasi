@@ -1,0 +1,129 @@
+[
+  {
+    "name": "Turkish Gozleme Pide & Sweet House",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "311 Racecourse Rd, Flemington VIC 3031",
+    "lat": -37.78843,
+    "lng": 144.93059,
+    "products": [
+      "Gözleme",
+      "Pide"
+    ],
+    "source": "https://www.openstreetmap.org/node/11240467936",
+    "id": "avustralya-melbourne-1",
+    "state": "VIC"
+  },
+  {
+    "name": "Nefes",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "174-178 Lygon St, Carlton VIC 3053",
+    "lat": -37.80302,
+    "lng": 144.96676,
+    "products": [
+      "Kuzu şiş",
+      "Kuzu pirzola",
+      "Hünkar beğendi"
+    ],
+    "source": "https://www.nefes.com.au/",
+    "id": "avustralya-melbourne-2",
+    "state": "VIC"
+  },
+  {
+    "name": "Likya - Turkish Eatery",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "174 Rathdowne St, Carlton VIC 3053",
+    "lat": -37.79531,
+    "lng": 144.97108,
+    "products": [
+      "Adana kebap",
+      "Şiş kebap",
+      "Pide",
+      "Meze"
+    ],
+    "source": "https://www.openstreetmap.org/node/1064821312",
+    "id": "avustralya-melbourne-3",
+    "state": "VIC"
+  },
+  {
+    "name": "Pehlivan Turkish Street Food",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "142 Middle St, Hadfield VIC 3046",
+    "lat": -37.70911,
+    "lng": 144.93878,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/14318330757",
+    "id": "avustralya-melbourne-4",
+    "state": "VIC"
+  },
+  {
+    "name": "Two Minutes Turkish",
+    "type": "kafe",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "Shop 10, 30 English St, Essendon Fields VIC 3041",
+    "lat": -37.72693,
+    "lng": 144.8953,
+    "products": [
+      "Kebap",
+      "Meze"
+    ],
+    "source": "https://www.openstreetmap.org/node/3136427717",
+    "id": "avustralya-melbourne-5",
+    "state": "VIC"
+  },
+  {
+    "name": "Best Turkish Bakery & Kebabs",
+    "type": "firin",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "348 High St, Northcote VIC 3070",
+    "lat": -37.76979,
+    "lng": 144.99909,
+    "products": [
+      "Pide",
+      "Türk ekmeği",
+      "Kebap"
+    ],
+    "source": "https://www.openstreetmap.org/node/2365435363",
+    "id": "avustralya-melbourne-6",
+    "state": "VIC"
+  },
+  {
+    "name": "Marmara Turkish Restaurant",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "68 Chapel St, Windsor VIC 3181",
+    "lat": -37.85535,
+    "lng": 144.99289,
+    "products": [],
+    "source": "https://www.opentable.com.au/r/marmara-windsor",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres OpenTable ve AAA listesinde aynı, bir kaynak Balaclava'da ikinci bir adres (217 Carlisle St) veriyor. Koordinat sokak adresi aramasından.",
+    "id": "avustralya-melbourne-7",
+    "state": "VIC"
+  },
+  {
+    "name": "Tulum Turkish Restaurant",
+    "type": "restoran",
+    "city": "Melbourne",
+    "country": "Avustralya",
+    "address": "217 Carlisle St, Balaclava VIC 3183",
+    "lat": -37.86897,
+    "lng": 144.99394,
+    "products": [],
+    "source": "https://sitchu.com.au/melbourne/restaurants/best-turkish-restaurants-melbourne",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres Sitchu ve OpenTable'a dayanıyor, bir kaynak Caulfield'da (619 Glen Huntly Rd) gösteriyor.",
+    "id": "avustralya-melbourne-8",
+    "state": "VIC"
+  }
+]

@@ -1,7 +1,8 @@
 const map = L.map("map").setView([30, 20], 2);
 
-const tileLayer = MAPTILER_KEY
-  ? L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${MAPTILER_KEY}`, {
+const maptilerKey = window.APP_CONFIG?.maptilerKey;
+const tileLayer = maptilerKey
+  ? L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${encodeURIComponent(maptilerKey)}`, {
       maxZoom: 19,
       tileSize: 512,
       zoomOffset: -1,
@@ -20,12 +21,13 @@ const list = document.getElementById("market-list");
 const resultCount = document.getElementById("result-count");
 const typeFilters = document.getElementById("type-filters");
 
-// markets.json içindeki "type" alanının alabileceği değerler
+// data/ altındaki kayıtların "type" alanının alabileceği değerler
 const TYPES = {
   market: { label: "Market", icon: "🛒" },
   restoran: { label: "Restoran", icon: "🍽️" },
   kafe: { label: "Kafe", icon: "☕" },
   firin: { label: "Fırın", icon: "🥖" },
+  berber: { label: "Berber", icon: "💈" },
 };
 const UNKNOWN_TYPE = { label: "Diğer", icon: "📍" };
 
@@ -34,7 +36,16 @@ function typeInfo(market) {
 }
 
 let markets = [];
+const cluster = L.markerClusterGroup().addTo(map);
+const countrySelect = document.getElementById("country");
+const stateSelect = document.getElementById("state");
+let regions = {};
+const citySelect = document.getElementById("city");
+const status = document.getElementById("status");
+let mode = "all", selectedId = "", position = null;
 let selectedType = null; // null = hepsi
+let areaBounds = null;
+let highlightedId = '';
 
 // Türkçe karakterleri de doğru küçültüp "Beypazarı" ile "beypazari" eşleşsin diye sadeleştiriyoruz
 function normalize(text) {
@@ -54,8 +65,26 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-function productTags(products) {
-  return products.map((p) => `<span class="product">${escapeHtml(p)}</span>`).join("");
+function safeUrl(value) { try { const u = new URL(value); return ["https:", "http:"].includes(u.protocol) ? u.href : ""; } catch { return ""; } }
+function productTags(products, market, reportButtons = false) {
+  return products.map(p => { const info = market?.productEvidence?.[p];
+    return `<span class="product"><strong>${escapeHtml(p)}</strong><small>${freshnessHtml(info?.lastSeen)}${safeUrl(info?.source) ? ` · <a href="${escapeHtml(safeUrl(info.source))}" target="_blank" rel="noopener">Kaynak</a>` : ""}</small>${reportButtons ? `<button class="seen-product" data-product="${escapeHtml(p)}">Bu ürünü gördüm</button>` : ''}</span>`;
+  }).join("");
+}
+function links(m) {
+  const destination = hasLocation(m) ? `${m.lat},${m.lng}` : [m.name,m.address,m.city,m.country].filter(Boolean).join(", ");
+  return `<div class="actions"><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}">Yol tarifi al</a>${safeUrl(m.website) ? ` <a target="_blank" rel="noopener" href="${escapeHtml(safeUrl(m.website))}">Web sitesi</a>` : ""}${m.phone && /^\+?[0-9 ()-]{5,30}$/.test(m.phone) ? ` <a href="tel:${escapeHtml(m.phone.replace(/[^+0-9]/g,""))}">Ara</a>` : ""}</div>`;
+}
+
+// "verified": false olan kayıtların bilgileri tam doğrulanamadı; sitede uyarı gösterilir
+function isUnverified(market) {
+  return market.verified === false;
+}
+
+function warningHtml(market) {
+  if (!isUnverified(market)) return "";
+  const note = market.note ? ` ${escapeHtml(market.note)}` : "";
+  return `<details class="warning"><summary>⚠️ Doğrulama gerekiyor</summary><p>Gitmeden önce kontrol et.${note}</p></details>`;
 }
 
 function popupHtml(market) {
@@ -63,17 +92,28 @@ function popupHtml(market) {
   return `
     <strong>${escapeHtml(market.name)}</strong><br>
     <small>${type.icon} ${type.label}</small><br>
-    ${escapeHtml(market.city)}, ${escapeHtml(market.country)}<br>
+    ${escapeHtml(locationLabel(market))}<br>
     ${market.address ? `<small>${escapeHtml(market.address)}</small><br>` : ""}
-    <div class="products">${productTags(market.products)}</div>
+    ${warningHtml(market)}
+    <div class="products">${productTags(market.products, market)}</div>${links(market)}
   `;
 }
 
+// Koordinatı henüz girilmemiş kayıtlar ("lat": null) listede görünür ama haritada işaret almaz
+function hasLocation(market) {
+  return typeof market.lat === "number" && typeof market.lng === "number";
+}
+
 function matches(market, query) {
+  if (!inArea(market)) return false;
   if (selectedType && market.type !== selectedType) return false;
+  if (countrySelect.value && market.country !== countrySelect.value) return false;
+  if (stateSelect.value && market.state !== stateSelect.value) return false;
+  if (citySelect.value && market.city !== citySelect.value) return false;
+  if (mode === "product" && !["market", "firin"].includes(market.type)) return false;
   if (!query) return true;
   const haystack = normalize(
-    [market.name, market.city, market.country, typeInfo(market).label, ...market.products].join(" ")
+    (mode === "product" ? market.products : mode === "place" ? [market.name, market.city, market.state || "", stateName(market), market.country, typeInfo(market).label] : [market.name, market.city, market.state || "", stateName(market), market.country, typeInfo(market).label, ...market.products]).join(" ")
   );
   return haystack.includes(normalize(query));
 }
@@ -83,30 +123,34 @@ function render() {
   const visible = markets.filter((m) => matches(m, query));
 
   list.innerHTML = "";
-  for (const market of markets) {
-    const isVisible = visible.includes(market);
-    if (isVisible) {
-      market.marker.addTo(map);
-    } else {
-      market.marker.remove();
-    }
-  }
-
+  cluster.clearLayers();
+  cluster.addLayers(visible.filter(hasLocation).map(m => m.marker));
+  if (position) visible.sort((a,b) => distance(a)-distance(b));
   for (const market of visible) {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <div class="market-name">${typeInfo(market).icon} ${escapeHtml(market.name)}</div>
-      <div class="market-location">${escapeHtml(market.city)}, ${escapeHtml(market.country)}</div>
-      <div class="products">${productTags(market.products)}</div>
-    `;
-    li.addEventListener("click", () => {
-      map.flyTo([market.lat, market.lng], 14);
-      market.marker.openPopup();
-    });
+    const open = document.createElement("button");
+    open.className = "result-card";
+    open.dataset.id = market.id;
+    open.addEventListener('mouseenter', () => highlightMarket(market.id));
+    open.addEventListener('mouseleave', () => highlightMarket(selectedId));
+    open.addEventListener('focus', () => highlightMarket(market.id));
+    open.addEventListener('blur', () => highlightMarket(selectedId));
+    open.setAttribute("aria-label", `${market.name}, ${market.city}: ayrıntıları göster`);
+    open.innerHTML = `<span class="result-icon" aria-hidden="true">${typeInfo(market).icon}</span><span><strong>${escapeHtml(market.name)}</strong><span class="market-location">${typeInfo(market).label} · ${escapeHtml(locationLabel(market))}</span><span class="preview-products">${escapeHtml(market.products.slice(0,3).join(" · "))}</span>${market.products.length ? freshnessHtml(Object.values(market.productEvidence || {}).map(e => e.lastSeen).filter(Boolean).sort().at(-1)) : ""}${hasLocation(market) ? "" : '<span class="market-location">Konum eklenecek</span>'}${position && hasLocation(market) ? `<span class="market-location">${distance(market).toFixed(1)} km</span>` : ""}</span>`;
+    open.onclick = () => selectMarket(market, true);
+    li.appendChild(open);
     list.appendChild(li);
   }
 
-  resultCount.textContent = `${visible.length} yer bulundu`;
+  resultCount.textContent = `${visible.length} yer · ${visible.filter(hasLocation).length} haritada · ${visible.filter(m => !hasLocation(m)).length} konum bekliyor`;
+  document.getElementById("search-summary").textContent = `${visible.length} yer bulundu`;
+  document.getElementById('sheet-label').textContent = `${visible.length} sonuç`;
+  if (!visible.length) list.innerHTML = '<li>Sonuç bulunamadı. Filtreleri temizleyebilir veya yeni bir yer önerebilirsin.</li>';
+  if (!visible.some(m => m.id === selectedId)) selectedId = "";
+  showDetail(markets.find(m => m.id === selectedId));
+  highlightMarket(selectedId);
+  renderActiveFilters();
+  syncUrl();
 }
 
 function renderTypeFilters() {
@@ -119,9 +163,10 @@ function renderTypeFilters() {
     const button = document.createElement("button");
     button.type = "button";
     button.textContent = `${option.icon} ${option.label}`.trim();
+    button.setAttribute("aria-pressed", String(option.key === selectedType));
     button.classList.toggle("active", option.key === selectedType);
     button.addEventListener("click", () => {
-      selectedType = option.key;
+      selectedType = option.key; selectedId = "";
       renderTypeFilters();
       render();
     });
@@ -131,7 +176,7 @@ function renderTypeFilters() {
 
 function markerIcon(market) {
   return L.divIcon({
-    className: "type-marker",
+    className: isUnverified(market) ? "type-marker unverified" : "type-marker",
     html: typeInfo(market).icon,
     iconSize: [34, 34],
     iconAnchor: [17, 17],
@@ -139,23 +184,398 @@ function markerIcon(market) {
   });
 }
 
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`${url} yüklenemedi (${response.status})`);
+  return response.json();
+}
+
 async function init() {
   try {
-    const response = await fetch("data/markets.json");
-    markets = await response.json();
+    // data/index.json { "ülke": ["şehir", ...] } -> her şehir data/<ülke>/<şehir>.json dosyasında
+    const [index, regionData] = await Promise.all([fetchJson("data/index.json"),fetchJson("data/regions.json")]);
+    regions = regionData;
+    const files = Object.entries(index).flatMap(([country, cities]) =>
+      cities.map((city) => `data/${country}/${city}.json`)
+    );
+    markets = (await Promise.all(files.map(async file => (await fetchJson(file)).map((m,i) => ({...m,id:m.id || `${file}:${i}`}))))).flat();
   } catch (error) {
-    resultCount.textContent = "Veriler yüklenemedi. Sayfayı Live Server ile açtığından emin ol.";
+    resultCount.textContent = "Veriler yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.";
+    status.textContent = resultCount.textContent;
     console.error(error);
     return;
   }
 
   for (const market of markets) {
-    market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market) }).bindPopup(popupHtml(market));
+    if (!hasLocation(market)) continue;
+    market.marker = L.marker([market.lat, market.lng], { icon: markerIcon(market), title: `${market.name}, ${market.city}`, alt: `${market.name}, ${market.city}` })
+      .on("click", () => selectMarket(market, true))
+      .on('mouseover', () => highlightMarket(market.id,true))
+      .on('mouseout', () => highlightMarket(selectedId));
   }
 
-  renderTypeFilters();
-  render();
+  document.getElementById("coverage").textContent = `Kapsam: ${[...new Set(markets.map(m => m.country))].join(", ")}. ${markets.length} kayıt.`;
+  for (const country of [...new Set(markets.map(m => m.country))].sort()) countrySelect.add(new Option(country,country));
+  restoreUrl();
 }
 
-searchInput.addEventListener("input", render);
+
+searchInput.addEventListener("input", () => { selectedId = ""; render(); renderSuggestions(); });
+
+function distance(m) {
+  if (!hasLocation(m)) return Infinity;
+  return map.distance(position, [m.lat,m.lng]) / 1000;
+}
+function syncUrl() {
+  const p = new URLSearchParams();
+  for (const [k,v] of Object.entries({q:searchInput.value, country:countrySelect.value, state:stateSelect.value, city:citySelect.value, type:selectedType, mode:mode === 'all' ? '' : mode, place:selectedId})) if(v) p.set(k,v);
+  if (areaBounds) p.set('bounds', [areaBounds.getSouth(), areaBounds.getWest(), areaBounds.getNorth(), areaBounds.getEast()].join(','));
+  history.replaceState(null,'',`${location.pathname}${p.size ? '?'+p : ''}`);
+}
+function updateCities() {
+  const previous = citySelect.value; citySelect.replaceChildren(new Option('Tüm şehirler',''));
+  for(const city of [...new Set(markets.filter(m => (!countrySelect.value || m.country === countrySelect.value) && (!stateSelect.value || m.state === stateSelect.value)).map(m => m.city))].sort()) citySelect.add(new Option(city,city));
+  citySelect.value = [...citySelect.options].some(o => o.value === previous) ? previous : '';
+}
+function restoreUrl() {
+  const p = new URLSearchParams(location.search);
+  areaBounds = parseAreaBounds(p.get('bounds'));
+  searchInput.value = p.get('q') || ''; countrySelect.value = p.get('country') || '';
+  // Older links used New Jersey as a city grouping; retain their meaning.
+  const legacyNJ = countrySelect.value === 'ABD' && p.get('city') === 'New Jersey';
+  updateStates(); stateSelect.value = legacyNJ ? 'NJ' : p.get('state') || '';
+  if(![...stateSelect.options].some(o=>o.value===stateSelect.value))stateSelect.value='';
+  updateCities(); citySelect.value = legacyNJ ? '' : p.get('city') || '';
+  selectedType = TYPES[p.get('type')] ? p.get('type') : null;
+  mode = ['product','place'].includes(p.get('mode')) ? p.get('mode') : 'all'; selectedId = p.get('place') || '';
+  renderModes(); renderTypeFilters(); render();
+  const selected = markets.find(m => m.id === selectedId);
+  if(selected) selectMarket(selected, false);
+  else fitResults();
+}
+function setPanel(open) {
+  document.body.classList.toggle('panel-closed', !open);
+  document.getElementById('sidebar').inert = !open;
+  const toggle = document.getElementById('panel-toggle');
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Yan paneli kapat' : 'Yan paneli aç');
+  document.getElementById('filter-toggle').setAttribute('aria-expanded', String(open && document.getElementById('advanced-filters').open));
+  if (!open && document.getElementById('sidebar').contains(document.activeElement)) toggle.focus();
+}
+function showDetail(m) {
+  const detail = document.getElementById('place-detail');
+  detail.hidden = !m; list.hidden = !!m;
+  document.getElementById('result-count').hidden = !!m;
+  if (!m) { detail.replaceChildren(); return; }
+  detail.innerHTML = `<button id="back-results">← Sonuçlara dön</button><div class="place-hero" aria-hidden="true">${typeInfo(m).icon}</div><h2 tabindex="-1">${escapeHtml(m.name)}</h2><p class="market-location">${typeInfo(m).label} · ${escapeHtml(locationLabel(m))}</p>${links(m)}<p>${escapeHtml(m.address || 'Açık adres henüz eklenmedi.')}</p>${hasLocation(m) ? '' : '<p>Harita konumu henüz eklenmedi. Yol tarifi adres aramasıyla açılır.</p>'}${warningHtml(m)}<h3>Ürünler ve güncellik</h3><div class="products">${productTags(m.products,m,true)}</div><p class="stock-note">Görülme tarihi stok garantisi değildir. Gitmeden önce işletmeyle kontrol et.</p><div class="detail-tools"><button id="detail-share">Paylaş</button><button id="detail-report">Bilgi düzelt / ürün bildir</button></div>`;
+  document.getElementById('back-results').onclick = () => { selectedId=''; syncUrl(); showDetail(); highlightMarket(''); list.querySelector('button')?.focus(); };
+  detail.querySelectorAll('.seen-product').forEach(button => button.onclick = () => openSeenForm(m, button.dataset.product));
+  document.getElementById('detail-share').onclick = shareUrl;
+  document.getElementById('detail-report').onclick = () => openForm(m);
+}
+function selectMarket(m, focus) {
+  selectedId = m.id; syncUrl(); setPanel(true); showDetail(m);
+  closeSuggestions(); setSheetExpanded(false);
+  if(hasLocation(m)) cluster.zoomToShowLayer(m.marker, () => { highlightMarket(m.id); map.panTo([m.lat,m.lng],{animate:false}); map.panInside?.([m.lat,m.lng],{...mapPadding(),animate:false}); });
+  else highlightMarket('');
+  if(focus) document.querySelector('#place-detail h2').focus();
+}
+const advancedFilters = document.getElementById('advanced-filters');
+const filterToggle = document.getElementById('filter-toggle');
+filterToggle.onclick = () => {
+  const open = document.body.classList.contains('panel-closed') || !advancedFilters.open;
+  setPanel(true);
+  advancedFilters.open = open;
+  if(open) setSheetExpanded(true);
+  if (open) advancedFilters.scrollIntoView({block:'nearest'});
+};
+advancedFilters.addEventListener('toggle', () => filterToggle.setAttribute('aria-expanded', String(advancedFilters.open && !document.body.classList.contains('panel-closed'))));
+document.getElementById('search-form').onsubmit = e => {
+  e.preventDefault();
+  closeSuggestions(); selectedId = ''; render(); fitResults();
+};
+document.getElementById('panel-toggle').onclick = () => document.body.classList.contains('panel-closed') ? setPanel(true) : dismissPanel();
+function fitResults() {
+  const points = markets.filter(m => matches(m, searchInput.value.trim()) && hasLocation(m)).map(m => [m.lat,m.lng]);
+  if(points.length) map.fitBounds(points,{...mapPadding(),maxZoom:13});
+}
+function renderModes() {
+  document.querySelectorAll('[data-mode]').forEach(b => { b.setAttribute('aria-pressed',String(b.dataset.mode===mode)); b.classList.toggle('active',b.dataset.mode===mode); });
+}
+document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode=b.dataset.mode; selectedType=null; selectedId=''; renderModes(); renderTypeFilters(); render(); fitResults(); });
+countrySelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; stateSelect.value=''; citySelect.value=''; updateStates(); updateCities(); render(); fitResults(); };
+stateSelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; citySelect.value=''; updateCities(); render(); fitResults(); };
+citySelect.onchange = () => { selectedId=''; areaBounds=null; status.textContent=''; render(); fitResults(); };
+document.getElementById('reset').onclick = () => { searchInput.value=''; countrySelect.value=''; stateSelect.value=''; updateStates(); updateCities(); citySelect.value=''; selectedType=null; selectedId=''; mode='all'; position=null; areaBounds=null; closeSuggestions(); status.textContent=''; renderModes(); renderTypeFilters(); render(); fitResults(); };
+window.addEventListener('popstate', restoreUrl);
+async function shareUrl() {
+  try { await navigator.clipboard.writeText(location.href); status.textContent='Bağlantı kopyalandı.'; }
+  catch { status.textContent=`Paylaşılacak bağlantı: ${location.href}`; }
+}
+document.getElementById('share').onclick = () => { selectedId=''; syncUrl(); shareUrl(); };
+document.getElementById('nearby').onclick = () => {
+  if(!navigator.geolocation) { status.textContent='Bu tarayıcı konumu desteklemiyor. Şehir filtresini kullanabilirsin.'; return; }
+  status.textContent='Konum izni bekleniyor…';
+  navigator.geolocation.getCurrentPosition(p => {
+    position=[p.coords.latitude,p.coords.longitude]; selectedId=''; areaBounds=null; countrySelect.value=''; stateSelect.value=''; updateStates(); updateCities(); citySelect.value='';
+    render(); const closest=markets.filter(m => matches(m,searchInput.value.trim()) && hasLocation(m)).sort((a,b)=>distance(a)-distance(b))[0];
+    if(closest) map.fitBounds([position,[closest.lat,closest.lng]],{...mapPadding(),maxZoom:13});
+    status.textContent='Sonuçlar kuş uçuşu mesafeye göre sıralandı. Konumun kaydedilmez veya katkı sunucusuna gönderilmez.';
+  }, () => { status.textContent='Konum alınamadı. Şehir filtresini kullanabilirsin.'; }, {timeout:10000,maximumAge:60000});
+};
+const dialog=document.getElementById('contribution'), form=document.getElementById('contribution-form');
+function openForm(m) {
+  closeSuggestions();
+  form.reset(); form.elements.place.value=m?.name || ''; form.elements.location.value=m ? locationLabel(m) : '';
+  form.elements.observedAt.max=new Date().toLocaleDateString('en-CA');
+  document.getElementById('form-status').textContent=window.APP_CONFIG?.contributionEndpoint ? '' : 'Çevrimiçi gönderim henüz yapılandırılmadı. Önerini dosya olarak indirebilirsin.';
+  dialog.showModal();
+}
+document.getElementById('contribute').onclick=()=>openForm();
+document.getElementById('close-form').onclick=()=>dialog.close();
+function reportData() { return Object.fromEntries(new FormData(form)); }
+document.getElementById('download-report').onclick=()=>{
+  if(!form.reportValidity()) return;
+  const u=URL.createObjectURL(new Blob([JSON.stringify(reportData(),null,2)],{type:'application/json'}));
+  const a=document.createElement('a'); a.href=u; a.download='yer-urun-onerisi.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(u),1000);
+};
+form.onsubmit=async e=>{
+  e.preventDefault(); const message=document.getElementById('form-status'); const endpoint=safeUrl(window.APP_CONFIG?.contributionEndpoint);
+  if(!endpoint){message.textContent='Çevrimiçi gönderim henüz yapılandırılmadı. Öneriyi indir seçeneğini kullanabilirsin.';return;}
+  const button=form.querySelector('[type=submit]'); button.disabled=true; message.textContent='Gönderiliyor…';
+  try { const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(reportData())}); if(!response.ok) throw Error(); message.textContent='Önerin incelemeye alındı. Teşekkürler!'; form.reset(); }
+  catch {message.textContent='Gönderilemedi. Yeniden deneyebilir veya öneriyi indirebilirsin.';}
+  finally {button.disabled=false;}
+};
+// Product observations are evidence dates, never live inventory claims.
+function freshnessHtml(value) {
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? new Date(`${value}T00:00:00Z`) : null;
+  const today = new Date();
+  const age = date ? (Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) - date.getTime()) / 86400000 : NaN;
+  if (!date || !Number.isFinite(age) || age < 0 || date.toISOString().slice(0,10) !== value) return '<span class="freshness unknown">Görülme tarihi bilinmiyor</span>';
+  const label = new Intl.DateTimeFormat('tr', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(date);
+  return `<span class="freshness ${age <= 90 ? 'recent' : 'older'}">Son görülme: <time datetime="${value}">${label}</time>${age > 90 ? ' · 90 günden eski' : ''}</span>`;
+}
+function openSeenForm(m, product) {
+  openForm(m);
+  form.elements.kind.value = 'seen';
+  form.elements.details.value = product;
+  const now = new Date();
+  form.elements.observedAt.value = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+}
+function highlightMarket(id, fromMap = false) {
+  highlightedId = id || '';
+  document.querySelectorAll('.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+  for (const card of list.querySelectorAll('.result-card')) {
+    const active = card.dataset.id === highlightedId;
+    card.classList.toggle('is-highlighted', active);
+    if (active && fromMap && !list.hidden && !document.body.classList.contains('panel-closed')) card.scrollIntoView({block:'nearest'});
+  }
+  markets.forEach(m => m.marker?.setZIndexOffset?.(m.id === highlightedId ? 1000 : 0));
+  const marker = markets.find(m => m.id === highlightedId)?.marker;
+  if (!marker) return;
+  const parent = cluster.getVisibleParent?.(marker) || marker;
+  parent.getElement?.()?.classList.add('is-highlighted');
+
+}
+function renderActiveFilters() {
+  const container = document.getElementById('active-filters');
+  container.replaceChildren();
+  const add = (label, clear) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.textContent = `${label} ×`;
+    button.setAttribute('aria-label', `${label} filtresini kaldır`);
+    button.onclick = () => { selectedId=''; clear(); closeSuggestions(); renderModes(); renderTypeFilters(); render(); fitResults(); };
+    container.appendChild(button);
+  };
+  if (searchInput.value.trim()) add(`Arama: ${searchInput.value.trim()}`, () => searchInput.value='');
+  if (countrySelect.value) add(countrySelect.value, () => {countrySelect.value='';stateSelect.value='';updateStates();updateCities();});
+  if (stateSelect.value) add(`${regions[countrySelect.value][stateSelect.value]} (${stateSelect.value})`, () => {stateSelect.value='';updateCities();});
+  if (citySelect.value) add(citySelect.value, () => citySelect.value='');
+  if (selectedType) add(TYPES[selectedType].label, () => selectedType=null);
+  if (mode !== 'all') add(mode === 'product' ? 'Ürün bul' : 'Mekân bul', () => mode='all');
+  if (position) add('Yakınımdakiler', () => position=null);
+  if (areaBounds) add('Haritadaki bölge', () => {areaBounds=null;status.textContent='';});
+}
+
+// Suggestions share the current geographic/type constraints and use real data only.
+const suggestions = document.getElementById('suggestions');
+let suggestionItems = [], activeSuggestion = -1;
+function closeSuggestions() {
+  suggestions.hidden = true; document.getElementById('suggestion-popup').hidden=true; searchInput.setAttribute('aria-expanded','false');
+  searchInput.removeAttribute('aria-activedescendant'); activeSuggestion = -1;
+}
+function renderSuggestions() {
+  const query = normalize(searchInput.value.trim());
+  suggestions.replaceChildren(); suggestionItems=[]; activeSuggestion=-1;
+  if (query.length < 2) { closeSuggestions(); return; }
+  const pool = markets.filter(m => matches(m,''));
+  const includes = value => normalize(value).includes(query);
+  const groups = [
+    ['Ürünler', [...new Set(pool.filter(m => ['market','firin'].includes(m.type)).flatMap(m => m.products))].filter(includes).slice(0,4).map(label => ({kind:'product',label}))],
+    ['Mekânlar', pool.filter(m => includes(m.name)).slice(0,4).map(m => ({kind:'place',label:m.name,description:locationLabel(m),market:m}))],
+    ['Eyaletler / bölgeler', [...new Map(pool.filter(m=>m.state).map(m=>[`${m.country}/${m.state}`,{kind:'state',label:stateName(m),country:m.country,state:m.state}])).values()].filter(x=>includes(x.label)||includes(x.state)).slice(0,4)],
+    ['Şehirler', [...new Map(pool.map(m => [`${m.country}/${m.state || ''}/${m.city}`,{kind:'city',label:m.city,country:m.country,state:m.state,description:stateName(m) ? `${stateName(m)}, ${m.country}` : m.country}])).values()].filter(x => includes(x.label)).slice(0,4)]
+  ];
+  for (const [label, items] of groups) {
+    if (!items.length) continue;
+    const group=document.createElement('div');group.setAttribute('role','group');group.setAttribute('aria-label',label);
+    const heading=document.createElement('div');heading.className='suggestion-heading';heading.textContent=label;group.appendChild(heading);
+    for (const item of items) {
+      const index=suggestionItems.push(item)-1;
+      const option=document.createElement('div');option.id=`suggestion-${index}`;option.setAttribute('role','option');option.setAttribute('aria-selected','false');
+      const title=document.createElement('strong');title.textContent=item.label;option.appendChild(title);
+      const small=document.createElement('small');small.textContent=item.description || item.country || 'Ürünü bul';option.appendChild(small);
+      option.onmousedown=e=>e.preventDefault();
+      option.onclick=()=>chooseSuggestion(index);
+      group.appendChild(option);
+    }
+    suggestions.appendChild(group);
+  }
+  suggestions.hidden=!suggestionItems.length;
+  document.getElementById('suggestion-popup').hidden=suggestions.hidden;
+  searchInput.setAttribute('aria-expanded',String(!suggestions.hidden));
+  searchInput.removeAttribute('aria-activedescendant');
+}
+function chooseSuggestion(index) {
+  const item=suggestionItems[index];if(!item)return;
+  selectedId='';
+  if(item.kind==='city'||item.kind==='state') {
+    areaBounds=null;countrySelect.value=item.country;updateStates();stateSelect.value=item.state || '';updateCities();citySelect.value=item.kind==='city'?item.label:'';
+    searchInput.value='';mode='all';
+  } else {searchInput.value=item.label;mode=item.kind==='product'?'product':'place';}
+  closeSuggestions();renderModes();renderTypeFilters();render();fitResults();
+  if(item.market)selectMarket(item.market,true);
+}
+searchInput.addEventListener('focus',renderSuggestions);
+searchInput.addEventListener('blur',e=>{if(!document.getElementById('suggestion-popup').contains(e.relatedTarget))closeSuggestions();});
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!suggestions.hidden){e.preventDefault();e.stopPropagation();closeSuggestions();return;}
+  if(suggestions.hidden)return;
+  if(e.key==='ArrowDown'||e.key==='ArrowUp') {
+    e.preventDefault();
+    activeSuggestion=activeSuggestion<0 ? (e.key==='ArrowDown'?0:suggestionItems.length-1) : (activeSuggestion+(e.key==='ArrowDown'?1:-1)+suggestionItems.length)%suggestionItems.length;
+    suggestions.querySelectorAll('[role="option"]').forEach((el,i)=>el.setAttribute('aria-selected',String(i===activeSuggestion)));
+    const option=document.getElementById(`suggestion-${activeSuggestion}`);
+    searchInput.setAttribute('aria-activedescendant',option.id);option.scrollIntoView({block:'nearest'});
+  } else if(e.key==='Enter'&&activeSuggestion>=0) {e.preventDefault();chooseSuggestion(activeSuggestion);}
+});
+document.addEventListener('pointerdown',e=>{
+  if(dialog.open)return;
+  if(!document.getElementById('map-search').contains(e.target))closeSuggestions();
+  if(!sidebar.contains(e.target)&&!e.target.closest('#panel-toggle, #filter-toggle'))dismissPanel();
+},true);
+
+function parseAreaBounds(value) {
+  if(!value)return null;
+  const parts=value.split(',').map(Number);
+  if(parts.length!==4||!parts.every(Number.isFinite))return null;
+  const [s,w,n,e]=parts;
+  if(s < -90 || n > 90 || s>=n || w>=e || Math.abs(w)>1080 || Math.abs(e)>1080)return null;
+  return L.latLngBounds([[s,w],[n,e]]);
+}
+function inArea(m) {
+  if(!areaBounds)return true;
+  if(!hasLocation(m)||m.lat<areaBounds.getSouth()||m.lat>areaBounds.getNorth())return false;
+  const west=areaBounds.getWest(),east=areaBounds.getEast();
+  const lng=((m.lng-west)%360+360)%360+west;
+  return east-west>=360 || lng<=east;
+}
+const areaButton=document.getElementById('search-area');
+map.on('moveend',()=>{areaButton.hidden=false;highlightMarket(selectedId);});
+document.getElementById('search-area').onclick=()=>{
+  areaBounds=map.getBounds();selectedId='';closeSuggestions();render();areaButton.hidden=true;
+  status.textContent='Yalnızca seçtiğin harita bölgesindeki konumlu yerler gösteriliyor.';
+};
+
+const sheetHandle=document.getElementById('sheet-handle');
+const sidebar=document.getElementById('sidebar');
+let sheetDrag=null;
+function setSheetExpanded(expanded) {
+  sidebar.style.removeProperty('--sheet-height');
+  document.body.classList.toggle('sheet-expanded',expanded);
+  sheetHandle.setAttribute('aria-expanded',String(expanded));
+  sheetHandle.setAttribute('aria-label',expanded?'Sonuç panelini küçült':'Sonuç panelini büyüt');
+}
+sheetHandle.onclick=()=>{if(!sheetHandle.dataset.dragged)setSheetExpanded(!document.body.classList.contains('sheet-expanded'));delete sheetHandle.dataset.dragged;};
+sheetHandle.onpointerdown=e=>{
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  sheetDrag={y:e.clientY,height:sidebar.getBoundingClientRect().height,moved:false};
+  document.body.classList.add('sheet-dragging');
+  sheetHandle.setPointerCapture(e.pointerId);
+};
+sheetHandle.onpointermove=e=>{
+  if(!sheetDrag)return;
+  const delta=sheetDrag.y-e.clientY;
+  if(Math.abs(delta)>5)sheetDrag.moved=true;
+  if(sheetDrag.moved) {
+    sheetDrag.targetHeight=Math.max(150,sheetDrag.height+delta);
+    sidebar.style.setProperty('--sheet-height',`${sheetDrag.targetHeight}px`);
+  }
+};
+function endSheetDrag() {
+  if(!sheetDrag)return;
+  if(sheetDrag.moved) {
+    sheetHandle.dataset.dragged='true';
+    const expanded=sheetDrag.targetHeight>window.innerHeight*.55;
+    setSheetExpanded(expanded);
+  }
+  sheetDrag=null;
+  document.body.classList.remove('sheet-dragging');
+}
+sheetHandle.onpointerup=endSheetDrag;
+sheetHandle.onpointercancel=()=>{sheetDrag=null;document.body.classList.remove('sheet-dragging');sidebar.style.removeProperty('--sheet-height');};
+sheetHandle.onkeydown=e=>{
+  if(e.key==='ArrowUp'||e.key==='ArrowDown') {e.preventDefault();setSheetExpanded(e.key==='ArrowUp');}
+};
+if(window.ResizeObserver) new ResizeObserver(()=>{
+  const search=document.getElementById('map-search');
+  document.documentElement.style.setProperty('--drawer-top',`${search.offsetTop+search.offsetHeight+12}px`);
+}).observe(document.getElementById('map-search'));
 init();
+function mapPadding() {
+  const mobile=window.innerWidth<=700;
+  const panelOpen=!document.body.classList.contains('panel-closed');
+  const searchBottom=document.getElementById('map-search').getBoundingClientRect().bottom;
+  return {
+    paddingTopLeft:[mobile?24:(panelOpen?sidebar.getBoundingClientRect().width+40:24),Math.min(searchBottom+16,window.innerHeight*.35)],
+    paddingBottomRight:[24,mobile?(panelOpen?Math.min(sidebar.getBoundingClientRect().height+92,window.innerHeight*.55):92):30]
+  };
+}
+// Maps-style dismissal keeps search and applied filters available.
+function dismissPanel() {
+  sidebar.querySelectorAll('details[open]').forEach(detail=>detail.open=false);
+  setPanel(false);
+}
+document.getElementById('close-panel').onclick=dismissPanel;
+document.getElementById('close-suggestions').onclick=()=>{searchInput.focus();closeSuggestions();};
+document.getElementById('close-contribution').onclick=()=>dialog.close();
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape'||dialog.open)return;
+  closeSuggestions();dismissPanel();
+});
+let backdropPointer=false;
+function outsideDialog(e) {
+  const rect=dialog.getBoundingClientRect();
+  return e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom;
+}
+dialog.addEventListener('pointerdown',e=>{backdropPointer=e.target===dialog&&outsideDialog(e);});
+dialog.addEventListener('click',e=>{
+  if(backdropPointer&&e.target===dialog&&outsideDialog(e))dialog.close();
+  backdropPointer=false;
+});
+function stateName(m) { return regions[m.country]?.[m.state] || ''; }
+function locationLabel(m) { return [m.city,stateName(m),m.country].filter(Boolean).join(', '); }
+function updateStates() {
+  const previous=stateSelect.value;
+  stateSelect.replaceChildren(new Option('Tüm eyaletler / bölgeler',''));
+  const enabled=!!regions[countrySelect.value];
+  document.getElementById('state-filter').hidden=!enabled;
+  stateSelect.disabled=!enabled;
+  if(enabled) {
+    const used=[...new Set(markets.filter(m=>m.country===countrySelect.value).map(m=>m.state).filter(Boolean))];
+    used.sort((a,b)=>regions[countrySelect.value][a].localeCompare(regions[countrySelect.value][b],'en'));
+    for(const code of used)stateSelect.add(new Option(`${regions[countrySelect.value][code]} (${code})`,code));
+  }
+  stateSelect.value=enabled&&[...stateSelect.options].some(o=>o.value===previous)?previous:'';
+}

@@ -1,0 +1,193 @@
+[
+  {
+    "name": "Turkuaz Turkish Cuisine",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "121 Enmore Rd, Enmore NSW 2042",
+    "lat": -33.89872,
+    "lng": 151.17371,
+    "products": [
+      "Pide",
+      "Beyti",
+      "Ali Nazik",
+      "Mantı"
+    ],
+    "source": "https://turkuazkitchen.com.au/",
+    "id": "avustralya-sydney-1",
+    "state": "NSW"
+  },
+  {
+    "name": "The Sultan's Table",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "179 Enmore Rd, Enmore NSW 2042",
+    "lat": -33.89888,
+    "lng": 151.17225,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4762860221",
+    "id": "avustralya-sydney-2",
+    "state": "NSW"
+  },
+  {
+    "name": "Anason",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "5/23 Barangaroo Ave, Barangaroo NSW 2000",
+    "lat": -33.8646,
+    "lng": 151.20128,
+    "products": [
+      "Meze",
+      "Rakı"
+    ],
+    "source": "https://www.anason.com.au/",
+    "id": "avustralya-sydney-3",
+    "state": "NSW"
+  },
+  {
+    "name": "Gima Supermarket",
+    "type": "market",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "31-35 Queen St, Auburn NSW 2144",
+    "lat": -33.85209,
+    "lng": 151.03363,
+    "products": [
+      "Köfte",
+      "Gözleme",
+      "Mantı"
+    ],
+    "source": "https://www.openstreetmap.org/way/563955282",
+    "id": "avustralya-sydney-4",
+    "state": "NSW"
+  },
+  {
+    "name": "Arzum Market",
+    "type": "market",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "61 Rawson St, Auburn NSW 2144",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Mantı",
+      "Zeytin",
+      "Baklava",
+      "Bitki çayı",
+      "Mehmet Efendi kahve",
+      "Ülker çikolata"
+    ],
+    "source": "https://www.sbs.com.au/food/article/featured-businesses-turkish/3aovmfzk5",
+    "id": "avustralya-sydney-5",
+    "state": "NSW"
+  },
+  {
+    "name": "Menzil Turkish Bakehouse",
+    "type": "firin",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "40 Auburn Rd, Auburn NSW 2144",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Simit",
+      "Pide"
+    ],
+    "source": "https://www.agfg.com.au/restaurant/menzil-turkish-bakehouse-85576",
+    "id": "avustralya-sydney-6",
+    "state": "NSW"
+  },
+  {
+    "name": "Sultan Turkish Pide & Kebab House",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "63 Pacific Hwy, Waitara NSW 2077",
+    "lat": -33.71046,
+    "lng": 151.10229,
+    "products": [
+      "Pide",
+      "Kebap",
+      "Falafel",
+      "Türk pizzası"
+    ],
+    "source": "http://www.sultankebabs.net",
+    "id": "avustralya-sydney-7",
+    "state": "NSW"
+  },
+  {
+    "name": "Feast of Istanbul",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "275 Kent St, Sydney NSW 2000",
+    "lat": -33.86553,
+    "lng": 151.20401,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/13529274549",
+    "id": "avustralya-sydney-8",
+    "state": "NSW"
+  },
+  {
+    "name": "Konak Turkish Kitchen",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "496 King St, Newtown NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.agfg.com.au/restaurant/konak-79307",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres OpenTable, Quandoo ve AGFG'de aynı ama güncel aktiflik doğrulanamadı, koordinat eksik.",
+    "id": "avustralya-sydney-9",
+    "state": "NSW"
+  },
+  {
+    "name": "Kusadasi Turkish Restaurant",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "111 Enmore Rd, Enmore NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.firsttable.com.au/sydney/inner-west/enmore/kusadasi-turkish-restaurant",
+    "verified": false,
+    "note": "OSM'de kaydı yok, adres yalnızca First Table ve Wanderlog'da geçiyor; aktiflik doğrulanamadı, koordinat eksik.",
+    "id": "avustralya-sydney-10",
+    "state": "NSW"
+  },
+  {
+    "name": "Maydanoz",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "50 Carrington St, Sydney NSW 2000",
+    "lat": -33.86632,
+    "lng": 151.20661,
+    "products": [],
+    "source": "https://concreteplayground.com/sydney/food-drink/efendys-somer-sivriolu-maydanoz-sydney",
+    "verified": false,
+    "note": "OSM'de kaydı yok; adres Concrete Playground, Time Out ve SBS'te aynı, güncel çalışma saatleri doğrulanamadı.",
+    "id": "avustralya-sydney-11",
+    "state": "NSW"
+  },
+  {
+    "name": "Pasha's Turkish Restaurant",
+    "type": "restoran",
+    "city": "Sydney",
+    "country": "Avustralya",
+    "address": "490 King St, Newtown NSW 2042",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.theurbanlist.com/sydney/directory/pashas-turkish-restaurant",
+    "verified": false,
+    "note": "OSM'de kaydı yok; listelerde adres 490/492 King St olarak geçiyor, koordinat eksik.",
+    "id": "avustralya-sydney-12",
+    "state": "NSW"
+  }
+]

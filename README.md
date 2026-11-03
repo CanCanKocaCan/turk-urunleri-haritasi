@@ -8,7 +8,7 @@ Yurt dışında Türk ürünlerini (Beypazarı, Ülker, Pınar, sucuk, simit…)
 
 - Düz HTML, CSS ve JavaScript (derleme adımı yok)
 - [Leaflet](https://leafletjs.com) ve [OpenStreetMap](https://www.openstreetmap.org) haritası
-- Veriler: [`data/markets.json`](data/markets.json)
+- Veriler: [`data/`](data) klasöründe, ülke ve şehre göre ayrılmış (`data/avustralya/adelaide.json` gibi)
 
 ## Yerelde çalıştırma
 
@@ -20,10 +20,11 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 ## Market ekleme (katkıda bulun)
 
 1. Bu repoyu fork'la.
-2. `data/markets.json` dosyasına yeni bir kayıt ekle:
+2. Yerin şehrinin dosyasına (`data/<ülke>/<şehir>.json`, ör. `data/avustralya/adelaide.json`) yeni bir kayıt ekle:
 
 ```json
 {
+  "id": "ulke-sehir-benzersiz-ad",
   "name": "Market adı",
   "type": "market",
   "city": "Şehir",
@@ -36,8 +37,9 @@ Sayfa verileri `fetch` ile yüklediği için `index.html` dosyasına çift tıkl
 }
 ```
 
-   `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖
+   `type` şunlardan biri olmalı: `market` 🛒, `restoran` 🍽️, `kafe` ☕, `firin` 🥖, `berber` 💈 (berberler için yalnızca Türk sahipli dükkanlar eklenir; `products` alanına verdikleri hizmetler yazılır)
 
+   Şehrin dosyası yoksa oluştur ve `data/index.json` içindeki ülkenin listesine ekle (ülke klasörü de yoksa o da eklenir). Ülke ve şehir adları küçük harfli, Türkçe karaktersiz yazılır, boşluk yerine `-` kullanılır: `data/avustralya/gold-coast.json`.
 3. Koordinatları bulmak için Google Maps'te markete sağ tıkla; ilk satırdaki sayılar `lat, lng` değerleridir.
 4. Pull Request aç. GitHub, dosyanın doğru formatta olduğunu otomatik olarak kontrol eder (`scripts/validate-markets.js`).
 
@@ -50,3 +52,56 @@ Haftada bir çalışan bir Claude agent'ı yeni yerler arar, doğrular ve PR aç
 ## Lisans
 
 [MIT](LICENSE)
+
+## Keşif ve paylaşım
+
+Ürün bul modu market ve fırınlardaki ürünleri arar; Mekân bul modu işletme adı,
+şehir, ülke ve türü arar. Ülke, eyalet/bölge, şehir, tür ve arama birlikte filtrelenir.
+ABD ve Avustralya seçildiğinde yalnızca kayıt bulunan eyaletler/bölgeler listelenir.
+`state` kodları `data/regions.json` içinde tanımlıdır ve bu iki ülkenin kayıtlarında zorunludur.
+Örnekler: `country: "ABD", state: "NJ", city: "Paterson"`;
+`country: "Avustralya", state: "ACT", city: "Canberra"`.
+New Jersey artık şehir değildir; kayıtlar gerçek kasaba/şehir dosyalarına taşındı.
+Mevcut mekân id değerleri ve eski `country=ABD&city=New Jersey` bağlantıları korunur.
+Yakınımdakiler yalnızca kullanıcı düğmeye bastığında konum ister; konum URL'ye,
+katkı servisine veya kalıcı depolamaya yazılmaz. Mesafeler kuş uçuşudur.
+Paylaş bağlantıları filtreleri veya seçili mekânın kalıcı `id` değerini taşır.
+Kayıtları yeniden sıralarken `id` alanını değiştirmeyin.
+
+İsteğe bağlı mekân alanları: `website` (http/https) ve `phone` (uluslararası telefon).
+Ürün bilgileri mevcut `products` listesiyle geriye uyumludur:
+
+```json
+"productEvidence": {
+  "Beypazarı maden suyu": {
+    "lastSeen": "2026-10-01",
+    "source": "https://example.com/product-evidence"
+  }
+}
+```
+
+Bu örnek gerçek gözlem değildir. Tarih ve kaynak yalnızca doğrulanmış gözlem
+olduğunda girilir. Eksik veride arayüz tarihi bilinmiyor gösterir; işletmenin
+`source` alanı ürünün stok kanıtı olarak kullanılmaz.
+
+## Hesapsız katkı servisi (ilk kurulum)
+
+GitHub Pages sunucu kodu çalıştırmaz. `community/worker.mjs` anonim formları
+GitHub issue olarak incelemeye alır; yayınlanan veriyi değiştirmez. Gönderilen
+bilgiler açık depoda herkese görünür olabilir; kişisel bilgi toplamayın.
+
+1. Cloudflare Workers hesabında `community/` dizininden Wrangler ile deploy edin.
+2. Yalnızca bu depoya Issues yazma yetkisi olan fine-grained GitHub token'ını
+   `npx wrangler secret put GITHUB_TOKEN` ile secret olarak kaydedin.
+3. `wrangler.toml` içindeki origin, depo ve rate limit binding'ini kontrol edip
+   `npx wrangler deploy` çalıştırın. IP başına dakikada 3 istek sınırı vardır;
+   IP yalnızca edge hız sınırı anahtarıdır, issue gövdesine eklenmez.
+4. Dönen HTTPS adresini `config.js` içindeki `contributionEndpoint` alanına yazın.
+5. Gerçek bir deneme gönderisini kontrol edin; gelen issue'ları doğruladıktan
+   sonra veriye PR ile aktarın. Kapandı/yok bildirimlerini de doğrulayın.
+
+Servis yapılandırılmamışsa arayüz bunu açıkça söyler ve raporu JSON olarak
+indirmeyi sunar. Token kesinlikle istemci dosyalarına konulmaz. Origin kontrolü
+kimlik doğrulama değildir; edge hız sınırı ve insan incelemesi zorunludur.
+
+Kontroller: `node scripts/validate-markets.js`, `node --test tests/*.test.mjs`.

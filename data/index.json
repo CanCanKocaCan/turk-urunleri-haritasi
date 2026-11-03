@@ -1,0 +1,34 @@
+{
+  "abd": [
+    "chicago",
+    "cinnaminson",
+    "clifton",
+    "jersey-city",
+    "paterson",
+    "toms-river",
+    "wayne",
+    "willingboro",
+    "new-york"
+  ],
+  "avustralya": [
+    "adelaide",
+    "brisbane",
+    "canberra",
+    "gold-coast",
+    "melbourne",
+    "perth",
+    "sydney"
+  ],
+  "yeni-zelanda": [
+    "auckland",
+    "christchurch",
+    "dunedin",
+    "hamilton",
+    "queenstown",
+    "tauranga",
+    "wellington"
+  ],
+  "japonya": [
+    "tokyo"
+  ]
+}

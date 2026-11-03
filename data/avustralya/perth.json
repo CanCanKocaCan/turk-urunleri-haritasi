@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Turkish Oven",
+    "type": "restoran",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "275 Albany Hwy, Victoria Park WA 6100",
+    "lat": -31.97228,
+    "lng": 115.89489,
+    "products": [
+      "Pide",
+      "Gözleme",
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://www.openstreetmap.org/way/167161761",
+    "id": "avustralya-perth-1",
+    "state": "WA"
+  },
+  {
+    "name": "Ankara Kebabs and Bakery",
+    "type": "firin",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "807B Beaufort St, Mount Lawley WA 6050",
+    "lat": -31.9251,
+    "lng": 115.88129,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4195540237",
+    "id": "avustralya-perth-2",
+    "state": "WA"
+  },
+  {
+    "name": "Istanbul Kitchen",
+    "type": "restoran",
+    "city": "Perth",
+    "country": "Avustralya",
+    "address": "Fitzgerald St, North Perth WA 6006",
+    "lat": -31.93321,
+    "lng": 115.85935,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4056130278",
+    "id": "avustralya-perth-3",
+    "state": "WA"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Taskin Bakery",
+    "type": "firin",
+    "city": "Paterson",
+    "country": "ABD",
+    "address": "103 Hazel St, Paterson, NJ 07503",
+    "lat": 40.89345,
+    "lng": -74.16396,
+    "products": [
+      "Pide",
+      "Türk çayı"
+    ],
+    "source": "https://www.taskinbakery.com/",
+    "id": "abd-new-jersey-2",
+    "state": "NJ"
+  },
+  {
+    "name": "Kral Pide",
+    "type": "restoran",
+    "city": "Paterson",
+    "country": "ABD",
+    "address": "818 Main St, Paterson, NJ 07503",
+    "lat": 40.89895,
+    "lng": -74.16368,
+    "products": [
+      "Pide",
+      "Lahmacun"
+    ],
+    "source": "https://www.openstreetmap.org/node/13016434501",
+    "id": "abd-new-jersey-3",
+    "state": "NJ"
+  },
+  {
+    "name": "Star Pide Salonu",
+    "type": "restoran",
+    "city": "Paterson",
+    "country": "ABD",
+    "address": "1059 Main St, Paterson, NJ 07503",
+    "lat": 40.89226,
+    "lng": -74.15687,
+    "products": [
+      "Pide",
+      "Lahmacun"
+    ],
+    "source": "https://www.openstreetmap.org/way/1219543442",
+    "id": "abd-new-jersey-4",
+    "state": "NJ"
+  },
+  {
+    "id": "abd-paterson-sultan-market",
+    "name": "Sultan Market",
+    "type": "market",
+    "city": "Paterson",
+    "state": "NJ",
+    "country": "ABD",
+    "address": "251 Crooks Ave, Paterson, NJ 07503",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Türk ekmeği",
+      "Hamur işleri",
+      "Zeytin",
+      "Peynir",
+      "Baharat"
+    ],
+    "source": "https://sultan.market/",
+    "website": "https://sultan.market/",
+    "phone": "+19735232000",
+    "note": "Sokak/kapı numarası eşleşmesi farklı belediye ve posta kodu döndürdüğünden koordinat teyit bekliyor; adres işletmenin kendi sitesinden alındı."
+  }
+]

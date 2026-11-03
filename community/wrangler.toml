@@ -1,0 +1,10 @@
+name = "turk-urunleri-community"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+[vars]
+ALLOWED_ORIGIN = "https://cancankocacan.github.io"
+GITHUB_REPOSITORY = "CanCanKocaCan/turk-urunleri-haritasi"
+[[ratelimits]]
+name = "REPORT_LIMITER"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }

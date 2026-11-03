@@ -1,0 +1,27 @@
+[
+  {
+    "id": "abd-toms-river-yener-turkish-food-market",
+    "name": "Yener Turkish Food Market",
+    "type": "market",
+    "city": "Toms River",
+    "state": "NJ",
+    "country": "ABD",
+    "address": "1234 Route 166, Stella Towne Center, Toms River, NJ 08753",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Ülker ürünleri",
+      "Pınar ürünleri",
+      "Pide",
+      "Simit",
+      "Lahmacun",
+      "Baklava",
+      "Künefe",
+      "Hamsi"
+    ],
+    "source": "https://turkishstorenj.com/",
+    "website": "https://turkishstorenj.com/",
+    "phone": "+17325050333",
+    "note": "Nominatim ve Photon bina/kapı numarası eşleşmesi vermedi; koordinat eklenecek."
+  }
+]

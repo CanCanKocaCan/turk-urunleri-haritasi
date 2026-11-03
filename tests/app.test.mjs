@@ -1,0 +1,37 @@
+// Run with NODE_PATH=/tmp/map-qa/node_modules node --test tests/app.test.mjs
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {JSDOM}=require('jsdom');
+test('combined filters, Turkish search, share restoration and empty state', async()=>{
+ const dom=new JSDOM(fs.readFileSync('index.html','utf8'),{url:'https://example.com/',runScripts:'outside-only'});const w=dom.window;
+ w.HTMLElement.prototype.scrollIntoView=function() {};
+ const map={setView(){return this;},fitBounds(){},on(){return this;},panTo(){},distance(){return 1000;}};
+ const cluster={addTo(){return this;},clearLayers(){},addLayers(){},zoomToShowLayer(m,fn){fn();}};
+ w.L={map:()=>map,tileLayer:()=>({addTo(){}}),markerClusterGroup:()=>cluster,divIcon:()=>({}),marker:()=>({on(){return this;},openPopup(){}})};
+ w.fetch=async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(url,'utf8'))});
+ vm.runInContext(fs.readFileSync('app.js','utf8'),dom.getInternalVMContext());
+ await new Promise(r=>setTimeout(r,30));
+ const d=w.document, search=d.getElementById('search');
+ const index=JSON.parse(fs.readFileSync('data/index.json','utf8'));
+ const total=Object.entries(index).reduce((n,[country,cities])=>n+cities.reduce((sum,city)=>sum+JSON.parse(fs.readFileSync(`data/${country}/${city}.json`,'utf8')).length,0),0);
+ assert.ok(d.getElementById('result-count').textContent.startsWith(`${total} yer`));
+ search.value='beypazari';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('#market-list li').length,1);
+ assert.equal(d.querySelectorAll('#market-list a').length,0);
+ d.querySelector('#market-list button').click();assert.ok(w.location.search.includes('place='));
+ assert.equal(d.getElementById('place-detail').hidden,false);
+ assert.match(d.getElementById('place-detail').textContent,/Yol tarifi al/);
+ d.getElementById('panel-toggle').click();assert.equal(d.getElementById('panel-toggle').getAttribute('aria-expanded'),'false');
+ assert.equal(d.getElementById('sidebar').inert,true);
+ for(const id of ['search','type-filters','nearby','share','reset','contribute','status']) assert.equal(d.getElementById('sidebar').contains(d.getElementById(id)),false);
+ assert.equal(d.getElementById('search-summary').textContent,'1 yer bulundu');
+ d.getElementById('panel-toggle').click();
+ d.getElementById('back-results').click();assert.equal(d.getElementById('place-detail').hidden,true);
+ d.getElementById('reset').click();const country=d.getElementById('country');country.value='Avustralya';country.dispatchEvent(new w.Event('change'));const city=d.getElementById('city');city.value='Adelaide';city.dispatchEvent(new w.Event('change'));assert.match(d.getElementById('result-count').textContent,/4 yer/);
+ d.querySelector('[data-mode=product]').click();assert.match(d.getElementById('result-count').textContent,/1 yer/);
+ search.value='zzzz';search.dispatchEvent(new w.Event('input'));assert.match(d.getElementById('market-list').textContent,/Sonuç bulunamadı/);
+ dom.window.close();
+});

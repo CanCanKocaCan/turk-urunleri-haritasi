@@ -10,30 +10,69 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav id="map-tools" aria-label="Harita araçları">
+    <button id="panel-toggle" aria-label="Yan paneli kapat" aria-controls="sidebar" aria-expanded="true"><span aria-hidden="true">☰</span><span>Sonuçlar</span></button>
+    <button id="filter-toggle" aria-controls="advanced-filters" aria-expanded="false"><span aria-hidden="true">☷</span><span>Filtreler</span></button>
+    <button id="nearby"><span aria-hidden="true">◎</span><span>Yakınımda</span></button>
+    <button id="share"><span aria-hidden="true">↗</span><span>Paylaş</span></button>
+    <button id="reset"><span aria-hidden="true">↺</span><span>Temizle</span></button>
+    <button id="contribute"><span aria-hidden="true">＋</span><span>Yer öner</span></button>
+  </nav>
+  <section id="map-search" aria-label="Haritada arama">
+    <form id="search-form" role="search">
+      <label class="sr-only" for="search">Ürün veya mekân ara</label>
+      <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="Ürün, mekân veya şehir ara" autocomplete="off">
+      <button type="submit" aria-label="Sonuçları haritada göster"><span aria-hidden="true">⌕</span></button>
+    </form>
+    <div id="suggestion-popup" hidden>
+      <div class="popup-heading"><span>Arama önerileri</span><button id="close-suggestions" type="button" class="close-button" aria-label="Arama önerilerini kapat">×</button></div>
+      <div id="suggestions" role="listbox" aria-label="Arama önerileri" hidden></div>
+    </div>
+    <div id="type-filters" aria-label="Mekân türü"></div>
+    <div id="active-filters" aria-label="Aktif filtreler"></div>
+    <p id="search-summary" role="status"></p>
+    <p id="status" role="status"></p>
+  </section>
+  <button id="search-area" hidden>Bu bölgede ara</button>
   <aside id="sidebar">
+    <div class="panel-heading"><span>Sonuçlar ve ayrıntılar</span><button id="close-panel" type="button" class="close-button" aria-label="Sonuç panelini kapat">×</button></div>
+    <button id="sheet-handle" aria-label="Sonuç panelini büyüt" aria-expanded="false"><span aria-hidden="true"></span><span id="sheet-label">Sonuçlar</span></button>
+    <div class="drawer-content">
     <header>
-      <h1>🇹🇷 Türk Ürünleri Haritası</h1>
+      <h1>Türk Ürünleri Haritası</h1>
       <p class="subtitle">Yurt dışında Türk ürünlerini nerede bulursun?</p>
     </header>
 
-    <input id="search" type="search" placeholder="Ürün, market, şehir veya ülke ara… (ör. Beypazarı)" autocomplete="off">
-    <div id="type-filters"></div>
-    <p id="result-count"></p>
+    <details id="advanced-filters"><summary>Filtreler ve arama seçenekleri</summary><div id="modes" aria-label="Arama amacı"><button data-mode="all">Tümü</button><button data-mode="product">Ürün bul</button><button data-mode="place">Mekân bul</button></div>
+    <div class="filters"><label>Ülke<select id="country"><option value="">Tüm ülkeler</option></select></label><label id="state-filter" hidden>Eyalet / bölge<select id="state" disabled aria-describedby="state-help"><option value="">Tüm eyaletler / bölgeler</option></select><small id="state-help">Kayıt bulunan eyaletler ve bölgeler</small></label><label>Şehir<select id="city"><option value="">Tüm şehirler</option></select></label></div>
+    </details><details><summary>Kapsam ve güncellik</summary><p id="coverage"></p><p>Liste kapsamlı değildir. Sonuç bulunmaması, bölgede Türk ürünü olmadığı anlamına gelmez. Ürünler güncel stok garantisi taşımaz.</p></details>
+    <p id="result-count" role="status"></p>
 
-    <ul id="market-list"></ul>
+    <section id="place-detail" aria-label="Mekân ayrıntıları" hidden></section><ul id="market-list"></ul>
 
     <footer>
-      <a href="https://github.com/CanCanKocaCan/turk-urunleri-haritasi" target="_blank" rel="noopener">
-        Market ekle / katkıda bulun →
-      </a>
+      <a href="https://github.com/CanCanKocaCan/turk-urunleri-haritasi" target="_blank" rel="noopener">Kaynak kodu</a>
     </footer>
+    </div>
   </aside>
 
-  <main id="map"></main>
+  <main id="map" aria-label="Mekân haritası"></main>
+  <dialog id="contribution"><form id="contribution-form"><div class="popup-heading"><h2>Topluluğa katkıda bulun</h2><button id="close-contribution" type="button" class="close-button" aria-label="Katkı formunu kapat">×</button></div><p>Öneriler incelendikten sonra yayımlanır. Kişisel bilgi yazmayın.</p>
+  <label>Bildirim türü<select name="kind"><option value="new">Yeni yer / ürün</option><option value="seen">Bu ürünü gördüm</option><option value="missing">Ürün artık yok</option><option value="closed">İşletme kapandı</option><option value="correction">Bilgi düzeltme</option></select></label>
+  <label>Mekân adı<input name="place" required maxlength="160"></label>
+  <label>Şehir / ülke<input name="location" required maxlength="160"></label>
+  <label>Ürün, adres veya açıklama<textarea name="details" required maxlength="2000"></textarea></label>
+  <label>Gözlem tarihi<input name="observedAt" type="date" required></label>
+  <label>Kaynak bağlantısı (isteğe bağlı)<input name="source" type="url" maxlength="500"></label>
+  <div class="sr-only" aria-hidden="true"><input name="company" tabindex="-1" autocomplete="off"></div>
+  <p id="form-status" role="status"></p><button type="submit">İncelemeye gönder</button><button type="button" id="download-report">Öneriyi indir</button><button type="button" id="close-form">Kapat</button>
+  </form></dialog>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="config.js"></script><script src="app.js"></script>
 </body>
 </html>
