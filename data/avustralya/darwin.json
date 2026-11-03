@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Istanbul Kebab Bar",
+    "type": "restoran",
+    "city": "Darwin",
+    "country": "Avustralya",
+    "address": "69 Mitchell St, Darwin City NT 0800",
+    "lat": -12.46298,
+    "lng": 130.83945,
+    "products": [],
+    "source": "https://darwinlocalista.com.au/listing/au/darwin-city/bars-and-restaurants/istanbul-kebab-bar",
+    "id": "avustralya-darwin-1",
+    "state": "NT"
+  }
+]
