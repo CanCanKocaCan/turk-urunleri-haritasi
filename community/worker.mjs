@@ -21,7 +21,7 @@ export default {
       data=JSON.parse(new TextDecoder().decode(bytes));
     } catch {return reply(400,'Invalid JSON');}
     if(!data || typeof data !== 'object' || data.company) return reply(400,'Invalid report');
-    if(!['new','seen','missing','closed','correction'].includes(data.kind)) return reply(400,'Invalid kind');
+    if(!['new','seen','missing','closed','correction','remove'].includes(data.kind)) return reply(400,'Invalid kind');
     for(const [field,max] of Object.entries({place:160,location:160,details:2000,observedAt:10})) if(typeof data[field] !== 'string' || !data[field].trim() || data[field].length>max) return reply(400,'Invalid fields');
     if(!/^\d{4}-\d{2}-\d{2}$/.test(data.observedAt) || !Number.isFinite(Date.parse(data.observedAt)) || data.observedAt>new Date().toISOString().slice(0,10)) return reply(400,'Invalid date');
     if(data.source && (typeof data.source!=='string' || data.source.length>500 || !/^https?:\/\/\S+$/.test(data.source))) return reply(400,'Invalid source');

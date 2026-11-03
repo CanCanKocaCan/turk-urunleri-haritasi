@@ -326,7 +326,7 @@ document.getElementById('nearby').onclick = () => {
 const dialog=document.getElementById('contribution'), form=document.getElementById('contribution-form');
 function openForm(m) {
   closeSuggestions();
-  form.reset(); form.elements.place.value=m?.name || ''; form.elements.location.value=m ? locationLabel(m) : '';
+  form.reset(); if(m) form.elements.kind.value='correction'; form.elements.place.value=m?.name || ''; form.elements.location.value=m ? locationLabel(m) : '';
   form.elements.observedAt.max=new Date().toLocaleDateString('en-CA');
   document.getElementById('form-status').textContent=window.APP_CONFIG?.contributionEndpoint ? '' : 'Çevrimiçi gönderim henüz yapılandırılmadı. Önerini dosya olarak indirebilirsin.';
   dialog.showModal();

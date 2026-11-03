@@ -16,6 +16,7 @@ test('queues moderated report without IP, escapes mentions, surfaces upstream fa
  try {globalThis.fetch=async(url,options)=>{queued=JSON.parse(options.body);return new Response('{}',{status:201});};
  assert.equal((await worker.fetch(request({...report,details:'@owner <script>'}),env)).status,201);
  assert.ok(!queued.body.includes('192.0.2.1'));assert.ok(!queued.body.includes('@owner'));
+ assert.equal((await worker.fetch(request({...report,kind:'remove'}),env)).status,201);assert.match(queued.title,/^\[Topluluk\/remove\]/);
  globalThis.fetch=async()=>new Response('',{status:500});assert.equal((await worker.fetch(request(report),env)).status,502);
  } finally {globalThis.fetch=original;}
 });

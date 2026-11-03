@@ -89,6 +89,7 @@ test('observation dates never fabricate freshness and report form carries produc
  assert.match(run("freshnessHtml(new Date().toISOString().slice(0,10))"),/recent/);
  input('beypazari');d.querySelector('.result-card').click();
  assert.match(d.getElementById('place-detail').textContent,/Görülme tarihi bilinmiyor/);
+ d.getElementById('detail-report').click();assert.equal(d.getElementById('contribution-form').elements.kind.value,'correction');d.getElementById('contribution').close();
  d.querySelector('.seen-product').click();const form=d.getElementById('contribution-form');
  assert.equal(d.getElementById('contribution').open,true);assert.equal(form.elements.kind.value,'seen');
  assert.equal(form.elements.place.value,'Saray Market & Butchery');assert.equal(form.elements.details.value,'Beypazarı maden suyu');
