@@ -1,0 +1,21 @@
+[
+  {
+    "id": "italya-brescia-black-house",
+    "name": "Black House",
+    "type": "restoran",
+    "city": "Brescia",
+    "country": "İtalya",
+    "address": "Via San Polo 279, 25134 Brescia, Italia",
+    "lat": 45.50775,
+    "lng": 10.25512,
+    "products": [
+      "Adana kebap",
+      "Tavuk şiş",
+      "Şiş kebap",
+      "Pirzola",
+      "Kebap"
+    ],
+    "source": "https://black-house.it/",
+    "website": "https://black-house.it/"
+  }
+]

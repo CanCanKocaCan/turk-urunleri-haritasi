@@ -1,0 +1,113 @@
+[
+  {
+    "id": "italya-milano-blu-istanbul",
+    "name": "Blu Istanbul",
+    "type": "restoran",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Corso Sempione 81, Milano, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Döner kebap",
+      "Şiş kebap",
+      "Izgara köfte",
+      "Pirzola",
+      "Ayran",
+      "Baklava",
+      "Kadayıf",
+      "Revani"
+    ],
+    "source": "https://bluistanbul.it/",
+    "phone": "+390236748147",
+    "website": "https://bluistanbul.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-milano-meydan",
+    "name": "Meydan Kebap Pizza Grill",
+    "type": "restoran",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Via G. B. Pergolesi 3, 20124 Milano MI, Italia",
+    "lat": 45.48345,
+    "lng": 9.21317,
+    "products": [
+      "Döner kebap",
+      "Adana kebap",
+      "Tavuk şiş",
+      "Karnıyarık",
+      "İzmir köfte",
+      "Sigara böreği",
+      "Baklava",
+      "Şekerpare"
+    ],
+    "source": "https://www.meydansrl.it/",
+    "phone": "+393275622407",
+    "website": "https://www.meydansrl.it/",
+    "note": "Koordinat Pergolesi 3 kapı numarası eşleşmesinden; OSM kaydında farklı işletme adı ve 20131 posta kodu var. Resmî site 20124 yazıyor; işletme/posta kodu elle teyit edilmeli. Sitedeki adresle uyuşmayan JSON-LD noktası kullanılmadı."
+  },
+  {
+    "id": "italya-milano-ilk-istanbul-living-kebap",
+    "name": "ILK Istanbul Living Kebap",
+    "type": "restoran",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Via Orefici 24, Milano, Italia",
+    "lat": 45.46462,
+    "lng": 9.18717,
+    "products": [
+      "Kebap",
+      "Falafel"
+    ],
+    "source": "https://ilk-kebap.com/",
+    "website": "https://ilk-kebap.com/"
+  },
+  {
+    "id": "italya-milano-istanbul-market-ponte-seveso",
+    "name": "Istanbul Market Milano",
+    "type": "market",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Via Ponte Seveso 42, 20125 Milano MI, Italia",
+    "lat": 45.49023,
+    "lng": 9.20579,
+    "products": [
+      "Ayran",
+      "Turşu"
+    ],
+    "source": "https://www.tuttamilano.it/milano-istanbul-market-milano-58478",
+    "phone": "+393757333707"
+  },
+  {
+    "id": "italya-milano-alnabulsi",
+    "name": "AlNabulsi Pasticceria",
+    "type": "firin",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Via Panfilo Castaldi 40, 20124 Milano, Italia",
+    "lat": 45.47559,
+    "lng": 9.20525,
+    "products": [
+      "Cevizli Türk baklavası"
+    ],
+    "source": "https://alnabulsi.it/",
+    "phone": "+393277848709",
+    "website": "https://alnabulsi.it/",
+    "note": "Koordinat Castaldi 40 kapı numarası eşleşmesinden; OSM kaydı farklı/eski bir işletme adı taşıyor. İşletme noktası elle teyit edilmeli."
+  },
+  {
+    "id": "italya-milano-turkuaz",
+    "name": "Ristorante Turkuaz",
+    "type": "restoran",
+    "city": "Milano",
+    "country": "İtalya",
+    "address": "Via Mac Mahon 40, 20155 Milano, Italia",
+    "lat": 45.49116,
+    "lng": 9.16183,
+    "products": [],
+    "source": "https://ristoranteturkuaz.eatbu.com/?lang=it",
+    "phone": "+390236587552",
+    "website": "https://ristoranteturkuaz.eatbu.com/?lang=it"
+  }
+]

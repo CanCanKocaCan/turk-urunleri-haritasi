@@ -1,0 +1,35 @@
+[
+  {
+    "id": "italya-rimini-istanbul-marconi",
+    "name": "Istanbul Kebab & Pizza - Marconi",
+    "type": "restoran",
+    "city": "Rimini",
+    "country": "İtalya",
+    "address": "Viale Guglielmo Marconi 28, 47924 Rimini RN, Italia",
+    "lat": 44.03234,
+    "lng": 12.61804,
+    "products": [
+      "Kebap",
+      "Baklava",
+      "Revani",
+      "Ayran"
+    ],
+    "source": "https://www.justeat.it/restaurants-istanbul-doner-kebab-and-pizza-rimini"
+  },
+  {
+    "id": "italya-rimini-pizza-kebap-turkish",
+    "name": "Pizza Kebap Turkish",
+    "type": "restoran",
+    "city": "Rimini",
+    "country": "İtalya",
+    "address": "Viale Guglielmo Marconi 52, 47924 Rimini RN, Italia",
+    "lat": 44.03096,
+    "lng": 12.61983,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://deliveroo.it/en/menu/rimini/rimini/pizza-kebap-turkish-viale-guglielmo-marconi-52-viale-guglielmo-marconi-52",
+    "note": "Kapı numarası sipariş platformu ve dizinlerde 52, OSM türevi bir listede 52a; koordinat eşleşmesi teyit edilmeli."
+  }
+]

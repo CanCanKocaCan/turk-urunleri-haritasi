@@ -1,0 +1,21 @@
+[
+  {
+    "id": "italya-bergamo-istanbul-efe-kebap",
+    "name": "İstanbul Efe Kebap",
+    "type": "restoran",
+    "city": "Bergamo",
+    "country": "İtalya",
+    "address": "Via San Bernardino 99, 24126 Bergamo BG, Italia",
+    "lat": 45.68291,
+    "lng": 9.66209,
+    "products": [
+      "Döner kebap",
+      "Ispanaklı börek",
+      "Baklava"
+    ],
+    "source": "https://www.istanbulefekebap.com/",
+    "phone": "+393297340527",
+    "website": "https://www.istanbulefekebap.com/",
+    "note": "Koordinat San Bernardino 99 kapı numarası eşleşmesinden; OSM kaydı farklı işletme adı taşıyor. Sitedeki adresle uyuşmayan JSON-LD noktası kullanılmadı; yerinde teyit önerilir."
+  }
+]

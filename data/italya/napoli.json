@@ -1,0 +1,30 @@
+[
+  {
+    "id": "italya-napoli-istanbul-monteoliveto",
+    "name": "Istanbul Doner Kebab Restaurant Naples",
+    "type": "restoran",
+    "city": "Napoli",
+    "country": "İtalya",
+    "address": "Via Monteoliveto 88, 80134 Napoli NA, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://restaurantguru.it/Istanbul-Doner-kebab-restaurant-naples-Naples",
+    "note": "Menü ürünleri doğrulanamadı. Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-napoli-istanbul-mezzocannone",
+    "name": "Istanbul Kebab - Mezzocannone",
+    "type": "restoran",
+    "city": "Napoli",
+    "country": "İtalya",
+    "address": "Via Mezzocannone 53, 80134 Napoli NA, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://restaurantguru.com/Istanbul-Kebab-Naples",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

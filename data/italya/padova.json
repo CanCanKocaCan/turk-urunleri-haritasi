@@ -1,0 +1,18 @@
+[
+  {
+    "id": "italya-padova-marrakesh-express",
+    "name": "Marrakesh Express Kebab",
+    "type": "restoran",
+    "city": "Padova",
+    "country": "İtalya",
+    "address": "Via Alessandro Manzoni 114, 35126 Padova PD, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Türk kebabı"
+    ],
+    "source": "https://marrakeshexpress.it/",
+    "website": "https://marrakeshexpress.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

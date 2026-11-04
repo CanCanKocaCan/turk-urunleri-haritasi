@@ -1,0 +1,33 @@
+[
+  {
+    "id": "italya-ancona-kebap-turco-gramsci",
+    "name": "Kebap Turco",
+    "type": "restoran",
+    "city": "Ancona",
+    "country": "İtalya",
+    "address": "Via Antonio Gramsci 3/B, 60121 Ancona AN, Italia",
+    "lat": 43.61949,
+    "lng": 13.51051,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://mapcarta.com/N1238991004",
+    "note": "OSM tabanlı Mapcarta ve Cartogiraffe aynı ad/kapı numarasını veriyor; Ancona Kebab ve Turcuaz takma adlarıyla ikinci kez eklenmedi."
+  },
+  {
+    "id": "italya-ancona-turcuaz-istanbul-cavour",
+    "name": "Turcuaz Istanbul Turkish Kebap Pizza",
+    "type": "restoran",
+    "city": "Ancona",
+    "country": "İtalya",
+    "address": "Piazza Camillo Benso di Cavour 31, 60121 Ancona AN, Italia",
+    "lat": 43.61698,
+    "lng": 13.51585,
+    "products": [
+      "Kebap",
+      "Börek"
+    ],
+    "source": "https://restaurantguru.it/Turcuaz-istanbul-turkish-kebap-pizza-Ancona",
+    "note": "Türk mutfağı Restaurant Guru kaydında açık. Adres LocalShop24 ve PizzaRank ile tutarlı; Cybo/tarihî ticaret kaydı 31/33 şeklinde yazıyor."
+  }
+]
