@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Istanbul Grill Cafe & Bakery",
+    "type": "restoran",
+    "city": "Urbandale",
+    "country": "ABD",
+    "address": "3281 100th St, Urbandale, IA 50322",
+    "lat": 41.6243,
+    "lng": -93.75495,
+    "products": [
+      "Kuzu şiş kebap"
+    ],
+    "source": "https://winimoranville.substack.com/p/my-one-word-review-of-istanbul-grill",
+    "id": "abd-urbandale-1",
+    "state": "IA"
+  }
+]

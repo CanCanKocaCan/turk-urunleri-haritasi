@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Turkish Family Market",
+    "type": "market",
+    "city": "Ellicott City",
+    "country": "ABD",
+    "address": "8457 Baltimore National Pike, Ellicott City, MD 21043",
+    "lat": 39.2844,
+    "lng": -76.80552,
+    "products": [
+      "Helal kesim dana eti",
+      "Helal kesim kuzu eti",
+      "Helal kesim tavuk"
+    ],
+    "source": "https://www.openstreetmap.org/node/7319336424",
+    "id": "abd-ellicott-city-1",
+    "state": "MD"
+  }
+]

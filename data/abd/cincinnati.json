@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Truva Turkish Kitchen (Kenwood)",
+    "type": "restoran",
+    "city": "Cincinnati",
+    "country": "ABD",
+    "address": "8060 Montgomery Rd Suite 400, Cincinnati, OH 45236",
+    "lat": 39.202,
+    "lng": -84.3709,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://www.truvaturkishkitchen.com",
+    "id": "abd-cincinnati-1",
+    "state": "OH"
+  }
+]

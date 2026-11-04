@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Istanbul'lu",
+    "type": "restoran",
+    "city": "Somerville",
+    "country": "ABD",
+    "address": "237 Holland Street, Somerville, MA 02144",
+    "lat": 42.40271,
+    "lng": -71.12676,
+    "products": [
+      "Menemen",
+      "İskender",
+      "Fırında patlıcan"
+    ],
+    "source": "https://www.cambridgeday.com/2023/05/31/turkish-eggs-and-coffee-at-istanbullu/",
+    "id": "abd-somerville-1",
+    "state": "MA"
+  }
+]

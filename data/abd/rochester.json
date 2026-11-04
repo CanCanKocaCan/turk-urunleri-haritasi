@@ -1,0 +1,20 @@
+[
+  {
+    "name": "As Evi Bakery & Restaurant",
+    "type": "restoran",
+    "city": "Rochester",
+    "country": "ABD",
+    "address": "2973 West Henrietta Road, Rochester, NY 14623",
+    "lat": 43.09272,
+    "lng": -77.63513,
+    "products": [
+      "Karışık ızgara",
+      "Pide",
+      "Mercimek çorbası",
+      "Kebap"
+    ],
+    "source": "https://www.zabihah.com/restaurants/95205d5e-d410-4898-9f52-bb798e7d4214/as-evi-bakery-rochester-ny",
+    "id": "abd-rochester-1",
+    "state": "NY"
+  }
+]

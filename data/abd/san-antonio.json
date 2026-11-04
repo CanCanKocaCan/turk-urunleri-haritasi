@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Chef's Table Turkish Mediterranean Grill",
+    "type": "restoran",
+    "city": "San Antonio",
+    "country": "ABD",
+    "state": "TX",
+    "address": "1546 Babcock Rd, Ste 102, San Antonio, TX 78229",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Adana kebap",
+      "Pide"
+    ],
+    "source": "https://foxsanantonio.com/newsletter-daily/chefs-table-brings-authentic-turkish-cuisine-to-san-antonio",
+    "id": "abd-san-antonio-1"
+  }
+]

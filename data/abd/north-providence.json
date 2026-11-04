@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Istanbul Gourmet Market",
+    "type": "market",
+    "city": "North Providence",
+    "country": "ABD",
+    "address": "1706 Mineral Spring Avenue, North Providence, RI 02904",
+    "lat": 41.86299,
+    "lng": -71.45404,
+    "products": [
+      "Sigara böreği",
+      "Türk kahvesi",
+      "Ayran"
+    ],
+    "source": "https://web.uri.edu/global/wp-content/uploads/sites/1988/Food-Resources-Presentation-Fall-2023.pdf",
+    "id": "abd-north-providence-1",
+    "state": "RI"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Truva Turkish Kitchen (Mason)",
+    "type": "restoran",
+    "city": "Mason",
+    "country": "ABD",
+    "address": "5065 Deerfield Blvd, Mason, OH 45040",
+    "lat": 39.30613,
+    "lng": -84.31531,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://www.truvaturkishkitchen.com",
+    "id": "abd-mason-1",
+    "state": "OH"
+  }
+]

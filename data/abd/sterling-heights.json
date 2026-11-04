@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Galata Turkish Cuisine Cafe and Restaurant",
+    "type": "restoran",
+    "city": "Sterling Heights",
+    "country": "ABD",
+    "address": "2079 15 Mile Rd, Sterling Heights, MI 48310",
+    "lat": 42.54986,
+    "lng": -83.08672,
+    "products": [
+      "Kebap",
+      "Künefe",
+      "Baklava"
+    ],
+    "source": "https://www.ubereats.com/store/galata-turkish-cuisine-cafe-and-restaurant/qH8SOcThVdmX1OOmOC_gKQ",
+    "id": "abd-sterling-heights-1",
+    "state": "MI"
+  }
+]

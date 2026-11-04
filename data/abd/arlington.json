@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Yayla Bistro",
+    "type": "restoran",
+    "city": "Arlington",
+    "country": "ABD",
+    "address": "2201 N Westmoreland St, Arlington, VA 22213",
+    "lat": 38.88665,
+    "lng": -77.16246,
+    "products": [
+      "Lahmacun",
+      "Pide"
+    ],
+    "source": "https://www.openstreetmap.org/way/207951177",
+    "id": "abd-arlington-1",
+    "state": "VA"
+  },
+  {
+    "name": "Istanbull Grill",
+    "type": "restoran",
+    "city": "Arlington",
+    "country": "ABD",
+    "address": "4617 Wilson Blvd, Arlington, VA 22203",
+    "lat": 38.87927,
+    "lng": -77.11761,
+    "products": [
+      "Döner",
+      "Adana kebap",
+      "İskender kebap"
+    ],
+    "source": "https://www.openstreetmap.org/way/211174271",
+    "id": "abd-arlington-2",
+    "state": "VA"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Istanbul Cafe and Bakery",
+    "type": "firin",
+    "city": "Denver",
+    "country": "ABD",
+    "address": "850 S Monaco Pkwy, Denver, CO 80224",
+    "lat": 39.70156,
+    "lng": -104.91175,
+    "products": [
+      "Baklava",
+      "Türk çayı",
+      "Türk kahvesi",
+      "Türk kahvaltısı",
+      "Açma"
+    ],
+    "source": "https://istanbulcafebakery.com/",
+    "id": "abd-denver-istanbul-cafe-bakery-monaco",
+    "state": "CO"
+  },
+  {
+    "name": "Istanbul Cafe and Bakery (Evans Ave)",
+    "type": "firin",
+    "city": "Denver",
+    "country": "ABD",
+    "address": "2350 E Evans Ave, Denver, CO 80210",
+    "lat": 39.67827,
+    "lng": -104.95902,
+    "products": [
+      "Baklava",
+      "Türk çayı",
+      "Türk kahvesi",
+      "Türk kahvaltısı",
+      "Açma"
+    ],
+    "source": "https://istanbulcafebakery.com/",
+    "id": "abd-denver-istanbul-cafe-bakery-evans",
+    "state": "CO"
+  },
+  {
+    "name": "Nazar International Market",
+    "type": "market",
+    "city": "Denver",
+    "country": "ABD",
+    "address": "1842 S Parker Rd #6, Denver, CO 80231",
+    "lat": 39.68357,
+    "lng": -104.88053,
+    "products": [],
+    "source": "https://www.atly.com/location/NazarInternationalMarket",
+    "id": "abd-denver-nazar-market",
+    "state": "CO"
+  },
+  {
+    "name": "Pizza & Pide Turkish Cuisine",
+    "type": "restoran",
+    "city": "Denver",
+    "country": "ABD",
+    "address": "2000 S Colorado Blvd (Junction Food & Drink), Denver, CO 80222",
+    "lat": 39.68049,
+    "lng": -104.93868,
+    "products": [
+      "Pide",
+      "Lahmacun",
+      "Börek",
+      "Sucuklu pide",
+      "Türk kahvaltısı"
+    ],
+    "source": "https://gazette.com/2026/05/26/move-over-pizza-meet-turkish-pide/",
+    "id": "abd-denver-pizza-and-pide",
+    "state": "CO"
+  }
+]

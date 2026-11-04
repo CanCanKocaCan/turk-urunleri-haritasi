@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Grand Bazaar Grocery & Meat",
+    "type": "market",
+    "city": "San Carlos",
+    "country": "ABD",
+    "address": "751 Laurel St, San Carlos, CA 94070",
+    "lat": 37.50468,
+    "lng": -122.25873,
+    "products": [
+      "Helal et",
+      "Baklava",
+      "Lokum",
+      "Susamlı ekmek",
+      "Baharat"
+    ],
+    "source": "https://www.atly.com/location/GrandBazaarFoods",
+    "id": "abd-san-carlos-grand-bazaar-grocery-meat",
+    "state": "CA"
+  }
+]

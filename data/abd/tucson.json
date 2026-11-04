@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Istanbul Mediterranean Cuisine & Bar",
+    "type": "restoran",
+    "city": "Tucson",
+    "country": "ABD",
+    "address": "2945 E Speedway Blvd, Tucson, AZ 85716",
+    "lat": 32.23644,
+    "lng": -110.92859,
+    "products": [
+      "Kebap",
+      "Baklava",
+      "Türk çayı",
+      "Türk kahvesi"
+    ],
+    "source": "https://tucsonfoodie.com/news/istanbul-mediterranean-cuisine",
+    "id": "abd-tucson-istanbul-mediterranean",
+    "state": "AZ"
+  },
+  {
+    "name": "Turkish Kebab House",
+    "type": "restoran",
+    "city": "Tucson",
+    "country": "ABD",
+    "address": "810 E University Blvd, Tucson, AZ 85719",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Adana kebap",
+      "İskender",
+      "Döner",
+      "Köfte",
+      "Baklava",
+      "Sütlaç",
+      "Kaymak"
+    ],
+    "source": "https://tucsonfoodie.com/news/turkish-kebab-house",
+    "id": "abd-tucson-turkish-kebab-house",
+    "state": "AZ"
+  }
+]

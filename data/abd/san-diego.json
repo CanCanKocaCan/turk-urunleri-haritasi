@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Balboa International Market",
+    "type": "market",
+    "city": "San Diego",
+    "country": "ABD",
+    "address": "5905 Balboa Ave, San Diego, CA 92111",
+    "lat": 32.81892,
+    "lng": -117.178,
+    "products": [
+      "Türk peynirleri",
+      "Sucuk",
+      "Zeytin",
+      "Kızılay maden suyu",
+      "Lokum"
+    ],
+    "source": "https://myhalalkitchen.com/three-halal-markets-around-san-diego/",
+    "id": "abd-san-diego-balboa-international-market",
+    "state": "CA"
+  }
+]

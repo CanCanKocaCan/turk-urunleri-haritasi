@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Global Bazaar",
+    "type": "market",
+    "city": "Casselberry",
+    "country": "ABD",
+    "address": "1531 E Altamonte Dr, Casselberry, FL 32730",
+    "lat": 28.66167,
+    "lng": -81.34288,
+    "products": [
+      "Ülker",
+      "Pınar",
+      "Eti",
+      "Çaykur",
+      "Yudum",
+      "Simit",
+      "Poğaça",
+      "Baklava"
+    ],
+    "source": "https://globalbazaaronline.com/",
+    "id": "abd-casselberry-1",
+    "state": "FL"
+  }
+]

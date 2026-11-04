@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Aya Sofia",
+    "type": "restoran",
+    "city": "St. Louis",
+    "country": "ABD",
+    "address": "6671 Chippewa St, St. Louis, MO 63109",
+    "lat": 38.59041,
+    "lng": -90.30684,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/cb506481-7767-11ef-95ae-6045bdeb9f57/aya-sofia-st-louis-mo",
+    "id": "abd-st-louis-1",
+    "state": "MO"
+  },
+  {
+    "name": "Sheesh",
+    "type": "restoran",
+    "city": "St. Louis",
+    "country": "ABD",
+    "address": "3226 S Grand Blvd, St. Louis, MO 63118",
+    "lat": 38.59837,
+    "lng": -90.24277,
+    "products": [
+      "İskender kebap",
+      "Fıstıklı kebap",
+      "Yaprak sarma",
+      "Künefe",
+      "Baklava",
+      "Türk kahvesi"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cb820710-7767-11ef-95ae-6045bdeb9f57/sheesh-st-louis-mo",
+    "id": "abd-st-louis-2",
+    "state": "MO"
+  }
+]

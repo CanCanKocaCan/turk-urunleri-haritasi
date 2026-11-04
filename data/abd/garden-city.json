@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Simit House Turkish Bakery",
+    "type": "firin",
+    "city": "Garden City",
+    "country": "ABD",
+    "address": "29530 Ford Rd, Garden City, MI 48135",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Simit",
+      "Türk kahvesi",
+      "Türk kahvaltısı"
+    ],
+    "source": "https://www.atly.com/location/SimitHouseTurkishBakery",
+    "id": "abd-garden-city-1",
+    "state": "MI"
+  }
+]

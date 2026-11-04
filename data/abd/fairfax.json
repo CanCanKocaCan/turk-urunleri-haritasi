@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Sultan Turkish Market",
+    "type": "market",
+    "city": "Fairfax",
+    "country": "ABD",
+    "address": "10560 Warwick Ave, Fairfax, VA 22030",
+    "lat": 38.85705,
+    "lng": -77.31003,
+    "products": [
+      "Baklava"
+    ],
+    "source": "https://www.openstreetmap.org/way/1539330646",
+    "id": "abd-fairfax-1",
+    "state": "VA"
+  }
+]

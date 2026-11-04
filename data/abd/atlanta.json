@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Truva Turkish Kitchen",
+    "type": "restoran",
+    "city": "Atlanta",
+    "country": "ABD",
+    "address": "842 N Highland Ave NE, Atlanta, GA 30306",
+    "lat": 33.77747,
+    "lng": -84.35274,
+    "products": [
+      "Meze",
+      "Kebap"
+    ],
+    "source": "https://www.virginiahighlanddistrict.com/business-directory/truva-turkish-kitchen",
+    "id": "abd-atlanta-1",
+    "state": "GA"
+  }
+]

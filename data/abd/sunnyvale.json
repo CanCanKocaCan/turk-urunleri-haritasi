@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Meyhouse Sunnyvale",
+    "type": "restoran",
+    "city": "Sunnyvale",
+    "country": "ABD",
+    "address": "187 S Murphy Ave, Sunnyvale, CA 94086",
+    "lat": 37.37645,
+    "lng": -122.03043,
+    "products": [
+      "Meze",
+      "Pide",
+      "Izgara"
+    ],
+    "source": "https://meyhouserestaurant.com",
+    "id": "abd-sunnyvale-meyhouse-sunnyvale",
+    "state": "CA"
+  }
+]

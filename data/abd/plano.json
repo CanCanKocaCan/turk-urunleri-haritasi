@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Horizon Turkish Supermarket",
+    "type": "market",
+    "city": "Plano",
+    "country": "ABD",
+    "state": "TX",
+    "address": "2901 W 15th St, Plano, TX 75075",
+    "lat": 33.02024,
+    "lng": -96.751,
+    "products": [
+      "Türk ve Akdeniz gıda ürünleri",
+      "Helal et",
+      "Taze ekmek ve pastane ürünleri"
+    ],
+    "source": "https://www.dmagazine.com/food-drink/2022/10/heres-how-to-shop-at-planos-terrific-turkish-grocery/",
+    "id": "abd-plano-1"
+  },
+  {
+    "name": "Altin Grocery",
+    "type": "market",
+    "city": "Plano",
+    "country": "ABD",
+    "state": "TX",
+    "address": "1201 N Central Expy, Plano, TX 75075",
+    "lat": 33.0178,
+    "lng": -96.7106,
+    "products": [
+      "Türk gıda ürünleri",
+      "Helal ürünler",
+      "Türk mutfak gereçleri",
+      "Közlenmiş patlıcan",
+      "Arpa şehriye",
+      "Lavaş"
+    ],
+    "source": "https://communityimpact.com/plano-north/business/turkish-groceries-available-at-altin-grocery-in-plano/",
+    "id": "abd-plano-2"
+  },
+  {
+    "name": "Prime Doner Restaurant",
+    "type": "restoran",
+    "city": "Plano",
+    "country": "ABD",
+    "state": "TX",
+    "address": "601 W 15th St, Plano, TX 75075",
+    "lat": 33.01962,
+    "lng": -96.71242,
+    "products": [
+      "Döner",
+      "Çağ kebabı",
+      "İskender"
+    ],
+    "source": "https://www.visitplano.com/dining/prime-doner-restaurant/",
+    "id": "abd-plano-3"
+  }
+]
