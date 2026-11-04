@@ -1,0 +1,14 @@
+[
+  {
+    "id": "almanya-leverkusen-hepsi",
+    "name": "Hepsi-Markt Leverkusen",
+    "type": "market",
+    "city": "Leverkusen",
+    "country": "Almanya",
+    "address": "Küppersteger Straße 3, 51373 Leverkusen, Deutschland",
+    "lat": 51.04619,
+    "lng": 6.99371,
+    "products": [],
+    "source": "https://hepsi-markt.de/filialen-anfahrt/"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "almanya-duisburg-bade-istanbul",
+    "name": "Bade Istanbul",
+    "type": "firin",
+    "city": "Duisburg",
+    "country": "Almanya",
+    "address": "Wanheimer Straße 90, 47053 Duisburg, Deutschland",
+    "lat": 51.41761,
+    "lng": 6.75349,
+    "products": [],
+    "source": "https://badeistanbul.de/kontakt/"
+  },
+  {
+    "id": "almanya-duisburg-cafe-femm",
+    "name": "Cafe Femm",
+    "type": "kafe",
+    "city": "Duisburg",
+    "country": "Almanya",
+    "address": "Hagedornstraße 55, 47169 Duisburg, Deutschland",
+    "lat": 51.50286,
+    "lng": 6.75559,
+    "products": [],
+    "source": "https://cafe-femm.de/"
+  }
+]

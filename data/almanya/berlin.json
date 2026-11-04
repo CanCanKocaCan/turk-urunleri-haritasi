@@ -1,0 +1,52 @@
+[
+  {
+    "id": "almanya-berlin-eurogida-kreuzberg-i",
+    "name": "Eurogida Kreuzberg I",
+    "type": "market",
+    "city": "Berlin",
+    "country": "Almanya",
+    "address": "Wrangelstraße 85, 10997 Berlin, Deutschland",
+    "lat": 52.49894,
+    "lng": 13.44138,
+    "products": [
+      "Turşu",
+      "Simit",
+      "Poğaça",
+      "Baklava",
+      "Kadayıf",
+      "Tulumba"
+    ],
+    "source": "https://www.eurogida.de/filialen/"
+  },
+  {
+    "id": "almanya-berlin-eurogida-schoneberg",
+    "name": "Eurogida Schöneberg",
+    "type": "market",
+    "city": "Berlin",
+    "country": "Almanya",
+    "address": "Potsdamer Straße 152, 10783 Berlin, Deutschland",
+    "lat": 52.49676,
+    "lng": 13.36131,
+    "products": [
+      "Turşu",
+      "Simit",
+      "Poğaça",
+      "Baklava",
+      "Kadayıf",
+      "Tulumba"
+    ],
+    "source": "https://www.eurogida.de/filialen/"
+  },
+  {
+    "id": "almanya-berlin-alsancak-simit-sarayi",
+    "name": "Alsancak Simit Sarayi",
+    "type": "firin",
+    "city": "Berlin",
+    "country": "Almanya",
+    "address": "Blücherstraße 9, 10961 Berlin, Deutschland",
+    "lat": 52.49588,
+    "lng": 13.39554,
+    "products": [],
+    "source": "https://www.alsancak-simit-sarayi.de/"
+  }
+]

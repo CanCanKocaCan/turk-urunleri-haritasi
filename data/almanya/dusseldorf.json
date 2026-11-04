@@ -1,0 +1,20 @@
+[
+  {
+    "id": "almanya-dusseldorf-damla-baklava",
+    "name": "Damla Düsseldorf",
+    "type": "firin",
+    "city": "Düsseldorf",
+    "country": "Almanya",
+    "address": "Graf-Adolf-Straße 71, 40210 Düsseldorf, Deutschland",
+    "lat": 51.21896,
+    "lng": 6.78714,
+    "products": [
+      "Baklava",
+      "Künefe",
+      "Kadayıf",
+      "Şöbiyet",
+      "Ayran"
+    ],
+    "source": "https://damlabaklava.de/fillialen/"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "almanya-darmstadt-anteplioglu",
+    "name": "Anteplioglu Darmstadt",
+    "type": "firin",
+    "city": "Darmstadt",
+    "country": "Almanya",
+    "address": "Adelungstraße 33, 64283 Darmstadt, Deutschland",
+    "lat": 49.87075,
+    "lng": 8.64662,
+    "products": [
+      "Baklava",
+      "Kadayıf"
+    ],
+    "source": "https://www.anteplioglu.de/pages/filialen"
+  }
+]

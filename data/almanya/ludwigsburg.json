@@ -1,0 +1,14 @@
+[
+  {
+    "id": "almanya-ludwigsburg-mg-supermarkt",
+    "name": "MG Supermarkt Ludwigsburg",
+    "type": "market",
+    "city": "Ludwigsburg",
+    "country": "Almanya",
+    "address": "Osterholzallee 36, 71636 Ludwigsburg",
+    "lat": 48.89734,
+    "lng": 9.17577,
+    "products": [],
+    "source": "https://mg-supermarkt.de/"
+  }
+]

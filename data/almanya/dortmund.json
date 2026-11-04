@@ -1,0 +1,20 @@
+[
+  {
+    "id": "almanya-dortmund-evinger-supermarkt",
+    "name": "Evinger Supermarkt",
+    "type": "market",
+    "city": "Dortmund",
+    "country": "Almanya",
+    "address": "Derner Straße 43-45, 44339 Dortmund, Deutschland",
+    "lat": 51.54315,
+    "lng": 7.47944,
+    "products": [
+      "Sucuk",
+      "Beyaz peynir",
+      "Türk çayı",
+      "Ayran"
+    ],
+    "source": "https://evinger-supermarkt.de/",
+    "note": "Adres aralığı, 43 kapısıyla eşleştirildi."
+  }
+]

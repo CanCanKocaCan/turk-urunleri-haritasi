@@ -1,0 +1,33 @@
+[
+  {
+    "id": "almanya-freiburg-im-breisgau-harem",
+    "name": "Restaurant Harem",
+    "type": "restoran",
+    "city": "Freiburg im Breisgau",
+    "country": "Almanya",
+    "address": "Gerberau 7c, 79098 Freiburg im Breisgau",
+    "lat": 47.99353,
+    "lng": 7.85063,
+    "products": [
+      "Meze",
+      "Börek",
+      "Sac tava"
+    ],
+    "source": "https://harem-freiburg.de/"
+  },
+  {
+    "id": "almanya-freiburg-im-breisgau-divan",
+    "name": "Divan Ocakbaşı",
+    "type": "restoran",
+    "city": "Freiburg im Breisgau",
+    "country": "Almanya",
+    "address": "Bertoldstraße 54, 79098 Freiburg im Breisgau",
+    "lat": 47.99573,
+    "lng": 7.8434,
+    "products": [
+      "Börek",
+      "Pide"
+    ],
+    "source": "https://www.divan-freiburg.de/"
+  }
+]

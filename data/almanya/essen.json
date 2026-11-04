@@ -1,0 +1,14 @@
+[
+  {
+    "id": "almanya-essen-hepsi-stauderstrasse",
+    "name": "Hepsi-Markt Essen",
+    "type": "market",
+    "city": "Essen",
+    "country": "Almanya",
+    "address": "Stauderstraße 55, 45326 Essen, Deutschland",
+    "lat": 51.49614,
+    "lng": 7.01694,
+    "products": [],
+    "source": "https://hepsi-markt.de/filialen-anfahrt/"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "almanya-bremen-le-keyf",
+    "name": "Le Keyf",
+    "type": "restoran",
+    "city": "Bremen",
+    "country": "Almanya",
+    "address": "Berliner Straße 35, 28203 Bremen, Deutschland",
+    "lat": 53.07064,
+    "lng": 8.82842,
+    "products": [
+      "Rakı",
+      "Türk şarabı"
+    ],
+    "source": "https://lekeyf-restaurant.de/"
+  }
+]

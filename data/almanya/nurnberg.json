@@ -1,0 +1,44 @@
+[
+  {
+    "id": "almanya-nurnberg-aydin",
+    "name": "Bäckerei & Konditorei Aydin",
+    "type": "firin",
+    "city": "Nürnberg",
+    "country": "Almanya",
+    "address": "Wölckernstraße 61, 90459 Nürnberg",
+    "lat": 49.44131,
+    "lng": 11.08737,
+    "products": [],
+    "source": "https://web2.cylex.de/firma-home/baeckerei-_--konditorei-aydin-gmbh-3670785.html"
+  },
+  {
+    "id": "almanya-nurnberg-zara-further",
+    "name": "ZA-RA Markt Fürther Straße",
+    "type": "market",
+    "city": "Nürnberg",
+    "country": "Almanya",
+    "address": "Fürther Straße 301, 90429 Nürnberg",
+    "lat": 49.45994,
+    "lng": 11.02385,
+    "products": [
+      "Tahin",
+      "Helva"
+    ],
+    "source": "https://muesiad-nuernberg.de/mitglieder/",
+    "note": "Ticaret derneği ve dizin adresi 301; OSM işletme noktası 301–303 aralığında."
+  },
+  {
+    "id": "almanya-nurnberg-can-supermarkt",
+    "name": "CAN Supermarkt",
+    "type": "market",
+    "city": "Nürnberg",
+    "country": "Almanya",
+    "address": "Ingolstädter Straße 53, 90461 Nürnberg",
+    "lat": 49.42787,
+    "lng": 11.09593,
+    "products": [
+      "Helva"
+    ],
+    "source": "https://www.veganguide-nuernberg.de/detail/53/can_supermarkt/"
+  }
+]

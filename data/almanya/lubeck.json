@@ -1,0 +1,16 @@
+[
+  {
+    "id": "almanya-lubeck-sultan-palast",
+    "name": "Sultan Palast",
+    "type": "restoran",
+    "city": "Lübeck",
+    "country": "Almanya",
+    "address": "Mühlenstraße 64, 23552 Lübeck, Deutschland",
+    "lat": 53.86198,
+    "lng": 10.68753,
+    "products": [
+      "Adana kebap"
+    ],
+    "source": "https://sultan-palast.de/index.html"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "almanya-karlsruhe-antalya-ocakbasi",
+    "name": "Antalya Ocakbaşı Grillrestaurant",
+    "type": "restoran",
+    "city": "Karlsruhe",
+    "country": "Almanya",
+    "address": "Schützenstraße 10, 76137 Karlsruhe",
+    "lat": 49.00216,
+    "lng": 8.40455,
+    "products": [
+      "Adana kebap",
+      "Köfte"
+    ],
+    "source": "https://antalya-grillrestaurant.de/"
+  }
+]
