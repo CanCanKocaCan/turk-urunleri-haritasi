@@ -8,3 +8,10 @@ GITHUB_REPOSITORY = "CanCanKocaCan/turk-urunleri-haritasi"
 name = "REPORT_LIMITER"
 namespace_id = "1001"
 simple = { limit = 3, period = 60 }
+[[ratelimits]]
+name = "SEARCH_LIMITER"
+namespace_id = "1002"
+simple = { limit = 30, period = 60 }
+[[analytics_engine_datasets]]
+binding = "SEARCHES"
+dataset = "turk_urunleri_aramalar"

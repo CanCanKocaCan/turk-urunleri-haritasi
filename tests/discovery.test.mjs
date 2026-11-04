@@ -175,3 +175,14 @@ test('state suggestions, legacy NJ links and stable place IDs survive city migra
  assert.equal(legacy.d.getElementById('state').value,'NJ');assert.match(legacy.d.getElementById('place-detail').textContent,/Taskin Bakery/);assert.match(legacy.d.getElementById('place-detail').textContent,/Paterson, New Jersey, ABD/);
  const invalid=await setup('https://example.com/?country=Avustralya&state=NJ');t.after(()=>invalid.dom.window.close());assert.equal(invalid.d.getElementById('state').value,'');
 });
+test('search counter sends one anonymous request after typing settles',async t=>{
+ const {dom,w,input,run}=await setup();t.after(()=>dom.window.close());
+ const sent=[],original=w.fetch;
+ w.fetch=async(url,options)=>{if(String(url).startsWith('https://worker.example/')){sent.push({url:String(url),body:JSON.parse(options.body)});return {ok:true};}return original(url,options);};
+ run("window.APP_CONFIG={contributionEndpoint:'https://worker.example/'}");
+ input('s');input('sim');input('simit');input('simit');
+ await new Promise(r=>setTimeout(r,2100));
+ assert.equal(sent.length,1);assert.equal(sent[0].url,'https://worker.example/search');
+ assert.equal(sent[0].body.q,'simit');assert.ok(Number.isInteger(sent[0].body.results));
+ input('simit');await new Promise(r=>setTimeout(r,2100));assert.equal(sent.length,1);
+});
