@@ -1,0 +1,16 @@
+[
+  {
+    "id": "italya-modena-istanbul-bosforo",
+    "name": "Istanbul Bosforo - Kebab & Pizza",
+    "type": "restoran",
+    "city": "Modena",
+    "country": "İtalya",
+    "address": "Via Cardinale Giovanni Morone 3a, 41121 Modena MO, Italia",
+    "lat": 44.64825,
+    "lng": 10.92281,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.justeat.it/restaurants-istanbul-kebab-and-pizza-modena/menu"
+  }
+]

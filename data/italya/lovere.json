@@ -1,0 +1,21 @@
+[
+  {
+    "id": "italya-lovere-istanbul-turkish-kebap",
+    "name": "Istanbul Turkish Kebap",
+    "type": "restoran",
+    "city": "Lovere",
+    "country": "İtalya",
+    "address": "Via Giorgio Paglia 2, 24065 Lovere BG, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Döner kebap",
+      "Dürüm kebap",
+      "Falafel"
+    ],
+    "source": "https://www.istanbulturkishkebap-lovere.it/",
+    "phone": "+39035212049",
+    "website": "https://www.istanbulturkishkebap-lovere.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

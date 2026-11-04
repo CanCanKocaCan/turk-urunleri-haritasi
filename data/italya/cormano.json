@@ -1,0 +1,21 @@
+[
+  {
+    "id": "italya-cormano-hanedan",
+    "name": "Hanedan Turk Restauranti",
+    "type": "restoran",
+    "city": "Cormano",
+    "country": "İtalya",
+    "address": "Via dei Giovi 5, 20032 Cormano MI, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Pide",
+      "Baklava",
+      "Künefe"
+    ],
+    "source": "https://www.hanedanitalia.com/",
+    "phone": "+393280264129",
+    "website": "https://www.hanedanitalia.com/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

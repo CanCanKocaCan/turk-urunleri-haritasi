@@ -1,0 +1,121 @@
+[
+  {
+    "id": "italya-roma-istanbul-kebab-nomentana",
+    "name": "Istanbul Kebab Nomentana",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Via Nomentana 48, 00161 Roma RM, Italia",
+    "lat": 41.913,
+    "lng": 12.50712,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://istanbulkebab.it/",
+    "website": "https://istanbulkebab.it/",
+    "phone": "+393295369257",
+    "note": "Koordinat Via Nomentana 48 kapı numarası eşleşmesinden; OSM farklı/eski işletme adı ve 00198 posta kodu, resmî site 00161 yazıyor. Adres/posta kodu elle teyit edilmeli."
+  },
+  {
+    "id": "italya-roma-istanbul-kebab-pizza-arenula",
+    "name": "Istanbul Kebab-Pizza",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Largo Arenula 21, Roma RM, Italia",
+    "lat": 41.89439,
+    "lng": 12.47661,
+    "products": [
+      "Kebap",
+      "Şiş kebap"
+    ],
+    "source": "https://www.turismoroma.it/it/accoglienza/istanbul-kebab-pizza"
+  },
+  {
+    "id": "italya-roma-turkish-kebap-cipro",
+    "name": "Turkish Kebap Specialità Turche",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Via Cipro 79, 00136 Roma RM, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap",
+      "Dürüm kebap",
+      "Baklava",
+      "Etli börek",
+      "Peynirli börek"
+    ],
+    "source": "https://piatti.menu/restaurants/roma-3/turkish-kebap-specialita-turche/menu",
+    "note": "Adres ve Türk mutfağı menüsü sipariş/menü platformlarında tutarlı; resmî siteye erişilemedi. Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-roma-turkish-kebab-flaminio",
+    "name": "Turkish Kebab Flaminio",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Via Flaminia 17, 00196 Roma RM, Italia",
+    "lat": 41.91256,
+    "lng": 12.47619,
+    "products": [
+      "Kebap",
+      "Dürüm kebap",
+      "Ayran"
+    ],
+    "source": "https://www.justeat.it/restaurants-turkish-kebab-flaminio-roma/menu",
+    "note": "Adres Just Eat ve OSM tabanlı Ristorinfo ile; ayran Deliveroo menüsüyle doğrulandı."
+  },
+  {
+    "id": "italya-roma-istanbul-kebab-turco-castani",
+    "name": "Istanbul Kebab Turco",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Via dei Castani 140, 00172 Roma RM, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap",
+      "Börek",
+      "Baklava"
+    ],
+    "source": "https://restaurantguru.it/Istanbul-kebab-Rome-5",
+    "note": "Restaurant Guru ve Just Eat aynı adresi listeliyor; ürünler kaynakta açıkça geçiyor. Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-roma-cemo-kebab",
+    "name": "Cemo Kebab",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Via Nomentana Nuova 23, 00141 Roma RM, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap",
+      "Dürüm kebap"
+    ],
+    "source": "https://cemo-kebab.eatbu.com/?lang=it",
+    "website": "https://cemo-kebab.eatbu.com/?lang=it",
+    "note": "Türk mutfağı bağlantısı ve ürünler Just Eat kaydında açıkça belirtiliyor; resmî işletme sayfası adresi doğruluyor. Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-roma-mr-kebab-turco",
+    "name": "Mr Kebab Turco",
+    "type": "restoran",
+    "city": "Roma",
+    "country": "İtalya",
+    "address": "Viale di Trastevere 51, 00153 Roma RM, Italia",
+    "lat": 41.88832,
+    "lng": 12.47381,
+    "products": [
+      "Döner kebap",
+      "Baklava"
+    ],
+    "source": "https://www.tripadvisor.com/Restaurant_Review-g187791-d13167582-Reviews-Mr_Kebab_Turco-Rome_Lazio.html",
+    "note": "Adres Tripadvisor, Virgilio ve Coobiz ile tutarlı. Eski resmî domain farklı içerik gösterdiğinden website olarak eklenmedi; aktiflik bağımsız olarak teyit edilmeli."
+  }
+]

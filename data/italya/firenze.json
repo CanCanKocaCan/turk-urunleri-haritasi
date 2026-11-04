@@ -1,0 +1,50 @@
+[
+  {
+    "id": "italya-firenze-istanbul-doner-kebap-benci",
+    "name": "Istanbul Doner Kebap",
+    "type": "restoran",
+    "city": "Firenze",
+    "country": "İtalya",
+    "address": "Via dei Benci 18/R, 50122 Firenze FI, Italia",
+    "lat": 43.76815,
+    "lng": 11.25991,
+    "products": [
+      "Döner kebap",
+      "Baklava"
+    ],
+    "source": "https://firmania.it/firenze/istanbul-doner-kebap-3977336",
+    "note": "Adres Firmania (21 Kasım 2025) ve Corner (13 Temmuz 2026) ile; Türk sahipliği ve ürünler Corner kaydında açık."
+  },
+  {
+    "id": "italya-firenze-nazar-kebab",
+    "name": "Nazar Kebab",
+    "type": "restoran",
+    "city": "Firenze",
+    "country": "İtalya",
+    "address": "Via dell'Ariento 69 Rosso, 50123 Firenze FI, Italia",
+    "lat": 43.77656,
+    "lng": 11.25252,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://restaurantguru.it/Nazar-Kebab-Florence",
+    "note": "Türk mutfağı Restaurant Guru ve Piatti.menu kayıtlarında açık; adres ticaret rehberi ve TuttiAffari ile tutarlı. Aktiflik bağımsız olarak teyit edilmeli."
+  },
+  {
+    "id": "italya-firenze-orso-turkish-kitchen-kebab",
+    "name": "Orso Turkish Kitchen & Kebab",
+    "type": "restoran",
+    "city": "Firenze",
+    "country": "İtalya",
+    "address": "Via Francesco Gianni 3R, 50134 Firenze FI, Italia",
+    "lat": 43.79006,
+    "lng": 11.24796,
+    "products": [
+      "Kebap",
+      "Dürüm kebap",
+      "Lahmacun"
+    ],
+    "source": "https://www.justeat.it/restaurants-orso-turkish-kitchen-and-kebab-firenze",
+    "note": "⚠️ TEK KAYNAK: Just Eat işletme/menü kaydı; Türk mutfağı adı ve lahmacun menüsü açık."
+  }
+]

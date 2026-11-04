@@ -1,0 +1,73 @@
+[
+  {
+    "id": "italya-bologna-baba-turkish",
+    "name": "Baba Turkish Restorant & Kafe",
+    "type": "restoran",
+    "city": "Bologna",
+    "country": "İtalya",
+    "address": "Via Giuseppe Massarenti 10b, 40138 Bologna BO, Italia",
+    "lat": 44.4939,
+    "lng": 11.35815,
+    "products": [
+      "Döner",
+      "Türk çayı",
+      "Ayran",
+      "Şalgam",
+      "Yeni Rakı"
+    ],
+    "source": "https://www.tripadvisor.it/Restaurant_Review-g187801-d23405288-Reviews-Baba_Turkish_Restorant_Kafe-Bologna_Province_of_Bologna_Emilia_Romagna.html",
+    "note": "İşletmenin eski alan adı restoran içeriği sunmadığından web sitesi bağlantısı eklenmedi."
+  },
+  {
+    "id": "italya-bologna-istanbul-lame",
+    "name": "Istanbul Kebab - Via delle Lame",
+    "type": "restoran",
+    "city": "Bologna",
+    "country": "İtalya",
+    "address": "Via delle Lame 92, Bologna BO, Italia",
+    "lat": 44.49959,
+    "lng": 11.3348,
+    "products": [
+      "Döner",
+      "Lahmacun",
+      "Pide",
+      "Baklava",
+      "Ayran",
+      "Sucuklu pizza"
+    ],
+    "source": "https://www.newmenu.net/restaurant/istanbul-kebab-bologna",
+    "note": "Tek kaynak: Newmenu menüsü; gitmeden önce adresi ve aktifliği teyit edin."
+  },
+  {
+    "id": "italya-bologna-istanbul-matteotti",
+    "name": "Istanbul Kebab e Pizza",
+    "type": "restoran",
+    "city": "Bologna",
+    "country": "İtalya",
+    "address": "Via Giacomo Matteotti 39c, 40128 Bologna BO, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.justeat.it/restaurants-istanbul-kebab-bologna-40128-1/menu",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  },
+  {
+    "id": "italya-bologna-bella-istanbul-carracci",
+    "name": "Bella Istanbul 3",
+    "type": "restoran",
+    "city": "Bologna",
+    "country": "İtalya",
+    "address": "Via de' Carracci 51/2, 40129 Bologna BO, Italia",
+    "lat": 44.50761,
+    "lng": 11.34158,
+    "products": [
+      "Döner",
+      "Börek",
+      "Baklava",
+      "Ayran"
+    ],
+    "source": "https://www.tripadvisor.it/Restaurant_Review-g187801-d20105132-Reviews-Bella_Istanbul-Bologna_Province_of_Bologna_Emilia_Romagna.html"
+  }
+]
