@@ -1,0 +1,45 @@
+[
+  {
+    "name": "The Golden Horn Turkish Bakery & Café",
+    "type": "firin",
+    "city": "Vancouver",
+    "country": "Kanada",
+    "address": "2857 Cambie Street, Vancouver, BC",
+    "lat": 49.25982,
+    "lng": -123.11533,
+    "products": [
+      "Baklava",
+      "Börek",
+      "Pide",
+      "Mercimek çorbası",
+      "Türk çayı",
+      "Türk kahvesi",
+      "Ayran"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cbda3968-7767-11ef-95ae-6045bdeb9f57/the-golden-horn-turkish-bakery-caf-vancouver-bc",
+    "id": "kanada-vancouver-1",
+    "state": "BC"
+  },
+  {
+    "name": "Simit Bakery & Cafe (Kitsilano)",
+    "type": "firin",
+    "city": "Vancouver",
+    "country": "Kanada",
+    "address": "2268 West 4th Avenue, Vancouver, BC",
+    "lat": 49.26803,
+    "lng": -123.15673,
+    "products": [
+      "Simit",
+      "Menemen",
+      "Mantı",
+      "Gözleme",
+      "Baklava",
+      "Revani",
+      "Lokum",
+      "Türk kahvesi"
+    ],
+    "source": "https://dailyhive.com/vancouver/simit-bakery-kitsilano",
+    "id": "kanada-vancouver-2",
+    "state": "BC"
+  }
+]

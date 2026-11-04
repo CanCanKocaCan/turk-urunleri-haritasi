@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Agha Turkish Restaurant",
+    "type": "restoran",
+    "city": "Waterloo",
+    "country": "Kanada",
+    "address": "50 Westmount Road North, Unit D4-5, Waterloo, ON N2L 6N9",
+    "lat": 43.46142,
+    "lng": -80.53794,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/4624349740",
+    "id": "kanada-waterloo-1",
+    "state": "ON"
+  },
+  {
+    "name": "Meetpoint",
+    "type": "restoran",
+    "city": "Waterloo",
+    "country": "Kanada",
+    "address": "400 The Boardwalk, Unit 1, Waterloo, ON N2T 0A6",
+    "lat": 43.43909,
+    "lng": -80.56399,
+    "products": [
+      "Adana kebap",
+      "Pide",
+      "Izgara patlıcan salatası"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Meetpoint",
+    "id": "kanada-waterloo-2",
+    "state": "ON"
+  },
+  {
+    "name": "Lily Turkish Cuisine",
+    "type": "restoran",
+    "city": "Waterloo",
+    "country": "Kanada",
+    "address": "203 Lester Street, Waterloo, ON N2L 0B5",
+    "lat": 43.4724,
+    "lng": -80.53392,
+    "products": [
+      "Mercimek çorbası",
+      "Sucuklu pizza",
+      "Ciğer sandviç"
+    ],
+    "source": "https://www.openstreetmap.org/node/11928875302",
+    "id": "kanada-waterloo-3",
+    "state": "ON"
+  }
+]

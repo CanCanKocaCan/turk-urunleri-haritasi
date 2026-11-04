@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Istanbul Kebab & Donair",
+    "type": "restoran",
+    "city": "Edmonton",
+    "country": "Kanada",
+    "address": "12556 132 Ave NW, Edmonton, AB T5E 5N1",
+    "lat": 53.59226,
+    "lng": -113.53944,
+    "products": [
+      "Adana kebap",
+      "Lahmacun",
+      "Künefe",
+      "Türk ekmeği"
+    ],
+    "source": "https://www.zabihah.com/restaurants/b4927091-17e4-4910-af6d-455ceeb795e7/istanbul-kebab-donair-edmonton-ab",
+    "id": "kanada-edmonton-1",
+    "state": "AB"
+  }
+]

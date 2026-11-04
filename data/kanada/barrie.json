@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Gallipoli Grocery & Cafe",
+    "type": "market",
+    "city": "Barrie",
+    "country": "Kanada",
+    "address": "408 Dunlop Street West, Unit 4, Barrie, ON L4N 1C2",
+    "lat": 44.37847,
+    "lng": -79.71667,
+    "products": [
+      "Sunar ayçiçek yağı",
+      "Ani Bakery lahmacun"
+    ],
+    "source": "https://www.gallipoligrocery.ca/",
+    "id": "kanada-barrie-1",
+    "state": "ON"
+  }
+]

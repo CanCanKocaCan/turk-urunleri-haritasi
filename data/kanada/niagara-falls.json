@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Bazaar Istanbul Turkish Market",
+    "type": "market",
+    "city": "Niagara Falls",
+    "country": "Kanada",
+    "address": "6788 Thorold Stone Road, Niagara Falls, ON L2J 1B4",
+    "lat": 43.11474,
+    "lng": -79.10945,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/6658835087",
+    "id": "kanada-niagara-falls-1",
+    "state": "ON"
+  }
+]

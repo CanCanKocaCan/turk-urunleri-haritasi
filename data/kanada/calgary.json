@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Anatolia Turkish Food",
+    "type": "restoran",
+    "city": "Calgary",
+    "country": "Kanada",
+    "address": "237 8 Ave SE, Calgary, AB T2G 5C3",
+    "lat": 51.04529,
+    "lng": -114.05864,
+    "products": [
+      "Baklava",
+      "Börek",
+      "Kebap",
+      "Kuzu incik"
+    ],
+    "source": "https://retail-insider.com/retail-insider/2023/02/anatolia-turkish-foods-looks-to-expand-from-calgary-base-into-new-markets-interview/",
+    "id": "kanada-calgary-1",
+    "state": "AB"
+  },
+  {
+    "name": "Turca Breakfast House",
+    "type": "kafe",
+    "city": "Calgary",
+    "country": "Kanada",
+    "address": "2604 4 St NW, Calgary, AB T2M 3A1",
+    "lat": 51.07533,
+    "lng": -114.07124,
+    "products": [
+      "Gözleme",
+      "Simit",
+      "Börek",
+      "Türk çayı",
+      "Türk kahvesi"
+    ],
+    "source": "https://savourcalgary.ca/?p=32092",
+    "id": "kanada-calgary-2",
+    "state": "AB"
+  },
+  {
+    "name": "Bereket Kebab House",
+    "type": "restoran",
+    "city": "Calgary",
+    "country": "Kanada",
+    "address": "1637 37 St SW, Calgary, AB T3C 1S7",
+    "lat": 51.03831,
+    "lng": -114.14148,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://dailyhive.com/calgary/bereket-kebab-house-calgary",
+    "id": "kanada-calgary-3",
+    "state": "AB"
+  },
+  {
+    "name": "The Turkish Rotisserie",
+    "type": "restoran",
+    "city": "Calgary",
+    "country": "Kanada",
+    "address": "2770 32 Ave NE #42, Calgary, AB T1Y 2G1",
+    "lat": 51.08185,
+    "lng": -113.9962,
+    "products": [
+      "Döner kebap",
+      "Kuzu incik"
+    ],
+    "source": "https://dailyhive.com/calgary/turkish-rotisserie-calgary",
+    "id": "kanada-calgary-4",
+    "state": "AB"
+  },
+  {
+    "name": "Turkish Kebab House",
+    "type": "restoran",
+    "city": "Calgary",
+    "country": "Kanada",
+    "address": "9697 Macleod Trail SW, Calgary, AB T2J 0P6",
+    "lat": 50.96815,
+    "lng": -114.07228,
+    "products": [
+      "Kebap",
+      "Baklava",
+      "Türk çayı"
+    ],
+    "source": "https://www.zabihah.com/restaurants/08dd3fee-3b69-4c8e-806c-5aa2519c2b44/turkish-kebab-calgary-ab",
+    "id": "kanada-calgary-5",
+    "state": "AB"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Saray",
+    "type": "restoran",
+    "city": "Richmond Hill",
+    "country": "Kanada",
+    "address": "9737 Yonge St, Richmond Hill, ON L4C 8S7",
+    "lat": 43.86501,
+    "lng": -79.43491,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/08dd2f60-e2da-48d3-886a-d933599e5e55/saray-richmond-hill-on",
+    "id": "kanada-richmond-hill-1",
+    "state": "ON"
+  },
+  {
+    "name": "Mangal Prime",
+    "type": "restoran",
+    "city": "Richmond Hill",
+    "country": "Kanada",
+    "address": "9724 Yonge St, Richmond Hill, ON L4C 8S7",
+    "lat": 43.86441,
+    "lng": -79.43592,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/15ee8ec2-cf2e-45da-bd42-22005f13cd75/mangal-prime-richmond-hill-on",
+    "id": "kanada-richmond-hill-2",
+    "state": "ON"
+  }
+]

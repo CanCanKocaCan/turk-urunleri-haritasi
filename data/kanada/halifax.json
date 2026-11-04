@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Turkuaz Restaurant",
+    "type": "restoran",
+    "city": "Halifax",
+    "country": "Kanada",
+    "address": "827 Bedford Hwy, Bedford, NS B4A 0J1",
+    "lat": 44.71077,
+    "lng": -63.67042,
+    "products": [
+      "Meze",
+      "Kebap"
+    ],
+    "source": "https://startpage.mapquest.com/ca/nova-scotia/turkuaz-restaurant-455723517",
+    "state": "NS",
+    "id": "kanada-halifax-1"
+  },
+  {
+    "name": "Turkish Delight",
+    "type": "restoran",
+    "city": "Halifax",
+    "country": "Kanada",
+    "address": "5680 Spring Garden Rd, Halifax, NS B3J 1H5",
+    "lat": 44.64236,
+    "lng": -63.57911,
+    "products": [
+      "Kuzu kebap",
+      "Tavuk döner",
+      "Ayran"
+    ],
+    "source": "https://www.sluurpy.com/en/halifax/restaurant/4735513/turkish-delight",
+    "state": "NS",
+    "id": "kanada-halifax-2"
+  }
+]

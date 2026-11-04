@@ -1,0 +1,20 @@
+[
+  {
+    "name": "MADO (Square One)",
+    "type": "kafe",
+    "city": "Mississauga",
+    "country": "Kanada",
+    "address": "100 City Centre Dr, Unit 2-454, Mississauga, ON L5B 2C9",
+    "lat": 43.59264,
+    "lng": -79.64369,
+    "products": [
+      "Dondurma",
+      "Baklava",
+      "Künefe",
+      "Börek"
+    ],
+    "source": "https://madosquareone.ca",
+    "id": "kanada-mississauga-1",
+    "state": "ON"
+  }
+]

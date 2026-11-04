@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Turquoise Maison Ankara",
+    "type": "restoran",
+    "city": "Montreal",
+    "country": "Kanada",
+    "address": "3662 Rue Fleury E, Montreal, QC H1H 2S6",
+    "lat": 45.58313,
+    "lng": -73.63825,
+    "products": [
+      "Pide",
+      "Lahmacun",
+      "Etli ekmek"
+    ],
+    "source": "https://www.restomontreal.ca/resto/turquoise-maison-ankara-montreal/18197/en/",
+    "state": "QC",
+    "id": "kanada-montreal-1"
+  },
+  {
+    "name": "Cicek Patisserie",
+    "type": "firin",
+    "city": "Montreal",
+    "country": "Kanada",
+    "address": "3656 Rue Fleury E, Montreal, QC H1H 2S6",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Baklava",
+      "Simit",
+      "Tulumba"
+    ],
+    "source": "https://www.restomontreal.ca/resto/cicek-patisserie-montreal/20600/en/",
+    "state": "QC",
+    "id": "kanada-montreal-2"
+  },
+  {
+    "name": "Efes Sweets",
+    "type": "firin",
+    "city": "Montreal",
+    "country": "Kanada",
+    "address": "689 Rue St-Roch, Montreal, QC H3N 1L2",
+    "lat": 45.52881,
+    "lng": -73.63008,
+    "products": [
+      "Baklava",
+      "Börek"
+    ],
+    "source": "https://www.restomontreal.ca/resto/efes-sweets-montreal/19024/en/",
+    "state": "QC",
+    "id": "kanada-montreal-3"
+  },
+  {
+    "name": "Chef Istanbul",
+    "type": "restoran",
+    "city": "Montreal",
+    "country": "Kanada",
+    "address": "1510 Boulevard De Maisonneuve O, Montreal, QC H3G 1N1",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Adana kebap",
+      "Lahmacun"
+    ],
+    "source": "https://chefistanbul.ca",
+    "state": "QC",
+    "id": "kanada-montreal-4"
+  },
+  {
+    "name": "Saray Restaurant Turc",
+    "type": "restoran",
+    "city": "Montreal",
+    "country": "Kanada",
+    "address": "6868 Rue Jarry E, Saint-Léonard, Montreal, QC H1P 3C1",
+    "lat": 45.59858,
+    "lng": -73.57734,
+    "products": [
+      "Menemen",
+      "Sucuklu yumurta",
+      "Ezme",
+      "Cacık",
+      "Humus",
+      "Pide",
+      "Türk çayı"
+    ],
+    "source": "https://tastet.ca/critiques/saray-excellent-turc-dans-lest-de-la-ville/",
+    "state": "QC",
+    "id": "kanada-montreal-5"
+  }
+]
