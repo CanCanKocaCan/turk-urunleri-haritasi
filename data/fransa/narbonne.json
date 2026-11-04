@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fransa-narbonne-istanbul",
+    "name": "Istanbul Narbonne",
+    "type": "restoran",
+    "city": "Narbonne",
+    "country": "Fransa",
+    "address": "21bis Boulevard Marcel Sembat, 11100 Narbonne",
+    "lat": 43.18688,
+    "lng": 3.00352,
+    "products": [
+      "Lahmacun",
+      "Börek",
+      "Pide",
+      "Mercimek çorbası",
+      "Hünkar beğendi",
+      "Adana kebap",
+      "Baklava",
+      "Künefe"
+    ],
+    "source": "https://restaurant-narbonne-istanbul.com/"
+  }
+]

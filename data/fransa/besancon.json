@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fransa-besancon-otantic-rivotte-grill",
+    "name": "Otantic Rivotte Grill",
+    "type": "restoran",
+    "city": "Besançon",
+    "country": "Fransa",
+    "address": "14 Faubourg Rivotte, 25000 Besançon, France",
+    "lat": 47.23235,
+    "lng": 6.03472,
+    "products": [],
+    "source": "https://explore.doubs.fr/service/1024-Otantic-Rivotte-Grill"
+  }
+]

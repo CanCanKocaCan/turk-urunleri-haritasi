@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fransa-dijon-akdeniz",
+    "name": "Akdeniz",
+    "type": "restoran",
+    "city": "Dijon",
+    "country": "Fransa",
+    "address": "47 Rue Jeannin, 21000 Dijon, France",
+    "lat": 47.32182,
+    "lng": 5.04655,
+    "products": [
+      "Ayran",
+      "Efes bira",
+      "Türk çayı",
+      "Türk kahvesi"
+    ],
+    "source": "https://restaurantakdeniz.fr/",
+    "website": "https://restaurantakdeniz.fr/"
+  }
+]

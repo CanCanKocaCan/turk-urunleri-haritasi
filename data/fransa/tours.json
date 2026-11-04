@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fransa-tours-constantinople",
+    "name": "Brasserie Constantinople",
+    "type": "restoran",
+    "city": "Tours",
+    "country": "Fransa",
+    "address": "9 Avenue du Général de Gaulle, 37000 Tours, France",
+    "lat": 47.37956,
+    "lng": 0.6937,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://brasserie-constantinople.fr/",
+    "website": "https://brasserie-constantinople.fr/"
+  }
+]

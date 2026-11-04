@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fransa-aix-en-provence-divan-d-antioche",
+    "name": "Le Divan d’Antioche",
+    "type": "restoran",
+    "city": "Aix-en-Provence",
+    "country": "Fransa",
+    "address": "8 Place des Cardeurs, 13100 Aix-en-Provence",
+    "lat": 43.53019,
+    "lng": 5.44727,
+    "products": [
+      "Börek"
+    ],
+    "source": "https://divandantioche.fr/",
+    "note": "İşletme/turizm kaynağı Place des Cardeurs, BAN adres kaydı Forum des Cardeurs adını kullanıyor; 8 kapı numarası ve şehir eşleşiyor."
+  }
+]

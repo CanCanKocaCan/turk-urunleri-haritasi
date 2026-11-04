@@ -1,0 +1,15 @@
+[
+  {
+    "id": "fransa-grenoble-palais-topkapi",
+    "name": "Le Palais Topkapi",
+    "type": "restoran",
+    "city": "Grenoble",
+    "country": "Fransa",
+    "address": "3 Place Claveyson, 38000 Grenoble, France",
+    "lat": 45.19264,
+    "lng": 5.72925,
+    "products": [],
+    "source": "https://le-palais-topkapi.eatbu.com/?lang=fr",
+    "website": "https://le-palais-topkapi.eatbu.com/?lang=fr"
+  }
+]

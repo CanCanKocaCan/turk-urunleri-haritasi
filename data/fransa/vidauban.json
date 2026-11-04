@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fransa-vidauban-turkish-market",
+    "name": "Turkish Market Vidauban",
+    "type": "market",
+    "city": "Vidauban",
+    "country": "Fransa",
+    "address": "49 Avenue du Président Wilson, 83550 Vidauban",
+    "lat": 43.42536,
+    "lng": 6.43024,
+    "products": [],
+    "source": "https://www.pagesjaunes.fr/pros/61588545"
+  }
+]

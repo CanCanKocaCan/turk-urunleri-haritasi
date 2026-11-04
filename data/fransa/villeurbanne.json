@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fransa-villeurbanne-divan-restaurant-patisserie",
+    "name": "Divan Restaurant & Patisserie",
+    "type": "firin",
+    "city": "Villeurbanne",
+    "country": "Fransa",
+    "address": "11 Avenue Condorcet, 69100 Villeurbanne, France",
+    "lat": 45.77788,
+    "lng": 4.86724,
+    "products": [],
+    "source": "https://divan-restaurant-villeurbanne.fr/fr/",
+    "website": "https://divan-restaurant-villeurbanne.fr/fr/",
+    "phone": "+33953321616"
+  }
+]

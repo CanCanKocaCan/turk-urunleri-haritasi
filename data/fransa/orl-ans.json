@@ -1,0 +1,15 @@
+[
+  {
+    "id": "fransa-orleans-patio-bourgogne",
+    "name": "Le Patio Bourgogne",
+    "type": "restoran",
+    "city": "Orléans",
+    "country": "Fransa",
+    "address": "188 Rue de Bourgogne, 45000 Orléans, France",
+    "lat": 47.90031,
+    "lng": 1.9109,
+    "products": [],
+    "source": "https://lepatio-bourgogne.eatbu.com/?lang=fr",
+    "website": "https://lepatio-bourgogne.eatbu.com/?lang=fr"
+  }
+]

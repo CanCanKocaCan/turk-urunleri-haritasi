@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fransa-bordeaux-istanbul-cafe",
+    "name": "Istanbul Café",
+    "type": "restoran",
+    "city": "Bordeaux",
+    "country": "Fransa",
+    "address": "2 Rue des Bahutiers, 33000 Bordeaux",
+    "lat": 44.83955,
+    "lng": -0.57044,
+    "products": [
+      "Dürüm",
+      "Pide",
+      "Lahmacun",
+      "Meze"
+    ],
+    "source": "https://www.istanbul-cafe.fr/online-ordering"
+  },
+  {
+    "id": "fransa-bordeaux-meatin-steakhouse",
+    "name": "Meat’in Steakhouse",
+    "type": "restoran",
+    "city": "Bordeaux",
+    "country": "Fransa",
+    "address": "5 Place Marie de Gournay, 33100 Bordeaux",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.meatinsteakhouse.com/",
+    "note": "Koordinat kapı/bina düzeyinde eşleşmedi; harita konumu eklenecek."
+  },
+  {
+    "id": "fransa-bordeaux-istanbul-market",
+    "name": "Istanbul Market (Bazar Istanbul)",
+    "type": "market",
+    "city": "Bordeaux",
+    "country": "Fransa",
+    "address": "84 Rue des Faures, 33000 Bordeaux",
+    "lat": 44.83543,
+    "lng": -0.56789,
+    "products": [],
+    "source": "https://www.cylex-locale.fr/entreprises/bazar-istanbul-10990872.html"
+  }
+]

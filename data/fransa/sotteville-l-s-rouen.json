@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fransa-sotteville-les-rouen-ottoman-palace",
+    "name": "Ottoman Palace",
+    "type": "restoran",
+    "city": "Sotteville-lès-Rouen",
+    "country": "Fransa",
+    "address": "85 Avenue des Canadiens, 76300 Sotteville-lès-Rouen, France",
+    "lat": 49.41037,
+    "lng": 1.07156,
+    "products": [
+      "Döner kebap"
+    ],
+    "source": "https://www.ottomanpalace-rouen.fr/"
+  }
+]

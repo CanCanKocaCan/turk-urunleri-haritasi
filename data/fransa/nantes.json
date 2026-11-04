@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fransa-nantes-capadocia",
+    "name": "Capadocia",
+    "type": "restoran",
+    "city": "Nantes",
+    "country": "Fransa",
+    "address": "28 Rue Kervégan, 44000 Nantes, France",
+    "lat": 47.2125,
+    "lng": -1.55651,
+    "products": [],
+    "source": "https://www.capadocia.fr/"
+  }
+]

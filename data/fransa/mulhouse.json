@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fransa-mulhouse-boulangerie-des-coteaux",
+    "name": "Boulangerie des Coteaux",
+    "type": "firin",
+    "city": "Mulhouse",
+    "country": "Fransa",
+    "address": "5 Rue du Docteur Alphonse Kienzler, 68200 Mulhouse, France",
+    "lat": 47.73678,
+    "lng": 7.30136,
+    "products": [
+      "Baklava"
+    ],
+    "source": "https://www.boulangeries-patisseries.fr/boulangeries/68224-mulhouse/ifjgaeichbecdgggfga.htm",
+    "phone": "+33389443686"
+  }
+]

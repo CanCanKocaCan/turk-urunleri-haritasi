@@ -1,0 +1,49 @@
+[
+  {
+    "id": "fransa-toulouse-le-soleil-d-istanbul",
+    "name": "Le Soleil d’Istanbul",
+    "type": "restoran",
+    "city": "Toulouse",
+    "country": "Fransa",
+    "address": "69 Boulevard Déodat de Séverac, 31300 Toulouse",
+    "lat": 43.58798,
+    "lng": 1.42397,
+    "products": [
+      "Kebap",
+      "Tavuk şiş"
+    ],
+    "source": "https://soleildistanbul.fr/"
+  },
+  {
+    "id": "fransa-toulouse-marche-de-mo",
+    "name": "Marché de Mo’",
+    "type": "market",
+    "city": "Toulouse",
+    "country": "Fransa",
+    "address": "5 Rue Joachim du Bellay, 31100 Toulouse",
+    "lat": 43.5845,
+    "lng": 1.40561,
+    "products": [
+      "Ayran",
+      "Pastırma",
+      "Sucuk",
+      "Börek",
+      "Baklava",
+      "Lokum",
+      "Türk kahvesi"
+    ],
+    "source": "https://www.marchedemo.com/rayons/balkans-turques"
+  },
+  {
+    "id": "fransa-toulouse-marche-garonne",
+    "name": "Marché Garonne",
+    "type": "market",
+    "city": "Toulouse",
+    "country": "Fransa",
+    "address": "10 Rue de Chambéry, 31500 Toulouse",
+    "lat": 43.62702,
+    "lng": 1.46349,
+    "products": [],
+    "source": "https://magasin.tel/f/marche-garonne-7739930/"
+  }
+]

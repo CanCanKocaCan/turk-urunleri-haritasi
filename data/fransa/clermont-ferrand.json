@@ -1,0 +1,21 @@
+[
+  {
+    "id": "fransa-clermont-ferrand-otantik",
+    "name": "Otantik Restaurant",
+    "type": "restoran",
+    "city": "Clermont-Ferrand",
+    "country": "Fransa",
+    "address": "345 Boulevard Étienne Clémentel, 63100 Clermont-Ferrand, France",
+    "lat": 45.8163,
+    "lng": 3.10929,
+    "products": [
+      "Ezme",
+      "Haydari",
+      "Mercimek çorbası",
+      "Kelle paça",
+      "Kaşarlı mantar"
+    ],
+    "source": "https://le-resto-kadirhan.fr/",
+    "website": "https://le-resto-kadirhan.fr/"
+  }
+]

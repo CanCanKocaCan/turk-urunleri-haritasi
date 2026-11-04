@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fransa-toulon-istanbul-best",
+    "name": "Istanbul Best",
+    "type": "restoran",
+    "city": "Toulon",
+    "country": "Fransa",
+    "address": "503 Avenue de la République, 83000 Toulon",
+    "lat": 43.11916,
+    "lng": 5.93486,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.istanbul-best.com/"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fransa-venissieux-antep-sofrasi",
+    "name": "Antep Sofrası Lyon",
+    "type": "restoran",
+    "city": "Vénissieux",
+    "country": "Fransa",
+    "address": "355 Route de Vienne, 69200 Vénissieux, France",
+    "lat": 45.71988,
+    "lng": 4.8545,
+    "products": [
+      "Karışık ızgara",
+      "Pirzola",
+      "Kiremitte tavuk",
+      "Baklava"
+    ],
+    "source": "https://www.antepsofrasilyon.com/",
+    "website": "https://www.antepsofrasilyon.com/"
+  },
+  {
+    "id": "fransa-venissieux-grand-marche-istanbul",
+    "name": "Grand Marché Istanbul",
+    "type": "market",
+    "city": "Vénissieux",
+    "country": "Fransa",
+    "address": "277 Route de Vienne, 69200 Vénissieux, France",
+    "lat": 45.7272,
+    "lng": 4.85397,
+    "products": [
+      "Albeni",
+      "Gazi kaşar peyniri",
+      "Efepaşa sucuk",
+      "Bizim tarhana çorbası",
+      "Cebel siyah zeytin",
+      "Gülsan tahin",
+      "Osso menengiç kahvesi",
+      "Esra lokum"
+    ],
+    "source": "https://grandmarcheistanbul.fr/",
+    "website": "https://grandmarcheistanbul.fr/"
+  }
+]

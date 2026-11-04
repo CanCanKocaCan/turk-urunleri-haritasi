@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fransa-argenteuil-restaurant-eliz",
+    "name": "Restaurant Eliz",
+    "type": "restoran",
+    "city": "Argenteuil",
+    "country": "Fransa",
+    "address": "1 Rue Henri Barbusse, 95100 Argenteuil, France",
+    "lat": 48.94153,
+    "lng": 2.24689,
+    "products": [
+      "Tavuk dürüm",
+      "Adana dürüm",
+      "Adana kebap",
+      "Döner kebap",
+      "Köfte",
+      "Börek",
+      "Baklava",
+      "Ayran"
+    ],
+    "source": "https://www.ubereats.com/fr/store/restaurant-eliz/H50MzrTYWPyMbKm68fZ2wQ"
+  }
+]

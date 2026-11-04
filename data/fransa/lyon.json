@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fransa-lyon-semazen",
+    "name": "Semazen",
+    "type": "restoran",
+    "city": "Lyon",
+    "country": "Fransa",
+    "address": "63 Place Voltaire, 69003 Lyon, France",
+    "lat": 45.75704,
+    "lng": 4.84868,
+    "products": [],
+    "source": "https://semazen-lyon.fr/fr",
+    "website": "https://semazen-lyon.fr/fr"
+  },
+  {
+    "id": "fransa-lyon-cigkoftem",
+    "name": "Cigkoftem Lyon",
+    "type": "restoran",
+    "city": "Lyon",
+    "country": "Fransa",
+    "address": "17 Avenue Jean Jaurès, 69007 Lyon, France",
+    "lat": 45.75259,
+    "lng": 4.84642,
+    "products": [
+      "Çiğ köfte"
+    ],
+    "source": "https://cigkoftem-lyon.fr/fr/",
+    "website": "https://cigkoftem-lyon.fr/fr/"
+  }
+]

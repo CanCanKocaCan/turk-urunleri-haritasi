@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fransa-rennes-zelal-kebab",
+    "name": "Zelal Kebab",
+    "type": "restoran",
+    "city": "Rennes",
+    "country": "Fransa",
+    "address": "39 Boulevard Magenta, 35000 Rennes, France",
+    "lat": 48.10457,
+    "lng": -1.67348,
+    "products": [
+      "Lahmacun",
+      "Kebap"
+    ],
+    "source": "https://zelalkebab.fr/notre-menu/"
+  }
+]
