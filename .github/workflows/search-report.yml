@@ -1,0 +1,45 @@
+name: Arama raporu
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Kaç günlük arama"
+        default: "7"
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    env:
+      CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      DAYS: ${{ inputs.days || '7' }}
+    steps:
+      - name: Analytics Engine'den aramaları çek
+        run: |
+          # Token'da "Account Analytics: Read" izni olmalı.
+          case "$DAYS" in ''|*[!0-9]*) echo "Gün sayısı sayı olmalı"; exit 1;; esac
+          query() {
+            curl -sSf "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/analytics_engine/sql" \
+              -H "Authorization: Bearer $CF_TOKEN" --data-binary "$1"
+          }
+          table() {
+            echo "| Arama | Ülke | Şehir | Sayı |"
+            echo "|---|---|---|---|"
+            # Arama metni kullanıcıdan gelir: tablo karakterlerini etkisizleştir, boş alanlara "—" yaz.
+            jq -r '.data[] | ([.q, .country, .city] | map(if . == "" then "—" else gsub("[|`<>]"; " ") end)) + [(.n | tostring)] | "| " + join(" | ") + " |"'
+          }
+          range="timestamp > NOW() - INTERVAL '$DAYS' DAY"
+          {
+            echo "## Son $DAYS günün aramaları"
+            echo "### Sonuç bulunamayan aramalar"
+            echo "Talep olup sitede karşılığı olmayan ürün ve şehirler."
+            query "SELECT blob1 AS q, blob2 AS country, blob4 AS city, SUM(_sample_interval) AS n FROM turk_urunleri_aramalar WHERE $range AND double1 = 0 GROUP BY q, country, city ORDER BY n DESC LIMIT 50 FORMAT JSON" | table
+            echo "### En çok yapılan aramalar"
+            query "SELECT blob1 AS q, blob2 AS country, blob4 AS city, SUM(_sample_interval) AS n FROM turk_urunleri_aramalar WHERE $range GROUP BY q, country, city ORDER BY n DESC LIMIT 50 FORMAT JSON" | table
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -107,4 +107,17 @@ Servis yapılandırılmamışsa arayüz bunu açıkça söyler ve raporu JSON ol
 indirmeyi sunar. Token kesinlikle istemci dosyalarına konulmaz. Origin kontrolü
 kimlik doğrulama değildir; edge hız sınırı ve insan incelemesi zorunludur.
 
+## Arama sayacı ve ziyaretçi istatistiği
+
+- **Arama sayacı:** Site, kullanıcı yazmayı bitirdikten sonra arama metnini, seçili
+  ülke/eyalet/şehir filtresini ve sonuç sayısını Worker'ın `/search` adresine gönderir.
+  IP, çerez veya kimlik bilgisi saklanmaz; kayıtlar Cloudflare Workers Analytics Engine'de
+  (`turk_urunleri_aramalar`) tutulur. Actions sekmesindeki **Arama raporu** iş akışı her
+  pazartesi en çok yapılan ve sonuç bulunamayan aramaları özet olarak yazar. Bunun için
+  `CLOUDFLARE_API_TOKEN` token'ına **Account Analytics: Read** izni eklenmelidir.
+  Depo herkese açıksa iş akışı özetleri de herkese açıktır.
+- **Ziyaretçi istatistiği:** Cloudflare panelinde Web Analytics → Add a site ile site
+  ekleyin, verilen token'ı `config.js` içindeki `cfAnalyticsToken` alanına yazın. Çerez
+  kullanmaz.
+
 Kontroller: `node scripts/validate-markets.js`, `node --test tests/*.test.mjs`.

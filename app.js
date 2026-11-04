@@ -16,6 +16,15 @@ const tileLayer = maptilerKey
     });
 tileLayer.addTo(map);
 
+// Cloudflare Web Analytics: çerezsiz ziyaretçi sayımı; token config.js içinde.
+if (window.APP_CONFIG?.cfAnalyticsToken) {
+  const beacon = document.createElement("script");
+  beacon.defer = true;
+  beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  beacon.dataset.cfBeacon = JSON.stringify({token: window.APP_CONFIG.cfAnalyticsToken});
+  document.head.append(beacon);
+}
+
 const searchInput = document.getElementById("search");
 const list = document.getElementById("market-list");
 const resultCount = document.getElementById("result-count");
@@ -145,6 +154,7 @@ function render() {
   resultCount.textContent = `${visible.length} yer · ${visible.filter(hasLocation).length} haritada · ${visible.filter(m => !hasLocation(m)).length} konum bekliyor`;
   document.getElementById("search-summary").textContent = `${visible.length} yer bulundu`;
   document.getElementById('sheet-label').textContent = `${visible.length} sonuç`;
+  logSearch(query, visible.length);
   if (!visible.length) list.innerHTML = '<li>Sonuç bulunamadı. Filtreleri temizleyebilir veya yeni bir yer önerebilirsin.</li>';
   if (!visible.some(m => m.id === selectedId)) selectedId = "";
   showDetail(markets.find(m => m.id === selectedId));
@@ -225,6 +235,20 @@ searchInput.addEventListener("input", () => { selectedId = ""; render(); renderS
 function distance(m) {
   if (!hasLocation(m)) return Infinity;
   return map.distance(position, [m.lat,m.lng]) / 1000;
+}
+// Anonim arama sayacı: yalnızca arama metni, filtreler ve sonuç sayısı gönderilir.
+// Yazma bitince (2 sn) bir kez gönderilir; aynı arama tekrar sayılmaz.
+let searchLogTimer, lastLoggedSearch = "";
+function logSearch(query, results) {
+  clearTimeout(searchLogTimer);
+  const endpoint = safeUrl(window.APP_CONFIG?.contributionEndpoint);
+  if (!endpoint || query.length < 2) return;
+  searchLogTimer = setTimeout(() => {
+    const body = JSON.stringify({q: query, country: countrySelect.value, state: stateSelect.value, city: citySelect.value, mode, results});
+    if (body === lastLoggedSearch) return;
+    lastLoggedSearch = body;
+    fetch(new URL("search", endpoint), {method: "POST", body, keepalive: true}).catch(() => {});
+  }, 2000);
 }
 function syncUrl() {
   const p = new URLSearchParams();
