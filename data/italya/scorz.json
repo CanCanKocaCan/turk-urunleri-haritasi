@@ -1,0 +1,18 @@
+[
+  {
+    "id": "italya-scorze-istanbul-food",
+    "name": "Istanbul Food",
+    "type": "restoran",
+    "city": "Scorzè",
+    "country": "İtalya",
+    "address": "Via Padova 89, Scorzè VE, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.istanbulfoodscorze.it/",
+    "website": "https://www.istanbulfoodscorze.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

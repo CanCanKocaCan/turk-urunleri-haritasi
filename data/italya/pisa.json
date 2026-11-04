@@ -1,0 +1,47 @@
+[
+  {
+    "id": "italya-pisa-anatolia-kebap-da-hasan",
+    "name": "Anatolia Kebap da Hasan",
+    "type": "restoran",
+    "city": "Pisa",
+    "country": "İtalya",
+    "address": "Piazza del Pozzetto 6, 56127 Pisa PI, Italia",
+    "lat": 43.71656,
+    "lng": 10.40279,
+    "products": [
+      "Kebap",
+      "Dürüm kebap"
+    ],
+    "source": "https://anatolia-kebap-da-hasan.it/",
+    "website": "https://anatolia-kebap-da-hasan.it/",
+    "note": "Türk mutfağı Restaurant Guru ve Tripadvisor kategorilerinde açık; işletme sipariş sitesi adresi/menüyü doğruluyor."
+  },
+  {
+    "id": "italya-pisa-euro-kebab",
+    "name": "Euro Kebab",
+    "type": "restoran",
+    "city": "Pisa",
+    "country": "İtalya",
+    "address": "Via San Francesco 43, 56127 Pisa PI, Italia",
+    "lat": 43.71839,
+    "lng": 10.40629,
+    "products": [],
+    "source": "https://www.tripadvisor.it/Restaurant_Review-g187899-d4458211-Reviews-Euro_Kebab-Pisa_Province_of_Pisa_Tuscany.html",
+    "note": "Türk mutfağı Tripadvisor ve Restaurant Guru kayıtlarında açık; aynı adres AutoReserve ile de tutarlı."
+  },
+  {
+    "id": "italya-pisa-controkebab",
+    "name": "ControKebab",
+    "type": "restoran",
+    "city": "Pisa",
+    "country": "İtalya",
+    "address": "Via Domenico Cavalca 21, 56126 Pisa PI, Italia",
+    "lat": 43.71723,
+    "lng": 10.40098,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.sluurpy.it/pisa/ristorante/33054/controkebab",
+    "note": "Türk mutfağı Sluurpy ve işletme tarafından sahiplenilmiş Tripadvisor profilinde açık. Sluurpy güncellemesi ve yorumları Aralık 2025."
+  }
+]

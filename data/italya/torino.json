@@ -1,0 +1,61 @@
+[
+  {
+    "id": "italya-torino-kirkuk-kaffe",
+    "name": "Kirkuk Kaffé",
+    "type": "restoran",
+    "city": "Torino",
+    "country": "İtalya",
+    "address": "Via Carlo Alberto 16b/18, 10123 Torino, Italia",
+    "lat": 45.06672,
+    "lng": 7.68482,
+    "products": [
+      "Döner kebap",
+      "Dolma",
+      "Baklava",
+      "Kadayıf",
+      "Türk kahvesi"
+    ],
+    "source": "https://www.kirkukkaffe.com/cucina.php",
+    "phone": "+39011530657",
+    "website": "https://www.kirkukkaffe.com/"
+  },
+  {
+    "id": "italya-torino-da-demir",
+    "name": "Da Demir",
+    "type": "restoran",
+    "city": "Torino",
+    "country": "İtalya",
+    "address": "Via Fréjus 4/A, 10139 Torino, Italia",
+    "lat": 45.07136,
+    "lng": 7.65306,
+    "products": [
+      "Kebap",
+      "İskender kebap",
+      "Pide"
+    ],
+    "source": "https://dademir.it/",
+    "phone": "+390115695043",
+    "website": "https://dademir.it/"
+  },
+  {
+    "id": "italya-torino-storico-istanbul",
+    "name": "Ristorante Storico Istanbul",
+    "type": "restoran",
+    "city": "Torino",
+    "country": "İtalya",
+    "address": "Corso San Martino 5f, 10122 Torino, Italia",
+    "lat": 45.07514,
+    "lng": 7.66931,
+    "products": [
+      "Lahmacun",
+      "Kıymalı pide",
+      "Ispanaklı peynirli pide",
+      "Peynirli pide",
+      "Baklava",
+      "Sütlaç",
+      "Ayran"
+    ],
+    "source": "https://www.justeat.it/restaurants-ristorante-storico-istanbul-torino/menu",
+    "phone": "+393513900127"
+  }
+]

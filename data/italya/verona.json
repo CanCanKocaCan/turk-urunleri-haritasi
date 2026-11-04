@@ -1,0 +1,28 @@
+[
+  {
+    "id": "italya-verona-istanbul-tombetta",
+    "name": "İstanbul Kebap - Tombetta",
+    "type": "restoran",
+    "city": "Verona",
+    "country": "İtalya",
+    "address": "Via Tombetta 146, 37135 Verona VR, Italia",
+    "lat": 45.41724,
+    "lng": 10.9909,
+    "products": [],
+    "source": "https://restaurantguru.it/Istanbul-Doner-Kebap-Verona",
+    "note": "Tek kaynak: RestaurantGuru; Türk mutfağı olarak sınıflandırılmıştır. Menü ürünleri doğrulanamadı."
+  },
+  {
+    "id": "italya-verona-istanbul-porta-nuova",
+    "name": "Istanbul Doner Kebab Pizzeria",
+    "type": "restoran",
+    "city": "Verona",
+    "country": "İtalya",
+    "address": "Corso Porta Nuova 24, 37122 Verona VR, Italia",
+    "lat": 45.43502,
+    "lng": 10.98965,
+    "products": [],
+    "source": "https://www.sluurpy.com/en/verona/restaurant/107017/istanbul-doner-kebab-pizzeria",
+    "note": "Menü ürünleri doğrulanamadı."
+  }
+]

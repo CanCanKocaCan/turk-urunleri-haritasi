@@ -1,0 +1,97 @@
+[
+  {
+    "id": "italya-genova-anatolia",
+    "name": "Anatolia - Grill & Chicken",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via San Martino 50 R, 16131 Genova GE, Italia",
+    "lat": 44.40571,
+    "lng": 8.97076,
+    "products": [
+      "Kebap",
+      "Köfte",
+      "Tavuk şiş",
+      "Adana dürüm"
+    ],
+    "source": "https://anatoliagastronomia.it/",
+    "website": "https://anatoliagastronomia.it/"
+  },
+  {
+    "id": "italya-genova-turkish-house",
+    "name": "Turkish House",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via Canevari 284 R, 16137 Genova GE, Italia",
+    "lat": 44.41338,
+    "lng": 8.95161,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://turkish-house.it/",
+    "website": "https://turkish-house.it/",
+    "note": "OSM işletme noktasında kapı numarası yok; resmî adres 284R. Posta kodu resmî kaynakta 16137, OSM’de 16139."
+  },
+  {
+    "id": "italya-genova-istanbul-gramsci",
+    "name": "Istanbul - Real Turkish Kebap & Pizza",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via Antonio Gramsci 113/115 R, 16126 Genova GE, Italia",
+    "lat": 44.41362,
+    "lng": 8.92603,
+    "products": [
+      "Döner",
+      "Köfte",
+      "Ayran"
+    ],
+    "source": "https://www.justeat.it/restaurants-istanbul---real-turkish-kebap-and-pizza-16126/menu"
+  },
+  {
+    "id": "italya-genova-monte-di-noe",
+    "name": "Monte di Noè",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via San Lorenzo 35 R, 16123 Genova GE, Italia",
+    "lat": 44.40794,
+    "lng": 8.93007,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://restaurantguru.it/Monte-Di-Noe-Genoa",
+    "website": "https://montedinoe.eatbu.com/",
+    "note": "Kaynaklarda 35R, aynı işletmenin OSM kaydında 37 rosso yazıyor; kapı numarası elle teyit edilmeli."
+  },
+  {
+    "id": "italya-genova-ulu-istanbul",
+    "name": "Ulu İstanbul Kebap Pizza",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via Milano 77 R, Genova GE, Italia",
+    "lat": 44.41238,
+    "lng": 8.90918,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://altraopinione.org/pizzeria/genova/ulu-istanbul-pizzeria-kebab-gr/",
+    "note": "Kaynaklarda posta kodu 16126 ve 16149 olarak farklı geçtiği için posta kodu yazılmadı. OSM kapı numarası 77a rosso, işletme kaynakları 77R yazıyor; kapı eki teyit edilmeli."
+  },
+  {
+    "id": "italya-genova-istanbul-grill-cornigliano",
+    "name": "Istanbul Grill",
+    "type": "restoran",
+    "city": "Genova",
+    "country": "İtalya",
+    "address": "Via Cornigliano 98 R, 16152 Genova GE, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://restaurantguru.it/Istanbul-grill-Genoa",
+    "note": "Menü ürünleri doğrulanamadı. Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]
