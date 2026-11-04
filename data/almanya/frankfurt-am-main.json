@@ -1,0 +1,44 @@
+[
+  {
+    "id": "almanya-frankfurt-am-main-okka-bakery",
+    "name": "Okka Turkish Bakery",
+    "type": "firin",
+    "city": "Frankfurt am Main",
+    "country": "Almanya",
+    "address": "Hanauer Landstraße 21a, 60314 Frankfurt am Main, Deutschland",
+    "lat": 50.11336,
+    "lng": 8.69792,
+    "products": [
+      "Gözleme"
+    ],
+    "source": "https://www.okkabakery.com/"
+  },
+  {
+    "id": "almanya-frankfurt-am-main-anteplioglu",
+    "name": "Anteplioglu Frankfurt",
+    "type": "firin",
+    "city": "Frankfurt am Main",
+    "country": "Almanya",
+    "address": "Fahrgasse 80, 60311 Frankfurt am Main, Deutschland",
+    "lat": 50.11265,
+    "lng": 8.68624,
+    "products": [
+      "Baklava",
+      "Künefe",
+      "Türk çayı"
+    ],
+    "source": "https://www.anteplioglu.de/pages/filialen"
+  },
+  {
+    "id": "almanya-frankfurt-am-main-europa-markt",
+    "name": "Europa Markt",
+    "type": "market",
+    "city": "Frankfurt am Main",
+    "country": "Almanya",
+    "address": "Frankenallee 230, 60326 Frankfurt am Main, Deutschland",
+    "lat": 50.10323,
+    "lng": 8.62608,
+    "products": [],
+    "source": "https://europa-markt-lebensmittel.eatbu.com/?lang=de"
+  }
+]

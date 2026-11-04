@@ -1,0 +1,31 @@
+[
+  {
+    "id": "almanya-offenbach-am-main-cavus-baeckerei",
+    "name": "Cavus Bäckerei",
+    "type": "firin",
+    "city": "Offenbach am Main",
+    "country": "Almanya",
+    "address": "Sandgasse 28, 63065 Offenbach am Main, Deutschland",
+    "lat": 50.10632,
+    "lng": 8.76595,
+    "products": [
+      "Simit",
+      "Baklava"
+    ],
+    "source": "https://www.baeckerei-cavus.de/"
+  },
+  {
+    "id": "almanya-offenbach-am-main-beyzade-baklava",
+    "name": "Beyzade Baklava & Konditorei",
+    "type": "firin",
+    "city": "Offenbach am Main",
+    "country": "Almanya",
+    "address": "Herrnstraße 10, 63065 Offenbach am Main, Deutschland",
+    "lat": 50.10392,
+    "lng": 8.7625,
+    "products": [
+      "Baklava"
+    ],
+    "source": "https://beyzadebaklava.de/about"
+  }
+]

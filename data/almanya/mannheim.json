@@ -1,0 +1,16 @@
+[
+  {
+    "id": "almanya-mannheim-istanbul-q1",
+    "name": "Istanbul Q1 Restaurant",
+    "type": "restoran",
+    "city": "Mannheim",
+    "country": "Almanya",
+    "address": "Q1 20, 68161 Mannheim",
+    "lat": 49.48834,
+    "lng": 8.46735,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.istanbul-q1.de/"
+  }
+]

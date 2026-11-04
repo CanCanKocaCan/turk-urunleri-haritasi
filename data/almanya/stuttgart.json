@@ -1,0 +1,42 @@
+[
+  {
+    "id": "almanya-stuttgart-mg-supermarkt",
+    "name": "MG Supermarkt Stuttgart",
+    "type": "market",
+    "city": "Stuttgart",
+    "country": "Almanya",
+    "address": "Borsigstraße 23, 70469 Stuttgart",
+    "lat": 48.8169,
+    "lng": 9.17135,
+    "products": [],
+    "source": "https://mg-supermarkt.de/"
+  },
+  {
+    "id": "almanya-stuttgart-konak-supermarkt",
+    "name": "Konak Supermarkt",
+    "type": "market",
+    "city": "Stuttgart",
+    "country": "Almanya",
+    "address": "König-Karl-Straße 59, 70372 Stuttgart",
+    "lat": 48.80282,
+    "lng": 9.21676,
+    "products": [
+      "Börek",
+      "Baklava",
+      "Gözleme"
+    ],
+    "source": "https://www.stuttgarter-zeitung.de/lokales/stuttgart/tuerkischer-supermarkt-stuttgart-mhsd-78983165.html"
+  },
+  {
+    "id": "almanya-stuttgart-erciyes-supermarket",
+    "name": "Erciyes Süpermarket",
+    "type": "market",
+    "city": "Stuttgart",
+    "country": "Almanya",
+    "address": "Inselstraße 5, 70327 Stuttgart",
+    "lat": 48.77624,
+    "lng": 9.23844,
+    "products": [],
+    "source": "https://www.erciyesmarkt.de/"
+  }
+]

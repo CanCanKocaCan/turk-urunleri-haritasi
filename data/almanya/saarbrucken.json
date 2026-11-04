@@ -1,0 +1,16 @@
+[
+  {
+    "id": "almanya-saarbrucken-saar-grill",
+    "name": "Saar Grill",
+    "type": "restoran",
+    "city": "Saarbrücken",
+    "country": "Almanya",
+    "address": "Berliner Promenade 16, 66111 Saarbrücken, Deutschland",
+    "lat": 49.23503,
+    "lng": 6.9928,
+    "products": [
+      "Künefe"
+    ],
+    "source": "https://www.saargrill.com/"
+  }
+]

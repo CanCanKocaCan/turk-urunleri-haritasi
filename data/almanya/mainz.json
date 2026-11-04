@@ -1,0 +1,28 @@
+[
+  {
+    "id": "almanya-mainz-can-market",
+    "name": "Can Market Mainz",
+    "type": "market",
+    "city": "Mainz",
+    "country": "Almanya",
+    "address": "Radweg 5, 55130 Mainz, Deutschland",
+    "lat": 49.97881,
+    "lng": 8.30031,
+    "products": [],
+    "source": "https://wolt.com/de/deu/mainz/venue/can-market-1/items/internationale-kuche-140"
+  },
+  {
+    "id": "almanya-mainz-heimat",
+    "name": "heimat",
+    "type": "restoran",
+    "city": "Mainz",
+    "country": "Almanya",
+    "address": "Spritzengasse 2, 55116 Mainz, Deutschland",
+    "lat": 49.99918,
+    "lng": 8.2671,
+    "products": [
+      "Türk çayı"
+    ],
+    "source": "https://www.mainz.de/angebote-entdecken/freizeit/essen-und-trinken/mainzmagazin-empfiehlt-heimat"
+  }
+]

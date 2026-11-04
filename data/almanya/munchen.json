@@ -1,0 +1,64 @@
+[
+  {
+    "id": "almanya-munchen-verdi-supermarket",
+    "name": "Verdi Süpermarket",
+    "type": "market",
+    "city": "München",
+    "country": "Almanya",
+    "address": "Landwehrstraße 46, 80336 München",
+    "lat": 48.13648,
+    "lng": 11.55782,
+    "products": [
+      "Döner"
+    ],
+    "source": "https://www.falstaff.com/de/streetfood/verdi-suepermarket"
+  },
+  {
+    "id": "almanya-munchen-turkitch-turkenstrasse",
+    "name": "Türkitch Türkenstraße",
+    "type": "restoran",
+    "city": "München",
+    "country": "Almanya",
+    "address": "Türkenstraße 21, 80799 München",
+    "lat": 48.14866,
+    "lng": 11.57478,
+    "products": [
+      "Döner",
+      "Dürüm",
+      "Köfte",
+      "Sucuk"
+    ],
+    "source": "https://www.in-muenchen.de/gastro/doener-streetfood/tuerkitch"
+  },
+  {
+    "id": "almanya-munchen-lezizel-city",
+    "name": "Lezizel Manti München City",
+    "type": "restoran",
+    "city": "München",
+    "country": "Almanya",
+    "address": "Corneliusstraße 6, 80469 München",
+    "lat": 48.13247,
+    "lng": 11.57478,
+    "products": [
+      "Mantı",
+      "Ayran",
+      "Turşu"
+    ],
+    "source": "https://lezizel.de/lezizel-filiale-muenchen-city/"
+  },
+  {
+    "id": "almanya-munchen-merhaba",
+    "name": "Merhaba Restaurant",
+    "type": "restoran",
+    "city": "München",
+    "country": "Almanya",
+    "address": "Pariser Straße 9, 81669 München",
+    "lat": 48.12656,
+    "lng": 11.59652,
+    "products": [
+      "Meze",
+      "Köfte"
+    ],
+    "source": "https://www.merhaba-restaurant.com/"
+  }
+]

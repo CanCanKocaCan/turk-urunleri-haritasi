@@ -1,0 +1,33 @@
+[
+  {
+    "id": "almanya-dresden-ocakbasi-neustadt",
+    "name": "Ocakbasi Neustadt",
+    "type": "restoran",
+    "city": "Dresden",
+    "country": "Almanya",
+    "address": "Eschenstraße 1, 01097 Dresden, Deutschland",
+    "lat": 51.06981,
+    "lng": 13.74866,
+    "products": [
+      "Pide",
+      "Lahmacun"
+    ],
+    "source": "https://www.tuerkisches-restaurant.org/"
+  },
+  {
+    "id": "almanya-dresden-ocakbasi-altstadt",
+    "name": "Ocakbasi Altstadt",
+    "type": "restoran",
+    "city": "Dresden",
+    "country": "Almanya",
+    "address": "Gewandhausstraße 2, 01067 Dresden, Deutschland",
+    "lat": 51.0491,
+    "lng": 13.74234,
+    "products": [
+      "Meze",
+      "Pide",
+      "Lahmacun"
+    ],
+    "source": "https://www.ocakbasi-altstadt.de/"
+  }
+]

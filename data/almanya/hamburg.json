@@ -1,0 +1,83 @@
+[
+  {
+    "id": "almanya-hamburg-pamukkale-grill-restaurant-bergedorf",
+    "name": "Pamukkale Grill & Restaurant Bergedorf",
+    "type": "restoran",
+    "city": "Hamburg",
+    "country": "Almanya",
+    "address": "Alte Holstenstraße 56, 21029 Hamburg, Deutschland",
+    "lat": 53.49016,
+    "lng": 10.20853,
+    "products": [
+      "Baklava",
+      "Sütlaç",
+      "Revani"
+    ],
+    "source": "https://www.pamukkale-grill-restaurant.de/"
+  },
+  {
+    "id": "almanya-hamburg-anteplioglu-baklava",
+    "name": "Anteplioglu Baklava",
+    "type": "firin",
+    "city": "Hamburg",
+    "country": "Almanya",
+    "address": "Große Bergstraße 254, 22767 Hamburg, Deutschland",
+    "lat": 53.55198,
+    "lng": 9.93905,
+    "products": [
+      "Baklava"
+    ],
+    "source": "https://www.anteplioglu-baklava.de/"
+  },
+  {
+    "id": "almanya-hamburg-adese-markt-harburg",
+    "name": "Adese Markt Harburg",
+    "type": "market",
+    "city": "Hamburg",
+    "country": "Almanya",
+    "address": "Rieckhoffstraße 8-10, 21073 Hamburg, Deutschland",
+    "lat": 53.45751,
+    "lng": 9.98563,
+    "products": [
+      "Simit",
+      "Açma",
+      "Baklava"
+    ],
+    "source": "https://www.adesemarkt.de/de/baeckerei.html",
+    "note": "Adres aralığı, 8 kapısıyla eşleştirildi."
+  },
+  {
+    "id": "almanya-hamburg-adese-markt-wilhelmsburg",
+    "name": "Adese Markt Wilhelmsburg",
+    "type": "market",
+    "city": "Hamburg",
+    "country": "Almanya",
+    "address": "Krieterstraße 38, 21109 Hamburg, Deutschland",
+    "lat": 53.49715,
+    "lng": 10.01008,
+    "products": [
+      "Simit",
+      "Açma",
+      "Baklava"
+    ],
+    "source": "https://www.adesemarkt.de/de/baeckerei.html",
+    "note": "Resmî adres Krieterstraße 38; aynı adlı OSM işletme noktası 40 numarayla etiketli. Resmî adres korundu."
+  },
+  {
+    "id": "almanya-hamburg-tarsus-baklava-billstedt",
+    "name": "Tarsus Baklava Billstedt",
+    "type": "firin",
+    "city": "Hamburg",
+    "country": "Almanya",
+    "address": "Billstedt Center, Möllner Landstraße 3, 22111 Hamburg, Deutschland",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Baklava",
+      "Halka tatlısı",
+      "Türk kurabiyesi"
+    ],
+    "source": "https://www.billstedt-center.de/shops/tarsus-baklava/?location=p688-79",
+    "note": "⚠️ KOORDİNAT EKSİK: AVM adresi diğer mağazalara da ait; Nominatim ve Photon Tarsus mağazasını ayırt edemedi."
+  }
+]

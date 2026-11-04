@@ -1,0 +1,15 @@
+[
+  {
+    "id": "almanya-magdeburg-adis-am-stadion",
+    "name": "ADIS am Stadion",
+    "type": "restoran",
+    "city": "Magdeburg",
+    "country": "Almanya",
+    "address": "Friedrich-Ebert-Straße 73-75, 39114 Magdeburg, Deutschland",
+    "lat": 52.1261,
+    "lng": 11.66615,
+    "products": [],
+    "source": "https://adnanulubay.wixsite.com/adisamstadion",
+    "note": "Resmî adres Friedrich-Ebert-Straße 73–75; aynı web adresli OSM işletme noktası yan yol Kanonenbahn üzerinde etiketli."
+  }
+]

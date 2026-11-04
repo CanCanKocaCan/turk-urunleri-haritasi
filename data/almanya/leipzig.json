@@ -1,0 +1,36 @@
+[
+  {
+    "id": "almanya-leipzig-brothers-cafe-backerei",
+    "name": "Brothers Café & Bäckerei",
+    "type": "kafe",
+    "city": "Leipzig",
+    "country": "Almanya",
+    "address": "Eisenbahnstraße 85, 04315 Leipzig, Deutschland",
+    "lat": 51.34561,
+    "lng": 12.40707,
+    "products": [
+      "Adana kebap",
+      "Tavuk şiş",
+      "Kuzu şiş",
+      "Köfte",
+      "Pirzola",
+      "Lahmacun"
+    ],
+    "source": "https://brothers-cafe.de/"
+  },
+  {
+    "id": "almanya-leipzig-leziz-turkisches-bistro",
+    "name": "LEZIZ Türkisches Bistro",
+    "type": "restoran",
+    "city": "Leipzig",
+    "country": "Almanya",
+    "address": "Prager Straße 49, 04317 Leipzig, Deutschland",
+    "lat": 51.3303,
+    "lng": 12.39827,
+    "products": [
+      "Döner kebap",
+      "Kumpir"
+    ],
+    "source": "https://www.leziz-trkisches-bistro-leipzig.de/"
+  }
+]

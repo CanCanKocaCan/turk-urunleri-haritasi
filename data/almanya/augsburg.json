@@ -1,0 +1,20 @@
+[
+  {
+    "id": "almanya-augsburg-nefis",
+    "name": "Bäckerei Nefis",
+    "type": "firin",
+    "city": "Augsburg",
+    "country": "Almanya",
+    "address": "Wertachstraße 9, 86153 Augsburg",
+    "lat": 48.37853,
+    "lng": 10.8844,
+    "products": [
+      "Gözleme",
+      "Pide",
+      "Lahmacun",
+      "Börek",
+      "Baklava"
+    ],
+    "source": "https://nefis-augsburg.de/"
+  }
+]

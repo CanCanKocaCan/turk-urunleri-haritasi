@@ -1,0 +1,44 @@
+[
+  {
+    "id": "almanya-koln-karadag-arcaden",
+    "name": "Karadag Supermarkt Köln Arcaden",
+    "type": "market",
+    "city": "Köln",
+    "country": "Almanya",
+    "address": "Kalker Hauptstraße 55, 51103 Köln, Deutschland",
+    "lat": 50.93868,
+    "lng": 6.99833,
+    "products": [],
+    "source": "https://www.koeln-arcaden.de/geschafte/karadag-supermarkt/"
+  },
+  {
+    "id": "almanya-koln-karadag-weidengasse",
+    "name": "Karadag Weidengasse",
+    "type": "market",
+    "city": "Köln",
+    "country": "Almanya",
+    "address": "Weidengasse 2-4, 50668 Köln, Deutschland",
+    "lat": 50.94779,
+    "lng": 6.95607,
+    "products": [
+      "Gül reçeli",
+      "Nar şurubu"
+    ],
+    "source": "https://koeln.mitvergnuegen.com/2026/internationale-supermaerkte/",
+    "note": "Adres aralığı, 4 kapısıyla eşleştirildi."
+  },
+  {
+    "id": "almanya-koln-damla-ehrenfeld",
+    "name": "Damla Ehrenfeld",
+    "type": "firin",
+    "city": "Köln",
+    "country": "Almanya",
+    "address": "Venloer Straße 291, 50823 Köln, Deutschland",
+    "lat": 50.94798,
+    "lng": 6.92039,
+    "products": [
+      "Baklava"
+    ],
+    "source": "https://damlabaklava.de/fillialen/"
+  }
+]
