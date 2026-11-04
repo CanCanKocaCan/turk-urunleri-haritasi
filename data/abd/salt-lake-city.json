@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Kahve Cafe",
+    "type": "kafe",
+    "city": "Salt Lake City",
+    "country": "ABD",
+    "address": "57 S 600 E, Salt Lake City, UT 84102",
+    "lat": 40.7679,
+    "lng": -111.87356,
+    "products": [
+      "Türk kahvesi",
+      "Baklava",
+      "Baklavalı cheesecake"
+    ],
+    "source": "https://www.sltrib.com/artsliving/food/2024/02/02/utah-eats-magic-turkish-baklava/",
+    "id": "abd-salt-lake-city-kahve-cafe",
+    "state": "UT"
+  }
+]

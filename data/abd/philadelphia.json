@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Queen Village Food Market",
+    "type": "market",
+    "city": "Philadelphia",
+    "country": "ABD",
+    "address": "629 South 4th Street, Philadelphia, PA 19147",
+    "lat": 39.94084,
+    "lng": -75.14922,
+    "products": [
+      "Türk baharatı",
+      "Mehmet Efendi kahve",
+      "Manti",
+      "Lahmacun",
+      "Sucuk",
+      "Türk peyniri",
+      "Gaziantep baklavası"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cb248f44-7767-11ef-95ae-6045bdeb9f57/queen-village-food-market-philadelphia-pa",
+    "id": "abd-philadelphia-1",
+    "state": "PA"
+  }
+]

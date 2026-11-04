@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Angora Food Market",
+    "type": "market",
+    "city": "Medford",
+    "country": "ABD",
+    "address": "2690 Route 112, Medford, NY 11763",
+    "lat": 40.82187,
+    "lng": -72.99885,
+    "products": [
+      "Baklava",
+      "Kebap",
+      "Gyro"
+    ],
+    "source": "https://www.openstreetmap.org/node/3059425163",
+    "id": "abd-medford-1",
+    "state": "NY"
+  }
+]

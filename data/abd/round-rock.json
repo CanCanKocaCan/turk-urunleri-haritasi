@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Istanbul Market ATX",
+    "type": "market",
+    "city": "Round Rock",
+    "country": "ABD",
+    "state": "TX",
+    "address": "1700 Bryant Dr, Ste 104, Round Rock, TX 78664",
+    "lat": 30.4927,
+    "lng": -97.64736,
+    "products": [
+      "Türk peyniri",
+      "Baklava",
+      "Künefe",
+      "Yufka",
+      "Türk şekerlemeleri",
+      "Helal dondurulmuş gıda"
+    ],
+    "source": "http://istanbulmarketatx.com/",
+    "id": "abd-round-rock-1"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Cappadocia Bistro",
+    "type": "restoran",
+    "city": "Burlington",
+    "country": "ABD",
+    "address": "92 Church Street, Burlington, VT 05401",
+    "lat": 44.47784,
+    "lng": -73.21245,
+    "products": [
+      "Lahmacun",
+      "Pide",
+      "Bafra pide",
+      "Kumpir",
+      "Tavuk döner dürüm"
+    ],
+    "source": "https://www.openstreetmap.org/node/8896082447",
+    "id": "abd-burlington-1",
+    "state": "VT"
+  }
+]

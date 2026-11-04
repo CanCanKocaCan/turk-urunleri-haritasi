@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Turkish Grille",
+    "type": "restoran",
+    "city": "Pittsburgh",
+    "country": "ABD",
+    "address": "272 Melwood Avenue, Pittsburgh, PA 15213",
+    "lat": 40.45163,
+    "lng": -79.95046,
+    "products": [
+      "İskender kebap",
+      "Karışık ızgara",
+      "Ayran",
+      "Türk kahvesi",
+      "Dolma"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cb7b9472-7767-11ef-95ae-6045bdeb9f57/turkish-grille-pittsburgh-pa",
+    "id": "abd-pittsburgh-1",
+    "state": "PA"
+  }
+]

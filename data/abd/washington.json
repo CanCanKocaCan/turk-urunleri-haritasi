@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Ottoman Taverna",
+    "type": "restoran",
+    "city": "Washington",
+    "country": "ABD",
+    "address": "906 4th St NW, Washington, DC 20001",
+    "lat": 38.90167,
+    "lng": -77.01635,
+    "products": [
+      "Adana kebap",
+      "Sigara böreği",
+      "Karnıyarık",
+      "İmam bayıldı",
+      "Çiğ köfte",
+      "Künefe",
+      "Baklava",
+      "Sütlaç"
+    ],
+    "source": "https://www.ottomantaverna.com/menus/",
+    "id": "abd-washington-1",
+    "state": "DC"
+  }
+]

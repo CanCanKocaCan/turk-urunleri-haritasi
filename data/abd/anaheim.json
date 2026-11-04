@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Koftegi Turkish Grill & Bakery",
+    "type": "restoran",
+    "city": "Anaheim",
+    "country": "ABD",
+    "address": "816 S Brookhurst St, Anaheim, CA 92804",
+    "lat": 33.81732,
+    "lng": -117.95911,
+    "products": [
+      "Köfte",
+      "Adana kebap",
+      "Döner",
+      "Peynirli börek",
+      "Sucuk",
+      "Pide",
+      "Kaymak ve bal"
+    ],
+    "source": "https://koftegi.com",
+    "id": "abd-anaheim-koftegi-turkish-grill-bakery",
+    "state": "CA"
+  }
+]

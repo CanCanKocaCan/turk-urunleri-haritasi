@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Koza Turkish Grocery & Deli",
+    "type": "market",
+    "city": "Kirkland",
+    "country": "ABD",
+    "address": "939 6th St S, Kirkland, WA 98033",
+    "lat": 47.66737,
+    "lng": -122.19664,
+    "products": [
+      "Türk kahvesi",
+      "Dondurulmuş mantı",
+      "Antep fıstığı",
+      "Lavaş",
+      "Döner"
+    ],
+    "source": "https://kozaturkishgrocery.com",
+    "id": "abd-kirkland-koza-turkish-grocery-deli",
+    "state": "WA"
+  }
+]

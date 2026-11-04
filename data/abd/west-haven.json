@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Istanbul Turkish Market",
+    "type": "market",
+    "city": "West Haven",
+    "country": "ABD",
+    "address": "605 Campbell Avenue, West Haven, CT 06516",
+    "lat": 41.27471,
+    "lng": -72.9517,
+    "products": [
+      "Sumak",
+      "Zahter",
+      "Zeytinyağı",
+      "Baklava"
+    ],
+    "source": "https://www.atly.com/location/IstanbulTurkishMarket",
+    "id": "abd-west-haven-1",
+    "state": "CT"
+  }
+]

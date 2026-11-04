@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Istanbul Market",
+    "type": "market",
+    "city": "Louisville",
+    "country": "ABD",
+    "address": "4817 S Watterson Trail, Louisville, KY 40218",
+    "lat": 38.17745,
+    "lng": -85.62226,
+    "products": [],
+    "source": "https://turkishmarkets.com/market/istanbul-market-4/",
+    "id": "abd-louisville-1",
+    "state": "KY"
+  }
+]

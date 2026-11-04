@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Bolmart Mediterranean Market",
+    "type": "market",
+    "city": "Marina del Rey",
+    "country": "ABD",
+    "address": "4224 Lincoln Blvd, Marina del Rey, CA 90292",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/cbf3b01f-7767-11ef-95ae-6045bdeb9f57/bolmart-mediteranean-market-marina-del-rey-ca",
+    "id": "abd-marina-del-rey-bolmart-mediterranean-market",
+    "state": "CA"
+  }
+]

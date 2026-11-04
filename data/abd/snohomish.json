@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Besler Market",
+    "type": "market",
+    "city": "Snohomish",
+    "country": "ABD",
+    "address": "18122 WA-9, Suite A101, Snohomish, WA 98296",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Çaykur çay",
+      "Mehmet Efendi Türk kahvesi",
+      "Beyaz peynir",
+      "İzmir tulum peyniri",
+      "Helal sucuk",
+      "Pastırma",
+      "Gemlik zeytini",
+      "Ülker",
+      "Eti",
+      "Lokum",
+      "Baklava",
+      "Salça"
+    ],
+    "source": "https://besler-market.pages.dev/",
+    "id": "abd-snohomish-besler-market",
+    "state": "WA"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Cappadocia Cafe",
+    "type": "firin",
+    "city": "White River Junction",
+    "country": "ABD",
+    "address": "5 South Main Street, White River Junction, VT 05001",
+    "lat": 43.64835,
+    "lng": -72.31889,
+    "products": [
+      "Pide",
+      "Lahmacun",
+      "Mercimek çorbası",
+      "Türk çayı",
+      "Türk kahvesi",
+      "Ayran"
+    ],
+    "source": "https://vnews.com/2024/09/29/new-eateries-in-white-river-junction-57178625/",
+    "id": "abd-white-river-junction-1",
+    "state": "VT"
+  },
+  {
+    "name": "Little Istanbul",
+    "type": "market",
+    "city": "White River Junction",
+    "country": "ABD",
+    "address": "27 North Main Street, White River Junction, VT 05001",
+    "lat": 43.64883,
+    "lng": -72.31899,
+    "products": [
+      "Baharat"
+    ],
+    "source": "https://www.openstreetmap.org/node/7055608814",
+    "id": "abd-white-river-junction-2",
+    "state": "VT"
+  }
+]

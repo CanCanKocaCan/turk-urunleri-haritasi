@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Sofra Turkish Restaurant and Bakery",
+    "type": "restoran",
+    "city": "Depew",
+    "country": "ABD",
+    "address": "38 Patrick Lane, Depew, NY 14043",
+    "lat": 42.91971,
+    "lng": -78.73245,
+    "products": [
+      "Lahmacun",
+      "Karışık pide",
+      "İskender kebap",
+      "Mantı"
+    ],
+    "source": "https://fourbites.substack.com/p/sunday-news-turkish-cuisine-arrives",
+    "id": "abd-depew-1",
+    "state": "NY"
+  }
+]

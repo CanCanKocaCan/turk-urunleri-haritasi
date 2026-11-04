@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Galata Turkish Halal Grill",
+    "type": "restoran",
+    "city": "Long Beach",
+    "country": "ABD",
+    "address": "5205 E 2nd St, Long Beach, CA 90803",
+    "lat": 33.76082,
+    "lng": -118.1355,
+    "products": [
+      "Meze tabağı",
+      "Karışık ızgara"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cbf841b7-7767-11ef-95ae-6045bdeb9f57/galata-halal-long-beach-ca",
+    "id": "abd-long-beach-galata-turkish-halal-grill",
+    "state": "CA"
+  }
+]

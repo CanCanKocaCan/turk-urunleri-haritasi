@@ -4,6 +4,11 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {JSDOM} from 'jsdom';
 
+// Counts come from the live data so adding places does not break these tests.
+function usPlaces() {
+ const index=JSON.parse(fs.readFileSync('data/index.json','utf8'));
+ return index.abd.flatMap(slug=>JSON.parse(fs.readFileSync(`data/abd/${slug}.json`,'utf8')));
+}
 function bounds(s=-35.1,w=138.4,n=-34.8,e=138.8) {
  return {getSouth:()=>s,getWest:()=>w,getNorth:()=>n,getEast:()=>e};
 }
@@ -28,14 +33,14 @@ async function setup(url='https://example.com/') {
 }
 test('suggestions support Turkish text, keyboard selection, city scope and dismiss',async t=>{
  const {dom,w,d,input}=await setup();t.after(()=>dom.window.close());
- const search=input('bey');
+ const search=input('beyp');
  assert.match(d.getElementById('suggestions').textContent,/Ürünler.*Beypazarı/s);
  search.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',cancelable:true}));
  assert.equal(search.getAttribute('aria-activedescendant'),'suggestion-0');
  search.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter',cancelable:true}));
  assert.equal(search.value,'Beypazarı maden suyu');assert.equal(d.querySelectorAll('.result-card').length,1);
  assert.ok(d.getElementById('suggestions').hidden);assert.ok(w.location.search.includes('mode=product'));
- d.getElementById('reset').click();input('adel');
+ d.getElementById('reset').click();input('adelai');
  d.querySelector('#suggestions [role=option]').click();
  assert.equal(d.getElementById('country').value,'Avustralya');assert.equal(d.getElementById('city').value,'Adelaide');
  assert.equal(d.querySelectorAll('.result-card').length,4);
@@ -148,8 +153,9 @@ test('US state filter narrows cities, combines with search and restores shared s
  d.getElementById('reset').click();
  const country=d.getElementById('country');country.value='ABD';country.dispatchEvent(new w.Event('change'));
  state.value='NY';state.dispatchEvent(new w.Event('change'));
- assert.equal(d.querySelectorAll('.result-card').length,6);assert.deepEqual([...city.options].map(o=>o.value),['','New York']);
- d.getElementById('panel-toggle').click();d.querySelector('[aria-label="New York (NY) filtresini kaldır"]').click();assert.equal(state.value,'');assert.equal(d.querySelectorAll('.result-card').length,20);
+ const ny=usPlaces().filter(m=>m.state==='NY');
+ assert.equal(d.querySelectorAll('.result-card').length,ny.length);assert.deepEqual([...city.options].map(o=>o.value),['',...[...new Set(ny.map(m=>m.city))].sort()]);
+ d.getElementById('panel-toggle').click();d.querySelector('[aria-label="New York (NY) filtresini kaldır"]').click();assert.equal(state.value,'');assert.equal(d.querySelectorAll('.result-card').length,usPlaces().length);
 });
 test('Australian states and ACT use country-specific options and reset incompatible cities',async t=>{
  const {dom,w,d}=await setup('https://example.com/?country=Avustralya&state=SA&city=Adelaide');t.after(()=>dom.window.close());

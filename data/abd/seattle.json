@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Turkish Delight",
+    "type": "restoran",
+    "city": "Seattle",
+    "country": "ABD",
+    "address": "1930 Pike Pl, Seattle, WA 98101",
+    "lat": 47.61034,
+    "lng": -122.34312,
+    "products": [
+      "Baklava",
+      "Döner",
+      "Mercimek çorbası",
+      "Pide",
+      "Börek",
+      "Lokum"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Turkish_Delight_(restaurant)",
+    "id": "abd-seattle-turkish-delight",
+    "state": "WA"
+  }
+]

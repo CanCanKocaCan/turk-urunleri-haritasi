@@ -1,0 +1,50 @@
+[
+  {
+    "name": "West LA International Market",
+    "type": "market",
+    "city": "Los Angeles",
+    "country": "ABD",
+    "address": "10817 Venice Blvd, Los Angeles, CA 90034",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://westlainternationalmarket.com/about.html",
+    "id": "abd-los-angeles-west-la-international-market",
+    "state": "CA"
+  },
+  {
+    "name": "Baklava Cafe & Grocery",
+    "type": "kafe",
+    "city": "Los Angeles",
+    "country": "ABD",
+    "address": "524 1/2 N La Brea Ave, Los Angeles, CA 90036",
+    "lat": 34.08105,
+    "lng": -118.34378,
+    "products": [
+      "Baklava",
+      "Lokum",
+      "Türk çayı"
+    ],
+    "source": "https://frankiapp.com/business/baklava-cafe-grocery-768998",
+    "id": "abd-los-angeles-baklava-cafe-grocery",
+    "state": "CA"
+  },
+  {
+    "name": "Nuka Cafe",
+    "type": "restoran",
+    "city": "Los Angeles",
+    "country": "ABD",
+    "address": "1510 Westwood Blvd, Los Angeles, CA 90024",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Lahmacun",
+      "Mantı",
+      "Pide",
+      "Kebap"
+    ],
+    "source": "https://nukacafe.com/",
+    "id": "abd-los-angeles-nuka-cafe",
+    "state": "CA"
+  }
+]

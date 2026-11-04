@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Borek-G Turkish Mom's Cookin'",
+    "type": "firin",
+    "city": "Falls Church",
+    "country": "ABD",
+    "address": "315 S Maple Ave, Falls Church, VA 22046",
+    "lat": 38.8807,
+    "lng": -77.1757,
+    "products": [
+      "Börek",
+      "Baklava",
+      "Yassı ekmek",
+      "Hamur işleri"
+    ],
+    "source": "https://www.borekg.com/",
+    "id": "abd-falls-church-1",
+    "state": "VA"
+  }
+]

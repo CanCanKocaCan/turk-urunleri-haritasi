@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Acacia Int'l Grocery Bakery & Halal Meat",
+    "type": "market",
+    "city": "Houston",
+    "country": "ABD",
+    "state": "TX",
+    "address": "11821 Wilcrest Dr, Houston, TX 77031",
+    "lat": 29.65017,
+    "lng": -95.56536,
+    "products": [
+      "Türk ürünleri",
+      "Helal et",
+      "Fırın ürünleri"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cad7e1bd-7767-11ef-95ae-6045bdeb9f57/acacia-food-mart-houston-tx",
+    "id": "abd-houston-1"
+  },
+  {
+    "name": "Nazif's Turkish Grill & Deli",
+    "type": "restoran",
+    "city": "Houston",
+    "country": "ABD",
+    "state": "TX",
+    "address": "8821 Westheimer Rd, Ste 109, Houston, TX 77063",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Lahmacun",
+      "Pide",
+      "İskender",
+      "Adana kebap",
+      "Künefe",
+      "Baklava",
+      "Fırın sütlaç",
+      "Türk kahvesi"
+    ],
+    "source": "https://www.allmenus.com/tx/houston/377438-nazifs-turkish-grill-deli/menu/",
+    "id": "abd-houston-2"
+  },
+  {
+    "name": "Simit & Poacha Bakery",
+    "type": "firin",
+    "city": "Houston",
+    "country": "ABD",
+    "state": "TX",
+    "address": "12315 Westheimer Rd, Ste D, Houston, TX 77077",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Simit",
+      "Poğaça",
+      "Türk kahvaltısı"
+    ],
+    "source": "https://www.houstonpress.com/?p=332423",
+    "id": "abd-houston-3"
+  }
+]

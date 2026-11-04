@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Hamle Market",
+    "type": "market",
+    "city": "Fountain Valley",
+    "country": "ABD",
+    "address": "9895 Warner Ave, Fountain Valley, CA 92708",
+    "lat": 33.71672,
+    "lng": -117.9564,
+    "products": [
+      "Çaykur çay",
+      "Mehmet Efendi Türk kahvesi",
+      "Pınar",
+      "Eti",
+      "Ülker",
+      "Duru",
+      "Tat",
+      "Sera",
+      "İkbal sucuk",
+      "Pastırma"
+    ],
+    "source": "https://hamlemarket.com",
+    "id": "abd-fountain-valley-hamle-market",
+    "state": "CA"
+  }
+]

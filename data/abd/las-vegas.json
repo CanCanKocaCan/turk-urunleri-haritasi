@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Istanbul Mediterranean",
+    "type": "restoran",
+    "city": "Las Vegas",
+    "country": "ABD",
+    "address": "3615 S Las Vegas Blvd Unit 101 (Grand Bazaar Shops), Las Vegas, NV 89109",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Döner",
+      "Baklava"
+    ],
+    "source": "https://www.zabihah.com/biz/DMlj8VcnqB",
+    "id": "abd-las-vegas-istanbul-mediterranean",
+    "state": "NV"
+  },
+  {
+    "name": "Marash Authentic Turkish Ice Cream",
+    "type": "kafe",
+    "city": "Las Vegas",
+    "country": "ABD",
+    "address": "3615 S Las Vegas Blvd #102 (Grand Bazaar Shops), Las Vegas, NV 89109",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Dondurma"
+    ],
+    "source": "https://offthestrip.pages.dev/listing/turkish-restaurants",
+    "id": "abd-las-vegas-marash-turkish-ice-cream",
+    "state": "NV"
+  },
+  {
+    "name": "Maza Mediterranean Grill & Lounge",
+    "type": "restoran",
+    "city": "Las Vegas",
+    "country": "ABD",
+    "address": "2550 S Rainbow Blvd Unit W1, Las Vegas, NV 89146",
+    "lat": 36.14391,
+    "lng": -115.24186,
+    "products": [
+      "İskender",
+      "Pide",
+      "Türk ızgarası"
+    ],
+    "source": "https://www.zabihah.com/mob/biz/MeIznJgS5a",
+    "id": "abd-las-vegas-maza-mediterranean-turkish-grill",
+    "state": "NV"
+  }
+]

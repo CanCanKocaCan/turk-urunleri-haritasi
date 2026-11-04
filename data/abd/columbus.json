@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Istanbul Market",
+    "type": "market",
+    "city": "Columbus",
+    "country": "ABD",
+    "address": "5221 Bethel Center Mall, Columbus, OH 43220",
+    "lat": 40.06465,
+    "lng": -83.05824,
+    "products": [
+      "Kuru Sele zeytin",
+      "Öncü biber salçası",
+      "Beyaz peynir",
+      "Lor peyniri",
+      "Kaymak",
+      "Pastırma",
+      "Sucuk",
+      "Şalgam"
+    ],
+    "source": "https://columbusfoodletter.substack.com/p/shop-like-an-expert-turkish-food-istanbul-market-columbus-ohio",
+    "id": "abd-columbus-1",
+    "state": "OH"
+  },
+  {
+    "name": "Tulip Cafe Turkish Kitchen & Coffee",
+    "type": "restoran",
+    "city": "Columbus",
+    "country": "ABD",
+    "address": "2926 Hayden Run Plaza, Columbus, OH 43235",
+    "lat": 40.06684,
+    "lng": -83.09626,
+    "products": [
+      "Börek",
+      "Türk simidi",
+      "Mantı",
+      "İskender",
+      "İçli köfte",
+      "Baklava",
+      "Lokum",
+      "Türk kahvesi"
+    ],
+    "source": "https://breakfastwithnick.com/2025/06/11/tulip-cafe-dublin-expands-breakfast-coffee-dessert/",
+    "id": "abd-columbus-2",
+    "state": "OH"
+  }
+]

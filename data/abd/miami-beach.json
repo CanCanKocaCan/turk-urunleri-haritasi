@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Sultan's Gourmet Market",
+    "type": "market",
+    "city": "Miami Beach",
+    "country": "ABD",
+    "address": "6889 Collins Ave, Miami Beach, FL 33141",
+    "lat": 25.85383,
+    "lng": -80.12025,
+    "products": [
+      "Baklava",
+      "Simit",
+      "Türk kahvesi"
+    ],
+    "source": "https://www.atly.com/location/Sultan's-Gourmet-Market-Miami-Beach",
+    "id": "abd-miami-beach-1",
+    "state": "FL"
+  },
+  {
+    "name": "Anatolia Gourmet Market",
+    "type": "market",
+    "city": "Miami Beach",
+    "country": "ABD",
+    "address": "851 Washington Ave, Miami Beach, FL 33139",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Baklava",
+      "Lokum",
+      "Türk kahvesi",
+      "Çay"
+    ],
+    "source": "https://www.atly.com/location/ANATOLIAGOURMETMARKET",
+    "id": "abd-miami-beach-2",
+    "state": "FL"
+  }
+]

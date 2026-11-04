@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Anatolia Turkish Restaurant",
+    "type": "restoran",
+    "city": "Nashville",
+    "country": "ABD",
+    "state": "TN",
+    "address": "48 White Bridge Rd, Nashville, TN 37205",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.aaa.com/tripcanvas/restaurant/anatolia-turkish-restaurant-AA7994",
+    "id": "abd-nashville-1"
+  }
+]

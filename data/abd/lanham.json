@@ -1,0 +1,24 @@
+[
+  {
+    "name": "DCA Grocery Market",
+    "type": "market",
+    "city": "Lanham",
+    "country": "ABD",
+    "address": "9704 Good Luck Rd, Lanham, MD 20706",
+    "lat": 38.98349,
+    "lng": -76.84384,
+    "products": [
+      "Türk et ürünleri",
+      "Börek ve tatlı çeşitleri",
+      "Peynir",
+      "Zeytin",
+      "Lokum",
+      "Türk kahvesi",
+      "Çay",
+      "Bulgur"
+    ],
+    "source": "https://diyanetamerica.org/?p=14345",
+    "id": "abd-lanham-1",
+    "state": "MD"
+  }
+]

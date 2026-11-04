@@ -1,0 +1,24 @@
+[
+  {
+    "name": "The Bosphorus Istanbul Cafe",
+    "type": "restoran",
+    "city": "Indianapolis",
+    "country": "ABD",
+    "address": "935 S East St, Indianapolis, IN 46225",
+    "lat": 39.75455,
+    "lng": -86.14924,
+    "products": [
+      "Dolma",
+      "Börek",
+      "Mercimek çorbası",
+      "Çoban salatası",
+      "İskender",
+      "Adana kebap",
+      "Güveç",
+      "Baklava"
+    ],
+    "source": "https://thebosphoruscafe.com",
+    "id": "abd-indianapolis-1",
+    "state": "IN"
+  }
+]

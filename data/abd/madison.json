@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Istanbul Market & Cafe",
+    "type": "market",
+    "city": "Madison",
+    "country": "ABD",
+    "address": "745 S Gammon Rd, Madison, WI 53719",
+    "lat": 43.05712,
+    "lng": -89.50267,
+    "products": [],
+    "source": "https://madison365.com/a-guide-for-restaurants-and-shops-to-visit-throughout-ramadan",
+    "id": "abd-madison-1",
+    "state": "WI"
+  }
+]

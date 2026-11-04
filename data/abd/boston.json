@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Turco Market",
+    "type": "market",
+    "city": "Boston",
+    "country": "ABD",
+    "address": "481 Cambridge Street, Boston, MA 02134",
+    "lat": 42.35386,
+    "lng": -71.13708,
+    "products": [
+      "Azerbaycan reçeli",
+      "Dubai çikolatası"
+    ],
+    "source": "https://www.openstreetmap.org/node/9826872522",
+    "id": "abd-boston-1",
+    "state": "MA"
+  },
+  {
+    "name": "Turkish Lazuri Café",
+    "type": "restoran",
+    "city": "Boston",
+    "country": "ABD",
+    "address": "1 North Beacon Street, Boston, MA 02134",
+    "lat": 42.35376,
+    "lng": -71.13742,
+    "products": [
+      "Lahmacun",
+      "Pide",
+      "Künefe",
+      "Baklava",
+      "Sütlaç"
+    ],
+    "source": "https://www.openstreetmap.org/node/9826872526",
+    "id": "abd-boston-2",
+    "state": "MA"
+  }
+]
