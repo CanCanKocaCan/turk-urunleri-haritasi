@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Beyzade Restaurant Turc",
+    "type": "restoran",
+    "city": "Laval",
+    "country": "Kanada",
+    "address": "2995 Boulevard Dagenais O, Laval, QC H7P 1T3",
+    "lat": 45.5798,
+    "lng": -73.78766,
+    "products": [
+      "Adana kebap",
+      "Mantı",
+      "Şalgam"
+    ],
+    "source": "https://www.restomontreal.ca/resto/restaurant-turc-beyzade-laval/21538/en/",
+    "state": "QC",
+    "id": "kanada-laval-1"
+  },
+  {
+    "name": "Anatolia Restaurant",
+    "type": "restoran",
+    "city": "Laval",
+    "country": "Kanada",
+    "address": "1203 Boulevard du Curé-Labelle, Laval, QC H7V 2V8",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Lahmacun"
+    ],
+    "source": "https://restoanatolia.ca",
+    "state": "QC",
+    "id": "kanada-laval-2"
+  },
+  {
+    "name": "Mirazu Laval",
+    "type": "restoran",
+    "city": "Laval",
+    "country": "Kanada",
+    "address": "1698 Boulevard Saint-Martin O, Laval, QC H7S 1N9",
+    "lat": 45.56731,
+    "lng": -73.72851,
+    "products": [
+      "İnegöl köfte",
+      "Sarma",
+      "Humus",
+      "Babaganuş",
+      "Kuzu incik"
+    ],
+    "source": "https://www.restomontreal.ca/article/mirazu-maintenant-a-laval/1982/fr/",
+    "state": "QC",
+    "id": "kanada-laval-3"
+  }
+]

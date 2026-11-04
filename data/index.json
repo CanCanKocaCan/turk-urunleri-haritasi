@@ -86,5 +86,22 @@
   "japonya": [
     "tokyo"
   ],
-  "kanada": []
+  "kanada": [
+    "montreal",
+    "laval",
+    "halifax",
+    "markham",
+    "mississauga",
+    "richmond-hill",
+    "toronto",
+    "vaughan",
+    "ottawa",
+    "waterloo",
+    "barrie",
+    "niagara-falls",
+    "calgary",
+    "edmonton",
+    "burnaby",
+    "vancouver"
+  ]
 }

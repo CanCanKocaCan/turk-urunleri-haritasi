@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Efendi Turkish Restaurant",
+    "type": "restoran",
+    "city": "Markham",
+    "country": "Kanada",
+    "address": "8190 Bayview Ave, Thornhill, Markham, ON L3T 2S2",
+    "lat": 43.83142,
+    "lng": -79.40452,
+    "products": [
+      "İçli köfte",
+      "Ali Nazik",
+      "Şiş kebap",
+      "Beyti kebap",
+      "Türk kahvesi"
+    ],
+    "source": "https://cdn2.hungryonion.org/t/efendi-turkish-cuisine-kebab-grill-8190-bayview-ave-thornhill-a-chance-encounter-with-a-delightful-turkish-hidden-gem/37430",
+    "id": "kanada-markham-1",
+    "state": "ON"
+  }
+]

@@ -1,0 +1,165 @@
+[
+  {
+    "name": "Pristine Fine Foods (Turkish Mart)",
+    "type": "market",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "339 Evans Ave, Etobicoke, ON M8Y 1Z2",
+    "lat": 43.61643,
+    "lng": -79.52071,
+    "products": [
+      "Türk kahvesi",
+      "Türk çayı",
+      "Sucuk",
+      "Pastırma",
+      "Simit",
+      "Lokum",
+      "Ülker",
+      "Eti"
+    ],
+    "source": "https://pristinefinefoods.com/",
+    "id": "kanada-toronto-1",
+    "state": "ON"
+  },
+  {
+    "name": "Istanbul Fine Foods",
+    "type": "market",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "3715 Keele St, North York, ON M3J 1N1",
+    "lat": 43.75626,
+    "lng": -79.48901,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/08dd381f-4629-422a-8946-04f0d43ba61c/istanbul-fine-foods-toronto-on",
+    "id": "kanada-toronto-2",
+    "state": "ON"
+  },
+  {
+    "name": "Elif Market",
+    "type": "market",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "867 Wilson Ave, North York, ON M3K 1S6",
+    "lat": 43.73074,
+    "lng": -79.46571,
+    "products": [
+      "Sucuk",
+      "Sosis",
+      "Lahmacun",
+      "Baharat"
+    ],
+    "source": "https://www.zabihah.com/restaurants/ca86109f-7767-11ef-95ae-6045bdeb9f57/elif-market-toronto-on",
+    "id": "kanada-toronto-3",
+    "state": "ON"
+  },
+  {
+    "name": "Meat Point",
+    "type": "restoran",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "1021 Wilson Ave, North York, ON M3K 1G6",
+    "lat": 43.7278,
+    "lng": -79.47863,
+    "products": [],
+    "source": "https://www.zabihah.com/restaurants/08dd319b-6fb4-41f8-8a34-e3d3b21305d4/meat-point-toronto-on",
+    "id": "kanada-toronto-4",
+    "state": "ON"
+  },
+  {
+    "name": "Rumeli",
+    "type": "restoran",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "4700 Dufferin St, North York, ON M3H 5S7",
+    "lat": 43.77546,
+    "lng": -79.46942,
+    "products": [
+      "Mercimek çorbası",
+      "Adana kebap",
+      "Fındık lahmacun",
+      "Beef şiş"
+    ],
+    "source": "https://www.zabihah.com/restaurants/08dd5d8b-63cd-4fac-8359-691b202af90a/rumeli-toronto-on",
+    "id": "kanada-toronto-5",
+    "state": "ON"
+  },
+  {
+    "name": "Mustafa Turkish Kebap Pide Döner",
+    "type": "restoran",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "866 Wilson Ave, North York, ON M3K 1E5",
+    "lat": 43.73062,
+    "lng": -79.46805,
+    "products": [
+      "Pide",
+      "İskender",
+      "Kadayıf",
+      "Künefe",
+      "Kebap"
+    ],
+    "source": "https://streetsoftoronto.com/streats/mustafa-turkish-kebap-pide-doner/",
+    "id": "kanada-toronto-6",
+    "state": "ON"
+  },
+  {
+    "name": "Galata Cafe",
+    "type": "kafe",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "5122 Dundas St W, Etobicoke, ON M9A 1C2",
+    "lat": 43.64444,
+    "lng": -79.5331,
+    "products": [
+      "Türk kahvaltısı",
+      "Türk kahvesi"
+    ],
+    "source": "https://streetsoftoronto.com/restaurants/galata-cafe",
+    "id": "kanada-toronto-7",
+    "state": "ON"
+  },
+  {
+    "name": "Marché Istanbul",
+    "type": "market",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "3220 Dufferin St, North York, ON M6A 2T2",
+    "lat": 43.71903,
+    "lng": -79.45793,
+    "products": [
+      "Sucuk",
+      "Pastırma",
+      "Mantı",
+      "Yufka",
+      "Zeytin",
+      "Biber salçası",
+      "Nar ekşisi",
+      "Simit"
+    ],
+    "source": "https://livingtorontojournal.com/2014/10/19/torontos-marche-istanbul/",
+    "id": "kanada-toronto-8",
+    "state": "ON"
+  },
+  {
+    "name": "Smyrna Laz Bakkal",
+    "type": "market",
+    "city": "Toronto",
+    "country": "Kanada",
+    "address": "808 Pape Ave, Toronto, ON M4K 3S7",
+    "lat": 43.68224,
+    "lng": -79.34627,
+    "products": [
+      "Sucuk",
+      "Zeytinyağı",
+      "Kekik",
+      "Helva",
+      "Pişmaniye",
+      "Türk çayı",
+      "Baklava",
+      "Simit"
+    ],
+    "source": "https://torontoobserver.ca/2019/09/14/grocery-store-offers-turkish-delights-in-greektown/",
+    "id": "kanada-toronto-9",
+    "state": "ON"
+  }
+]

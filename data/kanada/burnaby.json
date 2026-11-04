@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Anatolia's Gate",
+    "type": "restoran",
+    "city": "Burnaby",
+    "country": "Kanada",
+    "address": "7084 Kingsway, Burnaby, BC V5E 1E5",
+    "lat": 49.21826,
+    "lng": -122.95834,
+    "products": [
+      "Adana kebap",
+      "İskender kebap",
+      "Karışık kebap",
+      "Döner",
+      "Lahmacun",
+      "Peynirli pide",
+      "Lavaş"
+    ],
+    "source": "https://www.zabihah.com/restaurants/ca1b90e8-7767-11ef-95ae-6045bdeb9f57/anatolias-gate-burnaby-bc",
+    "id": "kanada-burnaby-1",
+    "state": "BC"
+  }
+]

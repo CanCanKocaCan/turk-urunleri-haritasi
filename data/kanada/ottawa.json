@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Sultan Ahmet Turkish Cuisine",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "575 Bank Street, Ottawa, ON K1S 3T4",
+    "lat": 45.40836,
+    "lng": -75.69114,
+    "products": [],
+    "source": "https://www.openstreetmap.org/way/238119932",
+    "id": "kanada-ottawa-1",
+    "state": "ON"
+  },
+  {
+    "name": "A La Istanbul Turkish Cuisine",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "140 Rideau Street, Ottawa, ON K1N 5X6",
+    "lat": 45.42663,
+    "lng": -75.69021,
+    "products": [],
+    "source": "https://alaistanbul.ca/",
+    "id": "kanada-ottawa-2",
+    "state": "ON"
+  },
+  {
+    "name": "Little Turkish Village",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "2095 St. Joseph Boulevard, Unit 8, Ottawa, ON K1C 1E7",
+    "lat": 45.4667,
+    "lng": -75.53556,
+    "products": [],
+    "source": "https://turkishvillage.ca/",
+    "id": "kanada-ottawa-3",
+    "state": "ON"
+  },
+  {
+    "name": "Turkish Anatolia Restaurant",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "4434 Innes Road, Ottawa, ON K4A 4C5",
+    "lat": 45.46074,
+    "lng": -75.48697,
+    "products": [],
+    "source": "https://turkishanatoliaon.com/",
+    "id": "kanada-ottawa-4",
+    "state": "ON"
+  },
+  {
+    "name": "Turkish Kebab House (Bank Street)",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "1910 Bank Street, Ottawa, ON K1V 8A3",
+    "lat": 45.36847,
+    "lng": -75.66286,
+    "products": [],
+    "source": "https://www.openstreetmap.org/node/14108921504",
+    "id": "kanada-ottawa-5",
+    "state": "ON"
+  },
+  {
+    "name": "Turkish Kebab House (Kanata)",
+    "type": "restoran",
+    "city": "Ottawa",
+    "country": "Kanada",
+    "address": "471 Terry Fox Drive, Unit 120, Ottawa, ON K2T 0A3",
+    "lat": 45.31231,
+    "lng": -75.93354,
+    "products": [],
+    "source": "https://apt613.ca/best-bites-in-ottawa-turkish-kebab-house-coopers-ay-wey/",
+    "id": "kanada-ottawa-6",
+    "state": "ON"
+  }
+]
