@@ -1,0 +1,97 @@
+[
+  {
+    "id": "fransa-paris-le-janissaire",
+    "name": "Le Janissaire",
+    "type": "restoran",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "22-24 Allée Vivaldi, 75012 Paris, France",
+    "lat": 48.84162,
+    "lng": 2.39129,
+    "products": [
+      "Pide"
+    ],
+    "source": "https://www.lejanissaire.fr/"
+  },
+  {
+    "id": "fransa-paris-le-sibel",
+    "name": "Le Sibel",
+    "type": "restoran",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "283 Rue de Vaugirard, 75015 Paris, France",
+    "lat": 48.83946,
+    "lng": 2.30128,
+    "products": [
+      "İskender kebap",
+      "Beyti",
+      "Döner kebap",
+      "Baklava",
+      "Künefe",
+      "Türk çayı"
+    ],
+    "source": "https://www.lesibelparis.fr/"
+  },
+  {
+    "id": "fransa-paris-restaurant-sec",
+    "name": "Restaurant Seç",
+    "type": "restoran",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "165 Rue Ordener, 75018 Paris, France",
+    "lat": 48.89335,
+    "lng": 2.33764,
+    "products": [],
+    "source": "https://www.restaurant-sec.com/restaurants/sec-montmartre/"
+  },
+  {
+    "id": "fransa-paris-pich-pich",
+    "name": "Pich Pich",
+    "type": "market",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "32 Rue d’Enghien, 75010 Paris, France",
+    "lat": 48.87215,
+    "lng": 2.35025,
+    "products": [
+      "Türk biberi",
+      "Köfte baharatı",
+      "Sumak",
+      "Nar ekşisi"
+    ],
+    "source": "https://www.pichpich.fr/shop"
+  },
+  {
+    "id": "fransa-paris-epicerie-du-faubourg",
+    "name": "Épicerie du Faubourg",
+    "type": "market",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "22-24 Rue du Faubourg Saint-Denis, 75010 Paris, France",
+    "lat": 48.87083,
+    "lng": 2.35336,
+    "products": [
+      "Kurukahveci Nuri Toplar kahve",
+      "Sebahat kahve",
+      "Çaykur Tomurcuk çay",
+      "Çaykur Rize çayı"
+    ],
+    "source": "https://www.epicerie-du-faubourg.com/"
+  },
+  {
+    "id": "fransa-paris-le-serail-paris",
+    "name": "Le Serail Paris",
+    "type": "firin",
+    "city": "Paris",
+    "country": "Fransa",
+    "address": "17 Avenue Victor Hugo, 75116 Paris, France",
+    "lat": 48.87223,
+    "lng": 2.2917,
+    "products": [
+      "Baklava",
+      "Lokum",
+      "Sucuklu omlet"
+    ],
+    "source": "https://leserailtraiteur.com/contact/"
+  }
+]

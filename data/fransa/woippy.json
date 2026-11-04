@@ -1,0 +1,19 @@
+[
+  {
+    "id": "fransa-woippy-tour-de-leandre",
+    "name": "La Tour de Léandre",
+    "type": "restoran",
+    "city": "Woippy",
+    "country": "Fransa",
+    "address": "39 Avenue de Thionville, 57140 Woippy, France",
+    "lat": 49.14687,
+    "lng": 6.16171,
+    "products": [
+      "Pide",
+      "Baklava",
+      "Künefe"
+    ],
+    "source": "https://tourdeleandre.fr/",
+    "website": "https://tourdeleandre.fr/"
+  }
+]

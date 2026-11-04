@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fransa-lille-istanbul-concept-kebab",
+    "name": "Istanbul Concept Kebab",
+    "type": "restoran",
+    "city": "Lille",
+    "country": "Fransa",
+    "address": "25 Rue de Turenne, 59000 Lille, France",
+    "lat": 50.62844,
+    "lng": 3.03766,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://istanbul-concept-kebab.eatbu.com/?lang=fr"
+  }
+]

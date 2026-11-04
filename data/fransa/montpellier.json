@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fransa-montpellier-destan-lounge",
+    "name": "Destan Lounge",
+    "type": "restoran",
+    "city": "Montpellier",
+    "country": "Fransa",
+    "address": "183 Rue de l’Industrie, 34070 Montpellier",
+    "lat": 43.58885,
+    "lng": 3.88469,
+    "products": [
+      "Adana kebap",
+      "Musakka",
+      "İskender",
+      "Beyti",
+      "Künefe"
+    ],
+    "source": "https://www.destan-lounge.fr/"
+  }
+]

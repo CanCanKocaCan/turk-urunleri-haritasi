@@ -1,0 +1,24 @@
+[
+  {
+    "id": "fransa-marsannay-la-cote-ogrill",
+    "name": "O’Grill",
+    "type": "restoran",
+    "city": "Marsannay-la-Côte",
+    "country": "Fransa",
+    "address": "80 Allée Olivier de la Marche, 21160 Marsannay-la-Côte, France",
+    "lat": 47.27986,
+    "lng": 5.01829,
+    "products": [
+      "Adana kebap",
+      "Karışık ızgara",
+      "Pide",
+      "Lahmacun",
+      "Güveç",
+      "Künefe",
+      "İskender",
+      "Ayran"
+    ],
+    "source": "https://www.ogrill-dijon.fr/",
+    "website": "https://www.ogrill-dijon.fr/"
+  }
+]

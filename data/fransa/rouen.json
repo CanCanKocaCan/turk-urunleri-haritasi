@@ -1,0 +1,39 @@
+[
+  {
+    "id": "fransa-rouen-sofra-rouen",
+    "name": "Sofra Rouen",
+    "type": "restoran",
+    "city": "Rouen",
+    "country": "Fransa",
+    "address": "105 Allée François Mitterrand, 76100 Rouen, France",
+    "lat": 49.43961,
+    "lng": 1.07888,
+    "products": [
+      "Tavuk şiş",
+      "Adana kebap",
+      "Ali nazik",
+      "Beyti",
+      "Trileçe",
+      "Baklava",
+      "Künefe"
+    ],
+    "source": "https://sofrarouen.com/"
+  },
+  {
+    "id": "fransa-rouen-station-grill-76",
+    "name": "Station Grill 76",
+    "type": "restoran",
+    "city": "Rouen",
+    "country": "Fransa",
+    "address": "24 Boulevard des Belges, 76000 Rouen, France",
+    "lat": 49.44161,
+    "lng": 1.08344,
+    "products": [
+      "Lahmacun",
+      "Köfte",
+      "Tavuk şiş",
+      "Adana kebap"
+    ],
+    "source": "https://www.station-grill76.fr/"
+  }
+]

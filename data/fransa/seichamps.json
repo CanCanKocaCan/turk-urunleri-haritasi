@@ -1,0 +1,18 @@
+[
+  {
+    "id": "fransa-seichamps-sofra",
+    "name": "Sofra",
+    "type": "restoran",
+    "city": "Seichamps",
+    "country": "Fransa",
+    "address": "15 Rue des Grands Prés, 54280 Seichamps, France",
+    "lat": 48.71562,
+    "lng": 6.25316,
+    "products": [
+      "Döner",
+      "Baklava"
+    ],
+    "source": "https://www.sofra-restaurant.fr/",
+    "website": "https://www.sofra-restaurant.fr/"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fransa-nice-tamam-kebab-gourmet",
+    "name": "Tamam Kebab Gourmet",
+    "type": "restoran",
+    "city": "Nice",
+    "country": "Fransa",
+    "address": "16 Rue Marceau, 06000 Nice",
+    "lat": 43.70771,
+    "lng": 7.26619,
+    "products": [
+      "Kebap",
+      "Baklava"
+    ],
+    "source": "https://www.tamam-gourmet.fr/"
+  },
+  {
+    "id": "fransa-nice-o-turkish",
+    "name": "O’TURKISH",
+    "type": "restoran",
+    "city": "Nice",
+    "country": "Fransa",
+    "address": "7 Rue d’Italie, 06000 Nice",
+    "lat": 43.70289,
+    "lng": 7.26566,
+    "products": [
+      "Kebap",
+      "Dürüm"
+    ],
+    "source": "https://niceshopping.fr/commerce/oturkish/"
+  }
+]

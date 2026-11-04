@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fransa-poissy-le-serail-poissy",
+    "name": "Le Serail Poissy",
+    "type": "firin",
+    "city": "Poissy",
+    "country": "Fransa",
+    "address": "1 Rue aux Moutons, 78300 Poissy, France",
+    "lat": 48.92881,
+    "lng": 2.04361,
+    "products": [
+      "Baklava",
+      "Lokum"
+    ],
+    "source": "https://leserailtraiteur.com/contact/"
+  }
+]

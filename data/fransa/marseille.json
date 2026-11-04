@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fransa-marseille-pacha-grill",
+    "name": "Pacha Grill",
+    "type": "restoran",
+    "city": "Marseille",
+    "country": "Fransa",
+    "address": "227 Avenue Pierre Mendès France, 13008 Marseille",
+    "lat": 43.2502,
+    "lng": 5.37547,
+    "products": [],
+    "source": "https://www.pachagrill.com/infos-pratiques/"
+  },
+  {
+    "id": "fransa-marseille-bodrum-city",
+    "name": "Bodrum City",
+    "type": "restoran",
+    "city": "Marseille",
+    "country": "Fransa",
+    "address": "42 Cours Belsunce, 13001 Marseille",
+    "lat": 43.29829,
+    "lng": 5.37704,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://bodrumcity.fr/"
+  },
+  {
+    "id": "fransa-marseille-inci",
+    "name": "İnci Restaurant",
+    "type": "restoran",
+    "city": "Marseille",
+    "country": "Fransa",
+    "address": "33 Boulevard Philippon, 13004 Marseille",
+    "lat": 43.30296,
+    "lng": 5.39632,
+    "products": [
+      "Kebap",
+      "Pide",
+      "Sigara böreği"
+    ],
+    "source": "https://inci-restaurant.fr/"
+  }
+]

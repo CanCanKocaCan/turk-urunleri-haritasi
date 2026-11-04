@@ -1,0 +1,15 @@
+[
+  {
+    "id": "fransa-roubaix-bizim-market",
+    "name": "Bizim Market",
+    "type": "market",
+    "city": "Roubaix",
+    "country": "Fransa",
+    "address": "82 Boulevard de Metz, 59100 Roubaix, France",
+    "lat": 50.70356,
+    "lng": 3.18198,
+    "products": [],
+    "source": "https://localitybiz.fr/25058639/bizim-market-roubaix",
+    "note": "OSM işletme noktasında kapı numarası yok; 82 numarası bağımsız işletme kaynaklarıyla doğrulandı."
+  }
+]

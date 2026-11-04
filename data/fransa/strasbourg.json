@@ -1,0 +1,47 @@
+[
+  {
+    "id": "fransa-strasbourg-meyno",
+    "name": "Meyno",
+    "type": "market",
+    "city": "Strasbourg",
+    "country": "Fransa",
+    "address": "105 Rue de la Plaine des Bouchers, 67100 Strasbourg, France",
+    "lat": 48.55479,
+    "lng": 7.73709,
+    "products": [],
+    "source": "https://meyno.fr/saveurs/turquie/",
+    "website": "https://meyno.fr/saveurs/turquie/"
+  },
+  {
+    "id": "fransa-strasbourg-taza-supermarche",
+    "name": "Taza Supermarché",
+    "type": "market",
+    "city": "Strasbourg",
+    "country": "Fransa",
+    "address": "21 Avenue Aristide Briand, 67100 Strasbourg, France",
+    "lat": 48.56876,
+    "lng": 7.77643,
+    "products": [
+      "Gül aromalı lokum"
+    ],
+    "source": "https://taza-supermarche.fr/",
+    "website": "https://taza-supermarche.fr/"
+  },
+  {
+    "id": "fransa-strasbourg-doy-doy-montagne-verte",
+    "name": "Doy Doy Montagne Verte",
+    "type": "restoran",
+    "city": "Strasbourg",
+    "country": "Fransa",
+    "address": "23 Rue de Friedolsheim, 67200 Strasbourg, France",
+    "lat": 48.56621,
+    "lng": 7.7085,
+    "products": [
+      "Döner",
+      "Yufka",
+      "Pide"
+    ],
+    "source": "https://www.doy-doy.fr/nos-restaurants-turc-kebab-strasbourg/",
+    "website": "https://www.doy-doy.fr/nos-restaurants-turc-kebab-strasbourg/"
+  }
+]

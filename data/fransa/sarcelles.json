@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fransa-sarcelles-anamour-steakhouse",
+    "name": "Anamour Steakhouse",
+    "type": "restoran",
+    "city": "Sarcelles",
+    "country": "Fransa",
+    "address": "1 Rue du Père Heude, 95200 Sarcelles, France",
+    "lat": 48.98652,
+    "lng": 2.38802,
+    "products": [],
+    "source": "https://anamour-sarcelles.eatbu.com/?lang=fr"
+  }
+]
