@@ -26,6 +26,9 @@ jobs:
         run: |
           # Token'da "Account Analytics: Read" izni olmalı.
           case "$DAYS" in ''|*[!0-9]*) echo "Gün sayısı sayı olmalı"; exit 1;; esac
+          # Secret'a yapıştırırken kalan boşluk/satır sonu başlığı bozar; temizle.
+          CF_TOKEN=${CF_TOKEN//[$'\r\n\t ']/}
+          CF_ACCOUNT=${CF_ACCOUNT//[$'\r\n\t ']/}
           query() {
             local out code
             out=$(curl -sS -w '\n%{http_code}' "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/analytics_engine/sql" \
