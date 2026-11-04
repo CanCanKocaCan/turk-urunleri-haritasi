@@ -1,0 +1,17 @@
+[
+  {
+    "id": "italya-romano-di-lombardia-istanbul-turkish-kebap",
+    "name": "Istanbul Turkish Kebap",
+    "type": "restoran",
+    "city": "Romano di Lombardia",
+    "country": "İtalya",
+    "address": "Via Matteotti 1, Romano di Lombardia BG, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [],
+    "source": "https://www.istanbulturkishkebap-lovere.it/",
+    "phone": "+393891097579",
+    "website": "https://www.istanbulturkishkebap-lovere.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]

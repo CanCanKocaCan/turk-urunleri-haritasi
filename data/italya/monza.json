@@ -1,0 +1,18 @@
+[
+  {
+    "id": "italya-monza-galatasaray",
+    "name": "Galatasaray Kebap & Pizza",
+    "type": "restoran",
+    "city": "Monza",
+    "country": "İtalya",
+    "address": "Via Alessandro Manzoni 58, 20900 Monza, Italia",
+    "lat": 45.58048,
+    "lng": 9.27303,
+    "products": [
+      "Döner kebap",
+      "Pide",
+      "Falafel"
+    ],
+    "source": "https://www.sluurpy.it/monza/ristorante/151821/turkish-galatasaray-kebap-di-sakiz-ahmet"
+  }
+]

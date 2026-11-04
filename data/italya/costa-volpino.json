@@ -1,0 +1,21 @@
+[
+  {
+    "id": "italya-costa-volpino-istanbul-turkish-kebap",
+    "name": "Istanbul Turkish Kebap",
+    "type": "restoran",
+    "city": "Costa Volpino",
+    "country": "İtalya",
+    "address": "Via Nazionale 257, Costa Volpino BG, Italia",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Döner kebap",
+      "Dürüm kebap",
+      "Falafel"
+    ],
+    "source": "https://www.istanbulturkishkebap-lovere.it/",
+    "phone": "+39035223177",
+    "website": "https://www.istanbulturkishkebap-lovere.it/",
+    "note": "Koordinat kapı/bina düzeyinde doğrulanamadı; harita konumu eklenecek."
+  }
+]
