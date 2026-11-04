@@ -21,12 +21,21 @@ jobs:
       DAYS: ${{ inputs.days || '7' }}
     steps:
       - name: Analytics Engine'den aramaları çek
+        # pipefail: sorgu hata verirse adım da başarısız olur.
+        shell: bash
         run: |
           # Token'da "Account Analytics: Read" izni olmalı.
           case "$DAYS" in ''|*[!0-9]*) echo "Gün sayısı sayı olmalı"; exit 1;; esac
           query() {
-            curl -sSf "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/analytics_engine/sql" \
-              -H "Authorization: Bearer $CF_TOKEN" --data-binary "$1"
+            local out code
+            out=$(curl -sS -w '\n%{http_code}' "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/analytics_engine/sql" \
+              -H "Authorization: Bearer $CF_TOKEN" --data-binary "$1")
+            code=${out##*$'\n'}
+            if [ "$code" != 200 ]; then
+              echo "Cloudflare API hatası ($code): ${out%$'\n'*}" >&2
+              return 1
+            fi
+            printf '%s' "${out%$'\n'*}"
           }
           table() {
             echo "| Arama | Ülke | Şehir | Sayı |"
