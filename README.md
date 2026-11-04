@@ -90,12 +90,15 @@ GitHub Pages sunucu kodu çalıştırmaz. `community/worker.mjs` anonim formlar�
 GitHub issue olarak incelemeye alır; yayınlanan veriyi değiştirmez. Gönderilen
 bilgiler açık depoda herkese görünür olabilir; kişisel bilgi toplamayın.
 
-1. Cloudflare Workers hesabında `community/` dizininden Wrangler ile deploy edin.
-2. Yalnızca bu depoya Issues yazma yetkisi olan fine-grained GitHub token'ını
-   `npx wrangler secret put GITHUB_TOKEN` ile secret olarak kaydedin.
-3. `wrangler.toml` içindeki origin, depo ve rate limit binding'ini kontrol edip
-   `npx wrangler deploy` çalıştırın. IP başına dakikada 3 istek sınırı vardır;
-   IP yalnızca edge hız sınırı anahtarıdır, issue gövdesine eklenmez.
+1. Depo ayarlarında (Settings → Secrets and variables → Actions) şu secret'ları ekleyin:
+   - `CLOUDFLARE_API_TOKEN`: "Edit Cloudflare Workers" şablonuyla oluşturulan Cloudflare API token'ı
+   - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare hesap kimliği
+   - `WORKER_GITHUB_TOKEN`: Yalnızca bu depoya Issues yazma yetkisi olan fine-grained GitHub token'ı
+2. `wrangler.toml` içindeki origin, depo ve rate limit binding'ini kontrol edin.
+   IP başına dakikada 3 istek sınırı vardır; IP yalnızca edge hız sınırı
+   anahtarıdır, issue gövdesine eklenmez.
+3. Actions sekmesinden "Katkı servisini yayınla" iş akışını çalıştırın. `community/`
+   değiştiğinde `main`'e her push'ta otomatik yeniden yayınlanır.
 4. Dönen HTTPS adresini `config.js` içindeki `contributionEndpoint` alanına yazın.
 5. Gerçek bir deneme gönderisini kontrol edin; gelen issue'ları doğruladıktan
    sonra veriye PR ile aktarın. Kapandı/yok bildirimlerini de doğrulayın.

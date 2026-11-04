@@ -1,0 +1,29 @@
+name: Katkı servisini yayınla
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "community/**"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: community
+          # Rate limit binding'i (REPORT_LIMITER) Wrangler 4 gerektirir.
+          wranglerVersion: "4.157.0"
+          # Worker'ın issue açmak için kullandığı token; Cloudflare'e secret olarak yüklenir.
+          secrets: |
+            GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKER_GITHUB_TOKEN }}
