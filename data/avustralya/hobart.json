@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Turkish Tukka",
+    "type": "restoran",
+    "city": "Hobart",
+    "country": "Avustralya",
+    "address": "160 Sandy Bay Rd, Sandy Bay TAS 7005",
+    "lat": null,
+    "lng": null,
+    "products": ["Kömürde tavuk", "Kömürde kuzu", "Dürüm", "Falafel"],
+    "source": "https://tasmania.foodtourist.com/turkish-tukka-sandy-bay-great-food/",
+    "id": "avustralya-hobart-1",
+    "state": "TAS"
+  }
+]
