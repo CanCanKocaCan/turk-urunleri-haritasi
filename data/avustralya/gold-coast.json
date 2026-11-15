@@ -13,5 +13,22 @@
     "note": "Kaynaklarda adres çelişiyor: FirstTable ve NRMA 1/90 Surf Parade, OSM 24-26 Queensland Ave yazıyor; koordinat OSM kaydından.",
     "id": "avustralya-gold-coast-1",
     "state": "QLD"
+  },
+  {
+    "name": "Adams Kebab",
+    "type": "restoran",
+    "city": "Gold Coast",
+    "country": "Avustralya",
+    "address": "126 Robina Town Centre Dr, 7, Robina QLD 4230",
+    "lat": null,
+    "lng": null,
+    "products": [
+      "Kebap",
+      "Baklava",
+      "Lokum"
+    ],
+    "source": "https://www.ubereats.com/au/store/adams-kebab/FBourumtQjC6vacu7gdKmw",
+    "id": "avustralya-gold-coast-2",
+    "state": "QLD"
   }
 ]
