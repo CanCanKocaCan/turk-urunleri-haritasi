@@ -11,5 +11,20 @@
     "source": "https://darwinlocalista.com.au/listing/au/darwin-city/bars-and-restaurants/istanbul-kebab-bar",
     "id": "avustralya-darwin-1",
     "state": "NT"
+  },
+  {
+    "name": "Darwin Kebab & Pizza",
+    "type": "restoran",
+    "city": "Darwin",
+    "country": "Avustralya",
+    "address": "5/798 Vanderlin Dr, Berrimah NT 0828",
+    "lat": -12.4322,
+    "lng": 130.92298,
+    "products": [
+      "Kebap"
+    ],
+    "source": "https://www.zabihah.com/restaurants/cb73a169-7767-11ef-95ae-6045bdeb9f57/darwin-kebab-pizza-berrimah-northern-territory",
+    "id": "avustralya-darwin-2",
+    "state": "NT"
   }
 ]
